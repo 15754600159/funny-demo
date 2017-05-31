@@ -1,0 +1,107 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.btn {
+    padding: 0 12px;
+}
+
+.btn-default {
+    border-radius: 0;
+    border-color: #556889;
+    color: #707070;
+}
+
+.caret {
+    background: url(../img/triangle.png);
+    width: 18px;
+    height: 12px;
+    border: 0;
+}
+
+.dateranger {
+    line-height: 26px;
+    margin-right: 20px;
+    border: 1px solid #003664;
+    float: right;
+}
+
+.dateranger .daterangebox-ipt {
+    width: 192px;
+    height: 22px;
+    padding: 0 10px;
+    border: none;
+    float: left;
+    background: url(../img/icon-calendar.png) 94% 5px no-repeat;
+    color: #707070;
+    font-size: 12px;
+    cursor: default;
+}
+
+.hushi-type {
+    margin: 10px;
+}
+
+.hushi-component {
+    border: 1px solid #cdd7e3;
+}
+
+.hushi-date {
+    position: absolute;
+    top: 32px;
+    right: 0;
+}
+
+.hushi-component h1 {
+    font-size: 14px;
+    height: 38px;
+    line-height: 38px;
+    background: #eff2f9;
+    color: #56688c;
+    padding-left: 10px;
+}
+
+.hushi-career {
+    overflow: hidden;
+    float: left;
+    width: 600px;
+}
+
+.hushi-career ul {
+    padding: 20px 0 0 0;
+    overflow: hidden;
+}
+
+.hushi-career ul li {
+    list-style: none;
+    float: left;
+    color: #888888;
+    text-align: center;
+    margin: 26px 52px;
+    width: 80px;
+    height: 120px;
+}
+
+.hushi-career ul li .num {
+    font-size: 22px;
+}
+
+.hushi-career ul li .name {
+    font-size: 12px;
+}
+
+.hushiMap {
+    position: relative;
+}
+
+.hushi-hour {
+    font-size: 14px;
+    margin: 20px 10px;
+    font-weight: bold;
+}
+
