@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>context-menu</title>
+</head>
+<body>
+	<div id="word" style="position: absolute;">I`m a menu! I can move.</div>
+	<script type="text/javascript">
+		// 鼠标右键 div位置会变化
+		window.onload = function(){
+			var div = document.getElementById('word');
+			document.addEventListener('contextmenu', function(e){
+				e.preventDefault();
+
+				div.style.left = e.clientX + 'px';
+				div.style.top = e.clientY + 'px';
+			})
+		}
+	</script>
+</body>
+</html>
