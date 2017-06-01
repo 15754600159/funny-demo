@@ -1,0 +1,10 @@
+body{
+	--pink: pink;
+	--black: black;
+
+	background-color: var(--pink);
+}
+
+body div{
+	background-color: var(--black);
+}
