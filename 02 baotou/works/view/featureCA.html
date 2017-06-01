@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+	<head>
+		<title>民航旅客特征分析</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/personnelFeature.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+		<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+
+		<script type="text/javascript" src="../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript" src="../js/web/featureCA.js"></script>
+
+	</head>
+
+	<body>
+		<div class="all">
+			<div class="top">
+				<div class="title">民航旅客特征分析</div>
+			</div>
+
+			<div class="content" style="height:auto;">
+
+				<input type="text" id="reservation" class="daterangebox-ipt active tz_input" />
+
+			</div>
+			<!--图表菜单-->
+			<div class="menus-chart">
+				<!--民族-->
+				<div class="nation alike-left">
+					<p class="titles">民族</p>
+					<div id="nation" class="alike-center"></div>
+				</div>
+				<!--性别-->
+				<div class="sex alike-right">
+					<p class="titles">性别</p>
+					<div id="sex" class="alike-center"></div>
+				</div>
+				<!--籍贯-->
+				<div class="native-place alike-left">
+					<p class="titles">籍贯</p>
+					<div id="nativePlace" class="alike-center"></div>
+				</div>
+				<!--年龄-->
+				<div class="age alike-right">
+					<p class="titles">年龄</p>
+					<div id="age" class="alike-center"></div>
+				</div>
+				<!--职业
+   			<div class="jobs alike-left">
+   				<p class="titles">职业</p>
+   				<div id="jobs" class="alike-center"></div>
+   			</div>
+			-->
+				<!--学历
+   			<div class="education alike-right">
+   				<p class="titles">学历</p>
+   				<div id="education" class="alike-center"></div>
+   			</div>
+			-->
+				<!--离岗时间段-->
+				<div class="lgsj alike-left">
+					<p class="titles">离岗时间</p>
+					<div id="lgsj" class="alike-center"></div>
+				</div>
+
+				<!--出发地-->
+				<div class="cfd_dwbh alike-right">
+					<p class="titles">出发地</p>
+					<div id="cfd_dwbh" class="alike-center"></div>
+				</div>
+
+				<!--目的地-->
+				<div class="mdd_dwbh alike-right">
+					<p class="titles">目的地</p>
+					<div id="mdd_dwbh" class="alike-center"></div>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>

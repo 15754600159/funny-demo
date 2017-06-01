@@ -1,0 +1,38 @@
+body{
+	background-image: url(../img/bodybg.jpg);
+}
+.title{
+	font-size: 20px;
+	color: #6DA7E7 ! important;
+	padding-left: 20px;
+	padding-top: 18px;
+}
+.top{
+    height:70px;
+    background-color: #1A427D;
+}
+.hushi-date{
+	margin-top: 60px;
+	right: 30px ! important;
+}
+.content{
+	padding: 20px;
+
+}
+#userLiveness{
+	margin-left: 15%;
+	margin-top: 80px;
+}
+.pic{
+	margin: 40px;
+	background-color: #FFFFFF;
+	border: 1px solid #C8CFDF;
+}
+.font{
+	height: 50px;
+	background-color: #EFF2F9;
+	border-bottom: 1px solid #C8CFDF;
+	color:#58688C;
+	font-size: 16px;
+    padding: 15px;
+}

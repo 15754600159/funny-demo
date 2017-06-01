@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <title id="doc_title">交通违章涉案车辆分析</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/personnelFeature.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/moment.js"></script>
+    <script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/common/api.js"></script>
+    <script type="text/javascript" src="../js/common/apiTools.js"></script>
+    <script type="text/javascript" src="../js/common/common-anjian.js"></script>
+    <script type="text/javascript" src="../js/caseweb/JTWZCarAnalyze.js"></script>
+
+</head>
+
+<body>
+<div class="all">
+    <div class="top">
+        <div class="title">交通违章涉案车辆分析</div>
+    </div>
+
+    <div class="content" style="height:auto;">
+        <div class="hushi-type">
+            <select id="select1" class="drop-down native-place" style="width:210px;">
+                <option value="">处理机关_公安机关</option>
+            </select>
+            <select id="select2" class="drop-down native-place"  style="width:280px;">
+                <option value="">交通违法行为</option>
+            </select>
+
+            <input id="find" type="button" value="查询" style="height:25px;background:
+	                -webkit-linear-gradient(left, #77a9fe , #7fc8ff);color: #dfe3ec;padding:0 6px;border: 1px solid #7dc3ff;"/>
+        </div>
+
+        <div class="hushi-date">
+            <div class="control-group">
+                <div class="controls">
+                    <div class="input-prepend input-group dateranger">
+                        <input type="text" id="reservation" class="daterangebox-ipt active" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="pic">-->
+        <!--<div class="font">常住人员特征分析</div>-->
+        <!--<div id="userLiveness"></div>-->
+        <!--</div>-->
+    </div>
+    <!--图表菜单-->
+    <div class="menus-chart">
+        <!--案发时段-->
+        <div class="alike-left" style="width:100%;">
+            <p class="titles">机动车使用性质</p>
+            <div id="jdcsyxzdm" class="alike-center"></div>
+        </div>
+        <!--发案部位-->
+        <div class="alike-left" style="width:100%;">
+            <p class="titles">交通违法车辆类型</p>
+            <div id="jtwfcllxdm" class="alike-center"></div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

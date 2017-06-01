@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+<head>
+    <title>邪教人员总览</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/person.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-pagination.min.css" />
+    <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/common/common.js"></script>
+    <script type="text/javascript" src="../js/plugins/moment.js"></script>
+    <script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+    <script src="../js/plugins/sea.js" id="seajsnode" type="text/javascript"></script>
+
+    <script type="text/javascript">seajs.use('../js/web/xiejiaorenyuan3.2');</script>
+</head>
+
+<body>
+    <div class="all">
+        <div class="top">
+            <div class="title">包头服务集—邪教人员总览</div>
+        </div>
+        <div class="content">
+            <div style="height: 50px;">
+                <select id="myDataSheng" class="drop-down native-place">
+                    <option value="">省份籍贯</option>
+                </select>
+                <select id="myDataShi" class="drop-down native-place">
+                    <option value="">市级籍贯</option>
+                </select>
+                <select id="myDataXian" class="drop-down native-place">
+                    <option value="">区县籍贯</option>
+                </select>
+                <select id="myDataYear" class="drop-down age-group">
+                    <option value="-99999,999999">请选择年龄段</option>
+                    <option value="-99999,20">20岁以下</option>
+                    <option value="20,30">20~30岁</option>
+                    <option value="30,40">30~40岁</option>
+                    <option value="40,50">40~50岁</option>
+                    <option value="50,60">50~60岁</option>
+                    <option value="60,70">60~70岁</option>
+                    <option value="70,80">70~80岁</option>
+                    <option value="80,90">80~90岁</option>
+                    <option value="90,100">90~100岁</option>
+					<option value="100,99999">100岁上</option>
+                </select>
+                <select id="myDataXieJiao" class="drop-down xieJiao">
+                    <option value="">邪教类别</option>
+                    <option value='FLG'>法轮功</option>
+                </select>
+                <select id="myDataSex" class="drop-down sex">
+                    <option value="">请选择性别</option>
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+                <input id="query" class="view-button" type="button" value="查看总览" />
+            </div>
+            <div class="pic">
+                <div class="font">人员信息表</div>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>证件号码</th>
+                                <th>性别</th>
+                                <th>民族</th>
+                                <th>籍贯</th>
+                                <th>年龄</th>
+                                <th>重点人员类别</th>
+                                <th>职业</th>
+                                <th>居住地址</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div style="text-align: right">
+                <nav style="width: 100%;">
+                    <ul id="pagination" class="pagination">
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

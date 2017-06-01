@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <title id="doc_title">治安案件涉案人员分析</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/personnelFeature.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/moment.js"></script>
+    <script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/common/api.js"></script>
+    <script type="text/javascript" src="../js/common/apiTools.js"></script>
+    <script type="text/javascript" src="../js/common/common-anjian.js"></script>
+    <script type="text/javascript" src="../js/caseweb/SheAnRen.js"></script>
+
+    <script>
+        var hashData = amGloable.tools.hash.get(true);
+        var _type = hashData._type;
+        if(!_type){
+            var params = {"_type":"sfzary"};
+            amGloable.tools.hash.set(params, true);
+            _type = params._type;
+        }
+        var map = {
+            sfzary: "治安案件",
+            sfjzry: "经侦案件",
+            sfxsry: "刑事案件",
+            sflqyd: "两抢一盗案件",
+            sfblry: "八类案件",
+            sfqtry: "其他案件"
+        };
+        document.getElementById("doc_title").innerText = map[_type]+"涉案人员分析";
+        $(function(){
+            $('.title').text("包头服务集—"+map[_type]+"涉案人员分析");
+        });
+    </script>
+
+</head>
+
+<body>
+<div class="all">
+    <div class="top">
+        <div class="title">案件涉案人员分析</div>
+    </div>
+
+    <div class="content" style="height:auto;">
+        <div class="hushi-type">
+            <select id="ajssfj_dm" class="drop-down native-place">
+                <option value="">所属分局</option>
+            </select>
+            <select id="ajsspcs_dm" class="drop-down native-place">
+                <option value="">所属派出所</option>
+            </select>
+            <select id="ajlb1" class="drop-down native-place">
+                <option value="">一级案件类型</option>
+            </select>
+            <select id="ajlb2" class="drop-down age-group">
+                <option value="">二级案件类型</option>
+            </select>
+            <select id="ajlb3" class="drop-down sex">
+                <option value="">三级案件类型</option>
+            </select>
+            <input id="find" type="button" value="查询" style="height:25px;background:
+	                -webkit-linear-gradient(left, #77a9fe , #7fc8ff);color: #dfe3ec;padding:0 6px;border: 1px solid #7dc3ff;"/>
+        </div>
+
+        <div class="hushi-date">
+            <div class="control-group">
+                <div class="controls">
+                    <div class="input-prepend input-group dateranger">
+                        <input type="text" id="reservation" class="daterangebox-ipt active" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!--图表菜单-->
+
+    <div class="alike-left">
+        <p class="titles">籍贯</p>
+        <div id="jg" class="alike-center"></div>
+    </div>
+
+
+    <div class="alike-right">
+        <p class="titles">性别</p>
+        <div id="xbdm" class="alike-center"></div>
+    </div>
+
+    <div class="alike-left">
+        <p class="titles">民族</p>
+        <div id="mzdm" class="alike-center"></div>
+    </div>
+
+    <div class="alike-right">
+        <p class="titles">年龄</p>
+        <div id="nl" class="alike-center"></div>
+    </div>
+
+
+    <div class="alike-left">
+        <p class="titles">学历</p>
+        <div id="xldm" class="alike-center"></div>
+    </div>
+
+
+    <div class='alike-left'>
+        <p class="titles">职业</p>
+        <div id="zylbdm" class="alike-center"></div>
+    </div>
+
+
+
+    <div class='alike-left'>
+        <p class="titles">重点人细类</p>
+        <div id="zdryxl" class="alike-center"></div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

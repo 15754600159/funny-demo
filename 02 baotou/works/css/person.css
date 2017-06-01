@@ -1,0 +1,130 @@
+body{
+	background-image: url(../img/bodybg.jpg);
+}
+.title{
+	font-size: 20px;
+	color: #6DA7E7 ! important;
+	padding-left: 20px;
+	padding-top: 18px;
+}
+.top{
+    height:70px;
+    background-color: #1A427D;
+}
+.hushi-date{
+	margin-top: 60px;
+	right: 30px ! important;
+}
+.content{
+	padding: 20px;
+
+}
+#userLiveness{
+	margin-left: 15%;
+	margin-top: 80px;
+}
+.pic{
+	margin: 10px 0px;
+	background-color: #FFFFFF;
+	border: 1px solid #C8CFDF;
+}
+.font{
+	height: 50px;
+	background-color: #EFF2F9;
+	border-bottom: 1px solid #C8CFDF;
+	color:#58688C;
+	font-size: 16px;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+.content .drop-down{
+    height:30px;
+    color:#666;
+    float: left;background: #dfe3ec;
+    margin-right: 15px;
+    border:solid 1px #587b99;
+    -webkit-appearance: none;
+    background-color: #EFF2F9;
+    background-repeat: no-repeat; 
+    background-position: right 5px center;
+}
+
+.content .native-place{
+    background-image: url('../img/ryzl3.png');
+    width: 95px;
+}
+
+.content .xingZheng{
+    background-image: url('../img/ryzl3.png');
+    width: 120px;
+}
+
+.content .age-group{
+    background-image: url('../img/ryzl2.png');
+    width: 120px;
+}
+
+.content .sex, .content .inn{  
+    background-image: url('../img/down.png');
+    width: 110px;
+}
+
+.content .chuFaDi, .content .muDiDi{  
+    background-image: url('../img/down.png');
+    width: 110px;
+}
+
+.content .hbh{  
+    background-image: url('../img/down.png');
+    width: 80px;
+}
+
+.content .server{  
+    background-image: url('../img/down.png');
+    width: 95px;
+}
+
+.content .xieJiao{  
+    background-image: url('../img/down.png');
+    width: 95px;
+}
+
+.content .caseCategory{
+    background-image: url('../img/down.png');
+    width: 135px;
+}
+
+.content .view-button{
+    height:30px;
+    float: left;
+    background: -webkit-linear-gradient(left, #77a9fe , #7fc8ff);
+    color: #dfe3ec;
+    padding:0 6px;
+    border: 1px solid #7dc3ff;
+}
+
+.content .pageInfo{
+	width: 40%;
+	float: left;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.content .dataPage{
+	width: 280px;
+	float: right;
+	margin-top: 0px;
+}
+
+.content select{
+	padding: 0 10px;
+}

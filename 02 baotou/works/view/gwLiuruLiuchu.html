@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+	<head>
+		<title>高危人员流入流出分析</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/gwLiuruLiuchu.css" />
+
+		<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/china.js"></script>
+		<script type="text/javascript" src="../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript" src="../js/common/api.js"></script>
+		<script type="text/javascript" src="../js/common/apiTools.js"></script>
+		<script type="text/javascript" src="../js/web/gwLiuruLiuchu.js"></script>
+
+	</head>
+
+	<body>
+		<div class="all">
+			<div class="top">
+				<div class="title">高危人员流入流出分析</div>
+			</div>
+			<ol class="gw_tab">
+				<li class="hover">流入流出</li>
+				<li>迁徙图</li>
+			</ol>
+			<div class="check_params qx_params">
+				<div class="hushi-type gw-type">
+
+					<div class="btn-group" id="hushi-xiaqu">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			
+			                        <span class="text">高危人员类别</span>
+			                        <span class="caret"></span>
+			                    </button>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="#one">高危人员类别</a>
+							</li>
+							<li>
+								<a href="#one">涉疆</a>
+							</li>
+							<li>
+								<a href="#two">涉藏</a>
+							</li>
+						</ul>
+					</div>
+					<div class="btn-group" id="hushi-people">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			                <span class="text">出行类型</span>
+			                <span class="caret"></span>
+			            </button>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="#">出行类型</a>
+							</li>
+							<li>
+								<a href="#">火车</a>
+							</li>
+							<li>
+								<a href="#">飞机</a>
+							</li>
+						</ul>
+					</div>
+					<input type="text" id="reservation" class="daterangebox-ipt active qx_input" />
+					<input id="find" type="button" value="查询" style="height:25px;background: -webkit-linear-gradient(left, #77a9fe , #7fc8ff);color: #dfe3ec;padding:0 6px;border: 1px solid #7dc3ff;" />
+				</div>
+			</div>
+
+			<ul class="gw_uls">
+				<li>
+					<div class="content">
+
+						<div class="pic">
+							<div id="userLiveness" style="height:300px;"></div>
+						</div>
+						<div class="pic">
+							<div class="thBtn">
+								<input id="tb" class="Btn active1" type="button" value="同比" />
+								<input id="hb" class="Btn" type="button" value="环比" />
+							</div>
+
+							<div id="userLiveness1" style="height:300px;"></div>
+						</div>
+
+					</div>
+				</li>
+				<li class="uls_second">
+					<ol class="cc_ols">
+						<li class="cc_hover">流入</li>
+						<li class="liuchu">流出</li>
+					</ol>
+					<ul class="liuchu_uls">
+						<li>
+							<div class="gw_map">
+								<div id="gw_qianxi" class="gw_qianxi"></div>
+								<div class="gw_table">
+									<p>往包头流入总人次：<span id="gw_span"></span></p>
+									<table border="0" cellspacing="0" cellpadding="0" id='gw_table'>
+										<thead>
+											<tr>
+												<th>排名</th>
+												<th>城市</th>
+												<th>流入人次</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+						<li class="liuchu_second">
+							<div class="gw_map">
+								<div id="gw_qianxi1" class="gw_qianxi"></div>
+								<div class="gw_table">
+									<p>往包头流入总人次：<span id="gw_span1"></span></p>
+									<table border="0" cellspacing="0" cellpadding="0" id='gw_table1'>
+										<thead>
+											<tr>
+												<th>排名</th>
+												<th>城市</th>
+												<th>流出人次</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+		</div>
+
+	</body>
+
+</html>

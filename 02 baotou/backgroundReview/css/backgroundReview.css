@@ -1,0 +1,208 @@
+a:hover {
+      text-decoration: none;
+}
+
+body{
+	background-color: #f6f7f9;
+}
+
+.top {
+      height: 70px;
+      background-color: #1A427D;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+}
+
+.top>a {
+      float: left;
+      margin: 17px 20px;
+}
+
+.top .title {
+      font-size: 20px;
+      color: #fff ! important;
+      padding-left: 30px;
+      padding-top: 18px;
+      float: left;
+}
+
+.top .role {
+      font-size: 18px;
+      color: #6DA7E7 ! important;
+      padding-right: 30px;
+      float: right;
+}
+
+.top .role a {
+      line-height: 70px;
+}
+
+.top .role a:hover {
+      color: #fff;
+}
+
+.content {
+      margin-top: 70px;
+      padding-top: 30px;
+}
+
+
+/*背景审查页面-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.content .background-review {
+      margin: 15% auto;
+      width: 60%;
+}
+
+.content .background-review input {
+      width: 50%;
+      float: left;
+}
+
+.content .background-review button {
+      background-color: #0088ff;
+      color: #fff;
+      margin-left: 1%;
+}
+
+.content .background-review button:hover {
+      color: #fff;
+      background-color: #286090;
+      border-color: #204d74;
+}
+
+
+/*任务管理页面-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.content .task-management {
+      width: 50%;
+}
+
+.content .task-management>input {
+      width: 50%;
+      float: left;
+}
+
+.content .task-management>button {
+      margin-left: 1%;
+}
+
+.content .task-management>button + button {
+      margin-left: 8%;
+}
+
+.progress {
+      margin-bottom: 0;
+}
+
+.content>table {
+      margin-top: 3%;
+}
+
+
+/*任务详情页面-------------------------------------------------------------------------------------------------------------------------------------*/
+#taskDetail button{
+      background-color: #e6e6e6;
+}
+
+#taskDetail button:hover{
+      background-color: grey;
+      color: white;
+}
+
+.content .task-detail {
+      width: 50%;
+}
+
+.content .task-detail>input {
+      width: 50%;
+      float: left;
+}
+
+.content .task-detail>button {
+      width: 100px;
+}
+
+.content .task-detail>button {
+      margin-left: 1%;
+}
+
+.content .task-detail>button + button {
+      margin-left: 8%;
+}
+
+.content .check-filter-box {
+      width: 100%;
+      height: 60px;
+      margin-top: 2%;
+      border: 1px solid #dee3eb;
+      border-radius: 15px;
+}
+
+.content .check-filter-box>button {
+      padding: 2px 20px;
+      margin-top: 20px;
+}
+
+.content .check-filter-box>.checkbox-inline{
+      margin-top: 20px;
+}
+
+.content .check-filter-box .checkbox-inline:nth-child(1), .content .check-filter-box>button:last-child{
+      margin-left: 20px;
+}
+
+.content .task-detail-box{
+      margin-top: 2%;
+}
+
+.content .task-detail-box .task-detail-card{
+      margin-bottom: 2%;
+      height: 150px;
+      border: 1px solid #dee3eb;
+      background-color: #fff;
+}
+
+.content .task-detail-card .img-box{
+      width: 15%;
+      margin: 23px 0;
+      float: left;
+}
+
+.content .task-detail-card .detail-box{
+      width: 45%;
+      float: left;
+}
+
+.content .task-detail-card .button-box{
+      width: 40%;
+      float: left;
+}
+
+.content .task-detail-card .img-box img{
+      height: 100px;
+      margin: 0 48px;
+}
+
+.content .task-detail-card .detail-box>div{
+      height: 50px;
+      padding-top: 30px;
+}
+
+.content .person-info span{
+      margin-right: 40px;
+}
+
+.content .task-detail-card .button-box button{
+      margin-top: 61px;
+      margin-right: 40px; 
+}
+
+/*页面分页组件样式调整-------------------------------------------------------------------------------------------------------------------------------------*/
+#pagination>li:nth-child(10)>div.input-group{
+      width: 90px;
+      display: inline-block;
+}

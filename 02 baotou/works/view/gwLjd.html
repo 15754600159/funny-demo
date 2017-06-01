@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+  <title>高危人员落脚点分析</title>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../css/gwLjd.css" />
+  <link rel="stylesheet" type="text/css" href="../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+    <script type="text/javascript" src="../js/common/common.js"></script>
+    <script type="text/javascript" src="../js/plugins/moment.js"></script>
+    <script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/common/api.js"></script>
+    <script type="text/javascript" src="../js/common/apiTools.js"></script>
+    <script type="text/javascript" src="../js/web/gwLjd.js"></script>
+
+</head>
+
+<body>
+   <div class="all">
+       <div class="top">
+          <div class="title">高危人员落脚点分析</div>
+       </div>
+
+       <div class="content">
+            <div class="hushi-type">
+
+                <form action="" name="myform" style="margin-right: 10px;float: left;margin-left: 30px;">
+                  <span> 选择辖区:</span>
+                  <select name="sheng" id="area">
+                    <option value="">一级辖区</option>
+                  </select>
+				  <!--
+                  <select name="shi" id="erjixiaqu">
+                    <option value="">二级辖区</option>
+                  </select>
+					-->
+               </form>              
+                  
+                <span> 场所类型:</span>
+                <select name="cs" id="csType" style="margin-right:10px;">
+                  <option value="hotel">住宿</option>
+                  <option value="internet">上网</option>
+                </select>
+                <span> 高危人员类别标记:</span>
+                <select name="gwType" id="gwType" style="margin-right:10px;">
+                  <option value="65">涉疆</option>
+                  <option value="54">涉藏</option>
+                </select>
+								<input type="text" id="reservation" class="daterangebox-ipt active ljd_input" />
+                <input class="gw-input" id="find" type="button" value="查询" style="height:25px;background: -webkit-linear-gradient(left, #77a9fe , #7fc8ff);color: #dfe3ec;padding:0 6px;border: 1px solid #7dc3ff;"/>
+          </div>
+            <div class="pic">
+              <div class="font">辖区详细信息</div>
+              <div id="userLiveness" style="height:600px;"></div>
+          </div>
+
+
+
+       </div>
+   </div> 
+  
+</body>
+</html>

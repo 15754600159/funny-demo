@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<!--
+editor: huke
+createdBy:
+author: unknow
+-->
+<html lang="zh-cn">
+<head>
+	<title id="doc_title">刑事案件区域分析</title>
+	<meta charset="utf-8">
+	
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/zhusuPerson.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/moment.js"></script>
+    <script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/common/api.js"></script>
+    <script type="text/javascript" src="../js/common/apiTools.js"></script>
+    <script type="text/javascript" src="../js/common/common-anjian.js"></script>
+    <script type="text/javascript" src="../js/caseweb/anjianArea.js"></script>
+	<script>
+		var hashData = amGloable.tools.hash.get(true);
+		var _type = hashData._type;
+		if(!_type){
+			var params = {"_type":"sfzaaj"};
+			amGloable.tools.hash.set(params, true);
+			_type = params._type;
+		}
+		var map = {
+			sfzaaj: "治安案件",
+			sfjzaj: "经侦案件",
+			sfxsaj: "刑事案件",
+			sflqyd: "两抢一盗案件",
+			sfblaj: "八类案件",
+			sfqtaj: "其他案件"
+		};
+		document.getElementById("doc_title").innerText = map[_type]+"区域分析";
+		
+		$(function(){
+			$('.title').text(""+map[_type]+"区域分析");
+		});
+	</script>
+</head>
+
+<body>
+   <div class="all">
+       <div class="top">
+       	  <div class="title">刑事案件区域分析</div>
+       </div>
+
+       <div class="content">
+       	    <div class="hushi-type">
+					选择辖区:
+					<select name="fenju" id="ajssfj_dm">
+						<option value="">所属分局</option>
+					</select>
+					<select name="paichusuo" id="ajsspcs_dm">
+						<option value="">所属派出所</option>
+					</select>
+					<select id="ajlb1" class="drop-down native-place">
+						<option value="">一级案件类型</option>
+					</select>
+					<select id="ajlb2" class="drop-down age-group">
+						<option value="">二级案件类型</option>
+					</select>
+					<select id="ajlb3" class="drop-down sex">
+						<option value="">三级案件类型</option>
+					</select>
+		
+
+	            <input id="find" type="button" value="查询" style="height:25px;background: -webkit-linear-gradient(left, #77a9fe , #7fc8ff);color: #dfe3ec;padding:0 6px;border: 1px solid #7dc3ff;"/>
+	        </div>
+
+
+	        <div class="hushi-date">
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend input-group dateranger">
+                            <input type="text" id="reservation" class="daterangebox-ipt active" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="pic">
+            	<div class="font">辖区详细信息</div>
+	            <div id="userLiveness" style="width: 1200px;height:600px;"></div>
+	        </div>
+
+
+
+       </div>
+   </div> 
+	
+</body>
+</html>

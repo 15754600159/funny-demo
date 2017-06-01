@@ -1,0 +1,86 @@
+<!--
+createdAt: 2017-04-06
+author: huke
+-->
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+<head>
+    <title>刑事案件总览</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/person.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-pagination.min.css" />
+
+    <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/moment.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/common/common-anjian.js"></script>
+    <script type="text/javascript" src="../js/common/api.js"></script>
+    <script type="text/javascript" src="../js/common/apiTools.js"></script>
+    <script type="text/javascript" src="../js/caseweb/XSAJCasePandect.js"></script>
+</head>
+
+<body>
+    <div class="all">
+        <div class="top">
+            <div class="title">包头服务集—刑事案件总览</div>
+        </div>
+        <div class="content">
+            <div style="height: 50px;">
+                <input id="reservation" name="basj" class="daterangebox-ipt active" style="float:left;margin-right:15px;width:170px"/>
+                <select id="ajssfj_dm" class="drop-down native-place">
+                    <option value="">案件所属分局</option>
+                </select>
+                <select id="ajsspcs_dm" class="drop-down native-place">
+                    <option value="">案件所属派出所</option>
+                </select>
+                <select id="ajlb_dm1" class="drop-down age-group">
+                    <option value="">一级案件类型</option>
+                </select>
+                <select id="ajlb_dm2" class="drop-down age-group">
+                    <option value="">二级案件类型</option>
+                </select>
+                <select id="ajlb_dm" class="drop-down age-group">
+                    <option value="">三级案件类型</option>
+                </select>
+                <input id="query" class="view-button" type="button" value="查看总览" />
+            </div>
+            <div class="pic">
+                <div class="font">刑事案件总览</div>
+                <div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>案件编号</th>
+                                <th>案件来源</th>
+                                <th>案件密级</th>
+                                <th>案件名称</th>
+                                <th>案件类别代码</th>
+                                <th>案件类别名称</th>
+                                <th>简要案情</th>
+                                <th>报案时间</th>
+                                <th>立案时间</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div style="text-align: right">
+                <nav style="width: 100%;">
+                    <ul id="pagination" class="pagination">
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

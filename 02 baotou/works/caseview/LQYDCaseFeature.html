@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<title>两抢一盗案件特征分析</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/personnelFeature.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+    <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+    <script type="text/javascript" src="../js/common/common.js"></script>
+    <script type="text/javascript" src="../js/plugins/moment.js"></script>
+    <script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/web/featureResident.js"></script>
+
+</head>
+
+<body>
+   <div class="all">
+       <div class="top">
+       	  <div class="title">两抢一盗案件特征分析</div>
+       </div>
+
+       <div class="content" style="height:auto;">
+       	    <div class="hushi-type">
+				<select id="fenju" class="drop-down native-place">
+					<option value="">所属分局</option>
+				</select>
+				<select id="paichusuo" class="drop-down native-place">
+					<option value="">市级籍贯</option>
+				</select>
+				<select id="myDataXian" class="drop-down native-place">
+					<option value="">区县籍贯</option>
+				</select>
+				<select id="myDataYear" class="drop-down age-group">
+					<option value="-99999,999999">请选择年龄段</option>
+					<option value="-99999,20">20岁以下</option>
+					<option value="20,30">20~30岁</option>
+					<option value="30,40">30~40岁</option>
+					<option value="40,50">40~50岁</option>
+					<option value="50,60">50~60岁</option>
+					<option value="60,70">60~70岁</option>
+					<option value="70,80">70~80岁</option>
+					<option value="80,90">80~90岁</option>
+					<option value="90,100">90~100岁</option>
+					<option value="100,99999">100岁上</option>
+				</select>
+				<select id="myDataSex" class="drop-down sex">
+					<option value="">请选择性别</option>
+					<option value="1">男</option>
+					<option value="2">女</option>
+				</select>
+				<input id="find" type="button" value="查询" style="height:25px;background:
+	                -webkit-linear-gradient(left, #77a9fe , #7fc8ff);color: #dfe3ec;padding:0 6px;border: 1px solid #7dc3ff;"/>
+	        </div>
+
+	        <div class="hushi-date">
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend input-group dateranger">
+                            <input type="text" id="reservation" class="daterangebox-ipt active" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="pic">-->
+            	<!--<div class="font">常住人员特征分析</div>-->
+	            <!--<div id="userLiveness"></div>-->
+	        <!--</div>-->
+       </div>
+   		<!--图表菜单-->
+   		<div class="menus-chart">
+   			<!--民族-->
+   			<div class="nation alike-left">
+   				<p class="titles">民族</p>
+   				<div id="nation" class="alike-center"></div>
+   			</div>
+   			<!--性别-->
+   			<div class="sex alike-right">
+   				<p class="titles">性别</p>
+   				<div id="sex" class="alike-center"></div>
+   			</div>
+   			<!--籍贯-->
+   			<div class="native-place alike-left">
+   				<p class="titles">籍贯</p>
+   				<div id="nativePlace" class="alike-center"></div>
+   			</div>
+   			<!--年龄-->
+   			<div class="age alike-right">
+   				<p class="titles">年龄</p>
+   				<div id="age" class="alike-center"></div>
+   			</div>
+   			<!--职业-->
+   			<div class="jobs alike-left">
+   				<p class="titles">职业</p>
+   				<div id="jobs" class="alike-center"></div>
+   			</div>
+   			<!--学历-->
+   			<div class="education alike-right">
+   				<p class="titles">学历</p>
+   				<div id="education" class="alike-center"></div>
+   			</div>
+   			<!--现住址
+   			<div class="administrative alike-left">
+   				<p class="titles">现住址</p>
+   				<div id="administrative" class="alike-center"></div>
+   			</div>
+			-->
+   			<!--口音-->
+   			<div class="accent alike-right">
+   				<p class="titles">口音</p>
+   				<div id="accent" class="alike-center"></div>
+   			</div>
+   		</div>
+   </div> 
+	
+</body>
+</html>

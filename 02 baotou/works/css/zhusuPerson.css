@@ -1,0 +1,106 @@
+body{
+	background-image: url(../img/bodybg.jpg);
+}
+.title{
+	font-size: 20px;
+	color: #6DA7E7 ! important;
+	padding-left: 20px;
+	padding-top: 18px;
+}
+.top{
+    height:70px;
+    background-color: #1A427D;
+}
+.hushi-date{
+	margin-top: 60px;
+	right: 30px ! important;
+}
+.content{
+	padding: 20px;
+
+}
+#userLiveness{
+	margin-left: 15%;
+	margin-top: 80px;
+}
+.pic{
+	margin: 40px;
+	background-color: #FFFFFF;
+	border: 1px solid #C8CFDF;
+}
+.font{
+	height: 50px;
+	background-color: #EFF2F9;
+	border-bottom: 1px solid #C8CFDF;
+	color:#58688C;
+	font-size: 16px;
+    padding: 15px;
+}
+.gwP_ols{
+	width: 99.4%;
+	height: 35px;
+	background: #e2e5ec;
+	margin-left: 10px;
+	margin-top: 70px;
+}
+.gwP_ols li{
+	float: left;
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #ccc;
+	text-align: center;
+	background: #cfd7e2;
+	color: #56688a;
+	cursor: pointer;
+}
+.gwP_ols li.hover{
+	color: #56688a;
+	background: #f6f7f9;
+	border: none;
+}
+.gwp-tip .hushi-date {
+	margin-top: 5%;
+}
+.gwp-tip .hushi-type{
+	margin-top: 1%;
+	margin-left: 2%;
+}
+.gwP_map{
+	margin-top: 3%;
+	width: 100%;
+}
+.gwP_qianxi{
+	width: 1100px;
+	height: 700px;
+	float: left;
+	margin-top: 3%;
+}
+.gwP_table{
+	float: left;
+	margin-top: 3%;
+	margin-left: 5%;
+}
+.gwP_table p{
+	text-align: center;
+}
+.gwP_table p span{
+	font-size: 28px;
+	color: red;
+	font-weight: bold;
+}
+.gwP_table tr th{
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background: #1A427D;
+	color: #fff;
+	border-right: 1px solid #fff;
+}
+.gwP_table tr td{
+	width: 33.3%;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+}
