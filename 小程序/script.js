@@ -103,4 +103,44 @@ function functionFunction(){
     return curryFunc;
 }
 
-console.log(functionFunction(1)(2)(3,4).toString())
+// console.log(functionFunction(1)(2)(3,4).toString())
+
+// 7.数组元素排序
+/**
+ * by函数配合sort函数使用，是arr.sort(fn)的排序函数fn，接受一个主要排序元素和一个次要元素
+ * @param {*String} name 主要排序元素
+ * @param {*String} minor 次要排序元素
+ * @return {*Number}
+ */
+function by(name, minor){
+    return function(o, p){
+        var a, b;
+        if(o && p && typeof o === 'object' && typeof p === 'object'){
+            a = o[name];
+            b = p[name];
+            if(a === b){
+                return typeof minor === 'function' ? minor(o, p) : 0;
+            }
+            if(typeof a === typeof b){
+                return a < b ? -1 : 1;
+            }
+            return typeof a < typeof b ? -1 : 1;
+        }else{
+            throw {
+                name: 'Error',
+                message: 'Expected an object when sorting by ' + name
+            };
+        }
+    };
+};
+
+var s = [
+    {first: 'Joe', last: 'Besser'},
+    {first: 'Moe', last: 'Howard'},
+    {first: 'Joe', last: 'Derita'},
+    {first: 'Shemp', last: 'Howard'},
+    {first: 'Larry', last: 'Fine'},
+    {first: 'Curry', last: 'Howard'}
+];
+
+console.log(s.sort(by('last', by('first'))));
