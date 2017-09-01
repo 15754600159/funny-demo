@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽</title>
+</head>
+<body>
+    
+
+    <script type="text/javascript" src="../../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/jquery-ui.min.js"></script>
+    <script>
+        // 左部分标签的拖拽功能
+            $('.left-part .items-box .sub-select-box .item').draggable({
+                helper: 'clone', //克隆，保留原位置的元素
+                revert: 'invalid', //没有拖入放置容器，飘回来
+                zIndex: 100, //设置拖动的Z-index，避免被position:absolute;的元素覆盖
+            });
+
+            $('.right-top-part').droppable({
+                accept: '.left-part .items-box .sub-select-box .item',//限制可拖入元素的类
+                drop: function (event, ui) { // ui.draggable可获取被拖动的元素；  event.target可获取元素放置的容器
+                    var dbyBoxElem = $(event.target),
+                        htmlCode = '',
+                        tableName = $(ui.draggable).data('name'),
+                        category = $(ui.draggable).data('category'),
+                        fields = $(ui.draggable).data('fields').split(',');
+
+                    htmlCode = `<div class="dby-info-card" data-name="${tableName}" data-category="${category}">
+                                <div class="main-title"><span>${category}</span>
+                                    ${tableName}
+                                    <span>（来自治安综合防范平台数据）</span>
+                                </div>
+                                <div class="control-buttons">
+                                    <div class="button sjtj-button">
+                                        <img src="../../img/bjscxq/sjtj-icon.png" alt="check">
+                                        <span>数据统计</span>
+                                    </div>
+                                    <div class="button llsj-button">
+                                        <img src="../../img/bjscxq/llsj-icon.png" alt="check">
+                                        <span>浏览数据</span>
+                                    </div>
+                                    <img class="button" src="../../img/bjscxq/wrong-icon.png" alt="delete">
+                                </div>
+                                <div class="filter-conditions-box">
+                                    <div class="orange-label-box">
+                                        <span class="orange-label">关联字段</span>
+                                        <span class="field">使用省份证号</span>
+                                    </div>
+                                    <div class="green-label-box">
+                                        <span class="green-label">约束条件</span>
+                                        <span class="field">活动发生时间</span>：
+                                        <!-- 日期选择 -->
+                                        <div class="input-group dateranger">
+                                            <input type="text" class="daterangebox date2" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fields-box">`
+                    for (var i in fields) {
+                        htmlCode += `<span class="field">${fields[i]}</span>`
+                    }
+                    htmlCode += `</div></div>`;
+                    //增加元素前先移除之前的
+                    var mainInfoBox = dbyBoxElem.find('.main-info-box');
+                    mainInfoBox.empty();
+                    mainInfoBox.append(htmlCode);
+                    //初始化新加的日期选择控件
+                    calendar($('.right-top-part .dby-info-card .filter-conditions-box .date2'), 'left');
+                }
+            });
+    </script>
+</body>
+</html>
