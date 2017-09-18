@@ -106,6 +106,8 @@
 // 10.减少页面元素的更新次数
 // 11.使用innerHTML比creatElement()和appendChild()快
 // 12.事件代理：页面上事件处理程序的数量会影响页面的性能，所以利用事件冒泡在祖先元素上处理事件能提高页面性能
+//      jquery 事件委托
+//      $(el).on( events [, selector ] [, data ], handler(eventObject) )
 // 13.注意HTMLCollections：发生以下情况时会返回HTMLCollections对象
     // a.进行了对getElemntsByTagName()的调用
     // b.获取元素的childNodes属性
