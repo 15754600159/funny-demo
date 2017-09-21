@@ -8,10 +8,24 @@
 
 // 3.本地存储 loacalStorage:永久 sessionStorage:页面关闭即删除
 
-// localStorage.setItem('name', 'shengxia');//新增记录
-// localStorage.getItem('name');//获取记录
-// localStorage.removeItem('name');//移除单个记录
-// localStorage.clear();//移除全部记录
+localStorage.setItem('name', 'shengxia');//新增记录
+localStorage.getItem('name');//获取记录
+localStorage.removeItem('name');//移除单个记录
+localStorage.clear();//移除全部记录
+
+// sessionStorage也可存储Json对象：存储时，通过JSON.stringify()将对象转换为文本格式；读取时，通过JSON.parse()将文本转换回对象。
+var userEntity = {
+    name: 'tom',
+    age: 22
+};
+ 
+// 存储值：将对象转换为Json字符串
+sessionStorage.setItem('user', JSON.stringify(userEntity));
+ 
+// 取值时：把获取到的Json字符串转换回对象
+var userJsonStr = sessionStorage.getItem('user');
+userEntity = JSON.parse(userJsonStr);
+console.log(userEntity.name); // => tom
 
 
 
