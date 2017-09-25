@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>web-socket</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <div class="footer" style="">
+        <input type="text" name="word">
+        <button id='send'>发送</button>
+        <button id='close'>断开</button>
+    </div>
+    <script>
+    function checkBrowser() {
+        if (window.WebSocket) {
+            console.log("This browser supports WebSocket!");
+        } else {
+            console.log("This browser does not support WebSocket.");
+        }
+    }
+
+    function setup() {
+        var wsServer = 'ws://localhost:3001';
+        var ws = new WebSocket(wsServer);
+        var input = document.getElementsByTagName('input')[0];
+        var send = document.getElementById('send');
+        var close = document.getElementById('close');
+
+        ws.onopen = function(e) {
+            console.log("Connected to WebSocket server.");
+        };
+
+        ws.onclose = function(e) {
+            console.log("Disconnected");
+        };
+
+        ws.onmessage = function(e) {
+            log("RECEIVED: " , e);
+        }
+
+        ws.onerror = function(e) {
+            console.log('Error occured: ');
+        };
+
+        var sendMessage = function(msg) {
+            ws.send(msg);
+        }
+
+        //发送消息
+        send.onclick  = function(){
+        	   sendMessage(input.value);
+            input.value = '';
+        }
+
+        //关闭连接
+        close.onclick  = function(){
+        	   ws.close();
+        }
+    }
+
+    function log(type, e) {
+        var output = document.getElementById("output");
+        var p = document.createElement("p");
+        p.style.wordWrap = "break-word";
+        p.style.padding = "10px";
+
+        var data = JSON.parse(e.data).data;
+        p.style.background = "#eee";
+        p.style.color = data.color || "black";
+        console.log(data)
+        if(JSON.parse(e.data).type == 'first'){
+            p.textContent = data.author + ' join in the chat!' ;
+        }else if(JSON.parse(e.data).type == 'next'){
+            p.textContent = data.author + ': ' + data.text + ' (' + data.time + ')';
+        }else{
+            data.forEach(function(word, index){
+                p.innerHTML += word.author + ': ' + word.text + ' (' + word.time + ')' + '<br/>';
+            })
+        }
+        output.appendChild(p);
+        console.log("LOG : " + type, e);
+    }
+
+    checkBrowser();
+    setup();
+    </script>
+</body>
+
+</html>
