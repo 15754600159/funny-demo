@@ -1,5 +1,6 @@
 /**
  * 1. 入门: http://www.jianshu.com/p/42e11515c10f
+ * 2. API：https://doc.webpack-china.org/concepts/
  */
 
 // const greeter = require('./Greeter.js');

@@ -1,0 +1,17 @@
+{
+  "name": "webpublic",
+  "version": "1.0.0",
+  "description": "web source",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shengxia",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "http-proxy-middleware": "^0.17.4",
+    "url": "^0.11.0"
+  }
+}
