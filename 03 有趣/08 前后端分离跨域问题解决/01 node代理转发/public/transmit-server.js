@@ -7,7 +7,7 @@ app.use(express.static('./public'));
 
 var proxyPath = "http://127.0.0.1:3000";//目标后端服务地址 一定要加上http://
  
-//将本地服务 localhost:3000 代理到 localhost:8080 端口上
+//将本地服务 localhost:8080 代理到 localhost:3000 端口上
 const apiProxy = proxy('/api', { target: proxyPath, changeOrigin: true });
 app.use('/api/*', apiProxy);//api目录下的都是用代理
  
