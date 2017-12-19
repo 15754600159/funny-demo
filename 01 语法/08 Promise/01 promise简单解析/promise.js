@@ -10,17 +10,27 @@
  */
 
 function MyPromise(fn) {
-    let value = null,
+    let state = 'pending',
+        value = null,
         callback = []; //可能有多个回调
 
     this.then = function(onFullFilled) {
-        callback.push(onFullFilled);
+        if (state = 'pending') {
+            callback.push(onFullFilled);
+            return this;
+        }
+        onFullFilled(value);
+        return this;
     };
 
-    function resolve(value) {
-        callback.forEach(function(callback) {
-            callback(value);
-        })
+    function resolve(newValue) {
+        value = newValue;
+        state = 'resolve';
+        setTimeout(function() { // 保证在resolve执行之前，then方法已经注册完所有的回调。
+            callback.forEach(function(callback) {
+                callback(value);
+            })
+        }, 0);
     };
 
     fn(resolve);
