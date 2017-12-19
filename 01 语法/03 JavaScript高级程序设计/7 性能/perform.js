@@ -113,3 +113,35 @@
     // b.获取元素的childNodes属性
     // c.获取了元素的attribute属性
     // d.访问了特殊集合 如document.forms、document.images等
+
+
+
+
+/*-----------------------------------------------------性能优化参考--------------------------------------------------------------------------------------------------------- */
+// http://mp.weixin.qq.com/s/bp6uO_ZHt-utPtu-qa_Zgw
+// 1. 在生产环境中去除所有console.log()
+    !function () {
+            
+        function Leaker() {
+            this.init();
+        };
+        Leaker.prototype = {
+            init: function () {
+                this.name = (Array(100000).join('*'));
+                console.log('Leaking an Object : ', (new Date()), this); //内存泄漏，this对象不能被回收
+            },
+            destroy: function () {
+                //do something...
+            }
+        };
+        document.querySelector('.title').addEventListener('click', function () {
+            new Leaker();
+        }, false);
+
+    } ()
+// 2. 闭包(closures) -没太看懂？？？
+// 3. DOM泄露
+    // 问题: 但如果在执行某些删除、更新操作后，可能会忘记释放掉代码中对应的DOM引用，这样会造成DOM内存泄露
+    // 解决: 删除DOM元素之前，移除监听事件，释放变量对DOM的引用（包括子节点）； 
+// 4. 清除定时器
+    
