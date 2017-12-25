@@ -24,7 +24,22 @@ $(function() {
         multiple: true,
         // width: 'style',
         width: '400px',
-    })
+    });
+
+    // 取值
+        $('.example').val(); //是一个code的数组
+
+    // 赋值
+        // 1. 先初始化select2
+        // 2. 给select dom元素赋数组初始值
+        // 3. 不带data的初始化
+        $( '.example' ).select2({
+            placeholder:'请选择',
+            allowClear:true,
+            multiple: true,
+            // width: 'style',
+            width: '400px',
+        });
 
 
 

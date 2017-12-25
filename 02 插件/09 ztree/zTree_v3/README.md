@@ -1,3 +1,12 @@
+<!-- tips -->
+1. 页面上有两棵树的时候，一定要给每棵树加不同的id；
+2. 想用树复选框功能，引 ztree.all.js 而不是 ztree.core.js；
+
+<!-- tips -->
+
+
+
+
 jQuery Tree Plugin ---- zTree  
 ============
 last verson :  3.5.29
