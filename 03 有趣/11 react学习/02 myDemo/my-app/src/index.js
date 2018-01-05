@@ -140,23 +140,146 @@ ReactDOM.render(<App />, document.getElementById('root'));
     // 一个元素的key最好是这个元素在列表中拥有的一个独一无二的字符串
     // 当元素没有确定的id时，你可以使用他的序列号索引index作为key(渲染变得很慢)
     // 元素的key只有在它和它的兄弟节点对比时才有意义
-    function NumberList(props) {
-        const numbers = props.numbers;
-        const listItems = numbers.map((number) => 
-            <li key={number.toString()}>
-                {number}
-            </li>
-        );
-        return (
-            <ul>{listItems}</ul>
-        );
+    // function NumberList(props) {
+    //     const numbers = props.numbers;
+    //     const listItems = numbers.map((number) => 
+    //         <li key={number.toString()}>
+    //             {number}
+    //         </li>
+    //     );
+    //     return (
+    //         <ul>{listItems}</ul>
+    //     );
+    // }
+
+    // const numbers = [1, 2, 3, 4, 5];
+    // ReactDOM.render(
+    //     <NumberList numbers={numbers} />,
+    //     document.getElementById('myTest')
+    // );
+
+// 7. 表单
+    // class NameForm extends React.Component {
+    //     constructor(props) {
+    //         super(props);
+    //         this.state = {value: ''};
+    //     }
+
+    //     handleChange = (event) => {
+    //         this.setState({value: event.target.value.toUpperCase()});
+    //     }
+
+    //     handleSubmit = (event) => {
+    //         alert('A name was submitted: ' + this.state.value);
+    //     }
+
+    //     render() {
+    //         return (
+    //             <form onSubmit={this.handleSubmit}>
+    //                 <label>
+    //                     Name: 
+    //                     <input type="text" value={this.state.value} onChange={this.handleChange} />
+    //                 </label>
+    //                 <input type="submit" value="submit" />
+    //             </form>
+    //         );
+    //     }
+
+    // }
+
+    // ReactDOM.render(
+    //     <NameForm />,
+    //     document.getElementById('myTest')
+    // )
+
+// 8. 状态提升
+    function toCelsius(fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
     }
 
-    const numbers = [1, 2, 3, 4, 5];
+    function toFahrenheit(celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    function tryConvert(temperature, convert) {
+        const input = parseFloat(temperature);
+        if (Number.isNaN(input)) {
+            return '';
+        }
+        const output = convert(input);
+        const rounded = Math.round(output * 1000) / 1000;
+        return rounded.toString();
+    }
+
+    class BoilingVerdict extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+
+        render() {
+            return this.props.celsius >= 100 ? <p>水会烧开</p> : <p>水不会烧开</p>;
+        }
+    }
+
+    class TemperatureInput extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+
+        handleChange = (event) => {
+            this.props.onTempratureChange(event.target.value);
+        }
+
+        render() {
+            const temperature = this.props.temperature,
+                scale = this.props.scale,
+                scaleNames = {
+                    c: 'Celsius',
+                    f: 'Fahrenheit'
+                  };
+            return (
+                <fieldset>
+                    <legend>在{scaleNames[scale]}: 中输入温度值</legend>
+                    <input value={temperature} onChange={this.handleChange} />
+                </fieldset>
+            );
+        }
+    }
+
+    class Calculator extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {temperature: '', scale: 'c'};
+        }
+
+        handleCelsiusChange = (temperature) => {
+            this.setState({scale: 'c', temperature});
+        }
+
+        handleFahrenheitChange = (temperature) => {
+            this.setState({scale: 'f', temperature});
+        }
+
+        render() {
+            const scale = this.state.scale,
+                temperature = this.state.temperature,
+                celsius = scale === 'f' ? tryConvert(temperature, toCelsius) : temperature,
+                fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
+
+            return (
+                <div>
+                    <TemperatureInput scale="c" temperature={celsius} onTempratureChange={this.handleCelsiusChange} />
+                    <TemperatureInput scale="f" temperature={fahrenheit} onTempratureChange={this.handleFahrenheitChange} />
+                    <BoilingVerdict celsius={parseFloat(celsius)} />
+                </div>
+            );
+        }
+    }
+
     ReactDOM.render(
-        <NumberList numbers={numbers} />,
+        <Calculator />,
         document.getElementById('myTest')
-    );
+    )
 
 
 
