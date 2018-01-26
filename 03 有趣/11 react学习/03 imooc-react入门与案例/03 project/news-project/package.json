@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "build": "webpack --config ./webpack.build.config.js --progress --colors"
   },
   "keywords": [
     "CSS",
@@ -22,6 +23,7 @@
     "babel-preset-react": "",
     "babel-preset-stage-0": "",
     "babel-preset-stage-1": "",
+    "clean-webpack-plugin": "^0.1.17",
     "css-loader": "",
     "extract-text-webpack-plugin": "",
     "fetch": "^1.1.0",
@@ -35,6 +37,7 @@
     "react-css-modules": "",
     "react-dom": "",
     "react-responsive": "^4.0.3",
+    "react-router-dom": "^4.2.2",
     "style-loader": "",
     "url-loader": "^0.6.2",
     "webpack": "",

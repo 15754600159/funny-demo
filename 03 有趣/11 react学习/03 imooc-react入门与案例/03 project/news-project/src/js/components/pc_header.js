@@ -11,6 +11,12 @@ import {
     CheckBox,
     Modal,
 } from 'antd';
+import {
+    HashRouter,
+    Route,
+    Link,
+    browserHistory
+} from 'react-router-dom';
 const SubMenu = Menu.SubMenu,
     MenuItemGroup = Menu.ItemGroup,
     TabPane = Tabs.TabPane,
@@ -26,12 +32,84 @@ class PCHeader extends React.Component {
         this.state = {
             current: 'top', // 初始选中标签
             modalVisible: false, // 模态框的显示状态
-            action: 'login',
+            action: '',
             hasLogined: false,
             userNickName: '', // 昵称
             userid: 0,
         };
-    }
+    };
+
+    componentWillMount = () => {
+        if (localStorage.userid != '') {
+            this.setState({
+                hasLogined: true,
+                userNickName: localStorage.userNickName,
+                userid: localStorage.userid,
+            });
+        }
+    };
+
+    setModalVisible = (value) => {
+        this.handleReset();
+        this.setState({ modalVisible: value });
+    };
+
+    handleClick = (e) => {
+        if (e.key === "register") {
+            this.setState({ current: 'register' });
+            this.setModalVisible(true);
+        } else {
+            this.setState({ current: e.key });
+        }
+    };
+
+    handleReset = () => {
+        this.props.form.resetFields();
+    };
+
+    // 页面向API提交数据 fetch
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = this.props.form.getFieldsValue(),
+            myFetchOptions = {
+                method: 'GET',
+            };
+        // console.log(formData);
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=" + this.state.action
+            + "&username=" + formData.userName
+            + "&password=" + formData.password
+            + "&r_userName=" + formData.r_userName
+            + "&r_password=" + formData.r_password
+            + "&r_confirmPassword=" + formData.r_confirmPassword, myFetchOptions)
+            .then(response => {
+                return response.json();
+            })
+            .then(json => {
+                // console.log(json)
+                this.setState({ userNickName: formData.userName, userid: json.UserId });
+                localStorage.userNickName = formData.userName;
+                localStorage.userid = json.UserId;
+            });
+        if (this.state.action === 'login') {
+            this.setState({ hasLogined: true });
+        }
+        message.success("请求成功！");
+        this.setModalVisible(false);
+    };
+
+    callback = (key) => {
+        if (key === '1') {
+            this.setState({ action: 'login' });
+        } else if (key === '2') {
+            this.setState({ action: 'register' });
+        }
+    };
+
+    logout = () => {
+        localStorage.userNickName = '';
+        localStorage.userid = '';
+        this.setState({ hasLogined: false });
+    };
 
     render() {
         let { getFieldProps } = this.props.form;
@@ -39,11 +117,13 @@ class PCHeader extends React.Component {
             ? <Menu.Item key="logout" className="register">
                 <Button type="primary" htmlType="button">{this.state.userNickName}</Button>
                 &nbsp;&nbsp;
-                <Link target="_blank">
-                    <Button type="dashed" htmlType="button">个人中心</Button>
-                </Link>
+                <HashRouter>
+                    <Link target="_blank" to="/usercenter" className="nav-person-center">
+                        <Button type="dashed" htmlType="button">个人中心</Button>
+                    </Link>
+                </HashRouter>
                 &nbsp;&nbsp;
-                <Button type="ghost" htmlType="button">退出</Button>
+                <Button type="ghost" htmlType="button" onClick={this.logout}>退出</Button>
             </Menu.Item>
             :
             <Menu.Item key="register" className="register">
@@ -62,7 +142,7 @@ class PCHeader extends React.Component {
                     </Col>
                     <Col span="16">
 
-                        <Menu mode="horizontal" selectedKeys={[this.state.current]}>
+                        <Menu mode="horizontal" onClick={this.handleClick} selectedKeys={[this.state.current]}>
                             <Menu.Item key="top">
                                 <Icon type="appstore" />头条
                             </Menu.Item>
@@ -84,9 +164,6 @@ class PCHeader extends React.Component {
                             <Menu.Item key="keji">
                                 <Icon type="appstore" />科技
                             </Menu.Item>
-                            <Menu.Item key="shishang">
-                                <Icon type="appstore" />时尚
-                            </Menu.Item>
                             {userShow}
                         </Menu>
 
@@ -98,17 +175,28 @@ class PCHeader extends React.Component {
                             onCancel={() => this.setModalVisible(false)}
                             okText="关闭"
                         >
-                            <Tabs type="card">
-                                <TabPane tab="注册" key="2">
-                                    <Form horizontal onSubmit={this.handleSubmit}>
+                            <Tabs type="card" onChange={this.callback}>
+                                <TabPane tab="登录" key="1">
+                                    <Form horizontal="true" onSubmit={this.handleSubmit}>
                                         <FormItem label="账户">
-                                            <Input placeholder="请输入您的账号" {...getFieldProps('r_userName')}/>
+                                            <Input placeholder="请输入您的账号" {...getFieldProps('userName') } />
                                         </FormItem>
                                         <FormItem label="密码">
-                                            <Input type="password" placeholder="请输入您的密码" {...getFieldProps('r_password')}/>
+                                            <Input type="password" placeholder="请输入您的密码" {...getFieldProps('password') } />
+                                        </FormItem>
+                                        <Button type="primary" htmlType="submit">登录</Button>
+                                    </Form>
+                                </TabPane>
+                                <TabPane tab="注册" key="2">
+                                    <Form horizontal="true" onSubmit={this.handleSubmit}>
+                                        <FormItem label="账户">
+                                            <Input placeholder="请输入您的账号" {...getFieldProps('r_userName') } />
+                                        </FormItem>
+                                        <FormItem label="密码">
+                                            <Input type="password" placeholder="请输入您的密码" {...getFieldProps('r_password') } />
                                         </FormItem>
                                         <FormItem label="确认密码">
-                                            <Input type="password" placeholder="请再次输入您的账号" {...getFieldProps('r_confirmPassword')}/>
+                                            <Input type="password" placeholder="请再次输入您的账号" {...getFieldProps('r_confirmPassword') } />
                                         </FormItem>
                                         <Button type="primary" htmlType="submit">注册</Button>
                                     </Form>
@@ -124,4 +212,4 @@ class PCHeader extends React.Component {
     };
 }
 
-export default PCHeader = Form.create()(PCHeader);
+export default PCHeader = Form.create({})(PCHeader);
