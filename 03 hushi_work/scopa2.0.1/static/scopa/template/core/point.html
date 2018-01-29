@@ -1,0 +1,100 @@
+<div class="banner-top">
+    <div class="bread-nav pull-left">
+        <ol class="breadcrumb">
+            <li><span class="goApp" style="cursor: pointer;">应用</span></li>
+            <li>重点人行为特征智能分析</li>
+        </ol>
+    </div>
+    <div class="action-btns pull-right">
+        <button class="show-point-module btn-current">积分模式</button>
+        <button class="btn-current return-point-list hidden">返回</button>
+
+    </div>
+</div>
+
+<div class="forewarn-box">
+    <div class="forewarn-content point-data-list">
+        <div class="forewarn-list">
+            <div class="filters">
+                <div class="selectbox pull-left ">类型：
+                   <!--  <select class="select selectType">
+                        <option value="涉毒">涉毒</option>
+                        <option value="涉恐">涉恐</option>
+                    </select> -->
+                    <span>涉毒</span>
+                </div>
+                <div class="searchbox pull-left">
+                    <label><input name="keyword" class="searchbox-ipt" placeholder="请输入身份证号或姓名" type="text"></label>
+                    <a class="searchbox-btn" href="javascript:;"></a>
+                </div>
+            </div>
+            <div class="data-list">
+                <table class="grid tablesorter newtable">
+                    <thead>
+                        <tr>
+                            <th class="fix60">序号</th>
+                            <th class="auto-width">身份证号</th>
+                            <th class="auto-width">姓名</th>
+                            <th class="fix100">类型</th>
+                            <th class="fix-time order-data" data-order-filed="score_single">行为特征积分</th>
+                            <th class="fix-time order-data" data-order-filed="score_relation">关系维度积分</th>
+                            <th class="fix-time order-data order-desc" data-order-filed="score_alert">预警积分</th>
+                            <th class="fix100">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="forewarn-info">
+            <div class="base-info">
+                <div class="infos">
+                 <!--    <div class="photo">
+                        <img src="#" alt="" />
+                    </div>
+                    <div class="details">
+                        <span>test</span>
+                    </div> -->
+                </div>
+                <div class="tags">
+                    <div class="tag-list"></div>
+                </div>
+            </div>
+            <div class="chart-btns"><span class="icon icon-toarchives to-file" title="到档案"></span><span class="icon icon-tomappinganalysis to-graph" title="到图析"></span></div>
+            <div class="graph-info">
+            </div>
+            <div class="list-info">
+                <table class="grid tablesorter newtable eventTable" id="list">
+                    <thead>
+                        <tr>
+                            <th class="ellipsis" title="时间">时间</th>
+                            <th class="ellipsis" title="类型">类型</th>
+                            <th class="ellipsis" title="描述">描述</th>
+                            <th class="ellipsis" title="命中规则名称">命中规则名称</th>
+                            <th class="ellipsis" title="积分">积分</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="forewarn-content point-data-details hidden">
+        <div class="point-types">
+            <span class="banner-title">重点人类别</span>
+            <div class="types-list">
+            </div>
+        </div>
+        <div class="point-item-details">
+            <div class="point-chart">
+                <div class="property"></div>
+                <div class="charts" id="chart"></div>
+            </div>
+            <div class="point-rules hide">
+
+            </div>
+        </div>
+    </div>
+</div>

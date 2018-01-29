@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+<head>
+	<title>任务详情</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" href="../../css/bjscxq.css">
+	<link rel="stylesheet" type="text/css" href="../..//css/backgroundReview.css" />
+</head>
+
+<body>
+	<!-- 页面头部start -->
+    <div class="nav-bar">
+        <div class="logo-box">
+            <img src="../../img/bjscxq/logo.png" alt="警徽">
+        </div>
+        <img class="logo-word" src="../../img/bjscxq/logo-word.png" alt="背景审查平台">
+
+        <div class="login-state">
+            <div class="person-icon">
+                <img src="../../img/bjscxq/person-icon.png" alt="You">
+            </div>
+            <div class="login-info">
+                <span class="admin-word">admin</span>
+                <span>人事、管理员、管理部门</span>
+                <span class="triangle-icon"></span>
+            </div>
+        </div>
+        <div class="email-box">
+            <img class="email-icon" src="../../img/bjscxq/email-icon.png" alt="power">
+            <div class="note blue">
+                <span>6</span>
+            </div>
+        </div>
+        <div class="volume-box">
+            <img class="volume-icon" src="../../img/bjscxq/volume-icon.png" alt="power">
+            <div class="note orange">
+                <span>8</span>
+            </div>
+        </div>
+        <img class="power-icon" src="../../img/bjscxq/power-icon.png" alt="power">
+    </div>
+    <!-- 页面头部end -->
+	
+	 <!-- 搜索栏start -->
+    <div class="search-bar">
+        <div class="content-box">
+            <div class="search-type">
+                <span class="active">背景审查</span> |
+                <span>情况摸排</span>
+            </div>
+            <input type="text" id="task_text" class="form-control input" placeholder="">
+            <!-- 背景审查按钮start -->
+            <div class="bjsc-buttons" style="">
+                <div class="button check" id="task_btn">
+                    <img src="../../img/bjscxq/check.png" alt="check">
+                    <span>背景审查</span>
+                </div>
+                <div class="button download" id="task_daochu">
+                    <img src="../../img/bjscxq/download.png" alt="check">
+                    <span>导&nbsp;出</span>
+                </div>
+            </div>
+            <!-- 背景审查按钮end -->
+        </div>
+    </div>
+    <!-- 搜索栏end -->
+
+    <!-- 条件筛选框start -->
+    <div class="condition-filter-box">
+        <div class="classify">
+            <span>重点人</span> |
+            <span>涉案人</span> |
+            <span>嫌疑人</span> |
+            <span class="active">不良行为记录</span>
+        </div>
+        <div class="items">
+            <div class="select-all">
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="CheckAll" value="option1"> 全选
+                </label>
+            </div>
+            <div class="select-item">
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox1" value="option1"> 工作对象
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox2" value="option2"> 呼市国税局处罚人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox3" value="option3"> 呼市国税局个体非正常解除人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox4" value="option4"> 传销黑名单人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox5" value="option5"> 银行卡黑名单人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox6" value="option6"> 撤逃人员人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox7" value="option7"> 劳教出入所人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox8" value="option8"> 两劳释放人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox9" value="option9"> 犯法经侦黑名单
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox10" value="option10"> 行政处罚人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox11" value="option11"> 缉控人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox12" value="option12"> 刑侦打处人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox13" value="option13"> 犯罪团伙
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox14" value="option14"> 监管人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox15" value="option15"> 监狱服刑人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox16" value="option16"> 涉毒人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox17" value="option17"> 看守所在押人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox18" value="option18"> 拘留所在押人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox19" value="option19"> 帮教人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox20" value="option20"> 法轮功人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox21" value="option21"> 司法矫正人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox22" value="option22"> 制假币人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox23" value="option23"> 制假票人员
+                </label>
+                <label class="checkbox-inline">
+                    <input class="item" type="checkbox" id="inlineCheckbox24" value="option24"> 制假产品人员
+                </label>
+            </div>
+        </div>
+        <div class="button" id="ck_btn">
+            <img src="../../img/bjscxq/hook-icon.png" alt="check">
+            <span>筛 &nbsp;选</span>
+        </div>
+    </div>
+    <!-- 条件筛选框end -->
+	<!-- 搜索结果start -->
+    <div class="result-table-box">
+        <!-- 结果列表start -->
+        <div class="results-list">
+           
+        </div>
+        <!-- 结果列表end -->
+        
+        <!-- 分页 -->
+		<div class="pagination-box" style="text-align: right;margin:0;">
+			<nav style="width: 100%;">
+				<ul id="pagination" class="pagination" style="margin:0;">
+				</ul>
+			</nav>
+		</div>
+        <!-- 分页器end -->
+    </div>
+    <!-- 搜索结果end -->
+	
+	<script type="text/javascript" src="../../js/plugins/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/fetch.js"></script>
+	<script type="text/javascript" src="../../js/plugins/moment.js"></script>
+	<script type="text/javascript" src="../../js/plugins/bootstrap-pagination.min.js"></script>
+	<script type="text/javascript" src="../../js/common/common.js"></script>
+	<script type="text/javascript" src="../../js/web/taskListDetail.js"></script>
+</body>
+
+</html>

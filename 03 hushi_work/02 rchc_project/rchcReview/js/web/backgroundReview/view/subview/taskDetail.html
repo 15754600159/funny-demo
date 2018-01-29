@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+	<head>
+		<title>任务详情</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../..//css/backgroundReview.css" />
+	</head>
+
+	<body>
+		<div class="all">
+			<div class="top">
+				<a href="backgroundReciew.html"><img src="../../img/nav-logo.png"></a>
+				<div class="title">人员背景核查</div>
+				<div class="role">
+					<a href="#">admin</a>
+				</div>
+			</div>
+			<div class="container-fluid content" id="taskDetail">
+				<form class="task-detail">
+					<input type="text" class="form-control" placeholder='请输入要查询的人员身份证号'>
+					<button type="button" class="btn btn-default">查询</button>
+					<button type="button" class="btn btn-default">导出</button>
+				</form>
+				<div class="check-filter-box">
+					<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox1" value="打处记录"> 打处记录
+			          </label>
+						<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox2" value="本地重点人"> 本地重点人
+			          </label>
+								<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox3" value="部级重点人"> 部级重点人
+			          </label>
+								<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox4" value="经侦黑名单"> 经侦黑名单
+			          </label>
+								<label class="checkbox-inline">
+			            <input type="checkbox" id="inlineCheckbox5" value="矫正对象"> 矫正对象
+			          </label>
+								<label class="checkbox-inline">
+			            	<input type="checkbox" id="inlineCheckbox6" value="教派人员"> 教派人员
+			          </label>
+								<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox7" value="出国定居"> 出国定居
+			          </label>
+								<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox8" value="亲属有记录"> 亲属有记录
+			          </label>
+								<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox9" value="审查有记录"> 审查有记录
+			          </label>
+								<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox10" value="审查无记录"> 审查无记录
+			          </label>
+					<button type="button" class="btn btn-default" id="ck_btn">筛选</button>
+				</div>
+				<!--主体内容-->
+				<div class="task-detail-box"></div>
+				<!-- 分页 -->
+				<div style="text-align: right">
+					<nav style="width: 100%;">
+						<ul id="pagination" class="pagination">
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../../js/plugins/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../../js/plugins/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../js/plugins/fetch.js"></script>
+		<script type="text/javascript" src="../../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../../js/plugins/bootstrap-pagination.min.js"></script>
+		<script type="text/javascript" src="../../js/web/taskDetails.js"></script>
+	</body>
+
+</html>

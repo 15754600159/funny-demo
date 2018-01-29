@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>任务详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/backgroundReview.css" />
+</head>
+<body>
+
+	<!-- 页面头部start -->
+	 <div class="nav-bar">
+	     <div class="logo-box">
+	         <img src="../img/bjscxq/logo.png" alt="警徽">
+	     </div>
+	     <img class="logo-word" src="../img/bjscxq/logo-word.png" alt="背景审查平台">
+		 <div class="top">
+			 <div class="title">
+		          <a href="index.html?sessionId=1">首页</a>
+		     </div>
+		     <div class="title">
+		          <a href="taskManagement.html?sessionId=1">任务列表</a>
+		     </div>
+	     </div>
+	     <div class="login-state">
+	         <div class="person-icon">
+	             <img src="../img/bjscxq/person-icon.png" alt="You">
+	         </div>
+	         <div class="login-info">
+	             <span class="admin-word">admin</span>
+	             <span>人事、管理员、管理部门</span>
+	             <span class="triangle-icon"></span>
+	         </div>
+	     </div>
+	     <div class="email-box">
+	         <img class="email-icon" src="../img/bjscxq/email-icon.png" alt="power">
+	         <div class="note blue">
+	             <span>6</span>
+	         </div>
+	     </div>
+	     <div class="volume-box">
+	         <img class="volume-icon" src="../img/bjscxq/volume-icon.png" alt="power">
+	         <div class="note orange">
+	             <span>8</span>
+	         </div>
+	     </div>
+	     <img class="power-icon" src="../img/bjscxq/power-icon.png" alt="power">
+	 </div>
+	 <!-- 页面头部end -->
+	 
+      <div class="all">
+
+            <!-- 内容main部分start -->
+            <div class="all-content">
+                  <div class="content-title">
+                       <p>智能比对任务</p> 
+                  </div>
+            <div class="container-fluid content">
+
+
+                  <!-- 副标题切换start -->
+                  <div class="subtitle-box">
+                        <span class="bjsc active">背景审查任务列表</span> |
+                        <span class="qkmp">情况摸排任务列表</span>
+                  </div> 
+                  <!-- 副标题切换end -->
+
+                  <!-- 搜索结果列表start -->
+				  <div id="bjsc-task-div">
+				  	  <!-- 查询任务名栏start -->
+	                  <form class="task-management">
+	                        <input type="text" class="form-control" placeholder="请输入要查找的任务名" id="chaxun_input">
+	                        <button type="button" class="btn btn-default" id="chaxun">查询</button>
+	                  </form>
+	                  <!-- 查询任务名栏end -->
+	                  <!-- 背景审查表  1  start -->
+	                  <table class="table table-bjsc table-bordered table-striped table-hover" id="task_table">
+	                        <thead>
+	                              <tr>
+	                                    <th>任务名</th>
+	                                    <th>上传人</th>
+	                                    <th>上传时间</th>
+	                                    <th>上传条数</th>
+	                                    <th>审查进度</th>
+	                                    <th></th>
+	                                    <th></th>
+	                              </tr>
+	                        </thead>
+	                        <tbody id="task_tbody">
+	                        
+	                        </tbody>
+	                  </table>
+	                  <!-- 分页 -->
+	                  <div style="text-align: right">
+	                        <nav style="width: 100%;">
+	                              <ul id="pagination" class="pagination"></ul>
+	                        </nav>
+	                  </div>
+                  </div>
+                  <!-- 背景审查表  1  end -->
+
+                  <!-- 情况摸排表  2  start -->
+                  <div id="qkmp-task-div" style="display:none;">
+                   <!-- 查询任务名栏start -->
+	                  <form class="task-management">
+	                        <input type="text" class="form-control" placeholder="请输入要查找的任务名" id="chaxun_task_input">
+	                        <button type="button" class="btn btn-default" id="chaxun_task">查询</button>
+	                  </form>
+	                  <table class="table table-qkmp table-bordered table-striped table-hover" id="task_table" >
+	                        <thead>
+	                              <tr>
+	                                    <th>任务ID</th>
+	                                    <th>任务名称</th>
+	                                    <th>操作人</th>
+	                                    <th>摸排开始时间</th>
+	                                    <th>摸排结束时间</th>
+	                                    <th>任务状态</th>
+	                                    <th>任务进度</th>
+	                                    <th style="width: 303px;">操作</th>
+	                              </tr>
+	                        </thead>
+	                        <tbody id="bd_task_tbody">
+	                              
+	                        </tbody>
+	                  </table>
+	                  <!-- 分页 -->
+	                  <div style="text-align: right">
+	                        <nav style="width: 100%;">
+	                              <ul id="qkmp-pagination" class="pagination"></ul>
+	                        </nav>
+	                  </div>
+	              </div>
+                  <!-- 情况摸排表end  2   -->
+
+                  <!-- 搜索结果列表end -->
+
+               
+            </div>
+            </div>
+            <!-- 内容main部分end -->
+
+      </div>
+      <!-- 来一个模态框 -->
+      <div class="modal fade" id="choseresule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="width:80%">
+            <div class="modal-content result-content">
+                  <div class="modal-header resule-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                              &times;
+                        </button>
+                        <p>摸排结果</p>
+                  </div>
+                  <div class="modal-body result-body">
+                       <div class="list-content" id="list-qkmp-content">
+                            
+                       </div>
+                  </div>
+            </div><!-- /.modal-content -->
+      </div>
+      </div><!-- /.modal -->
+      
+        <!-- 来一个模态框 -->
+      <div class="modal fade" id="choseresule-concat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="width:80%">
+            <div class="modal-content result-content">
+                  <div class="modal-header resule-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                              &times;
+                        </button>
+                        <p>摸排结果</p>
+                  </div>
+                  <div class="modal-body result-body">
+                      <table class="table table-bordered">
+                              <tbody id="list-contcat-result">
+                              </tbody>
+                       </table>
+                  </div>
+                  <div style="text-align: right">
+                        <nav style="width: 100%;">
+                              <ul id="qkmp-result-pagination" class="pagination"></ul>
+                        </nav>
+                  </div>
+            </div><!-- /.modal-content -->
+      </div>
+      </div><!-- /.modal -->
+
+      <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+      <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+      <script src="../js/plugins/jquery.tablesorter.min.js"></script>
+      <script type="text/javascript" src="../js/plugins/fetch.js"></script>
+      <script type="text/javascript" src="../js/plugins/moment.js"></script>
+      <script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+      <script type="text/javascript" src="../js/common/common.js"></script>
+      <script type="text/javascript" src="../js/web/task.js"></script>
+	  <script type="text/javascript" src="../js/web/qkmptaskList.js"></script>
+
+
+</body>
+
+</html>

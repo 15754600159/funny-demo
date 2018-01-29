@@ -1,0 +1,15 @@
+.upload-excel-window input[type="file"]{
+    border: none;
+}
+
+.upload-excel-window #uploadExcelFile{
+    padding: 50px;
+}
+
+#uploadExcelFile .form-group{
+    margin-bottom: 60px;
+}
+
+#uploadExcelFile .form-group label{
+    line-height: 34px;
+}

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SCOPA-CORE</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../theme/default/images/common/favicon.ico" rel="shortcut icon">
+    <link href="../../../common/gallery/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../theme/default/common.css" rel="stylesheet">
+    <link href="./css/baseui.css" rel="stylesheet">
+    <link href="../../theme/default/global.css" rel="stylesheet">
+    <script src="../../../common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+    <script>
+        var _href = window.location.href,
+				_index = window.location.href.indexOf("/scopatrunk/");
+			staticUrl = (-1 == _index ? "" : _href.slice(0, _index + 11)) + "/static";
+    </script>
+    <script src="../../../common/config.js?t=201609011800" type="text/javascript"></script>
+</head>
+<body>
+
+    <div class="main-box">
+        <div class="module-box">
+            <div class="basepage page-style">
+                <div class="base-info">
+                    <h1 class="base-title">全局通用样式</h1>
+                    <p class="paragraph-retract">根据设计组给出的SCOPA2.0统一视觉规范，整理并生成的前端样式文件，该全局样式文件会逐步完善。</p>
+                    <p class="paragraph-retract">目前可通过引用http://k1269.mlamp.co/static/scopa/theme/default/global.css实现。</p>
+                </div>
+                <div class="modules">
+                    <div class="module-panels font-box">
+                        <div class="panels-bar">通用字体</div>
+                        <div class="panels-information paragraph-retract">
+                            中文：思源黑体
+                        </div>
+                        <div class="panels-box">
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">链接</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>可用状态链接为元素添加<span class="style-name">.link-current</span>类名。不可用状态链接为元素添加<span class="style-name">.link-current-disabled</span>类名。</p>
+                                </div>
+                                <ul class="list-box link-list">
+                                    <li>
+                                        <a class="link-current" href="javascript:;">链接</a>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                    <li class="hidden">
+                                        <a class="link-current-disabled" href="javascript:;">链接</a>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;a</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"link-current"</span>
+                                        <span class="na">href=</span>
+                                        <span class="s">"#"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>链接</span>
+                                        <span class="nt">&lt;/a&gt;</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">状态颜色</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>
+                                        次级状态/临时状态为元素添加<span class="style-name">.status-minor</span>类名。
+                                        安全状态/完成状态为元素添加<span class="style-name">.status-safe</span>类名。
+                                        警示状态/失败状态为元素添加<span class="style-name">.status-warning</span>类名。
+                                        锁定状态为元素添加<span class="style-name">.status-locking</span>类名。
+                                    </p>
+                                </div>
+                                <ul class="list-box status-list">
+                                    <li class="status-minor">
+                                        次级状态/临时状态(色值：#fda738)<br />
+                                        (上升值域,停止中,已停止,重置中,更改密码中,创建中,更换系统中,解锁中)
+                                    </li>
+                                    <li class="status-safe">
+                                        安全状态/完成状态(色值：#00c76c)<br />
+                                        (安全值域,运行中)
+                                    </li>
+                                    <li class="status-warning">
+                                        警示状态/失败状态(色值：#ff474c)<br />
+                                        (启动失败,停止失败,重置失败,已过期,创建失败,密码错误,快照保存失败,到期失败)
+                                    </li>
+                                    <li class="status-locking">
+                                        锁定状态(#aaaaaa)<br />
+                                        (已锁定)
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"status-minor"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>次级状态/临时状态</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"status-safe"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>安全状态/完成状态</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"status-warning"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>警示状态/失败状态</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"status-locking"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>锁定状态</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">ICON状态颜色</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>
+                                        运行中状态为元素添加<span class="style-name">.status-icon-running</span>类名。
+                                        已停止状态为元素添加<span class="style-name">.status-icon-stop</span>类名。
+                                        已过期状态为元素添加<span class="style-name">.status-icon-past</span>类名。
+                                        已锁定状态为元素添加<span class="style-name">.status-icon-locking</span>类名。
+                                    </p>
+                                </div>
+                                <ul class="list-box status-icon-list">
+                                    <li>
+                                        <span class="status-icon-running">运行中</span>
+                                    </li>
+                                    <li>
+                                        <span class="status-icon-stop">已停止</span>
+                                    </li>
+                                    <li>
+                                        <span class="status-icon-past">已过期</span>
+                                    </li>
+                                    <li>
+                                        <span class="status-icon-locking">已锁定</span>
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"status-icon-running"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>运行中</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"status-icon-stop"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>已停止</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"status-icon-past"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>已过期</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"status-icon-locking"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>已锁定</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">LOADING状态</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>loading状态为元素添加<span class="style-name">.status-loading</span>类名,为子元素添加<span class="style-name">.loading-icon</span>类名。</p>
+                                </div>
+                                <ul class="list-box status-icon-list">
+                                    <li>
+                                        <span class="status-loading"><i class="loading-icon"></i>启动中</span>
+                                    </li>
+                                    <li>
+                                        <span class="status-loading"><i class="loading-icon"></i>停止中</span>
+                                    </li>
+                                    <li>
+                                        <span class="status-loading"><i class="loading-icon"></i>升级中</span>
+                                    </li>
+                                    <li>
+                                        <span class="status-loading"><i class="loading-icon"></i>创建中</span>
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"status-loading"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;i</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"loading-icon"</span>
+                                        <span class="nt">&gt;&lt;i&gt;</span>
+                                        <span>启动中</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">提示性状态</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>
+                                        提示状态为元素添加<span class="style-name">.information-current</span>类名。
+                                        疑问状态为元素添加<span class="style-name">.question-current</span>类名。
+                                        警示状态为元素添加<span class="style-name">.warning-current</span>类名。
+                                        正确状态为元素添加<span class="style-name">.right-current</span>类名。
+                                        错误状态为元素添加<span class="style-name">.wrong-current</span>类名。
+                                    </p>
+                                </div>
+                                <ul class="list-box status-icon-list">
+                                    <li>
+                                        <span class="information-current"></span>
+                                    </li>
+                                    <li>
+                                        <span class="question-current"></span>
+                                    </li>
+                                    <li>
+                                        <span class="warning-current"></span>
+                                    </li>
+                                    <li>
+                                        <span class="right-current"></span>
+                                    </li>
+                                    <li>
+                                        <span class="wrong-current"></span>
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"information-current"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"question-current"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"warning-current"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"right-current"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"wrong-current"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panels-interpretation"></div>
+                        <div class="panels-example"></div>
+                    </div>
+                    <div class="module-panels icons-box">
+                        <div class="panels-bar">通用ICON</div>
+                        <div class="panels-information paragraph-retract">
+                            <p>所有ICON圆角2px，线粗2px，大小为2X*2X，根据不同使用场景，相同ICON会有不同尺寸但线粗不变。</p>
+                            <p>说明：<span class="status-minor">点击以下字体所在的标签，即可复制字体类名</span></p>
+                        </div>
+                        <div class="panels-box">
+                        </div>
+                        <div class="panels-interpretation"></div>
+                        <div class="panels-example"></div>
+                    </div>
+                    <div class="module-panels btns-box">
+                        <div class="panels-bar">通用按钮</div>
+                        <div class="panels-information paragraph-retract">
+                            按钮在保证按钮文字辨识度的前提下,根据使用场景,尺寸可以调节。可通过修改按钮元素<span class="style-name">padding</span>值修改按钮尺寸。
+                        </div>
+                        <div class="panels-box">
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">常规按钮</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>可用状态按钮为元素添加<span class="style-name">.btn-current</span>类名。不可用状态按钮为元素添加<span class="style-name">.btn-current-disabled</span>类名。</p>
+                                    <p>说明：常规可用按钮为#77aaff-#7fc7ff颜色渐变,hover状态下,弥散投影样式与按钮颜色相同为#77aaff-#7fc7ff颜色渐变,透明度为0.88。</p>
+                                </div>
+                                <ul class="list-box btns-list">
+                                    <li>
+                                        <span class="btn-current">常规按钮</span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                    <li>
+                                        <span class="btn-current-disabled">常规按钮</span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-current"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>常规按钮</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-current-disabled"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>常规按钮</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">警示按钮</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>警告按钮为元素添加<span class="style-name">.btn-current-warn</span>类名。</p>
+                                    <p>说明：常规可用按钮为#ff4444—#fc6b6c颜色渐变,hover状态下,弥散投影样式与按钮颜色相同为#ff4444—#fc6b6c颜色渐变,透明度为0.88。警示按钮为特例，除非<span class="style-name style-warn">“警告”</span>不建议使用此颜色按钮。</p>
+                                </div>
+                                <ul class="list-box btns-list">
+                                    <li>
+                                        <span class="btn-current-warn">删除</span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-current-warn"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>删除</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">ICON/文本按钮</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>
+                                        圆形可用按钮为元素添加<span class="style-name">.btn-current .btn-circle</span>类名。
+                                        圆形警告按钮为元素添加<span class="style-name">.btn-current-warn .btn-circle</span>类名。
+                                        圆形不可用按钮为元素添加<span class="style-name">.btn-current-disabled .btn-circle</span>类名。
+                                    </p>
+                                    <p>说明：常规可用按钮为#77aaff-#7fc7ff颜色渐变,hover状态下,弥散投影样式与按钮颜色相同为#77aaff-#7fc7ff颜色渐变,透明度为0.88。</p>
+                                </div>
+                                <ul class="list-box btns-list">
+                                    <li>
+                                        <span class="btn-current btn-circle"><span class="scopaicon scopaicon-shanchuda"></span></span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                    <li>
+                                        <span class="btn-current-warn btn-circle"><span class="scopaicon scopaicon-shanchuda"></span></span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                    <li>
+                                        <span class="btn-current-disabled btn-circle"><span class="scopaicon scopaicon-shanchuda"></span></span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                    <li>
+                                        <span class="btn-current btn-circle"><span class="scopaicon">+</span></span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                    <li>
+                                        <span class="btn-current-warn btn-circle"><span class="scopaicon">+</span></span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                    <li>
+                                        <span class="btn-current-disabled btn-circle"><span class="scopaicon">+</span></span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-current btn-circle"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"scopaicon scopaicon-shanchuda"</span>
+                                        <span class="nt">&gt;&lt;/span&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-current-warn btn-circle"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"scopaicon scopaicon-shanchuda"</span>
+                                        <span class="nt">&gt;&lt;/span&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-current-disabled btn-circle"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"scopaicon scopaicon-shanchuda"</span>
+                                        <span class="nt">&gt;&lt;/span&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-current btn-circle"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"scopaicon"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>+</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-current-warn btn-circle"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"scopaicon"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>+</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-current-disabled btn-circle"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;span</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"scopaicon"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>+</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                        <span class="nt">&lt;/span&gt;</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panels-interpretation"></div>
+                        <div class="panels-example"></div>
+                    </div>
+                    <div class="module-panels input-box">
+                        <div class="panels-bar">通用输入/下拉框</div>
+                        <div class="panels-information paragraph-retract">
+                            按钮在保证按钮文字辨识度的前提下,根据使用场景,尺寸可以调节。可通过修改按钮元素padding值修改按钮尺寸。
+                        </div>
+                        <div class="panels-box">
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">按钮输入框</div>
+                                <div class="item-box-des paragraph-retract">
+                                </div>
+                                <ul class="list-box status-list">
+                                    <li>
+                                        <div class="btn-input-box">
+                                            <input placeholder="输入关键字查询" type="text">
+                                            <a class="scopaicon scopaicon-sousuoda" href="javascript:;"></a>
+                                        </div>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                    <li>
+                                        <div class="btn-input-box">
+                                            <input placeholder="09/16/2015－09/30/2015" type="text">
+                                            <a class="scopaicon scopaicon-riqi" href="javascript:;"></a>
+                                        </div>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;div</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-input-box"</span>
+                                        <span class="nt">&gt;&lt;input</span>
+                                        <span class="na">placeholder=</span>
+                                        <span class="s">"输入关键字查询"</span>
+                                        <span class="na">type=</span>
+                                        <span class="s">"text"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;a</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"scopaicon scopaicon-sousuoda"</span>
+                                        <span class="na">href=</span>
+                                        <span class="s">"javascript:;"</span>
+                                        <span class="nt">&gt;&lt;/a&gt;</span>
+                                        <span class="nt">&lt;/div&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span class="nt">&lt;div</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-input-box"</span>
+                                        <span class="nt">&gt;&lt;input</span>
+                                        <span class="na">placeholder=</span>
+                                        <span class="s">"09/16/2015－09/30/2015"</span>
+                                        <span class="na">type=</span>
+                                        <span class="s">"text"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;a</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"scopaicon scopaicon-riqi"</span>
+                                        <span class="na">href=</span>
+                                        <span class="s">"javascript:;"</span>
+                                        <span class="nt">&gt;&lt;/a&gt;</span>
+                                        <span class="nt">&lt;/div&gt;</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">按钮下拉框</div>
+                                <div class="item-box-des paragraph-retract">
+                                </div>
+                                <ul class="list-box status-list">
+                                    <li>
+                                        <select class="btn-select-box">
+                                            <option value="1">1</option>
+                                            <option value="2">3</option>
+                                        </select>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                </ul>
+                                <div class="code-box">
+                                    <span class="item-code">
+                                        <span class="nt">&lt;select</span>
+                                        <span class="na">class=</span>
+                                        <span class="s">"btn-select-box"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span class="nt">&lt;option</span>
+                                        <span class="na">value=</span>
+                                        <span class="s">"1"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>1</span>
+                                        <span class="nt">&lt;/option&gt;</span>
+                                        <span class="nt">&lt;option</span>
+                                        <span class="na">value=</span>
+                                        <span class="s">"2"</span>
+                                        <span class="nt">&gt;</span>
+                                        <span>2</span>
+                                        <span class="nt">&lt;/option&gt;</span>
+                                        <span class="nt">&lt;/select&gt;</span>
+                                    </span>
+                                    <span class="item-code">
+                                        <span>$('select.btn-select-box').select2();</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panels-interpretation"></div>
+                        <div class="panels-example"></div>
+                    </div>
+                    <div class="module-panels forms-box">
+                        <div class="panels-bar">通用表单</div>
+                        <div class="panels-information paragraph-retract">
+                        </div>
+                        <div class="panels-box">
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">复合表单</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>复合表单为表单样式集合，请根据实际场景使用。行距：默认为带有“输入注释”40px,根据<span class="style-name">场景</span>及页面<span class="style-name">空间</span>缩减。</p>
+                                </div>
+                                <div class="list-box">
+                                    <form class="form-current">
+                                        <div class="input-current-control input-required">
+                                            <label class="label-current" for="">默认状态</label>
+                                            <input id="" type="text" class="input-current" required="required">
+                                            <span class="help-des">这是对这行表单的描述，如：8-12个字符。允许数字、字母,”/ - _”</span>
+                                        </div>
+                                        <div class="input-current-control input-right">
+                                            <label class="label-current" for="">正确状态</label>
+                                            <input id="" type="text" class="input-current">
+                                            <span class="help-des"></span>
+                                        </div>
+                                        <div class="input-current-control input-wrong">
+                                            <label class="label-current" for="">错误状态</label>
+                                            <input id="" type="text" class="input-current">
+                                            <span class="help-des right">这是一条错误信息</span>
+                                        </div>
+                                        <div class="input-current-control input-disabled">
+                                            <label class="label-current" for="">禁用状态</label>
+                                            <input id="" type="text" class="input-current" disabled>
+                                            <span class="help-des"></span>
+                                        </div>
+                                        <div class="input-current-control input-disabled">
+                                            <label class="label-current" for="">下拉框</label>
+                                            <select class="btn-select-box input-current">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                            </select>
+                                            <span class="help-des"></span>
+                                        </div>
+                                        <div class="input-current-control input-disabled hidden">
+                                            <label class="label-current" for="">多选项</label>
+                                            <label for="checkbox-inline-current"><span class="scopaicon scopaicon-fuxuankuang"></span></label>
+                                            <label for="checkbox-inline-current"><span class="scopaicon scopaicon-fuxuankuang"></span></label>
+                                            <label for="checkbox-inline-current"><span class="scopaicon scopaicon-fuxuankuang"></span></label>
+                                            <span class="help-des"></span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panels-interpretation"></div>
+                        <div class="panels-example"></div>
+                    </div>
+                    <div class="module-panels win-box hidden">
+                        <div class="panels-bar">通用弹窗</div>
+                        <div class="panels-information paragraph-retract">
+                        </div>
+                        <div class="panels-box">
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">常规弹窗</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>宽度：默认550px，如遇特殊情况可减小，最大不可超过1000px</p>
+                                    <p>高度：最大不超过750px ，最小不超过200px</p>
+                                </div>
+                                <ul class="list-box btns-list">
+                                    <li>
+                                        <span class="btn-current">常规按钮</span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                    <li>
+                                        <span class="btn-current-disabled">常规按钮</span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panels-interpretation"></div>
+                        <div class="panels-example"></div>
+                    </div>
+                    
+                    <div class="module-panels pages-box">
+                        <div class="panels-bar">通用翻页</div>
+                        <div class="panels-information paragraph-retract">
+                        </div>
+                        <div class="panels-box">
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">默认分页</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>可用状态按钮为元素添加<span class="style-name">.btn-current</span>类名。不可用状态按钮为元素添加<span class="style-name">.btn-current-disabled</span>类名。</p>
+                                    <p>require('pagination');</p>
+                                    <p style="white-space: pre;">$('.pages-current .pages').pagination(pagesTotalCount,{
+                                            num_edge_entries:2,
+                                            num_display_entries:4,
+                                            callback:function(){},
+                                            items_per_page:1,
+                                            link_to:'javascript:;',
+                                            current_page:(pageNo - 1),
+                                            prev_text:'<i></i>',
+                                            next_text:'<i></i>'
+                                        })</p>
+                                </div>
+                                <div class="list-box">
+                                    <div class="pages-current">
+                                        <div class="totalcount pull-left">
+                                            共有<span class="current-page">1</span>页，
+                                            每页显示<span class="total-num">20</span>条
+                                        </div>
+                                        <div class="pages pull-left">
+                                            <span class="current prev"><i></i></span>
+                                            <span class="current">1</span>
+                                            <a href="javascript:;">2</a>
+                                            <a href="javascript:;">3</a>
+                                            <a href="javascript:;">4</a>
+                                            <a href="javascript:;" class="next"><i></i></a>
+                                        </div>
+                                        <div class="goto-page pull-left">
+                                            <input class="input-current" type="text">
+                                            <span class="btn-current btn-goto-page">GO</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="code-box">
+                                    <span class="nt">&lt;div</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"pages-current"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span class="nt">&lt;div</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"totalcount pull-left"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span>共有</span>
+                                    <span class="nt">&lt;span</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"current-page"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span>1</span>
+                                    <span class="nt">&lt;/span&gt;</span>
+                                    <span>页，</span>
+                                    <span>每页显示</span>
+                                    <span class="nt">&lt;span</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"total-num"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span>20</span>
+                                    <span class="nt">&lt;/span&gt;</span>
+                                    <span>条</span>
+                                    <span class="nt">&lt;/div&gt;</span>
+                                    <span class="nt">&lt;div</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"pages pull-left"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span class="nt">&lt;span</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"current prev"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span class="nt">&lt;i&gt;&lt;/i&gt;</span>
+                                    <span class="nt">&lt;/span&gt;</span>
+                                    <span class="nt">&lt;span</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"current"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span>1</span>
+                                    <span class="nt">&lt;/span&gt;</span>
+                                    <span class="nt">&lt;a</span>
+                                    <span class="na">href=</span>
+                                    <span class="s">"javascript:;"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span>2</span>
+                                    <span class="nt">&lt;/a&gt;</span>
+                                    <span class="nt">&lt;a</span>
+                                    <span class="na">href=</span>
+                                    <span class="s">"javascript:;"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span>3</span>
+                                    <span class="nt">&lt;/a&gt;</span>
+                                    <span class="nt">&lt;a</span>
+                                    <span class="na">href=</span>
+                                    <span class="s">"javascript:;"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span>4</span>
+                                    <span class="nt">&lt;/a&gt;</span>
+                                    <span class="nt">&lt;a</span>
+                                    <span class="na">href=</span>
+                                    <span class="s">"javascript:;"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span>5</span>
+                                    <span class="nt">&lt;/a&gt;</span>
+                                    <span class="nt">&lt;a</span>
+                                    <span class="na">href=</span>
+                                    <span class="s">"javascript:;"</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"next"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span class="nt">&lt;i&gt;&lt;/i&gt;</span>
+                                    <span class="nt">&lt;/a&gt;</span>
+                                    <span class="nt">&lt;/div&gt;</span>
+                                    <span class="nt">&lt;div</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"goto-page"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span class="nt">&lt;input</span>
+                                    <span class="na">type=</span>
+                                    <span class="s">"text"</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"input-current"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span class="nt">&lt;span</span>
+                                    <span class="na">class=</span>
+                                    <span class="s">"btn-current btn-goto-page"</span>
+                                    <span class="nt">&gt;</span>
+                                    <span>GO</span>
+                                    <span class="nt">&lt;/span&gt;</span>
+                                    <span class="nt">&lt;/div&gt;</span>
+                                    <span class="nt">&lt;/div&gt;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panels-interpretation"></div>
+                        <div class="panels-example"></div>
+                    </div>
+                    <div class="module-panels btns-box hidden">
+                        <div class="panels-bar">通用下拉框</div>
+                        <div class="panels-information paragraph-retract">
+                        </div>
+                        <div class="panels-box">
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">按钮下拉框组合</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>可用状态按钮为元素添加<span class="style-name">.btn-current</span>类名。不可用状态按钮为元素添加<span class="style-name">.btn-current-disabled</span>类名。</p>
+                                </div>
+                                <ul class="select-list">
+                                    <li>
+                                        <span class="btn-current">常规按钮</span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="item-box pull-left">
+                                <div class="item-box-title">警示按钮</div>
+                                <div class="item-box-des paragraph-retract">
+                                    <p>注：警示按钮为特例，除非<span class="style-name style-warn">“警告”</span>不建议使用此颜色按钮。</p>
+                                    <p>说明：常规可用按钮为#ff4444—#fc6b6c颜色渐变,hover状态下,弥散投影样式与按钮颜色相同为#ff4444—#fc6b6c颜色渐变,透明度为0.88。</p>
+                                </div>
+                                <ul class="btns-list">
+                                    <li>
+                                        <span class="btn-current-warn">删除</span>
+                                        <span class="item-txt"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panels-interpretation"></div>
+                        <div class="panels-example"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slidebar-docs hidden">左侧导航</div>
+    <script type="text/javascript">seajs.use('./scripts/baseui');</script>
+</body>
+</html>

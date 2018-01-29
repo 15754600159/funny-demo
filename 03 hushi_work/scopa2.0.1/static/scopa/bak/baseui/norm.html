@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SCOPA-CORE</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/scopa/static/scopa/theme/default/images/common/favicon.ico" rel="shortcut icon">
+    <link href="/scopa/static/common/gallery/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/scopa/static/scopa/theme/default/common.css" rel="stylesheet">
+    <link href="./css/baseui.css" rel="stylesheet">
+    <link href="/scopa/static/scopa/theme/default/global.css" rel="stylesheet">
+    <script src="/scopa/static/common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+    <script>
+        var _href = window.location.href,
+                _index = window.location.href.indexOf("/views/");
+        staticUrl = (-1 == _index ? "" : _href.slice(0, _index)) + "/scopa/static";
+    </script>
+    <script src="/scopa/static/common/config.js?t=201609011800" type="text/javascript"></script>
+</head>
+<body>
+
+    <div class="main-box">
+        <div class="module-box">
+            <div class="basepage page-norm" template="basenorm"></div>
+        </div>
+    </div>
+    <div class="slidebar-docs hidden">左侧导航</div>
+    <script type="text/javascript">seajs.use('./scripts/baseui');</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 1920px) {
+    html{
+        font-size: 57px;
+    }
+}
+
+@media screen and (max-width: 1680px) {
+    html{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    html{
+        font-size: 40px;
+    }
+}
+
+body{
+    background-color: #eaecf1;
+    font-family: Microsoft Yahei;
+}
+
+.triangle-icon, .email-box, .volume-box, .power-icon, .check, .upload, .download, .classify span, .button, .search, .item, .select-all, .field, .ksmp-button{
+    cursor: pointer;
+}
+
+
+.top {
+      position: absolute;
+      top: 0;
+      left: 5.14rem;
+      height: 1.0148rem;
+      min-height: 42px;
+}
+
+.top>a {
+      float: left;
+      margin: 17px 20px;
+}
+
+.top .title {
+      font-size: 20px;
+      color: #fff ! important;
+      padding-left: 30px;
+      /* padding-top: 18px; */
+      float: left;
+      /* line-height: 50px; */
+      line-height: 1.0148rem;
+}
+.top .title a{
+	color: #ffffff
+}
+.top .title a:hover{
+	color: #447bda;
+}
+.top .role {
+      font-size: 18px;
+      color: #6DA7E7 ! important;
+      padding-right: 30px;
+      float: right;
+}
+
+.top .role a {
+      line-height: 70px;
+}
+
+.top .role a:hover {
+      color: #fff;
+}
+
+.nav-bar{
+    position: relative;
+    width: 100%;
+    height: 1.0148rem;
+    min-height: 42px;
+    background-image: linear-gradient(to right, #0e47a1, #3c73d3);
+}
+
+.nav-bar .logo-box{
+    position: absolute;
+    width: 0.6299rem;
+    height: 0.6299rem;
+    margin: 0.1749rem 0 0 0.2099rem;
+}
+
+.nav-bar .logo-box img{
+    width: 0.6299rem;
+    display: block;
+}
+
+.nav-bar .logo-word{
+    display: block;
+    position: absolute;
+    height: .7rem;
+    margin-left: 1rem;
+    top: 53%;
+    transform: translateY(-50%);
+}
+
+.nav-bar .email-box{
+    position: absolute;
+    display: block;
+    right: 2.2747rem;
+    top: 0.3674rem;
+    width: 0.4374rem;
+    height: 0.28rem;
+}
+
+.nav-bar .email-box img{
+    width: 0.4374rem;
+    display: block;
+}
+
+.nav-bar .volume-box{
+    position: absolute;
+    display: block;
+    right: 1.3123rem;
+    top: 0.3325rem;
+    width: 0.35rem;
+    height: 0.35rem;
+}
+
+.nav-bar .volume-box img{
+    width: 0.35rem;
+    display: block;
+}
+
+.nav-bar .power-icon{
+    position: absolute;
+    display: block;
+    right: 0.4374rem;
+    top: 0.3325rem;
+    width: 0.35rem;
+}
+
+.nav-bar .note{
+    position: absolute;
+    font-size: .21rem;
+    font-family: MicrosoftYaHei;
+    color: #ffffff;
+    width: 0.2975rem;
+    height: 0.2975rem;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    text-align: center;
+    border-radius: 0.16rem;
+}
+
+.nav-bar .note span{
+    display: block;
+    transform: scale(0.8,0.8);
+    margin-top: -.035rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .nav-bar .note span {
+        display: block;
+        transform: scale(0.7,0.7);
+        margin-top: -.09rem;
+    }
+}
+
+.nav-bar .blue{
+    background-color: #4faaff;
+    border: solid 2px #386fcf;
+}
+
+.nav-bar .orange{
+    background-color: #ff7800;
+    border: solid 2px #3a71d1;
+    width: 0.3075rem;
+    height: 0.3075rem;
+}
+
+.nav-bar .login-state{
+    position: absolute;
+    right: 3.6045rem;
+    width: 4.6495rem;
+    height: 100%;
+}
+
+.nav-bar .person-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: #d3d3d3;
+    border-radius: 0.35rem;
+}
+
+.nav-bar .person-icon img{
+    display: block;
+    margin: 0.15rem auto;
+    width: 0.42rem;
+}
+
+.nav-bar .login-info{
+    position: absolute;
+    width: 3.7396rem;
+    height: 100%;
+    right: 0;
+    font-size: 0.2274rem;
+    font-family: MicrosoftYaHei;
+    color: #ffffff;
+}
+
+.nav-bar .login-info .admin-word{
+    display: block;
+    margin-top: .15rem;
+}
+
+.nav-bar .triangle-icon{
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: 0.1075rem solid #ffffff;
+    border-bottom: 0.1075rem solid transparent;
+    border-left: 0.1275rem solid transparent;
+    border-right: 0.1275rem solid transparent;
+    text-align: center;
+    vertical-align: bottom;
+}

@@ -1,0 +1,86 @@
+<div class="container bgmask">
+	<div class="window" style="width: 600px; height: 80%;" id="window-qtwj-viewWindow">
+		<header>
+			<h1>挖掘结果信息查看</h1>
+			<a class="close btn-window-close">×</a>
+		</header>
+		<div class="content">
+			<form class="form-view" id="view-qtwj-info">
+				<section class="h-box col2">
+					<div>
+						<div class="control-item">
+							<label class="required">姓名:</label>
+							<div class="text-display">{%=o.rwId%}</div>
+						</div>
+					</div>
+					<div>
+						<div class="control-item">
+							<label class="required">别名绰号:</label>
+							<div class="text-display">{%=o.rwId%}</div>
+						</div>
+					</div>
+				</section>
+			</form>
+		</div>
+		<footer>
+			<a class="btn btn-outline btn-window-close">关闭</a>
+		</footer>
+	</div>
+</div>
+
+<!-- 群体挖掘列表 -->
+<script type="text/html" id="tmpl-view-qtwj-info">
+	<section class="h-box qtwj-view">
+		<div class="control-item" >
+			<label >任务记录编号</label>
+			<div>
+				<div class="text-display">{%=o.rwId%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>群体名称</label>
+			<div>
+				<div class="text-display">{%=o.qtName%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>挖掘时间</label>
+			<div>
+				<div class="text-display">{%=o.wjsj%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>群体规模</label>
+			<div>
+				<div class="text-display">{%=o.qtgm%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>群体成因</label>
+			<div>
+				<div class="text-display">{%=o.qtcy%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>群体类型</label>
+			<div>
+				<div class="text-display">{%=o.qtlx%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>数据来源</label>
+			<div>
+				<div class="text-display">{%=o.source%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>描述</label>
+			<div>
+				<div class="text-display">{%=o.description%}&nbsp;</div>
+			</div>
+		</div>
+	</section>
+</script>
+<script>
+	app.qtwj.viewWindow.init();
+</script>

@@ -1,0 +1,92 @@
+<div class="new-page">
+    
+    <div class="page-content wwgzqtgl">
+
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">筛选条件</div>
+            <div class="filter-conditions">
+                <form action="" id="form-department-search">
+                    <div class="input-item">
+                        <label>群体名称：</label>
+                        <input id="wggzqt-qtmc" type="text" class="input" placeholder="请输入群体名称" />
+                    </div>
+                    <div class="input-item">
+                        <label>群体规模：</label>
+                        <input id="wggzqt-qtgm" type="text" class="input" placeholder="请输入群体规模" />
+                    </div>
+                    <div class="input-item">
+                        <label>群体类别：</label>
+                        <input id="wggzqt-qtlb" type="text" class="input" placeholder="请选择群体类别" code="" onclick="app.wfgzqtgl.showMenu('wggzqt-qtlb'); return false;" readonly/>
+                    </div>
+                    <div class="input-item">
+                        <label>采集时间：</label>
+                        <div class="time-select">
+                            <input id="wggzqt-caijishijianstart" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input id="wggzqt-caijishijianzhi" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="filter-button-box">
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                    </div> -->
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+
+        <!-- 操作按钮start -->
+        <div class="operate-buttons-box">
+            <div class="left-buttons">
+                <button type="button" class="btn btn-border" onclick="app.wfgzqtgl.add.open();">添加</button>
+                <button type="button" class="btn btn-border" onclick="app.wfgzqtgl.add.del();">删除</button>
+            </div>
+            <div class="right-buttons">
+                <button type="button" class="btn btn-normal" onclick="app.wfgzqtgl.all()">查询</button>
+                <button type="button" class="btn btn-normal" onclick="app.wfgzqtgl.reset()">重置</button>
+            </div>
+        </div>
+        <!-- 操作按钮end -->
+
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th class="checks td-width-1">
+                            <label class="check">
+                                <input id="Checkall" type="checkbox" class="Checkall">
+                                <span>全选</span>
+                            </label>
+                        </th>
+                        <th>群体名称</th>
+                        <th>群体类型</th> 
+                        <th>群体规模</th>
+                        <th>群体积分</th>
+                        <th>状态</th>
+                        <th style="width:199px;">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="table_all">
+                    
+                </tbody>
+            </table>
+
+            <ul id="paginationjc" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+        <div id="wggzqt-qtlbContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+            <ul id="wggzqt-qtlbUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+        </div>
+    </div>
+
+
+    <script>
+        app.wfgzqtgl.init();
+    </script>
+
+</div>

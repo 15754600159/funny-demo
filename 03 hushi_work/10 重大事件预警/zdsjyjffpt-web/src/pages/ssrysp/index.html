@@ -1,0 +1,134 @@
+<div class="new-page">
+    
+    <div class="page-content wwgzrygl">
+
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">筛选条件</div>
+            <div class="filter-conditions">
+                <form action="" id="form-department-search">
+                    <div class="input-item">
+                        <label>姓名：</label>
+                        <input id="rygl-xm" type="text" class="input" placeholder="请输入姓名" />
+                    </div>
+                    <div class="input-item">
+                        <label>公民身份证号：</label>
+                        <input id="rygl-sfzh" type="text" class="input" placeholder="请输入公民身份证号" />
+                    </div>
+                    <div class="input-item">
+                        <label>采集单位：</label>
+                        <input id="cjdwsp" type="text" class="input"  code='' placeholder="请输入采集单位"   onclick="app.zxrygl.sp.showMenu('cjdwsp'); return false;" readonly="">
+                    </div>
+                    <div class="input-item">
+                        <label>审批状态：</label>
+                        <select id="sp-type" style="width: 200px;" class="form-control select">
+                            <option value="">-全部-</option>
+                            <option value="">-未审批-</option>
+                            <option value="">-审批通过-</option>
+                            <option value="">-审批未通过-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>有效性：</label>
+                        <select id="yxx" style="width: 200px;" class="form-control select">
+                            <option value="">-请选择-</option>
+                            <option value="01">-是-</option>
+                            <option value="02">-否-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>人员类别：</label>
+                        <select id="ry-type" style="width: 200px;" class="form-control select">
+                            <option value="">-请选择-</option>
+                            <option value="">-涉恐人员-</option>
+                            <option value="">-涉稳人员-</option> 
+                            <option value="">-涉藏人员-</option>
+                            <option value="">-法轮功等邪教人员-</option>
+                            <option value="">-涉日人员-</option>
+                            <option value="">-涉军人员-</option>
+                            <option value="">-涉众型经济犯罪涉稳人员-</option>
+                            <option value="">-非正常访人员-</option>
+                            <option value="">-网上重点人员-</option>
+                            <option value="">-涉众型诈骗犯罪涉稳人员-</option>
+                            <option value="">-危害十九大一级重点关注人员-</option>
+                            <option value="">-危害十九大二级重点关注人员-</option>
+                            <option value="">-危害十九大关注人员-</option>
+                            <option value="">-国保重点人员-</option>
+                            <option value="">-新疆维族-</option>
+                            <option value="">-其他类涉稳人员-</option>
+                            <option value="">-暴力恐怖类-</option> 
+                            <option value="">-群体性事件类-</option>
+                            <option value="">-极端个人-</option>
+                            <option value="">-矛盾纠纷类-</option>
+                            <option value="">-其他-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>采集时间：</label>
+                        <div class="time-select">
+                            <input id="sqtart" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input id="sqiend" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="filter-button-box">
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                    </div> -->
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+
+        <!-- 操作按钮start -->
+        <div class="operate-buttons-box">
+            <div class="left-buttons">
+                <!-- <button type="button" class="btn btn-border" onclick="app.zxrygl.add.open();">添加</button>
+                <button type="button" class="btn btn-border" onclick="app.zxrygl.add.del();">删除</button> -->
+            </div>
+            <div class="right-buttons">
+                <button type="button" class="btn btn-normal" onclick="app.zxrygl.sp.all();">查询</button>
+                <!-- <button type="button" class="btn btn-normal" onclick="app.zxrygl.search.reset();">重置</button> -->
+            </div>
+        </div>
+        <!-- 操作按钮end -->
+
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>身份证号</th>
+                        <th>户籍地区划</th>
+                        <th>户籍地详址</th>
+                        <th>采集人姓名</th>
+                        <th>录入时间</th>
+                        <th>审批状态</th>
+                        <th>出生日期</th>
+                        <th>有效性</th>
+                        <th>涉事人分类</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="table_all">
+                    
+                </tbody>
+            </table>
+
+            <ul id="paginationspry" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+    </div>
+    <div id="cjdwspContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+		<ul id="cjdwspUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+	</div>
+
+    <script>
+        app.zxrygl.sp.init(); 
+    </script>
+
+</div>

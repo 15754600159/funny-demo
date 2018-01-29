@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html class="qkmp-page" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>情况摸排</title>
+    <link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/plugins/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/bjscxq.css">
+</head>
+
+<body>
+    <!-- 页面头部start -->
+    <div class="nav-bar">
+        <div class="logo-box">
+            <img src="../../img/bjscxq/logo.png" alt="警徽">
+        </div>
+        <img class="logo-word" src="../../img/bjscxq/logo-word.png" alt="背景审查平台">
+		<div class="top">
+			 <div class="title">
+		          <a href="../index.html?sessionId=1">首页</a>
+		     </div>
+		     <div class="title">
+		          <a href="../taskManagement.html?sessionId=1">任务列表</a>
+		     </div>
+	     </div>
+        <div class="login-state">
+            <div class="person-icon">
+                <img src="../../img/bjscxq/person-icon.png" alt="You">
+            </div>
+            <div class="login-info">
+                <span class="admin-word">admin</span>
+                <span>人事、管理员、管理部门</span>
+                <span class="triangle-icon"></span>
+            </div>
+        </div>
+        <div class="email-box">
+            <img class="email-icon" src="../../img/bjscxq/email-icon.png" alt="power">
+            <div class="note blue">
+                <span>6</span>
+            </div>
+        </div>
+        <div class="volume-box">
+            <img class="volume-icon" src="../../img/bjscxq/volume-icon.png" alt="power">
+            <div class="note orange">
+                <span>8</span>
+            </div>
+        </div>
+        <img class="power-icon" src="../../img/bjscxq/power-icon.png" alt="power">
+    </div>
+    <!-- 页面头部end -->
+
+    <!-- 搜索栏start -->
+    <div class="search-bar">
+        <div class="content-box">
+            <div class="search-type">
+                <a href="../index.html"><span>背景审查</span></a> |
+                <span class="active">情况摸排</span>
+            </div>
+            <input type="text" class="form-control input" placeholder="请输入人员身份证号">
+            <!-- 情况摸排按钮start -->
+            <div class="qkmp-buttons">
+                <div class="button qkmp-button">
+                    <img src="../../img/bjscxq/mopai-icon.png" alt="check">
+                    <span>情况摸排</span>
+                </div>
+                <div class="button download">
+                    <img src="../../img/bjscxq/download.png" alt="check">
+                    <span>模板下发</span>
+                </div>
+                <div class="button upload">
+                    <img src="../../img/bjscxq/upload.png" alt="check">
+                    <span>批量上传</span>
+                </div>
+            </div>
+            <!-- 情况摸排按钮end -->
+        </div>
+    </div>
+    <!-- 搜索栏end -->
+
+    <!------------------------------------------------------      情况摸排     ----------------------------------------------- -->
+    <!-- 情况摸排内容部分start -->
+    <div class="qkmp">
+
+        <div class="left-part">
+            <!-- 标签切换start -->
+            <div class="button-box">
+                <div class="button bdgzl active">
+                    <span>本地关注类</span>
+                </div>
+                |
+                <div class="button ryl">
+                    <span>人员类</span>
+                </div>
+                |
+                <div class="button cll">
+                    <span>车辆类</span>
+                </div>
+                |
+                <div class="button gjl">
+                    <span>轨迹类</span>
+                </div>
+                |
+                <div class="button zyl">
+                    <span>资源类</span>
+                </div>
+                |
+                <div class="button znss">
+                    <span>智能搜索</span>
+                </div>
+            </div>
+            <!-- 标签切换end -->
+
+            <div class="items-box">
+                <div class="main-select-box">
+                    <div class="search-content">
+                        <input id="leftSearchTableName" data-value-length="0" type="text" placeholder="请输入搜索内容">
+                        <img class="search" src="../../img/bjscxq/search-icon2.png" alt="search">
+                    </div>
+                    <div class="select-all">
+                        <span>全部选择</span>
+                    </div>
+                </div>
+                <div class="sub-select-box">
+                    <div class="local-upload-tables">
+                        <div class="local-ryl">
+                            <h4>人员类:</h4>
+                        </div>
+                        <hr>
+                        <div class="local-cll">
+                            <h4>车辆类:</h4>
+                        </div>
+                        <div class="add-local-table">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="online-database-tables"></div>
+                    <!-- <div class="item">
+                        <span>转移登记信息</span>
+                    </div>
+                    <div class="item active">
+                        <span>全国重点人员</span>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="filter-condition-box">
+                <div class="row">
+                    <div class="col-md-3 word">请选择时间：</div>
+                    <div class="col-md-9">
+                        <!-- 日期选择 -->
+                        <div class="input-group dateranger">
+                            <input type="text" class="daterangebox date1" />
+                        </div>
+                        <!-- <input class="start-time" type="text">
+                        <input class="end-time" type="text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 word">请选择：</div>
+                    <div class="col-md-9">
+                        <div class="item">
+                            <span>融合</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        </div>
+                        <div class="item active">
+                            <span>去重</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 word">定时选择：</div>
+                    <div class="col-md-9">
+                        <div class="item">
+                            <span>手动</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        </div>
+                        <div class="item active">
+                            <span>定时</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-4">频 次：
+                        <label class="radio-inline">
+                            <input class="day" type="radio" name="day-hour" value="1"> 天
+                        </label>
+                        <label class="radio-inline">
+                            <input class="hour" type="radio" name="day-hour" value="2"> 小时
+                        </label>
+                        每隔 <select class="cir-value">
+                                <option value = "1">1</option>
+                                <option value = "2">2</option>
+                                <option value = "3">3</option>
+                                <option value = "4">4</option>
+                              </select> 时
+                    </div>
+                </div>
+                <div class="ksmp-button">
+                    <img src="../../img/bjscxq/kaishimopai-icon.png" alt="check">
+                    <span>开始摸排</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-top-part">
+            <div class="green-rectangle">
+                <span>比<br>对<br>源</span>
+            </div>
+            <div class="main-info-box">
+
+                <!-- <div class="dby-info-card">
+                    <div class="main-title">
+                        <span>人员类</span>
+                        重点人口信息
+                        <span>（来自治安综合防范平台数据）</span>
+                    </div>
+                    <div class="control-buttons">
+                        <div class="button sjtj-button">
+                            <img src="../../img/bjscxq/sjtj-icon.png" alt="check">
+                            <span>数据统计</span>
+                        </div>
+                        <div class="button llsj-button">
+                            <img src="../../img/bjscxq/llsj-icon.png" alt="check">
+                            <span>浏览数据</span>
+                        </div>
+                        <img class="button" src="../../img/bjscxq/wrong-icon.png" alt="delete">
+                    </div>
+                    <div class="filter-conditions-box">
+                        <div class="orange-label-box">
+                            <span class="orange-label">关联字段</span>
+                            <span class="field">使用省份证号</span>
+                        </div>
+                        <div class="green-label-box">
+                            <span class="green-label">约束条件</span>
+                            <span class="field">活动发生时间</span>：
+                            <div class="input-group dateranger">
+                                <input type="text" class="daterangebox date2" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields-box">
+                        <span class="field">姓 名</span>
+                        <span class="field">性 别 </span>
+                        <span class="field">出生日期</span>
+                        <span class="field">证件号码</span>
+                        <span class="field">学 历</span>
+                        <span class="field">暂住地址</span>
+                        <span class="field">暂住地址</span>
+                        <span class="field">姓 名</span>
+                        <span class="field">性 别 </span>
+                        <span class="field">出生日期</span>
+                        <span class="field">证件号码</span>
+                        <span class="field">性 别 </span>
+                        <span class="field">出生日期</span>
+                        <span class="field">证件号码</span>
+                        <span class="field">姓 名</span>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+
+        <div class="right-bottom-part">
+            <div class="blue-rectangle">
+                <span>目<br>标<br>区</span>
+            </div>
+            <div class="sub-info-box">
+                <div class="filter-conditions-box">
+                    <div class="search-content">
+                        <input id="rightBottomSearchTableName" type="text" placeholder="请输入搜索内容">
+                        <img class="search" src="../../img/bjscxq/search-icon2.png" alt="search">
+                    </div>
+                    <!-- <div class="item active">
+                        <span>全部</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    </div> -->
+                    <div class="item">
+                        <span>本地关注类</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    </div>
+                    <div class="item">
+                        <span>人员类</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    </div>
+                    <div class="item">
+                        <span>车辆类</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    </div>
+                    <div class="item">
+                        <span>轨迹类</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    </div>
+                    <div class="item">
+                        <span>资源类</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    </div>
+                    <div class="button qbqk-button">
+                        <img src="../../img/bjscxq/delete-icon.png" alt="check">
+                        <span>全部清空</span>
+                    </div>  
+                </div>
+                <div class="mbq-info-box">
+
+                    <div class="bdgzl-card-box"></div>
+                    <div class="ryl-card-box"></div>
+                    <div class="cll-card-box"></div>
+                    <div class="gjl-card-box"></div>
+                    <div class="zyl-card-box"></div>
+
+                    <!-- <div class="mbq-info-card">
+                        <div class="main-title">
+                            重点人口信息
+                            <span>（来自治安综合防范平台数据）</span>
+                        </div>
+                        <div class="control-buttons">
+                            <div class="button sjtj-button">
+                                <img src="../../img/bjscxq/sjtj-icon.png" alt="check">
+                                <span>数据统计</span>
+                            </div>
+                            <div class="button llsj-button">
+                                <img src="../../img/bjscxq/llsj-icon.png" alt="check">
+                                <span>浏览数据</span>
+                            </div>
+                            <img class="button" src="../../img/bjscxq/wrong-icon.png" alt="delete">
+                        </div>
+                        <div class="filter-conditions-box">
+                            <div class="orange-label-box">
+                                <span class="orange-label">关联字段</span>
+                                <span class="field">使用省份证号</span>
+                            </div>
+                            <div class="green-label-box">
+                                <span class="green-label">约束条件</span>
+                                <span class="field">活动发生时间</span>：
+                                <div class="input-group dateranger">
+                                    <input type="text" class="daterangebox date2" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fields-box">
+                            <span class="field">姓 名</span>
+                            <span class="field">性 别 </span>
+                            <span class="field">出生日期</span>
+                            <span class="field">证件号码</span>
+                            <span class="field">学 历</span>
+                            <span class="field">暂住地址</span>
+                            <span class="field">暂住地址</span>
+                            <span class="field">姓 名</span>
+                            <span class="field">性 别 </span>
+                            <span class="field">出生日期</span>
+                            <span class="field">证件号码</span>
+                            <span class="field">性 别 </span>
+                            <span class="field">出生日期</span>
+                            <span class="field">证件号码</span>
+                            <span class="field">姓 名</span>
+                        </div>
+                    </div>
+
+                    <div class="mbq-info-card">
+                        <div class="main-title">
+                            重点人口信息
+                            <span>（来自治安综合防范平台数据）</span>
+                        </div>
+                        <div class="control-buttons">
+                            <div class="button sjtj-button">
+                                <img src="../../img/bjscxq/sjtj-icon.png" alt="check">
+                                <span>数据统计</span>
+                            </div>
+                            <div class="button llsj-button">
+                                <img src="../../img/bjscxq/llsj-icon.png" alt="check">
+                                <span>情况摸排</span>
+                            </div>
+                            <img class="button" src="../../img/bjscxq/wrong-icon.png" alt="delete">
+                        </div>
+                        <div class="filter-conditions-box">
+                            <div class="orange-label-box">
+                                <span class="orange-label">关联字段</span>
+                                <span class="field">使用省份证号</span>
+                            </div>
+                            <div class="green-label-box">
+                                <span class="green-label">约束条件</span>
+                                <span class="field">活动发生时间</span>：
+                                <div class="input-group dateranger">
+                                    <input type="text" class="daterangebox date2" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fields-box">
+                            <span class="field">姓 名</span>
+                            <span class="field">性 别 </span>
+                            <span class="field">出生日期</span>
+                            <span class="field">证件号码</span>
+                            <span class="field">学 历</span>
+                            <span class="field">暂住地址</span>
+                            <span class="field">暂住地址</span>
+                            <span class="field">姓 名</span>
+                            <span class="field">性 别 </span>
+                            <span class="field">出生日期</span>
+                            <span class="field">证件号码</span>
+                            <span class="field">性 别 </span>
+                            <span class="field">出生日期</span>
+                            <span class="field">证件号码</span>
+                            <span class="field">姓 名</span>
+                        </div>
+                    </div>
+
+                    <div class="mbq-info-card">
+                        <div class="main-title">
+                            重点人口信息
+                            <span>（来自治安综合防范平台数据）</span>
+                        </div>
+                        <div class="control-buttons">
+                            <div class="button sjtj-button">
+                                <img src="../../img/bjscxq/sjtj-icon.png" alt="check">
+                                <span>数据统计</span>
+                            </div>
+                            <div class="button llsj-button">
+                                <img src="../../img/bjscxq/llsj-icon.png" alt="check">
+                                <span>浏览数据</span>
+                            </div>
+                            <img class="button" src="../../img/bjscxq/wrong-icon.png" alt="delete">
+                        </div>
+                        <div class="filter-conditions-box">
+                            <div class="orange-label-box">
+                                <span class="orange-label">关联字段</span>
+                                <span class="field">使用省份证号</span>
+                            </div>
+                            <div class="green-label-box">
+                                <span class="green-label">约束条件</span>
+                                <span class="field">活动发生时间</span>：
+                                <div class="input-group dateranger">
+                                    <input type="text" class="daterangebox date2" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fields-box">
+                            <span class="field">姓 名</span>
+                            <span class="field">性 别 </span>
+                            <span class="field">出生日期</span>
+                            <span class="field">证件号码</span>
+                            <span class="field">学 历</span>
+                            <span class="field">暂住地址</span>
+                            <span class="field">暂住地址</span>
+                            <span class="field">姓 名</span>
+                            <span class="field">性 别 </span>
+                            <span class="field">出生日期</span>
+                            <span class="field">证件号码</span>
+                            <span class="field">性 别 </span>
+                            <span class="field">出生日期</span>
+                            <span class="field">证件号码</span>
+                            <span class="field">姓 名</span>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 情况摸排内容部分end -->
+
+    <!-- 小模态框 数据统计start -->
+    <div id="sjtjModel" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">数据统计</h4>
+                </div>
+                <div class="modal-body">
+                    <p>共有数据<span>0</span>条!</p>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- 小模态框 数据统计end -->
+
+    <!-- 大模态框 浏览数据start -->
+    <div id="llsjModel" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">浏览数据</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped table-hover">
+                        <!-- <caption>表格标题</caption>
+                        <tr>
+                            <th>Heading</th>
+                            <th>Another Heading</th>
+                        </tr>
+                        <tr>
+                            <td>row 1, cell 1</td>
+                            <td>row 1, cell 2</td>
+                        </tr>
+                        <tr>
+                            <td>row 2, cell 1</td>
+                            <td>row 2, cell 2</td>
+                        </tr> -->
+                    </table>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- 大模态框 浏览数据end -->
+
+    <!-- 小模态框 单个上传本地表单start -->
+    <div id="uploadSingleTable" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">单个表格上传</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group hidden">
+                            <label class="col-sm-3 control-label">用户id:</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="userId" class="form-control" placeholder="请输入表名称" value="000000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">表名称:</label>
+                            <div class="col-sm-9">
+                                <input id="localUploadTableName" type="text" name="tableName" class="form-control" placeholder="请输入表名称">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">表类型:</label>
+                            <div class="col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="tableType" value="1"> 人员类
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="tableType" value="2"> 车辆类
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-default upload-file">
+                                请选择导入文件
+                                <input type="file" name="excelFile">
+                            </button>
+                            <span class="file-tip">导入文件不能找过5M，仅允许导入”xls”或”xlsx”格式文件.</span>
+                        </div>
+                        <hr>
+                            <ol class="file-list">
+                                <!-- <li>重点人员名单.xls <a href="#">删除</a></li> -->
+                            </ol>
+                        <hr>
+                        <div class="form-group btns">
+                            <button type="button" class="btn btn-default download-model">下载模板</button>
+                            <button type="button" class="btn btn-default cancel" data-dismiss="modal">取消</button>
+                            <button type="submit" class="btn btn-default sure">确定</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- 小模态框 数据统计end -->
+
+    <!-- 小模态框 多个上传本地表单start -->
+    <div id="uploadMultipleTable" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">多个表格上传</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group hidden">
+                                <label class="col-sm-3 control-label">用户id:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="userId" class="form-control" placeholder="请输入表名称" value="000000">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">表名称:</label>
+                                <div class="col-sm-9">
+                                    <input id="localUploadTableName" type="text" name="tableName" class="form-control" placeholder="请输入表名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">表类型:</label>
+                                <div class="col-sm-9">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="tableType" value="1"> 人员类
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="tableType" value="2"> 车辆类
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default upload-file">
+                                    请选择导入文件
+                                    <input type="file" name="excelFile" multiple>
+                                </button>
+                                <span class="file-tip">导入文件不能找过5M，仅允许导入”xls”或”xlsx”格式文件.</span>
+                            </div>
+                            <hr>
+                                <ol class="file-list">
+                                    <!-- <li>重点人员名单.xls <a href="#">删除</a></li> -->
+                                </ol>
+                            <hr>
+                            <div class="form-group btns">
+                                <button type="button" class="btn btn-default download-model">下载模板</button>
+                                <button type="button" class="btn btn-default cancel" data-dismiss="modal">取消</button>
+                                <button type="submit" class="btn btn-default sure">确定</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- 小模态框 数据统计end -->
+
+
+
+    <script type="text/javascript" src="../../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/moment.js"></script>
+    <script type="text/javascript" src="../../js/plugins/daterangepicker.js"></script><!-- bootstrap的日历插件 -->
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <script src="../../js/web/qkmp.js"></script>
+</body>
+
+</html>

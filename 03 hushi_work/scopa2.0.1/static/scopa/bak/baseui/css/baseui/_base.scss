@@ -1,0 +1,193 @@
+html, body {
+	@include size(100%,100%);
+	background-color: $white;
+	overflow: hidden;
+}
+.main-box {
+	@include size(100%,calc(100% - 60px));
+	margin-top: 60px;
+	font-size: 14px;
+	color: $gray-color2;
+	overflow: hidden;
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	p{
+		margin: 0;
+	}
+	.style-name{
+		display: inline-block;
+		margin: 0 5px;
+		color: $mark-color1;
+		text-indent: 0;
+	}
+	.style-warn{
+		color: $warn-color;
+	}
+	.paragraph-retract{
+		text-indent: 2em;
+	}
+	.module-box{
+		@include size(100%,100%);
+		padding: 20px 80px;
+		.base-info{
+			@include size(100%);
+			margin-bottom: 30px;
+			.base-title{
+				color: $main-color1;
+				margin-bottom: 20px;
+				font-weight: 700;
+			}
+			& > p{
+				line-height: 30px;
+				font-size: 16px;
+			}
+		}
+		.page-style, .page-norm, .page-plugins{
+			@include size(100%,100%);
+		}
+		.modules{
+			@include size(100%, 100%);
+			.module-panels{
+				@include size(100%, auto);
+				.panels-bar{
+					font-size: 22px;
+					color: $main-color1;
+					font-weight: 700;
+					line-height: 40px;
+				}
+				.panels-information{
+					line-height: 28px;
+					margin-bottom: 10px;
+				}
+				.panels-box{
+					.item-box {
+						@include size(100%);
+						margin-bottom: 15px;
+						.item-box-title {
+							font-size: 16px;
+							color: $main-color2;
+							line-height: 30px;
+						}
+						.item-box-des{
+							margin-bottom: 10px;
+							line-height: 24px;
+						}
+						.item-txt{
+							display: block;
+						}
+					}
+				}
+				.panels-interpretation{}
+				.panels-example{}
+			}
+		}
+		.page-style{
+			.list-box{
+				@include size(100%);
+				float: left;
+				background-color: $layout-bg1;
+				border: 1px solid $layout-color3;
+				border-radius: 2px 2px 0 0;
+				padding: 10px;
+			}
+			.code-box{
+				width: 100%;
+				float: left;
+				background-color: $layout-bg2;
+				border: 1px solid $layout-color3;
+				border-top: none;
+				border-radius: 0 0 2px 2px;
+				padding: 10px;
+				.item-code{
+					@include size(100%);
+					display: block;
+				}
+			}
+			.icons-list{
+				& > li{
+					float: left;
+					width: 90px;
+					height: 80px;
+					padding: 10px;
+					font-size: 12px;
+					line-height: 1.4;
+					text-align: center;
+					margin-bottom: 10px;
+					.scopaicon{
+						margin-top: 5px;
+						margin-bottom: 10px;
+						font-size: 24px
+					}
+					.font-txt{
+						display: block;
+						word-wrap: break-word;
+					}
+					&:hover .scopaicon{
+						color: $white;
+					}
+				}
+			}
+			.btns-list{
+				& > li{
+					margin-right: 20px;
+					float: left;
+				}
+				.btn-current, .btn-current-warn{
+					padding: 6px 18px;
+				}
+				.btn-current.btn-circle, .btn-current-warn.btn-circle{
+					padding: 6px;
+				}
+				.btn-current-disabled{
+					padding: 4px 16px;
+				}
+				.btn-current-disabled.btn-circle{
+					padding: 4px;
+				}
+			}
+			.link-list{
+				& > li{
+					margin-right: 20px;
+					float: left;
+				}
+			}
+			.status-list{
+				& > li{
+					margin-bottom: 10px;
+				}
+			}
+			.status-icon-list{
+				& > li{
+					margin-right: 15px;
+					float: left;
+				}
+			}
+		}
+	}
+	.nt{
+		color: $mark-color5;
+	}
+	.nt.start{
+		text-indent: 2em;
+	}
+	.nt.end{
+		white-space: pre-line;
+	}
+	.na{
+		color: $mark-color6;
+	}
+	.s{
+		color: $mark-color3;
+	}
+}
+.tag-current.hover{
+	color: $white;
+	background-color: $hover-color;
+	box-shadow: 0 0 6px rgba(23, 84, 188, 0.5);
+	.scopaicon{
+		color: $white;
+	}
+}

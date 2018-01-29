@@ -1,0 +1,70 @@
+<div class="container bgmask person-check">
+    <div class="window popIn" style="width: 50%; height: 50%;">
+
+        <!-- 弹框头部start -->
+        <header>
+            <h1>查看详情</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <!-- 弹框头部end -->
+
+        <!-- 弹框正文start -->
+        <div class="content">
+            <form class="form two-column-form">
+                <div class="input-item">
+                    <label>状态：</label>
+                    <input name="processStatus" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>姓名：</label>
+                    <input name="name" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>证件号码：</label>
+                    <input name="sfzh" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>人员类别：</label>
+                    <input name="personCategory" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>预警详情：</label>
+                    <input name="warnDetail" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>预警时间：</label>
+                    <input name="warnTime" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>活动时间：</label>
+                    <input name="actTime" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>活动发生地区划：</label>
+                    <input name="actZoning" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>活动类型：</label>
+                    <input name="actType" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>办理单位：</label>
+                    <input name="transactUnit" type="text" class="input" readonly/>
+                </div>
+            </form>
+        </div>
+        <!-- 弹框正文end -->
+
+        <!-- 弹框底部start -->
+        <footer>
+            <!-- <a class="btn btn_submit">确定</a> -->
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+        <!-- 弹框底部end -->
+
+    </div>
+</div>
+
+<script>
+    app.zdsjyjgl.person.check.init();
+</script>

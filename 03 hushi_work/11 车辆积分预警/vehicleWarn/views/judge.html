@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>车辆事件预警</title>
+    <link rel="stylesheet" type="text/css" href="../static/jifen/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../static/jifen/css/bootstrap-pagination.css">
+    <link rel="stylesheet" href="../static/jifen/css/judge.css"/>
+</head>
+<body>
+<div class="all">
+    <div class="top">
+        <a href="#"><img src="../static/jifen/img/nav-logo.png"></a>
+        <div class="title">重点车辆积分预警</div>
+        <div class="role"></div>
+    </div>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="./index.html">重点车辆积分预警</a></li>
+            <li>&gt;</li>
+            <li><a href="javascript:;">车辆详情</a></li>
+        </ul>
+    </div>
+</div>
+<div id="loading">
+    <div><img src="../static/jifen/img/loading.gif"></div>
+</div>
+<div class="content">
+    <div class="score-info vehicle">
+        <div class="score-left" id="vehicle-detail">
+            <div class="personal pull-left"><img src="../static/jifen/img/car.png" alt="汽车"></div>
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <div class="number-title">关联人员信息</div>
+    <div class="score-info number">
+        <div class="score-left score-number">
+            <ul class="clearfix">
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="base-tag">
+        <div class="common-title">基础积分 <span class="baseScore"></span></div>
+        <div class="base-content">
+            <div class="ba base-left">
+                <div class="base-left-title">
+                    <span class="first">部级重点人车辆</span><!--
+                    --><span class="second vehicleScore"></span>
+                    <span class="first third">近90天关联人涉案</span><!--
+                    --><span class="second ninety"></span>
+                    </div>
+
+            </div>
+                <div class="time-line time-line1"><ul></ul></div>
+                <div class="time-line time-line2"><ul></ul></div>
+            </div>
+    </div>
+    <div class="behavior-tag"><div class="common-title">异动分 <span class="ydScore"></span></div>
+        <div class="behavior-table">
+
+        </div>
+    </div>
+
+</div>
+
+<script src="../static/jifen/js/zdyj/jquery-1.9.1.min.js"></script>
+<script src="../static/common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+<script src="../static/common/config.js?t=20170104" type="text/javascript"></script>
+<script src="../static/jifen/js/zdyj/echarts.min.js"></script>
+<script src="../static/jifen/js/zdyj/bootstrap.min.js"></script>
+<script src="../static/jifen/js/zdyj/jquery.slimscroll.min.js"></script>
+<script src="../static/jifen/js/lodash.js"></script>
+<script type="text/javascript">seajs.use(staticUrl + '/jifen/js/zdyj/judge');</script>
+</body>
+</html>

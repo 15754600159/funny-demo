@@ -1,0 +1,22 @@
+@mixin size($width:100%,$height:auto){
+  width:$width;
+  height: $height;
+}
+
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin headerIco($end){
+  @for $i from 1 through $end {
+    >li:nth-child(#{$i}){
+      a:hover,a.active{
+        i{
+          @extend .icons-icon00#{$i}.icon00#{$i}-hover;
+        }
+      }
+    }
+  }
+}

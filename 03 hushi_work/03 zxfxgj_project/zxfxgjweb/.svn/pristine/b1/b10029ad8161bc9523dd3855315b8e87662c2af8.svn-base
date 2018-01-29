@@ -1,0 +1,7 @@
+#window-excelWindow input[type="file"]{
+    border: none;
+}
+
+#window-excelWindow .upload-file{
+    padding: 50px;
+}

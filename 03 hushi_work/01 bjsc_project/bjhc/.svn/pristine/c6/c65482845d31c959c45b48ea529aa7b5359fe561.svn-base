@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)http://10.101.139.21:8777/taskManagement.html?sessionId=1&cookieUserId=99ca3cb2b54a0c86c432 -->
+<html lang="zh-cn">
+
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>任务管理</title>
+
+      <link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../css/backgroundReview.css">
+</head>
+
+<body>
+      <div class="all">
+            <!-- 头部start -->
+            <div class="top">
+                  <a href="taskManagement.html?sessionId=1&amp;cookieUserId=99ca3cb2b54a0c86c432#"><img src="../img/nav-logo.png"></a>
+                  <div class="title">
+                        <a href="backgroundReciew.html?sessionId=1">背景审查</a>
+                  </div>
+                  <div class="title">
+                        <a href="taskManagement.html?sessionId=1">任务列表</a>
+                  </div>
+                  <div class="role"><a href="#">明略管理员,您好</a></div>
+            </div>
+            <!-- 头部end -->
+
+            <!-- 内容main部分start -->
+            <div class="all-content">
+                  <div class="content-title">
+                       <p>智能比对任务</p> 
+                  </div>
+            <div class="container-fluid content">
+
+
+                  <!-- 副标题切换start -->
+                  <div class="subtitle-box">
+                        <span class="bjsc active">背景审查任务列表</span> |
+                        <span class="qkmp">情况摸排任务列表</span>
+                  </div> 
+                  <!-- 副标题切换end -->
+
+                  <!-- 查询任务名栏start -->
+                  <form class="task-management">
+                        <input type="text" class="form-control" placeholder="请输入要查找的任务名" id="chaxun_input">
+                        <button type="button" class="btn btn-default" id="chaxun">查询</button>
+                  </form>
+                  <!-- 查询任务名栏end -->
+
+                  <!-- 搜索结果列表start -->
+
+                  <!-- 背景审查表  1  start -->
+                  <table class="table table-bjsc table-bordered table-striped table-hover" id="task_table">
+                        <thead>
+                              <tr>
+                                    <th>任务名</th>
+                                    <th>上传人</th>
+                                    <th>上传时间</th>
+                                    <th>上传条数</th>
+                                    <th>审查进度</th>
+                                    <th></th>
+                                    <th></th>
+                              </tr>
+                        </thead>
+                        <tbody id="task_tbody">
+                        
+                        </tbody>
+                  </table>
+                  <!-- 背景审查表  1  end -->
+
+                  <!-- 情况摸排表  2  start -->
+                  <table class="table table-qkmp table-bordered table-striped table-hover" id="task_table" style="display:none;">
+                        <thead>
+                              <tr>
+                                    <th>任务名</th>
+                                    <th>操作人</th>
+                                    <th>摸排开始时间</th>
+                                    <th>摸排结束时间</th>
+                                    <th>任务状态</th>
+                                    <th>任务进度</th>
+                                    <th style="width: 230px;">操作</th>
+                              </tr>
+                        </thead>
+                        <tbody id="bd_task_tbody">
+                              <tr>
+                                    <td>重点人员</td>
+                                    <td>admin</td>
+                                    <td>2017/08/17 09:11:04</td>
+                                    <td>2017-08-23 09:09:34</td>
+                                    <td>进行中</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 80%;">80%</div>
+                                          </div>
+                                    </td>
+                                    <td class="cz">
+                                          <a href="#">查看</a>
+                                          <a href="#">修改</a>
+                                          <a href="#">删除</a>
+                                          <a href="#" class="result">查看摸排结果</a>
+                                    </td>
+                              </tr>
+                              <tr>
+                                    <td>重点人员</td>
+                                    <td>admin</td>
+                                    <td>2017/08/17 09:11:04</td>
+                                    <td>2017-08-23 09:09:34</td>
+                                    <td>进行中</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 80%;">80%</div>
+                                          </div>
+                                    </td>
+                                    <td class="cz">
+                                          <a href="#">查看</a>
+                                          <a href="#">修改</a>
+                                          <a href="#">删除</a>
+                                          <a href="#" class="result">查看摸排结果</a>
+                                    </td>
+                              </tr> 
+                        </tbody>
+                  </table>
+                  <!-- 情况摸排表end  2   -->
+
+                  <!-- 搜索结果列表end -->
+
+                 <!-- 分页 -->
+                  <div style="text-align: right">
+                        <nav style="width: 100%;">
+                              <ul id="pagination" class="pagination"></ul>
+                        </nav>
+                  </div>
+            </div>
+            </div>
+            <!-- 内容main部分end -->
+
+      </div>
+      <!-- 来一个模态框 -->
+      <div class="modal fade" id="choseresule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="width:80%">
+            <div class="modal-content result-content">
+                  <div class="modal-header resule-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                              &times;
+                        </button>
+                        <p>选择结果</p>
+                  </div>
+                  <div class="modal-body result-body">
+                       <!-- <table class="table table-bordered">
+                              <tbody>
+                                    <tr>
+                                          <td rowspan="6">辉-测试</td>
+                                          <td>人员类</td>
+                                          <td>车辆类</td>
+                                          <td>轨迹类</td>
+                                          <td>资源类</td>
+                                          <td>本地关注</td>
+                                    </tr>
+                                    <tr>
+                                          <td><p>重点人口信息(1)</p></td>
+                                          <td>铁路窗口售票信息</td>
+                                          <td>400003</td>
+                                          <td>Bangalore</td>
+                                          <td>560001</td>
+                                    </tr>
+                                
+                              </tbody>
+                       </table> -->
+                       <div class="list-content">
+                              <div class="list-name listall">
+                                    <p>辉-测试</p>
+                              </div>
+                              <div class="people listall">
+                                    <p>人员类</p>
+                                    <p class="have">重点人信息（1）</p>
+                                    <p >民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p >民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                              </div>
+                              <div class="car listall">
+                                    <p>车辆类</p>
+                                    <p class="have">重点人信息（1）</p>
+                                    <p >民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p >民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                              </div>
+                              <div class="guiji listall">
+                                    <p>轨迹类</p>
+                                    <p class="have">重点人信息（1）</p>
+                                    <p >民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p >民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                              </div>
+                              <div class="ziyuan listall">
+                                    <p>资源类</p>
+                                    <p class="have">重点人信息（1）</p>
+                                    <p >民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p >民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                              </div>
+                              <div class="bendi listall">
+                                    <p>本地类</p>
+                                    <p class="have">重点人信息（1）</p>
+                                    <p class="have">重点人信息（1）</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p >民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                                    <p>民航乘机信息(0)</p>
+                              </div>
+                       </div>
+                  </div>
+            </div><!-- /.modal-content -->
+      </div>
+      </div><!-- /.modal -->
+
+      <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+      <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+      <script src="../js/plugins/jquery.tablesorter.min.js"></script>
+      <script type="text/javascript" src="../js/plugins/fetch.js"></script>
+      <script type="text/javascript" src="../js/plugins/moment.js"></script>
+      <script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+      <script type="text/javascript" src="../js/common/common.js"></script>
+      <script type="text/javascript" src="../js/web/task.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+a:hover {
+      text-decoration: none;
+}
+
+body{
+	background-color: #f6f7f9;
+}
+button{
+	outline: none;
+}
+.top {
+height: 58px;
+    background-color: #3b72d2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+.top .title {
+      font-size: 20px;
+      color: #fff ! important;
+      padding-left: 30px;
+      padding-top: 18px;
+      float: left;
+}
+.top .title a{
+	color: #337ab7
+}
+.top .title a:hover{
+	color: #fff;
+}
+.top .role {
+      font-size: 18px;
+      color: #6DA7E7 ! important;
+      padding-right: 30px;
+      float: right;
+}
+
+.top .role a {
+      line-height: 70px;
+}
+
+.top .role a:hover {
+      color: #fff;
+}
+
+.content {
+      margin-top: 70px;
+      padding-top: 30px;
+}
+
+
+/*背景审查页面-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.content .background-review {
+      margin: 15% auto;
+      width: 60%;
+}
+.tankuang,.tankuang1{
+	display: none;
+	position: absolute;
+	left: 35%;
+	top: 25%;
+	width: 500px;
+	height: 300px;
+	background: #fff;
+}
+.tankuang1{
+	height: 200px;
+}
+.all .tankuang .liulan button,.all .tankuang .sure button{
+	outline: none;
+}
+.hecha{
+	margin-top: 8%;
+	margin-left: 30%;
+}
+.hecha input{
+	height: 35px;
+}
+.liulan{
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.tankuang1_content{
+	margin-left: 25%;
+	margin-top: 5%;
+}
+.tankuang1_content span{
+	margin-right: 5%;
+	text-align: center;
+}
+.liulan .liulan_file{
+	width: 185px;
+	background: #fff;
+	height: 35px;
+	outline: none;
+}
+.hecha .panduan{
+	display: none;
+}
+.liulan .panfile{
+	display: none;
+}
+.info_p{
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.sure{
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.esc1{
+	margin-left: -5%;
+}
+.ok1{
+	margin-left: 25%;
+}
+.sure .esc{
+	margin-right: 30%;
+}
+.content .background-review input {
+      width: 50%;
+      float: left;
+}
+
+.content .background-review button {
+      background-color: #0088ff;
+      color: #fff;
+      margin-left: 1%;
+}
+
+.content .background-review button:hover {
+      color: #fff;
+      background-color: #286090;
+      border-color: #204d74;
+}
+.content .progress .progress-bar{
+	width: 100%;
+}
+.content .table tbody tr:nth-child(1) .progress .progress-bar{
+	width: 0;
+}
+/*任务管理页面-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.content .task-management {
+      width: 50%;
+}
+#taskDetail,#taskDel{
+	/*cursor: pointer;*/
+}
+.taskDetail1,.taskDel1{
+	cursor: pointer;
+}
+#pagination{
+	width: 1500px;
+}
+#pagination .form-control{
+	width: 50px;
+}
+.pagination>li{
+	display: inline-block;
+}
+.content .task-management>input {
+      width: 50%;
+      float: left;
+}
+
+.content .task-management>button {
+      margin-left: 1%;
+}
+
+.content .task-management>button + button {
+      margin-left: 2%;
+}
+
+.progress {
+      margin-bottom: 0;
+}
+
+.content>table {
+      margin-top: 3%;
+}
+/*.all .del{
+	width: 200px;
+	height: 160px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: none;
+}*/
+
+/*任务详情页面-------------------------------------------------------------------------------------------------------------------------------------*/
+#taskDetail button{
+      background-color: #e6e6e6;
+      outline: none;
+}
+
+#taskDetail button:hover{
+      background-color: grey;
+      color: white;
+}
+#ck_btn{
+	margin-left: 1%;
+}
+.content .task-detail {
+      width: 50%;
+}
+
+.content .task-detail>input {
+      width: 50%;
+      float: left;
+}
+
+.content .task-detail>button {
+      width: 100px;
+}
+
+.content .task-detail>button {
+      margin-left: 1%;
+}
+
+/*.content .task-detail>button + button {
+      margin-left: 8%;
+}*/
+.content .tags{
+	margin-top: 12px;
+}
+.content .tags span{
+	margin-left: 6px;
+}
+.content .check-filter-box {
+      width: 100%;
+      height: 60px;
+      margin-top: 2%;
+      border: 1px solid #dee3eb;
+      border-radius: 15px;
+}
+
+.content .check-filter-box>button {
+      padding: 2px 20px;
+      margin-top: 20px;
+}
+
+.content .check-filter-box>.checkbox-inline{
+      margin-top: 20px;
+}
+
+.content .check-filter-box .checkbox-inline:nth-child(1), .content .check-filter-box>button:last-child{
+      margin-left: 20px;
+}
+
+.content .task-detail-box{
+      margin-top: 2%;
+}
+
+.content .task-detail-box .task-detail-card{
+      margin-bottom: 2%;
+      height: 150px;
+      border: 1px solid #dee3eb;
+      background-color: #fff;
+}
+
+.content .task-detail-card .img-box{
+      width: 15%;
+      margin: 23px 0;
+      float: left;
+}
+
+.content .task-detail-card .detail-box{
+      width: 45%;
+      float: left;
+}
+
+.content .task-detail-card .button-box{
+      width: 40%;
+      float: left;
+}
+
+.content .task-detail-card .img-box img{
+      height: 100px;
+      margin: 0 48px;
+}
+
+.content .task-detail-card .detail-box>div{
+      height: 50px;
+      padding-top: 30px;
+}
+
+.content .person-info span{
+      margin-right: 40px;
+}
+
+.content .task-detail-card .button-box button{
+      margin-top: 61px;
+      margin-right: 40px; 
+}
+
+/*页面分页组件样式调整-------------------------------------------------------------------------------------------------------------------------------------*/
+#pagination>li:nth-child(10)>div.input-group{
+      width: 90px;
+      display: inline-block;
+}

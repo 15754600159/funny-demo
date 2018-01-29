@@ -1,0 +1,129 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.top {
+	height: 70px;
+	background-color: #1A427D;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+.top>a {
+	float: left;
+	margin: 17px 20px;
+}
+
+.top .title {
+	font-size: 20px;
+	color: #fff ! important;
+	padding-left: 30px;
+	padding-top: 18px;
+	float: left;
+}
+.top .title a{
+	color: #337ab7
+}
+.top .title a:hover{
+	text-decoration: none;
+	color: #fff;
+}
+.top .role {
+	font-size: 18px;
+	color: #6DA7E7 ! important;
+	padding-right: 30px;
+	float: right;
+}
+
+.top .role a {
+	line-height: 70px;
+}
+
+.top .role a:hover {
+	color: #fff;
+}
+.content{
+	margin-top: 70px;
+    padding-top: 30px;
+}
+
+.own-info-box{
+	/* overflow: auto; */
+}
+
+.img-box{
+	width: 20%;
+	float: left;
+}
+
+.detail-box{
+	width: 50%;
+	float: left;
+}
+
+.detail-box .person-info {
+    height: 160px;
+    padding-top: 30px;
+    width: 60%;
+    float: left;
+}
+
+.detail-box .occupation {
+    height: 160px;
+    padding-top: 30px;
+    width: 40%;
+    float: left;
+}
+
+.person-info .person-info-row {
+    margin-bottom: 15px;
+}
+
+.detail-box .label {
+    display: inline-block;
+	margin-bottom: 10px;
+	margin-left: 6px;
+}
+
+.content .person-attribute{
+	float: left;
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 100%;
+    border-top: 1px dashed black;
+}
+
+.content .tags{
+	width: 70%;
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+	padding-top: 10px;
+	border-top: 1px dashed black;
+}
+
+.content .tags > div{
+	margin-top: 10px;
+}
+
+.content .tags > div > span{
+	margin-left: 6px;
+}
+
+.immediate-family-list{
+	float: left;
+    width: 100%;
+    margin-left: 5px;
+    margin-top: 10px;
+    padding-top: 10px;
+	border-top: 1px dashed black;
+	/* overflow: auto; */
+}
+
+.family-info-box{
+	float: left;
+	margin-bottom: 50px;
+}

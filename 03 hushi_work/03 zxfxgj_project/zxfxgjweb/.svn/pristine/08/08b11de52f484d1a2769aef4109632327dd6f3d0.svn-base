@@ -1,0 +1,62 @@
+app.fxmxgl.rwgl.search = {
+    init: function() {
+        // app.time.init();
+        app.fxmxgl.rwgl.search.SearchInfo(1, 10);
+    },
+
+    SearchInfo: function(pageNo, pageSize) {
+        app.api.fxmxgl.rwgl.view({
+            data: {
+                pageNo: pageNo,
+                pageSize: pageSize,
+            },
+            success: function(result) {
+                var data = result.msg.result,
+                    resultHtml = '',
+                    taskTypeArray = [],
+                    taskStatusArray = [];
+
+                // 获取任务类型、任务状态码表 (同步)
+                $.ajax({
+                    type: "get",
+                    url: app.api.fxmxgl.jhlx_jhztCxUrl,
+                    async: false,
+                    success: function(result) {
+                        taskTypeArray = result.msg.TASK_TYPE;
+                        taskStatusArray = result.msg.TASK_STATUS;
+                    }
+                });
+                // 拼接、并添加html代码
+                for (var i = 0; i < data.length; i++) {
+                    resultHtml += "<tr data-id=" + data[i].id + ">" +
+                        `<td>
+                            <label class="check">
+                                <input type="checkbox" name="task" value="${data[i].id}">
+                                <span> </span>
+                            </label> 
+                        </td>` +
+                        "<td>" + app.data(data[i].name) + "</td>" +
+                        "<td>" + app.data(taskTypeArray[data[i].type]) + "</td>" +
+                        "<td>" + app.data(taskStatusArray[data[i].status]) + "</td>" +
+                        "<td>" + app.data(data[i].startTime) + "</td>" +
+                        "<td>" + app.data(data[i].endTime) + "</td>" +
+                        "<td>" + app.data(data[i].prevTime) + "</td>" +
+                        "<td>" + app.data(data[i].interval) + "</td>" +
+                        "<td>" +
+                        '<button class="btn btn-sm btn-primary">查看</button>' +
+                        '<button class="btn btn-sm btn-info" style="margin-left:10px;">修改</button>' +
+                        '<button class="btn btn-sm btn-danger" style="margin-left:10px;">删除</button>' +
+                        "</td>" +
+                        "</tr >"
+                }
+                $(".table_all").empty().append(resultHtml);
+                // 分页器初始化
+                app.fxmxgl.rwgl.pagination && app.fxmxgl.rwgl.pagination(result.msg);
+            }
+        });
+    },
+
+
+
+
+};

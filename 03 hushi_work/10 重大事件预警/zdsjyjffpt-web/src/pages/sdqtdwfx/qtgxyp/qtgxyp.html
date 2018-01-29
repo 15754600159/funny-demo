@@ -1,0 +1,82 @@
+<div class="new-page">
+    
+    <div class="page-content wwgzrygl">
+
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">筛选条件</div>
+            <div class="filter-conditions">
+                <form action="" id="form-department-search">
+                    <div class="input-item">
+                        <label>群体名称：</label>
+                        <input id="qtmc_input" type="text" class="input" placeholder="请输入群体名称" />
+                    </div>
+                    <div class="input-item">
+                        <label>成立时间：</label>
+                        <div class="time-select">
+                            <input id="begin_datetime" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input id="end_datetime" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="input-item">
+                        <label>群体编号：</label>
+                        <input id="qtbh_input" type="text" class="input" placeholder="请输入群体编号" />
+                    </div>
+                    <div class="input-item">
+                        <label>群体类别：</label>
+                        <select id="qtlb_gxyp_input" name="qtlb" style="width: 200px;" class="form-control select"></select>
+                    </div>
+
+                    <!-- <div class="filter-button-box">
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                    </div> -->
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+
+        <!-- 操作按钮start -->
+        <div class="operate-buttons-box">
+            <div class="left-buttons"></div>
+            <div class="right-buttons">
+                <button type="button" class="btn btn-normal" onclick="app.qtdwfx.qtgzypSearch.initSearchForm(1,5,app.qtdwfx.qtgzypSearch.pagination);">查询</button>
+                <button type="button" class="btn btn-normal" onclick="app.qtdwfx.qtgzypSearch.reset();">重置</button>
+            </div>
+        </div>
+        <!-- 操作按钮end -->
+
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th>群体名称</th>
+                        <th>成立时间</th>
+                        <th>群体类别</th>
+                        <th>群体规模</th>
+                        <th>群体诉求</th>
+                        <th>产生原因</th>
+                        <th>群体编号</th>
+                        <th>群体积分</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="table_all_qtyp">
+                    
+                </tbody>
+            </table>
+
+            <ul id="qtgl_qtyp_pagination" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+        <iframe id="qtgxyp_ifram" onload="app.qtdwfx.qtgzypSearch.load()" style="width:100%; height: 100%;" frameborder="0" src="http://yp.hsga.nn:8055/core.html?username=014591#!scopa/graph/key/"></iframe>
+    </div>
+    <script>
+        app.qtdwfx.qtgzypSearch.init();
+    </script>
+
+</div> 

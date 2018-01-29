@@ -1,0 +1,375 @@
+<div class="page">
+    <div class="gzqt_body">
+        <div class="gzqt_head">
+            <h2>群体多维分析</h2>
+        </div>
+        <div class="gzqt_cont">
+            <div class="gzqt_tj">
+                <div class="tj_head">
+                    <p>过滤条件</p>
+                </div>
+                <div class="tj_body">
+                	 <form id="form-qtdwfx-search" class="form-view qtdwfx">
+		                <section class="h-box col2">
+		                    <div class="control-item">
+		                        <label>户籍</label>
+		                        <div>
+		                            <select class="select" name="rHuji" id=""></select>
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>民族</label>
+		                        <div>
+		                            <select class="select" name="rMinzu" id="" ></select>
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>身份证号</label>
+		                        <div>
+		                            <input type="text" class="input" name="rSfzh" >
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>姓名</label>
+		                        <div>
+		                            <input type="text" class="input" name="rXm" >
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>性别</label>
+		                        <div>
+		                            <select class="select" name="rXingbie" id="" ></select>
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>年龄区间</label>
+		                        <div>
+		                            <input type="number" class="input age" name="rAgeStart"> 至 
+		                            <input type="number" class="input age" name="rAgeEnd">
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>辖区</label>
+		                        <div>
+		                            <select class="select" name="rXiaqu" id="" ></select>
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>是否本地</label>
+		                        <div>
+		                            <select class="select" name="rLocal" id="" >
+		                                <option value="1">外地</option>
+		                                <option value="2">本地</option>
+		                            </select>
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>活动开始时间段</label>
+		                        <div>
+		                            <input name="rHdkssjdStart" size="16" type="text" readonly class="form_datetime" style="width: 230px;">                            至
+		                            <input name="rHdkssjdEnd" size="16" type="text" readonly class="form_datetime" style="width: 230px;">
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>活动结束时间段</label>
+		                        <div>
+		                            <input name="rHdjssjdStart" size="16" type="text" readonly class="form_datetime" style="width: 230px;">                            至
+		                            <input name="rHdjssjdEnd" size="16" type="text" readonly class="form_datetime" style="width: 230px;">
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>人员类别</label>
+		                        <div>
+		                            <select class="select" name="rRylb" id="" ></select>
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>活动场所类别</label>
+		                        <div>
+		                            <select class="select" name="rHdcslx" id="" ></select>
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>活动场所名称</label>
+		                        <div>
+		                            <input type="text" class="input" name="rHdcsmc" >
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>出发地</label>
+		                        <div>
+		                            <select class="select" name="rCfd" id="" ></select>
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>目的地</label>
+		                        <div>
+		                            <select class="select" name="rMdd" id="" ></select>
+		                        </div>
+		                    </div>
+		                    <div class="control-item">
+		                        <label>群体大小下限</label>
+		                        <div>
+		                            <input type="number" class="input" name="rMinsize" >
+		                        </div>
+		                    </div>
+		                </section>
+		            </form>
+		             <!-- 主规则 end -->
+		            <hr/>
+		            <div class="h-box col2" style="padding: 0px 10px;">
+                    	<div class="">
+		            	<h4 style="color: #1D1D1D;display: inline-block;">任务规则字表：</h4>
+		           			<button class="btn add-sub-rule" type="button"  id="qtdwfx-role-add-btn">新增</button>
+		            		<button class="btn add-sub-rule" type="button"  id="qtdwfx-role-group-btn">分组</button>
+		            	</div>
+			            <div class="" style="padding: 0px 10px;text-align: right;">
+	                        <button type="button" class="btn btn-submit" id="form-qtdwfx-submit">查询</button>
+	                        <button type="button" class="btn btn-submit" id="form-qtdwfx-reset">重置</button>
+	                    </div>
+	                </div>
+		            <!-- 子规则 start -->
+		            <form id="form-qtdwfx-role-add" class="form-view qtdwfx-gz">
+		               
+            		</form>
+            		<!-- 子规则 end -->
+                </div>
+            </div>
+            <div class="gzqt_all">
+                <div class="search-btn-div">
+                    <div class="qtgzbd" style="padding-top:0px;" id="qtdwfx-search-div">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                	<th><label class="check check-nolabel">
+											<input type="checkbox" id="list-qtwj-search-checkAll"><span></span>
+										</label>
+									</th>
+                                    <th style="width: 8%;">姓名</th>
+                                    <th style="width: 10%;">身份证号</th>
+                                    <th style="width: 10%;">重点人员类别</th>
+                                    <th style="width: 10%;">活动场所类型</th>
+                                    <th style="width: 10%;">活动发生区别</th>
+                                    <th style="width: 12%;">所属社会场所名称</th>
+                                    <th style="width: 12%;">活动发生详细地址</th>
+                                    <th style="width: 10%;">活动发生时间</th>
+                                    <th style="width: 8%;">预警时间</th>
+                                    <th style="width: 10%;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list-qtdwfx-search">
+                               
+                            </tbody>
+                        </table>
+                        <ul id="qtdwfx-search-pagebtn" class="pagination">
+                        </ul>
+                    </div>
+                    
+                    <div class="qtgzbd" style="display:none;" id="qtdwfx-qtwj-search-div">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                	<th><label class="check check-nolabel">
+											<input type="checkbox" id="list-qtwj-search-checkAll"><span></span>
+										</label>
+									</th>
+                                    <th style="width: 10%;">任务记录编号</th>
+                                    <th style="width: 10%;">群体名称</th>
+                                    <th style="width: 10%;">群体规模</th>
+                                    <th style="width: 10%;">群体成因</th>
+                                    <th style="width: 10%;">群体类型</th>
+                                    <th style="width: 14%;">数据来源</th>
+                                    <th style="width: 9%;">挖掘时间</th>
+                                    <th style="width: 10%;">描述</th>
+                                    <th style="width: 13%;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list-qtdwfx-qtwj-search">
+                               
+                            </tbody>
+                        </table>
+                        <ul id="qtdwfx-qtwj-search-pagebtn" class="pagination">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="tmpl-qtdwfx-role-add">
+	<section class="h-box col4">
+		<div class="control-item">
+		    <label>活动类型</label>
+		    <div>
+		        <select class="select" name="fType">
+		            <option value="02">飞机</option>
+		            <option value="01">火车</option>
+		            <option value="00">汽车</option>
+		            <option value="03">宾馆</option>
+		            <option value="04">网吧</option>
+		        </select>
+		    </div>
+		</div>
+		<div class="control-item">
+		    <label>活动规则</label>
+		    <div>
+		        <select class="select" name="fRule">
+		            <option value="01">同行</option>
+		            <!-- <option value="02">同屋同住</option>
+		            <option value="03">多次同住</option>
+		            <option value="04">同上网</option> -->
+		        </select>
+		    </div>
+		</div>
+		<div class="control-item limit-condition plane">
+		    <label style="width: 140px;">飞机同行次数</label>
+		    <div>
+		        <input type="text" class="input" name="minhangCishu" style="width: 140px;">
+		    </div>
+		</div>
+		<div class="control-item limit-condition plane">
+		    <label style="width: 140px;">飞机值机间隔</label>
+		    <div>
+		        <input type="text" class="input" name="minhangZjjg" style="width: 140px;">
+		    </div>
+		</div>
+		<div class="control-item limit-condition railway" style="display: none;">
+		    <div>
+		        <label class="check">
+		            <input type="checkbox" name="tieluCfdsfxt" value="1">
+		            <span>铁路-出发地是否相同</span>
+		        </label>
+		    </div>
+		</div>
+		<div class="control-item limit-condition railway" style="display: none;">
+		    <div>
+		        <label class="check">
+		            <input type="checkbox" name="tieluMddsfxt" value="1">
+		            <span>铁路-目的地是否相同</span>
+		        </label>
+		    </div>
+		</div>
+		<div class="control-item limit-condition railway" style="display: none;">
+		    <div>
+		        <label class="check">
+		            <input type="checkbox" name="tieluTcc" value="1">
+		            <span>铁路-是否同车次</span>
+		        </label>
+		    </div>
+		</div>
+		<div class="control-item limit-condition inn" style="display: none;">
+		    <label>旅店-多次同住次数</label>
+		    <div>
+		        <input type="text" class="input" name="lvdianDctzcs">
+		    </div>
+		</div>
+		<div class="control-item limit-condition inn" style="display: none;">
+		    <label>旅店-入住时间间隔</label>
+		    <div>
+		        <input type="text" class="input" name="lvdianRuzhusjjg">
+		    </div>
+		</div>
+		<div class="control-item limit-condition inn" style="display: none;">
+		    <label>旅店-离开时间间隔</label>
+		    <div>
+		        <input type="text" class="input" name="lvdianLikaisjjg">
+		    </div>
+		</div>
+		<div class="control-item limit-condition internet" style="display: none;">
+		    <label>上网间隔</label>
+		    <div>
+		        <input type="text" class="input" name="lvdianRuzhusjjg">
+		    </div>
+		</div>
+		<div class="control-item limit-condition internet" style="display: none;">
+		    <label>下网间隔</label>
+		    <div>
+		        <input type="text" class="input" name="lvdianLikaisjjg">
+		    </div>
+		</div>
+		<div class="control-item limit-condition car" style="display: none;">
+		    <div>
+		        <label class="check">
+		            <input type="checkbox" name="qicheCfdsfxt" value="1">
+		            <span>汽车-出发地是否相同</span>
+		        </label>
+		    </div>
+		</div>
+		<div class="control-item limit-condition car" style="display: none;">
+		    <div>
+		        <label class="check">
+		            <input type="checkbox" name="qicheMddsfxt" value="1">
+		            <span>汽车-目的地是否相同</span>
+		        </label>
+		    </div>
+		</div>
+		<div class="control-item limit-condition car" style="display: none;">
+		    <div>
+		        <label class="check">
+		            <input type="checkbox" name="qicheTcc" value="1">
+		            <span>汽车-是否同车次</span>
+		        </label>
+		    </div>
+		</div>
+		<div class="delete-sub-rule">X</div>
+	</section>
+</script>
+
+<!-- 群体多维分析列表 -->
+<script type="text/html" id="tmpl-list-qtdwfx-search">
+		<!--% for (var i in o) { %-->
+		<tr>
+			<td style="text-align: center">
+				<label class="check check-nolabel">
+					<input type="checkbox" value="{%=o[i].id%}" name="id"><span></span>
+				</label>
+			</td>
+			<td>{%=o[i].xm%}</td>
+			<td>{%=o[i].sfzh%}</td>
+			<td>{%=o[i].rylb%}</td>
+			<td>{%=o[i].hdcslx%}</td>
+			<td>{%=o[i].hdfsqb%}</td>
+			<td>{%=o[i].hdcsmc%}</td>
+			<td>{%=o[i].hdfsxxdz%}</td>
+			<td>{%=o[i].hdsj%}</td>
+			<td>{%=o[i].yjsj%}</td>
+			<td>
+				<button class="btn btn-sm btn-primary look" type="button" onclick="app.qtdwfx.search.openView('{%=o[i].id%}');">查看</button>
+			</td>
+		</tr>
+		<!--% } %-->
+</script>
+
+
+<!-- 群体挖掘列表 -->
+<script type="text/html" id="tmpl-list-qtdwfx-qtwj-search">
+		<!--% for (var i in o) { %-->
+		<tr>
+			<td style="text-align: center">
+				<label class="check check-nolabel">
+					<input type="checkbox" value="{%=o[i].id%}" name="id"><span></span>
+				</label>
+			</td>
+			<td>{%=o[i].rwId%}</td>
+			<td>{%=o[i].qtName%}</td>
+			<td>{%=o[i].qtgm%}</td>
+			<td>{%=o[i].qtcy%}</td>
+			<td>{%=o[i].qtlx%}</td>
+			<td>{%=o[i].source%}</td>
+			<td>{%=o[i].wjsj%}</td>
+			<td>{%=o[i].description%}</td>
+			<td>
+				<button class="btn btn-sm btn-info" type="button" style="margin-left:10px;" onclick="app.qtwj.search.openPerson('{%=o[i].id%}');">人员</button>
+				<button class="btn btn-sm btn-primary look" type="button" onclick="app.qtwj.search.openView('{%=o[i].id%}');">查看</button>
+			</td>
+		</tr>
+		<!--% } %-->
+</script>
+
+<script>
+    app.qtdwfx.search.init();
+</script>
+
+
+

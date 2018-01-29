@@ -1,0 +1,151 @@
+<div class="new-page">
+
+    <div class="page-content gxrfx">
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">多元布控</div>
+            <div class="filter-conditions">
+                <form action="">
+                    <div class="input-item" style="display: none;">
+                        <label>关系ID：</label>
+                        <input name="relationid" class="input" type="text" />
+                    </div>
+                    <div class="input-item">
+                        <label>身份证号：</label>
+                        <input name="sfzh" class="input" type="text" placeholder="请输入身份证号" />
+                    </div>
+                    <div class="input-item">
+                        <label>人员类别：</label>
+                        <select name="rylbmc" class="form-control select">
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>关系时间段：</label>
+                        <div class="time-select">
+                            <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="input-item">
+                        <label class="check">
+                            <input type="checkbox" name="tjg">
+                            <span>同籍贯</span>
+                        </label>
+                    </div>
+                    <div class="input-item">
+                        <label>年龄段：</label>
+                        <div class="time-select">
+                            <input name="ageStart" class="input" type="text" /> -
+                            <input name="ageEnd" class="input" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="input-item gxdm-tree-item tree-item">
+                        <label>关系：</label>
+                        <button type="button" class="btn btn-border btn_show_gxList">
+                            展开
+                            <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <!-- <div class="input-item gxdm-tree-item tree-item">
+                        <label>关系：</label>
+                        <input name="gxdmmc" class="input node-name" type="text" placeholder="请选择关系" readonly />
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <input name="gxdm" class="input node-code" type="text" style="display: none;" readonly />
+                        <div class="ztree gxdm-tree-dom tree-dom" style="display: none;"></div>
+                    </div> -->
+
+                    <div class="filter-button-box">
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                        <button type="button" class="btn btn-border btn_history">历史记录</button>
+                    </div>
+
+                    <div class="gx-list" style="display: none;">
+                        <hr/>
+                        <div class="control-item">
+                            <label>显性关系：</label>
+                            <div>
+                                <label class="check">
+                                    <input type="checkbox" name="xxgx" value="" checked="checked">
+                                    <span>选项1</span>
+                                </label>
+                                <label class="check">
+                                    <input type="checkbox" name="xxgx" value="" checked="checked">
+                                    <span>选项1</span>
+                                </label>
+                                <label class="check">
+                                    <input type="checkbox" name="xxgx" value="" checked="checked">
+                                    <span>选项1</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="control-item">
+                            <label>隐形关系：</label>
+                            <div>
+                                <label class="check">
+                                    <input type="checkbox" name="yxgx" value="" checked="checked">
+                                    <span>选项1</span>
+                                </label>
+                                <label class="check">
+                                    <input type="checkbox" name="yxgx" value="" checked="checked">
+                                    <span>选项1</span>
+                                </label>
+                                <label class="check">
+                                    <input type="checkbox" name="yxgx" value="" checked="checked">
+                                    <span>选项1</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+        <!-- 操作按钮start -->
+        <!--<div class="operate-buttons-box">-->
+        <!--<div class="left-buttons">-->
+        <!--<button type="button" class="btn btn-border btn_history">历史记录</button>-->
+        <!--</div>-->
+        <!--<div class="right-buttons">-->
+        <!--&lt;!&ndash; <button type="button" class="btn btn-normal btn_addNewClue">新增线索</button> &ndash;&gt;-->
+        <!--</div>-->
+        <!--</div>-->
+        <!-- 操作按钮end -->
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th class="td-width-2">姓名</th>
+                        <th>身份证号</th>
+                        <th class="td-width-2">重点人细类</th>
+                        <th class="td-width-2">关注类型</th>
+                        <th class="td-width-2">关系</th>
+                        <th class="td-width-2">性别</th>
+                        <th class="td-width-2">民族</th>
+                        <th class="td-width-2">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+
+                </tbody>
+            </table>
+
+            <ul id="gxrfxPagination" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+
+    </div>
+
+
+    <script>
+        app.gxrfx.search.init();
+    </script>
+
+</div>

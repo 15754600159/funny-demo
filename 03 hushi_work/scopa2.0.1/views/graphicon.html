@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+	<head>
+		<title>图析图标 - Scopa</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../static/scopa/theme/default/images/common/favicon.ico" rel="shortcut icon">
+		<link href="../static/common/gallery/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../static/scopa/theme/default/common.css" rel="stylesheet">
+		<link href="../static/scopa/theme/default/core.css" rel="stylesheet">
+		<script src="../static/common/stacktrace.js" type="text/javascript"></script>
+		<script src="../static/common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+		<script>
+			var _href = window.location.href,
+				_index = window.location.href.indexOf("/views/");
+			staticUrl = (-1 == _index ? "" : _href.slice(0, _index)) + "/static";
+		</script>
+		<script src="../static/common/config.js" type="text/javascript"></script>
+		<style>
+			#makeIcon{ width:362px; height:362px; float:left; background:#fff;position:absolute; z-index:10; display:none;}
+		
+			.icontable{ width:1140px;position:absolute;left:50%;margin:20px 0 20px -570px; background:#fff; z-index:1;}
+			.icontable th{ padding:20px;}
+			.icontable td{ vertical-align: middle!important;}
+			.graphicon{ display:inline-block; text-align:center; background:#4887bd; cursor: pointer; border:3px solid #fff;}
+			.graphicon.active{ border:3px solid #0d93f0;}
+			.graphicon:hover{ background:#5896cb;}
+			.graphicon span{ color:#fff; display:inline-block; vertical-align: middle;}
+			.type-entity{ width:66px; height:66px; line-height:60px; border-radius: 50%;}
+			.type-entity span{ font-size:40px;}
+			.person{ background:#5ca2af;}
+			.person:hover{ background:#66a8b5;}
+			.person_common_0,.person_eventful_0{ background:#d47fa9;}
+			.person_common_0:hover,.person_eventful_0:hover{ background:#d78bb2;}
+			.vehicle{ background:#9f88c8;}
+			.vehicle:hover{ background:#ab96cf;}
+			.type-relation,.type-event{ width:51px; height:51px; line-height:45px; background:#5b759d;}
+			.type-relation:hover,.type-event:hover{ background:#6580a9;}
+			.type-relation span,.type-event span{ font-size:30px;}
+		</style>
+	</head>
+
+	<body>
+		<a href="mapping.html" target="_blank" style="position:fixed;right:10px;top:10px;opacity:0.5;">
+			<button class="btn btn-sm btn-primary">Mapping表定义</button>
+		</a>
+		<div id="makeIcon"></div>
+		<table class="grid icontable table">
+			<thead>
+				<tr>
+					<th>本体</th>
+					<th>类型</th>
+					<th>子类</th>
+					<th>名称</th>
+					<th>图标</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<script type="text/javascript">
+			seajs.use('common/graphicon');
+		</script>
+	</body>
+
+</html>

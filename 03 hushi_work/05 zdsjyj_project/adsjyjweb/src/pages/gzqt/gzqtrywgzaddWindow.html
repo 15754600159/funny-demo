@@ -1,0 +1,61 @@
+<div class="container bgmask">
+    <div class="window" style="width: 50%; height: 50%;" id="window-gzqtrywgz-addWindow">
+        <header style="background:#4f8cf6">
+            <h1 style="color:#fff">新增人员采集</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <div class="content" style="padding:20px;">
+            <form id="form-gzqtrywgz-add" class="form">
+                <section class="h-box col2">
+                    <div>
+                        <div class="control-item">
+                            <label>群体编号</label>
+                            <div>
+                                <input type="text" class="input" name="zdqtbh" id="gzqtrywgzadd_qtbh">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label class="required">身份证号</label>
+                        <div>
+                            <input type="text" class="input" name="sfzh">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label class="required">姓名</label>
+                        <div>
+                            <input type="text" class="input" name="xm">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动轨迹</label>
+                        <div>
+                            <input type="text" class="input" name="hdgj">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>成员类型</label>
+                        <div>
+                            <input type="text" class="input" name="cylx">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>人员标签</label>
+                        <div>
+                            <input type="text" class="input" name="flag">
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+        <footer style="background:#4f8cf6">
+            <a class="btn" onclick="app.gzqt.gzqtrywgzadd.gzqtonclickform()" id="btn-ok-person-excel">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+    </div>
+</div>
+
+<script>
+    app.gzqt.gzqtrywgzadd.init();
+
+</script>

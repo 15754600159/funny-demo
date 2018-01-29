@@ -1,0 +1,131 @@
+app.qtdwfx.search = {
+	mbObject :null,
+	init: function(){
+		app.qtdwfx.search.initSearchFrom();
+		app.qtdwfx.search.initSubRole();
+	},
+	initSearchFrom: function(){
+//		if(sessionStorage.getItem('mbObject')){
+//			 var mbJsonStr = sessionStorage.getItem('mbObject');
+//			 app.qtdwfx.search.mbObject = JSON.parse(mbJsonStr);
+//			 app.qtdwfx.search.initFormSelect();
+//		}else{
+			app.api.fxmxgl.getSysDict({
+				success: function(result) {
+					var data = result.msg;
+					var mbObject = {};
+		
+		            for (let table of Object.keys(data)) {
+		                mbObject[table] = {};
+		                for (let i = 0, j = data[table].length; i < j; i++) {
+		                    mbObject[table][data[table][i]['value']] = data[table][i]['label'];
+		                }
+		            }
+		            // 存储值：将对象转换为Json字符串
+		            sessionStorage.setItem('mbObject', JSON.stringify(mbObject));
+		            app.qtdwfx.search.mbObject = mbObject;
+		            app.qtdwfx.search.initFormSelect();
+				}
+			});
+		//}
+		
+	},
+	initFormSelect:function(){
+        app.select.init($('#form-qtdwfx-search select[name="rHuji"]'), app.qtdwfx.search.mbObject.tb_d_qgxzqh);
+        app.select.init($('#form-qtdwfx-search select[name="rMinzu"]'), app.qtdwfx.search.mbObject.nation);
+        app.select.init($('#form-qtdwfx-search select[name="rXingbie"]'), app.qtdwfx.search.mbObject.sex);
+        app.select.init($('#form-qtdwfx-search select[name="rXiaqu"]'), app.qtdwfx.search.mbObject.tb_d_qgxzqh);
+        app.select.init($('#form-qtdwfx-search select[name="rRylb"]'), app.qtdwfx.search.mbObject.tb_d_zdryxl);
+        app.select.init($('#form-qtdwfx-search select[name="rHdcslx"]'), app.qtdwfx.search.mbObject.RULE_TYPE);
+        app.select.init($('#form-qtdwfx-search select[name="rCfd"]'), app.qtdwfx.search.mbObject.tb_d_qgxzqh);
+        app.select.init($('#form-qtdwfx-search select[name="rMdd"]'), app.qtdwfx.search.mbObject.tb_d_qgxzqh);
+	},
+	initSubRole:function(){
+		 // 新增规则任务子表
+        $('#qtdwfx-role-add-btn').on('click', function() {
+            if ($('#form-qtdwfx-role-add .col4').length >= 5) {
+                app.alert('最多只能增加5个规则任务子表！');
+                return;
+            }
+            var tempHtml = $('#tmpl-qtdwfx-role-add').html();
+            $('#form-qtdwfx-role-add').append(tempHtml);
+        });
+        
+        // 删除规则任务子表
+        $(document).on('click', '#form-qtdwfx-role-add .delete-sub-rule', function() {
+            var subRuleElem = $(this).parent('.col4');
+            subRuleElem.remove();
+        });
+        
+        // 规则任务子表 下拉框的联动
+        $(document).on('change', '#form-qtdwfx-role-add select[name="fType"]', function() {
+            var fType = $(this).val(),
+                subRuleElem = $(this).parents('section.col4'),
+                fRuleSelect = subRuleElem.find('select[name="fRule"]'),
+                limitConditionElem = subRuleElem.find('div.limit-condition'),
+                planeElem = subRuleElem.find('div.plane'),
+                carElem = subRuleElem.find('div.car'),
+                railwayElem = subRuleElem.find('div.railway'),
+                innElem = subRuleElem.find('div.inn'),
+                internetElem = subRuleElem.find('div.internet');
+
+            switch (fType) {
+                case '02': //飞机
+                    fRuleSelect.empty().append('<option value="01">同行</option>');
+                    limitConditionElem.css('display', 'none');
+                    planeElem.css('display', 'block');
+                    break;
+                case '01': //火车
+                    fRuleSelect.empty().append('<option value="01">同行</option>');
+                    limitConditionElem.css('display', 'none');
+                    railwayElem.css('display', 'block');
+                    break;
+                case '00': //汽车
+                    fRuleSelect.empty().append('<option value="01">同行</option>');
+                    limitConditionElem.css('display', 'none');
+                    carElem.css('display', 'block');
+                    break;
+                case '03': //宾馆
+                    fRuleSelect.empty().append('<option value="02">同屋同住</option><option value="03">多次同住</option>');
+                    limitConditionElem.css('display', 'none');
+                    // innElem.css('display', 'block');
+                    break;
+                case '04': //网吧
+                    fRuleSelect.empty().append('<option value="04">同上网</option>');
+                    limitConditionElem.css('display', 'none');
+                    internetElem.css('display', 'block');
+                    break;
+                default:
+                    console.log('你选的活动类型不符合！');
+            }
+        });
+
+        $(document).on('change', '#form-rule-add-sub select[name="fRule"]', function() {
+            var fRule = $(this).val(),
+                subRuleElem = $(this).parents('section.col4'),
+                fType = subRuleElem.find('select[name="fType"]').val(),
+                limitConditionElem = subRuleElem.find('div.limit-condition'),
+                innElem = subRuleElem.find('div.inn');
+
+            if (fType !== '03') { //宾馆
+                return;
+            }
+
+            switch (fRule) {
+                case '02': //同屋居住
+                    limitConditionElem.css('display', 'none');
+                    break;
+                case '03': //多次同住
+                    limitConditionElem.css('display', 'none');
+                    innElem.css('display', 'block');
+                    break;
+                default:
+                    console.log('你选的活动类型不符合！');
+            }
+        });
+        
+        //初始化
+        var tempHtml = $('#tmpl-qtdwfx-role-add').html();
+        $('#form-qtdwfx-role-add').append(tempHtml);
+	}
+};

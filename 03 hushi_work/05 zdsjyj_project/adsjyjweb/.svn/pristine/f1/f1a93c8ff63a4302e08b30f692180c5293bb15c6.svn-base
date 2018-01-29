@@ -1,0 +1,29 @@
+.breadcrumb {
+	margin: 10px 0;
+	font-size: 14px;
+	background-color: rgb(82, 143, 243);
+	color: #fff;
+	border-radius: 0px;
+	> li {
+		display: inline-block;
+
+		&.active {
+			//color: #666;
+		}
+
+		> a {
+			//color: @color-main;
+		}
+
+		+ li:before {
+			content: "/\00a0";
+			padding: 0 5px;
+			color: #ccc;
+			font-weight: 100;
+		}
+	}
+}
+
+.rygl {
+	background: #fff;
+}

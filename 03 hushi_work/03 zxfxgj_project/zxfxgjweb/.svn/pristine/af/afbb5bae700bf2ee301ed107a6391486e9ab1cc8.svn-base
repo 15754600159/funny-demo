@@ -1,0 +1,28 @@
+app.api.qtwj = {
+	// 群体挖掘接口
+    search: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/qtwjjg/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    // 群体挖掘 导出
+    exportFileUrl: app.api.url + '/zx/group/qtwjjg/file/?',
+    // 群体挖掘人员
+    searchRy: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/wjjgry/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    // 群体挖掘人员 导出
+    exportRyFile: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/wjjgry/file/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    }
+}

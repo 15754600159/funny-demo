@@ -1,0 +1,303 @@
+.content-card{
+    position: absolute;
+    top: 1.3123rem;
+    bottom: .2975rem;
+    left: .2975rem;
+    right: .2975rem;
+    background-color: #fcfcfc;
+    box-shadow: 1px 1.7px 4px 0 rgba(210, 210, 210, 0.75);
+    padding: .21rem;
+    font-family: SourceHanSansCN;
+    color: #343434;
+}
+
+.own-info-box{
+    height: 8.6614rem;
+    box-shadow: 1px 1.7px 4px 0 rgba(210, 210, 210, 0.75);
+    border: solid 1px #f5f5f5;
+}
+
+.own-info-box .blue-label{
+    display: inline-block;
+    height: 100%;
+    width: .1225rem;
+    background: #006AE4;
+}
+
+.own-info-box .own-info-card{
+    height: 100%;
+    display: inline-block;
+    width: calc(100% - .35rem);
+    vertical-align: top;
+}
+
+.own-info-box .own-info-card .own-basic-info-box{
+    height: 5.4418rem;
+    border-bottom: 1px solid rgba(210, 210, 210, 0.75);
+}
+
+.own-info-box .own-basic-info-box .head-icon-box{
+    display: inline-block;
+    height: 100%;
+    width: 3.7095rem;
+    text-align: center;
+    padding-top: .5424rem;
+}
+
+.own-info-box .own-basic-info-box .head-icon-box img{
+    width: 2.2047rem;
+}
+
+.own-info-box .own-basic-info-box .own-basic-info{
+    display: inline-block;
+    vertical-align: top;
+    height: 98%;
+    width: 9rem;
+    border-right: 1px solid rgba(210, 210, 210, 0.75);
+}
+
+.own-info-box .own-basic-info-box .own-basic-info h3{
+    font-size: .35rem;
+    margin-top: .6rem;
+    margin-bottom: .4rem;
+}
+
+.own-info-box .own-basic-info-box .own-basic-info p{
+    font-size: .245rem;
+}
+
+.own-info-box .own-basic-info-box .own-basic-info span{
+    color: #246be6;
+}
+
+.own-info-box .own-basic-info-box .own-occupation{
+    display: inline-block;
+    vertical-align: top;
+    padding: .5rem 0 0 .4rem;
+    font-size: .245rem;
+    width: 18rem;
+    height: 5rem;
+    overflow: auto;
+}
+
+.label-danger{
+    background-color: #ea3333;
+    font-weight: 500;
+}
+
+.label-warning{
+    background-color: #f9a91d;
+    font-weight: 500;
+}
+
+.label-info{
+    background-color: #319afc;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 0.1rem;
+}
+
+.own-info-box .own-basic-info-box .own-occupation .label-word{
+    width: 8%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.own-info-box .own-basic-info-box .own-occupation .labels{
+    display: inline-block;
+    width: 88%;
+}
+
+.own-info-box .own-basic-info-box .occupation-list{
+    margin: .3rem;
+}
+
+.own-info-box .own-basic-info-box .occupation-list li{
+    margin-top: .2rem;
+}
+
+.own-info-box .own-label-box{
+    width: 97%;
+    font-size: .245rem;
+    padding: .5rem 0 0 .49rem;
+}
+
+.own-info-box .own-label-box .tags{
+    margin-bottom: .5rem;
+}
+
+.own-info-box .own-label-box .red-tags{
+    color: #ea3333;
+}
+
+.own-info-box .own-label-box .yellow-tags{
+    color: #f9a91d;
+}
+
+.own-info-box .own-label-box .blue-tags{
+    color: #319afc;
+}
+
+.own-info-box .own-label-box .tags .label-word{
+    width: 9%;
+}
+
+.relatives-info-box{
+    margin-left: .01rem;
+    overflow: auto;
+    height: calc(100% - 9.4rem);
+}
+
+.relatives-info-box .relative-card{
+    margin-top: .1925rem;
+    width: 100%;
+    border: solid 1px #f5f5f5;
+    border-left: .13rem solid #447bda;
+    box-shadow: 1px 1.7px 4px 0 rgba(210, 210, 210, 0.75);
+}
+
+.relative-card .head-icon-box{
+    display: inline-block;
+    width: 8%;
+}
+
+.relative-card .head-icon-box img{
+    display: block;
+    width: 2.2047rem;
+    margin: .16rem .15rem;
+}
+
+.relative-card .person-info-box{
+    display: inline-block;
+    width: 91%;
+    vertical-align: top;
+    margin: .1rem 0px;
+    height: 93%;
+}
+
+.relative-card .top-right-part{
+    height: 73%;
+    border-bottom: 1px solid #c3bfbf;
+    font-family: SourceHanSansCN;
+}
+
+.relative-card .bottom-right-part{
+    height: 27%;
+    margin-top: .2rem;
+}
+
+.relative-card .top-right-part .basic-info-box{
+    display: inline-block;
+    vertical-align: top;
+    height: calc(100% - 8px);
+    width: 44.56%;
+    margin: 4px;
+    border-right: 1px solid #c3bfbf;
+    font-size: .245rem;
+}
+
+.relative-card .top-right-part .occupation-box{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: 39.44%;
+}
+
+.relative-card .top-right-part .view-details-button{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: 14%;
+    position: relative;
+}
+
+.top-right-part .basic-info-box h3{
+    margin: 0 0 .2625rem 0;
+    font-size: .35rem;
+}
+
+.relative-card .basic-info-box span{
+    color: #246be6;
+}
+
+.results-list .person-info-row{
+    margin-bottom: .2275rem;
+}
+
+.relatives-info-box .occupation-box{
+    font-size: .245rem;
+}
+
+.relatives-info-box .occupation-box .occu-label{
+    display: inline-block;
+    vertical-align: top;
+} 
+
+.relatives-info-box .occupation-box ol{
+    display: inline-block;
+    margin-left: .2rem;
+    width: 9.4rem;
+}
+
+.relatives-info-box .occupation-box ol > li{
+    margin-bottom: .3rem;
+}
+
+.top-right-part .view-details-button .button{
+    /*  position: absolute;
+     width: 3.1671rem;
+    height: 0.9974rem; */
+    width: 2.0671rem;
+    height: .63rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #0099EE, #5F4EED);
+    font-family: SourceHanSansCN;
+    color: #fff;
+    font-size: .245rem;
+    top: .34rem;
+    right: .6999rem;
+    margin:10px 0px;
+}
+
+.top-right-part .view-details-button span > a{
+    color: white;
+}
+
+.top-right-part .view-details-button .button img{
+    width: .35rem;
+    margin-right: .28rem;
+}
+
+.bottom-right-part {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-right-part .tags{
+    width: 100%;
+}
+
+.bottom-right-part .label-word{
+    text-align: center;
+}
+
+.bottom-right-part .labels .label{
+    margin-right: .1rem;
+}
+
+.bottom-right-part .labels .label-danger{
+    background-color: #ea3333;
+    font-weight: 500;
+}
+
+.bottom-right-part .labels .label-warning{
+    background-color: #f9a91d;
+    font-weight: 500;
+}
+
+.bottom-right-part .labels .label-info{
+    background-color: #319afc;
+    font-weight: 500;
+}

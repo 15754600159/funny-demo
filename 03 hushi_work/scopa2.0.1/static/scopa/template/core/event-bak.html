@@ -1,0 +1,272 @@
+<div class="location-nav">
+    <span class="goApp" style="  cursor: pointer;">应用</span> / 重大事件
+</div>
+<div class="tab">
+    <ul>
+        <li tab="event" class="active">重大事件</li>
+        <li tab="intelligence">预警情报</li>
+        <li tab="report">报送管理</li>
+        <li tab="labels">群体分类</li>
+    </ul>
+</div>
+
+<div class="list-container">
+    <div class="event">
+        <button class="btn-new-default btn-top btn-report1">情报报送</button>
+        <form enctype="multipart/form-data" onsubmit="return false;">
+            <input type="file" name="files" class="fileup">
+        </form>
+        <div class="chart-panel">
+            <div class="chart-filter">
+                <select class="year select">
+                    <option>2016</option>
+                    <option>2015</option>
+                    <option>2014</option>
+                    <option>2013</option>
+                    <option>2012</option>
+                    <option>2011</option>
+                    <option>2010</option>
+                    <option>2009</option>
+                    <option>2008</option>
+                    <option>2007</option>
+                    <option>2006</option>
+                    <option>2005</option>
+                    <option>2004</option>
+                    <option>2003</option>
+                    <option>2002</option>
+                    <option>2001</option>
+                    <option>2000</option>
+                </select>
+
+                <select class="partition select">
+                    <option value="0">统计全年</option>
+                    <option value="1">最近五年</option>
+                </select>
+            </div>
+            <div id="chart"></div>
+        </div>
+        <div class="data-list">
+            <table class="grid tablesorter">
+                <thead>
+                <tr>
+                    <th style="width: 15%">重大事件</th>
+                    <th style="width:10%" class=" order-data" data-order-filed="wxjb">危险级别</th>
+                    <th style="width:10%">案件数量</th>
+                    <th style="width:10%" class=" order-data" data-order-filed="zxhdsj">最新活动时间</th>
+                    <th style="width: 25%">核心诉求</th>
+                    <th style="width: 25%">事件描述</th>
+                    <th style="width: 5%">操作</th>
+
+                </tr>
+                </thead>
+            </table>
+            <div class="list-content" pageno="1">
+                <table class="grid tablesorter" id="list">
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="intelligence">
+        <button id="addReport" class="btn-new-default btn-top btn-report">情报报送</button>
+        <div class="search">
+            <button class="btn-blue">标签选择</button>
+            <div class="searchbox ">
+                <label><input name="keyword" class="searchbox-ipt" placeholder="请输入搜索内容" type="text"></label>
+                <a class="searchbox-btn" href="javascript:;"></a>
+            </div>
+            类型 <select class="select" name="">
+            <option value="1">常规情报</option>
+            <option value="2">情报指令</option>
+            <option value="3">事件预警</option>
+        </select>
+            <button class="btn-new-default pull-right">组合串并</button>
+        </div>
+        <div class="data-list">
+            <table class="grid tablesorter">
+                <thead>
+                <tr>
+                    <th rowspan="2" class="width5"><input type="checkbox"></th>
+                    <th rowspan="2" class="width5">序号</th>
+                    <th rowspan="2" class="width15">发布单位</th>
+                    <th rowspan="2" class="width10">文号</th>
+                    <th rowspan="2" class="width15">标题</th>
+                    <th rowspan="2" class="width10">原采集单位</th>
+                    <th rowspan="2" class="width10">填报时间</th>
+                    <th rowspan="2" class="width10">类型</th>
+                    <th colspan="4" style="    border-bottom: 1px solid #ccc; border-left: 1px solid #ccc;">处理状态</th>
+                </tr>
+                <tr>
+                    <th class="width5">阅读状态</th>
+                    <th class="width5">引用状态</th>
+                    <th class="width5">上报范围</th>
+                    <th class="width5">下发状态</th>
+                </tr>
+                </thead>
+            </table>
+            <div class="list-content" pageno="1">
+                <table class="grid tablesorter" id="intlist">
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="footer">共 <span class="total">10</span>条数据，当前显示到 <span>2</span>条</div>
+    </div>
+    <div class="report">
+        <button class="btn-new-default btn-top btn-report">情报报送</button>
+        <div class="search">
+            <button class="btn-blue">标签选择</button>
+            <div class="searchbox ">
+                <label><input name="keyword" class="searchbox-ipt" placeholder="请输入搜索内容" type="text"></label>
+                <a class="searchbox-btn" href="javascript:;"></a>
+            </div>
+            类型 <select class="select" name="">
+            <option value="1">常规情报</option>
+            <option value="2">情报指令</option>
+            <option value="3">事件预警</option>
+        </select>
+            <button class="btn-new-default pull-right">组合串并</button>
+        </div>
+        <div class="data-list">
+            <table class="grid tablesorter">
+                <thead>
+                <tr>
+                    <th rowspan="2" class="width5"><input type="checkbox"></th>
+                    <th rowspan="2" class="width5">序号</th>
+                    <th rowspan="2" class="width15">发布单位</th>
+                    <th rowspan="2" class="width10">文号</th>
+                    <th rowspan="2" class="width15">标题</th>
+                    <th rowspan="2" class="width10">原采集单位</th>
+                    <th rowspan="2" class="width10">填报时间</th>
+                    <th rowspan="2" class="width10">类型</th>
+                    <th colspan="4" style="    border-bottom: 1px solid #ccc; border-left: 1px solid #ccc;">处理状态</th>
+                </tr>
+                <tr>
+                    <th class="width5">阅读状态</th>
+                    <th class="width5">引用状态</th>
+                    <th class="width5">上报范围</th>
+                    <th class="width5">下发状态</th>
+                </tr>
+                </thead>
+            </table>
+            <div class="list-content" pageno="1">
+                <table class="grid tablesorter" id="report-list">
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="footer">共 <span>10</span>条数据，当前显示到 <span>2</span>条</div>
+    </div>
+    <div class="report-detail">
+        <div class="detail-title">预警事件详情-常规情报</div>
+        <div class="detail-left pull-left">
+            <ul class="top-label">
+                <li><span>线索编号：</span> <b class="info-xsbh"></b></li>
+                <li><span>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span> <b class="info-type"></b></li>
+                <li><span>发布单位：</span> <b class="info-cjdw"></b></li>
+                <li><span class="">发布时间：</span> <b class="info-cjsj"></b></li>
+            </ul>
+            <div class="title"><h3 class="info-bt"></h3></div>
+            <div class="content"><p class="info-xxzw"></p></div>
+            <div class="attachment-box"> 附件：<a class="attachment-btn">全选</a> <a class="attachment-btn">下载</a>
+                <ul class="attachment-list">
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="detail-right pull-right">
+            <div class="detail-toolbar">
+                <button class="btn-new-default">情报串并</button>
+                <button class="btn-new-default btn-intelligence btn-suggest">情报反馈</button>
+                <!--         <button  class="btn-new-default btn-intelligence">上报</button>-->
+                <button class="btn-new-default">群体档案</button>
+                <!--  <button  class="btn-new-default btn-intelligence"> 删除</button>-->
+                <button class="btn-new-default btn-close">关闭返回</button>
+            </div>
+            <div class="label-box">
+                <div class="label-title">分类标签</div>
+
+            </div>
+            <div class="label-box">
+                <div class="label-title">特征标签</div>
+                <ul class="label-features-box">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="report-add">
+        <div class="detail-title">新建</div>
+        <div class="container">
+            <div class="report-row">
+                <span>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</span>
+                <select name="" class="select">
+                    <option value="1">常规情报</option>
+                    <option value="2">情报指令</option>
+                    <option value="3">事件预警</option>
+                </select>
+            </div>
+            <div class="report-row"><span>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</span>
+                <input class="report-bt" type="text">
+            </div>
+            <div class="report-row"><span>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
+                <select class="select report-category"></select>
+                <span>上报范围：</span><select class="select report-sbfw"></select></div>
+            <div class="report-row"><span>信息文号：</span><input type="text" class="report-xxwh"></div>
+            <div class="report-row">
+                <div id="myEditor" style="width: 100%; height: 400px"></div>
+            </div>
+            <div class="report-row"><span>上传附件：</span>
+                <button class="btn-up">点击上传文件</button>
+                <form enctype="multipart/form-data" onsubmit="return false;">
+                    <input type="file" name="files" class="fileup">
+                </form>
+            </div>
+            <div class="report-row"><span>采集单位：</span><select class="select report-cjdw"></select></div>
+            <div class="report-row"><span>采&nbsp;&nbsp;集&nbsp;&nbsp;人：</span> <span class="report-cjr"></span></div>
+            <div class="report-row"><span>采集时间：</span><span class="report-time"></span></div>
+            <div class="report-row">
+                <button class="btn-new-default btn-submit">提交</button>
+                <button class="btn-new-default">取消</button>
+            </div>
+        </div>
+    </div>
+    <div class="labels">
+        <button class="btn-new-default btn-top">编辑</button>
+        <div class="label-list">
+
+        </div>
+    </div>
+
+</div>
+
+<div class="fixed-nav">
+    <div class="nav-box hide active">
+        <div class="nav-title">重大事件预警 <span class="icon  icon-dropdown2 pull-right"></span></div>
+        <ul class="nav-list">
+            <li>重大事件</li>
+            <li>预警情报</li>
+            <li>报送管理</li>
+            <li>群体分类</li>
+        </ul>
+    </div>
+    <div class="nav-box hide">
+        <div class="nav-title">重点人积分<span class="icon  icon-dropdown2 pull-right"></span></div>
+        <ul class="nav-list">
+            <li>临时布控</li>
+            <li>重点人积分</li>
+        </ul>
+    </div>
+    <div class="slider"></div>
+</div>

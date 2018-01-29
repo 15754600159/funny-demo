@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="qkmp-page" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>情报专题库</title>
+    <link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/plugins/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/bjscxq.css">
+    <link rel="stylesheet" href="../../css/qbztk.css">
+</head>
+
+<body>
+    <!-- 页面头部start -->
+    <div class="nav-bar">
+        <div class="logo-box">
+            <img src="../../img/bjscxq/logo.png" alt="警徽">
+        </div>
+        <img class="logo-word" src="../../img/bjscxq/logo-word.png" alt="背景审查平台">
+		<div class="top">
+            <div class="title">
+                 <a href="./qbztk.html">情报专题库</a>
+            </div>
+			 <div class="title">
+		          <a href="../subview/qkmp.html">比对摸排</a>
+		     </div>
+		     <div class="title">
+		          <a href="../taskManagement.html?sessionId=1">比对任务列表</a>
+		     </div>
+	     </div>
+        <div class="login-state">
+            <div class="person-icon">
+                <img src="../../img/bjscxq/person-icon.png" alt="You">
+            </div>
+            <div class="login-info">
+                <span class="admin-word">admin</span>
+                <span class="department-word">人事、管理员、管理部门</span>
+                <!-- <span class="triangle-icon"></span> -->
+            </div>
+        </div>
+        <div class="email-box">
+            <img class="email-icon" src="../../img/bjscxq/email-icon.png" alt="power">
+            <div class="note blue">
+                <span>6</span>
+            </div>
+        </div>
+        <div class="volume-box">
+            <img class="volume-icon" src="../../img/bjscxq/volume-icon.png" alt="power">
+            <div class="note orange">
+                <span>8</span>
+            </div>
+        </div>
+        <img class="power-icon" src="../../img/bjscxq/power-icon.png" alt="power">
+    </div>
+    <!-- 页面头部end -->
+
+    <!-- 页面内容部分start -->
+    <div class="page-content">
+
+        <div class="tab-nav-bar">
+            <div class="button renyuan active" data-subpage="renyuan">
+                <span>人员专题库</span>
+            </div>
+            |
+            <div class="button cheliang" data-subpage="cheliang">
+                <span>车辆专题库</span>
+            </div>
+            |
+            <div class="button dianzi" data-subpage="dianzi">
+                <span>电子专题库</span>
+            </div>
+            |
+            <div class="button wangluo" data-subpage="wangluo">
+                <span>网络专题库</span>
+            </div>
+            |
+            <div class="button renxiang" data-subpage="renxiang">
+                <span>人像专题库</span>
+            </div>
+            |
+            <div class="button anjian" data-subpage="anjian">
+                <span>案件专题库</span>
+            </div>
+            |
+            <div class="button dizhi" data-subpage="dizhi">
+                <span>地址专题库</span>
+            </div>
+            |
+            <div class="button wupin" data-subpage="wupin">
+                <span>物品专题库</span>
+            </div>
+            |
+            <div class="button zuzhi" data-subpage="zuzhi">
+                <span>组织专题库</span>
+            </div>
+            |
+            <div class="button shehui" data-subpage="shehui">
+                <span>社会资源类</span>
+            </div>
+            |
+        </div>
+
+        <div class="search-input-box">
+            <input class="input-search" id="table_search" data-length="0" type="text" placeholder="请输入搜索内容"/>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </div>
+
+        <div class="tables-box">
+
+            <div class="subpage subpage-renyuan active">
+                <!-- <div class="single-table">
+                    <img src="../../img/qbztk/renyuan.png" alt="icon">
+                    <span class="table-name">常驻人员车辆库</span>
+                    <span class="table-message-count">10</span>
+                </div> -->
+            </div>
+
+            <div class="subpage subpage-cheliang"></div>
+
+            <div class="subpage subpage-dianzi"></div>
+
+            <div class="subpage subpage-wangluo"></div>
+
+            <div class="subpage subpage-renxiang">
+                <div class="single-table">
+                    <img src="../../img/qbztk/renyuan.png" alt="icon">
+                    <span class="table-name">常驻人员车辆库</span>
+                    <span class="table-message-count">10</span>
+                </div>
+            </div>
+
+            <div class="subpage subpage-anjian"></div>
+
+            <div class="subpage subpage-dizhi"></div>
+
+            <div class="subpage subpage-wupin"></div>
+
+            <div class="subpage subpage-zuzhi"></div>
+
+            <div class="subpage subpage-shehui"></div>
+
+        </div>
+
+    </div>
+    <!-- 页面内容部分end -->
+
+    <!-- loading 弹窗start -->
+    <div id='loading'>
+        <div>
+            <img src='../../img/bjscxq/loading.gif' style='text-align:center;line-height:124px;'>
+        </div>
+    </div>
+    <!-- loading 弹窗end -->
+
+    <!-- 大模态框 浏览数据start -->
+    <div id="llsjModel" class="modal fade bs-example-modal-lg llsj-model" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">table name</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- <button type="button" class="btn btn-info btn-blue btn_output">
+                        <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+                        导出
+                    </button> -->
+                    <table class="table table-striped table-bordered table-condensed">
+                        <!-- <tr>
+                            <th>
+                                <label>
+                                    <input type="checkbox"> 全选
+                                </label>    
+                            </th> 
+                            <th>Heading</th>
+                            <th>Another Heading</th>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>row 1, cell 1</td>
+                            <td>row 1, cell 2</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>row 2, cell 1</td>
+                            <td>row 2, cell 2</td>
+                        </tr> -->
+                    </table>
+                </div>
+                <div class="body-footer">
+                    <div class="tip" style="display: none;">
+                        <span>仅显示前<span class="current-num">1000</span>条数据！</span>
+                    </div>
+                    <nav style="width: 100%;">
+                        <ul id="qkmpLlsjPagination" class="pagination"></ul>
+                    </nav>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- 大模态框 浏览数据end -->
+
+    <!-- 大模态框 人像专题库 浏览数据start -->
+    <div id="rxLlsjModel" class="modal fade bs-example-modal-lg llsj-model" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">table name</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- <button type="button" class="btn btn-info btn-blue btn_output">
+                        <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+                        导出
+                    </button> -->
+                    <div class="rx-message-box">
+                        <div class="single-rx">
+                            <div class="left-image-part">
+                                <img src="../../img/qbztk/person-head-icon.png" alt="person head icon">
+                            </div>
+                            <div class="right-detail-part">
+                                <p>
+                                    <span class="person-name">王明奇乐图</span>
+                                </p>
+                                <p>
+                                    身份证号：<span class="person-sfzh">150108199208032322 </span>
+                                </p>
+                                <p>
+                                    性别：<span class="person-xb">女</span>
+                                    民族：<span class="person-mz">汉</span>
+                                </p>
+                                <p>
+                                    户籍地：<span class="person-xb">内蒙古呼和浩特市</span>
+                                </p>
+                                <p>
+                                    现住地：<span class="person-xb">内蒙古包头市XX区Xz蒙古包头市XX区XX路</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single-rx"></div>
+                        <div class="single-rx"></div>
+                        <div class="single-rx"></div>
+                        <div class="single-rx"></div>
+                        <div class="single-rx"></div>
+                        <div class="single-rx"></div>
+                        <div class="single-rx"></div>
+                    </div>
+                </div>
+                <div class="body-footer">
+                    <div class="tip" style="display: none;">
+                        <span>仅显示前<span class="current-num">1000</span>条数据！</span>
+                    </div>
+                    <nav style="width: 100%;">
+                        <ul id="qkmpRxLlsjPagination" class="pagination"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 大模态框 人像专题库 浏览数据end -->
+
+
+
+
+    <script type="text/javascript" src="../../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/bootstrap-pagination.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/moment.js"></script>
+    <script type="text/javascript" src="../../js/plugins/daterangepicker.js"></script><!-- bootstrap的日历插件 -->
+    <script type="text/javascript" src="../../js/common/common.js"></script>
+    <!-- <script src="../../js/web/qkmpCommon.js"></script> -->
+    <script src="../../js/web/qbztk.js"></script>
+</body>
+
+</html>

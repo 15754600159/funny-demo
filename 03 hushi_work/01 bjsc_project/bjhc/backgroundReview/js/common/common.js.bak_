@@ -1,0 +1,51 @@
+var validatehost = "http://10.101.139.22:8889";
+
+function GetQueryString(name){
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+
+function loginValidate(){
+	// 取得参数中的cookieUserId
+	var cookieUserId = GetQueryString("cookieUserId");
+	if(!cookieUserId){
+		cookieUserId = sessionStorage.cookieUserId;
+	}
+	var localurl = document.URL.replace("http://","").replace("https://","");
+	if(cookieUserId){
+		// 调用验证 返回用户信息 是否可用
+		
+		$.get(validatehost + "/login/validate?cookieUserId="+cookieUserId, function(data){
+			if(data){
+				// 存储session
+				sessionStorage.cookieUserId = cookieUserId;
+				sessionStorage.user = JSON.stringify(data);
+				
+				var userInfo = '<a href="#">'+data.userName+',您好</a>';
+				console.log(userInfo);
+				$('.top .role').html(userInfo);
+				
+			}else{
+				$.get(validatehost + "/login/getValidateUrl", function(data){
+					var validateUrl = data;
+					var url = "http://"+validateUrl + "?requestUrl=" +localurl;
+					console.log(url);
+					location.href = url;
+				})
+			}
+		});
+	}else{
+		$.get(validatehost + "/login/getValidateUrl", function(data){
+			var validateUrl = data;
+			var url = "http://"+validateUrl + "?requestUrl=" +localurl;
+			console.log(url);
+			location.href = url;
+		})
+	}
+}
+
+
+$(function(){
+	loginValidate();
+});

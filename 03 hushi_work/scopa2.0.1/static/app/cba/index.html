@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<title>案件智能串并 - SCOPA</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/static/scopa/theme/default/common.css" rel="stylesheet">
+	<link href="/static/scopa/theme/default/core.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/cbasy.css" />
+    <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/static/common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+	<script>staticUrl = "/static";</script>
+	<script src="/static/common/config.js?t=201609011800" type="text/javascript"></script>
+	<script>seajs.use(['core/common/showelement','router','./js/cbasy.js'], function(module){SCOPA_showModule = module;})</script>
+	<!--<link href="/static/scopa/css/special.css" rel="stylesheet">-->
+</head>
+<body>
+<div id="all" >
+		<div>
+			<ol class="breadcrumb">
+			    <li><span id="goApp" style="cursor:pointer;">应用</span></li>
+			    <li  class="active">案件智能串并</li>
+		    </ol>
+		</div>
+
+        <div class="container-fluid">
+        <div id="top" class="row">
+              <div id="nav">
+			      <ul>
+			      	  <li id="zp" onclick="getTypeData('诈骗')"><span>诈骗</span></li>
+			      	  <li id="qj" onclick="getTypeData('抢劫')"><span>抢劫</span></li>
+			          <li id="dq" onclick="getTypeData('盗窃')"><span>盗窃</span></li>
+				  </ul>
+			   </div>
+			  	<div id="btn_sure">案件搜索</div>
+        </div>
+        
+		<div id="container" class="row">		    
+			  
+			 <div id="center" class="col-lg-6">
+			     <div class="font" >串并案分析结果</div><br>
+			     <div id="cenTexta" style="margin-top: 22px;width:98%;">
+			       <div id="cenText"style="width:97%;"></div> 
+			     </div>		 
+			 </div>
+			 <div id="right" class="col-lg-6">
+			    <div class="font" >案件统计</div><br>
+			    <DIV id="scl2"style="margin-top: 11px;width:98%">
+				<div id="scl" style="margin-top: 11px;width:97%;">
+			         <table id="detailInfor" style="color:#000000" border="1">
+			            <tr>
+			                 <th style="width: 75px;height:50px;">编号</th>
+			                 <th style="width: 75px;height:50px;">特征标签</th>
+			                 <th style="width: 75px;height:50px;">涉案人员</th>
+			                 <th style="width: 210px;height:50px;">案件概述</th>
+			                 <th style="width: 70px;height:50px;">操作</th>
+			            </tr>
+			          
+			          </table>
+	     		 </div>
+	     	   </DIV>
+			</div>	     
+		</div> 
+	</div> 
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,34 @@
+app.api.zxrygl = {
+	view: function(settings) {
+		app.api.ajax({
+			url: '/zxfx/management/view',
+			type: 'GET',
+			data: settings.data,
+		}, settings);
+	},
+	updata: function(settings) {
+		app.api.ajax({
+			url: '/zxfx/management/addition',
+			type: 'POST',
+			data: settings.data,
+		}, settings);
+	},
+	delete: function(settings) {
+		app.api.ajax({
+			url: '/zxfx/management/destroy?ids=' + settings.data.ids,
+			type: 'DELETE',
+		}, settings);
+	},
+	types: function(settings) {
+		app.api.ajax({
+			url: '/zx/sysDict/?types=' + settings.data.types,
+			type: 'get',
+		}, settings);
+	},
+	ids: function(settings) {
+		app.api.ajax({
+			url: '/zxfx/management/viewById/' + settings.data.types,
+			type: 'get',
+		}, settings);
+	}
+};

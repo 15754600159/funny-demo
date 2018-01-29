@@ -1,0 +1,166 @@
+.btn-current {
+  display: inline-block;
+  font-size: 12px;
+  color: $btn-current-txt;
+  padding: 6px 18px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  border-radius: 2px;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  background: -webkit-linear-gradient(left, $btn-current-from, $btn-current-to);
+  background: -o-linear-gradient(left, $btn-current-from, $btn-current-to);
+  background: linear-gradient(to right, $btn-current-from, $btn-current-to);
+  * {
+    color: $btn-current-txt;
+  }
+  &:hover, &:active{
+    color: $white;
+    * {
+      color: $white;
+    }
+    &:after{
+      @include size(100%,100%);
+      top: 0;
+      left: 0;
+      border-radius: 2px;
+      background: -webkit-linear-gradient(left, $btn-current-from, $btn-current-to);
+      background: -o-linear-gradient(left, $btn-current-from, $btn-current-to);
+      background: linear-gradient(to right, $btn-current-from, $btn-current-to);
+    }
+  }
+  &:hover:before{
+    content: '';
+    @include size(auto,14px);
+    display: inline-block;
+    position: absolute;
+    bottom: -5px;
+    left: 6px;
+    right: 6px;
+    z-index: -1;
+    -webkit-filter: blur(5px) brightness(0.88);
+    filter: blur(5px) brightness(0.88);
+    background: -webkit-linear-gradient(left, $btn-current-from, $btn-current-to);
+    background: -moz-linear-gradient(left, $btn-current-from, $btn-current-to);
+    background: linear-gradient(to right, $btn-current-from, $btn-current-to);
+  }
+  &:active:before{
+    display: none;
+  }
+  &:after{
+    content: '';
+    @include size(calc(100% - 4px),calc(100% - 4px));
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    background: $white;
+    z-index: -1;
+  }
+}
+.btn-current-warn {
+  display: inline-block;
+  font-size: 12px;
+  color: $btn-current-warn-txt;
+  padding: 6px 18px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  border-radius: 2px;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  background: -webkit-linear-gradient(left, $btn-current-warn-from, $btn-current-warn-to);
+  background: -o-linear-gradient(left, $btn-current-warn-from, $btn-current-warn-to);
+  background: linear-gradient(to right, $btn-current-warn-from, $btn-current-warn-to);
+  * {
+    color: $btn-current-warn-txt;
+  }
+  &:hover, &:active{
+    color: $white;
+    * {
+      color: $white;
+    }
+    &:after{
+      @include size(100%,100%);
+      top: 0;
+      left: 0;
+      border-radius: 2px;
+      background: -webkit-linear-gradient(left, $btn-current-warn-from, $btn-current-warn-to);
+      background: -o-linear-gradient(left, $btn-current-warn-from, $btn-current-warn-to);
+      background: linear-gradient(to right, $btn-current-warn-from, $btn-current-warn-to);
+    }
+  }
+  &:hover:before{
+    content: '';
+    @include size(auto,14px);
+    display: inline-block;
+    position: absolute;
+    bottom: -5px;
+    left: 6px;
+    right: 6px;
+    z-index: -1;
+    -webkit-filter: blur(5px) brightness(0.88);
+    filter: blur(5px) brightness(0.88);
+    background: -webkit-linear-gradient(left, $btn-current-warn-from, $btn-current-warn-to);
+    background: -moz-linear-gradient(left, $btn-current-warn-from, $btn-current-warn-to);
+    background: linear-gradient(to right, $btn-current-warn-from, $btn-current-warn-to);
+  }
+  &:active:before{
+    display: none;
+  }
+  &:after{
+    content: '';
+    @include size(calc(100% - 4px),calc(100% - 4px));
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    background: $white;
+    z-index: -1;
+  }
+}
+.btn-current.btn-circle, .btn-current-warn.btn-circle {
+  border-radius: 50%;
+  padding: 6px;
+  line-height: 100%;
+  .scopaicon{
+    @include size(12px,12px);
+    text-align: center;
+    vertical-align: middle;
+  }
+  &:hover, &:active{
+    &:after{
+      border-radius: 50%;
+    }
+  }
+  &:hover:before{
+    border-radius: 50%;
+  }
+  &:after{
+    border-radius: 50%;
+  }
+}
+.btn-current-disabled {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.26);
+  border: 2px solid #bdbdbd;
+  padding: 4px 16px;
+  font-size: 12px;
+  border-radius: 2px;
+  cursor: no-drop;
+}
+.btn-current-disabled.btn-circle{
+  padding: 4px;
+  border-radius: 50%;
+  * {
+    color: rgba(0, 0, 0, 0.26);
+  }
+  .scopaicon{
+    @include size(12px,12px);
+    text-align: center;
+    vertical-align: middle;
+  }
+}

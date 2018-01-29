@@ -1,0 +1,165 @@
+<div class="container bgmask">
+    <div id="window-qtwjgzpz-updateWindow" class="window" style="width: 90%; height: 90%;">
+        <header style="background:#4f8cf6">
+            <h1 style="color:#fff">修改规则信息</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <div class="content" style="padding:20px;">
+            <!-- 主规则 start -->
+            <form id="form-rule-update-main" class="form-view qtdwfx">
+                <section class="h-box col2">
+                    <div>
+                        <div class="control-item">
+                            <label class="required">规则名称</label>
+                            <div>
+                                <input type="text" class="input" name="ruleName">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-item">
+                            <label class="required">规则状态</label>
+                            <div>
+                                <select class="select" name="ruleStatus" id="">
+                                        <!-- <option value="">请选择</option>
+                                        <option value="">选择1</option> -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>规则描述</label>
+                        <div>
+                            <input type="text" class="input" name="ruleDesc">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>户籍</label>
+                        <div>
+                            <select class="select" name="ruleHuji" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>民族</label>
+                        <div>
+                            <select class="select" name="ruleMinzu" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>身份证号</label>
+                        <div>
+                            <input type="text" class="input" name="ruleSfzh">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>姓名</label>
+                        <div>
+                            <input type="text" class="input" name="ruleXm">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>性别</label>
+                        <div>
+                            <select class="select" name="ruleXingbie" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>年龄区间</label>
+                        <div>
+                            <input type="number" class="input" name="ruleAgeStart"> 至 <input type="number" class="input" name="ruleAgeEnd">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>年龄</label>
+                        <div>
+                            <input type="number" class="input" name="ruleAge">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>辖区</label>
+                        <div>
+                            <select class="select" name="ruleXiaqu" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>是否本地</label>
+                        <div>
+                            <select class="select" name="ruleLocal" id="">
+                                <option value="1">外地</option>
+                                <option value="2">本地</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动开始时间段</label>
+                        <div>
+                            <input name="ruleHdkssjdStart" size="16" type="text" readonly class="form_datetime" style="width:142px;">                            至
+                            <input name="ruleHdkssjdEnd" size="16" type="text" readonly class="form_datetime" style="width:142px;">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动结束时间段</label>
+                        <div>
+                            <input name="ruleHdjssjdStart" size="16" type="text" readonly class="form_datetime" style="width:142px;">                            至
+                            <input name="ruleHdjssjdEnd" size="16" type="text" readonly class="form_datetime" style="width:142px;">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>人员类别</label>
+                        <div>
+                            <select class="select" name="ruleRylb" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动场所类别</label>
+                        <div>
+                            <select class="select" name="ruleHdcslx" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动场所名称</label>
+                        <div>
+                            <input type="text" class="input" name="ruleHdcsmc">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>出发地</label>
+                        <div>
+                            <select class="select" name="ruleCfd" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>目的地</label>
+                        <div>
+                            <select class="select" name="ruleMdd" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>群体大小下限</label>
+                        <div>
+                            <input type="number" class="input" name="ruleMinsize">
+                        </div>
+                    </div>
+                </section>
+            </form>
+            <!-- 主规则 end -->
+            <hr/>
+            <h4>任务规则字表：</h4>
+            <button class="btn add-sub-rule">新增</button>
+            <!-- 子规则 start -->
+            <form id="form-rule-add-sub" class="form">
+
+            </form>
+            <!-- 子规则 end -->
+        </div>
+        <footer style="background:#4f8cf6">
+            <a class="btn" id="btn-ok-rule-update">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+    </div>
+</div>
+
+<script>
+    app.fxmxgl.qtwjgzpz.update.init();
+
+</script>

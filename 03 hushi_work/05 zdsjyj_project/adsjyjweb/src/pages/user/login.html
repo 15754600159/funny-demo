@@ -1,0 +1,33 @@
+<div class="bg-login"></div>
+<!-- 顶部导航 -->
+@@include('../common/@topbar.html')
+<div class="p-login">
+	<img class="login-logo-image" alt="" src="/images/logo.png">
+	<div class="content-login">
+		<div class="login-logo">
+			<h1 class="logo">
+				<span>大数据公安情报合成研判平台</span>
+			</h1>
+		</div>
+	
+		<form id="form-login" class="form-login">
+			<div class="item-input username">
+				<i class="icon icon-username"></i>
+				<input id="login-username" name="username" type="text" class="input-login" placeholder="用户名" value="" />
+			</div>
+			<div class="item-input">
+				<i class="icon icon-password"></i>
+				<input id="login-password" name="password" type="password" class="input-login" placeholder="密码" value="" />
+			</div>
+			<div class="h-box col2">
+				<button type="submit" class="btn-login">登录</button>
+				<button type="submit" class="btn-login pki">PKI登录</button>			
+			</div>
+			<div id="login-error" class="field-error"></div>
+		</form>
+	</div>
+</div>
+<script>
+	//app.login.init();
+</script>
+

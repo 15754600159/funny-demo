@@ -1,0 +1,219 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.top {
+	height: 70px;
+	background-color: #1A427D;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+.top>a {
+	float: left;
+	margin: 17px 20px;
+}
+
+.top .title {
+	font-size: 20px;
+	color: #fff ! important;
+	padding-left: 30px;
+	padding-top: 18px;
+	float: left;
+}
+.top .title a{
+	color: #337ab7
+}
+.top .title a:hover{
+	text-decoration: none;
+	color: #fff;
+}
+.top .role {
+	font-size: 18px;
+	color: #6DA7E7 ! important;
+	padding-right: 30px;
+	float: right;
+}
+
+.top .role a {
+	line-height: 70px;
+}
+
+.top .role a:hover {
+	color: #fff;
+}
+.content{
+	width: 90%;
+	margin: 0 auto;
+	border: 1px solid #000;
+	margin-top: 4.5%;
+	margin-bottom: 1%;
+	
+}
+.con_jichu,.con_shejiao,.con_shehui{
+	border-bottom: 1px dashed #000;
+	min-height: 270px;
+}
+.con_zhixi{
+	min-height: 270px;
+}
+.content div h3{
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 2.5%;
+}
+.content .con_pic dl{
+	width: 100%;
+}
+.content .con_pic dl dt,dd{
+	float: left;
+}
+.clearFloat{
+	clear: both;
+}
+.content .con_pic dl dd{
+	width: 80%;
+	margin-top: 1.5%;
+}
+.content .con_pic dl dd p{
+	line-height: 50px;
+}
+.content .con_pic dl dd span{
+	margin-right: 30%;
+}
+.content .con_pic .riqi{
+	margin-right: 24.8%;
+}
+.content .dianhua{
+	margin-left: 2.5%;
+}
+.content .dianhua div{
+	float: left;
+}
+.content .dianhua div p{
+	border: 1px solid #000;
+	text-align: center;
+}
+.content .dianhua .dianhua_first{
+	width: 80px;
+}
+.content .dianhua .dianhua_div{
+	margin-left: 27%;
+}
+.content .dianhua div p span{
+	display: block;
+	padding: 5px;
+}
+.con_shehui .dachu div{
+	float: left;
+}
+.con_shehui .dachu div p span{
+	display: block;
+}
+.dachu_div{
+	margin-left: 2.5%;
+}
+.dachu_div1{
+	margin-left: 5%;
+}
+.dachu_span,.qinshu_span{
+	display: inline-block;
+	text-align: center;
+	margin: 8px auto;
+	padding: 5px 5px;
+}
+.qinshu{
+	font-weight: normal;
+	font-size: 14px;
+}
+.con_zhixi .qinshu_div1{
+	margin-left: 2.5%;
+}
+.con_zhixi .qinshu div{
+	float: left;
+	width: 30%;
+}
+.con_zhixi .qinshu div p span{
+	display: inline-block;
+}
+.content .con_jichu{
+	width: 100%;
+}
+.content .con_jichu div{
+	float: left;
+}
+.content .img-box{
+	width: 220px;
+}
+.content .person-info{
+	width: 60%;
+}
+.content .person-info p{
+	margin-top: 5%;
+}
+.content .person-info p span{
+	margin-right: 5%;
+}
+.content .img-box img{
+	width: 150px;
+	height: 150px;
+	margin-top: 25px;
+	margin-left: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

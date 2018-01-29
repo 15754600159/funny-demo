@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+	<head>
+		<title>用户行为统计 - Scopa</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../../theme/default/images/common/favicon.ico" rel="shortcut icon">
+		<link href="../../../common/gallery/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../theme/default/common.css" rel="stylesheet">
+		<link href="../../theme/default/core.css" rel="stylesheet">
+		<script src="../../../common/stacktrace.js" type="text/javascript"></script>
+		<script src="../../../common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+		<script>
+			var _href = window.location.href,
+				_index = window.location.href.indexOf("/scopatrunk/");
+			staticUrl = (-1 == _index ? "" : _href.slice(0, _index + 11)) + "/static";
+		</script>
+		<script src="../../../common/config.js" type="text/javascript"></script>
+		<style>
+			body{ background:none;}
+			h1{ font-weight: bold; font-size: 1.5em;}
+			.main{ padding:20px!important; height:auto;}
+			.doc{ padding:20px; margin:0 auto;}
+			code{ margin:0 5px; padding:0 2px; border:1px solid rgba(0,0,0,0.1); display:inline-block;}
+			table.newtable th, table.newtable td{border-left: 1px solid #c8d0dd;}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="doc">
+				<h1>【用户行为统计说明】v2.0</h1>
+				<div>
+					<p>通过记录用户操作行为轨迹，并进行统计分析，为 <b>优化SCOPA系统功能</b>、<b>提升用户体验</b> 提供真实可靠的数据支撑。
+						<a class="getmapping" href="/console.html#!scopa/actionlog">
+							<button class="btn btn-sm btn-primary">查看行为统计表</button>
+						</a>
+					</p>
+				</div>
+				<hr style="border-top:1px solid #ccc;">
+				<h1>【前端埋点】</h1>
+				<div>
+					<pre>/**
+* @name Utils#serverLog
+* @function   
+* @desc 记录用户操作行为日志。
+* @param {Number} operateid
+* @return {String} content
+*/
+mining.utils.serverLog(ID, content);//用户行为记录</pre>
+				</div>
+				<hr style="border-top:1px solid #ccc;">
+				<h1>【测试说明】</h1>
+				<div>
+					<p>每个 <b>操作点</b> 对应操作完毕后，F12在Console控制台会有log状态输出，如下</p>
+					<p><span class="label label-success">成功</span>：<img src="images/ServerLog-SUCCESS.png"></p>
+					<p><span class="label label-danger">失败</span>：<img src="images/ServerLog-ERROR-1.png"></p>
+					<p><span class="label label-danger">失败</span>：<img src="images/ServerLog-ERROR-2.png"></p>
+				</div>
+				<hr style="border-top:1px solid #ccc;">
+				<h1>【操作点列表】</h1>
+				<table class="newtable">
+					<thead>
+						<th class="txtc">序号</th>
+						<th>操作点</th>
+						<th>操作内容</th>
+						<th>ID</th>
+					</thead>
+					<tbody><tr><td colspan="4" class="loading"></td></tr></tbody>
+				</table>
+			</div>
+		</div>
+		<script type="text/javascript">
+			seajs.use('../serverlog/serverlog');
+		</script>
+	</body>
+
+</html>

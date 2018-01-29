@@ -1,0 +1,116 @@
+<div class="new-page">
+	
+	<div class="page-content drypfx">
+		<!-- 筛选条件框start -->
+		<div class="content-block filter-box">
+			<div class="color-block-title">筛选条件</div>
+			<div class="filter-conditions">
+				<form action="" id="form-group-search">
+					<div class="input-item">
+						<label>人群名称：</label>
+						<input name="rqmc" type="text" class="input" placeholder="请输入人群名称" />
+					</div>
+					<div class="input-item">
+						<label>导入人：</label>
+						<input name="drr" type="text" class="input" placeholder="请输入导入人" />
+					</div>
+					<div class="input-item">
+						<label>人群规模：</label>
+						<input name="rqgm" type="text" class="input" placeholder="请输入人群规模" />
+					</div>
+					<div class="input-item">
+						<label>人群类型：</label>
+						<input name="rqlx" type="text" class="input" placeholder="请输入人群类型" />
+					</div>
+					<div class="input-item">
+						<label>导入时间段：</label>
+						<div class="time-select">
+							<input name="drsjStart" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+							<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+							--
+							<input name="drsjEnd" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+							<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						</div>
+					</div>
+
+					<div class="filter-button-box">
+						<button type="button" class="btn btn-normal btn_search" onclick="app.drypfx.search.SearchInfo(1, 10);">查 询</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+		<!-- 筛选条件框end -->
+
+		<!-- 操作按钮start -->
+		<div class="operate-buttons-box">
+			<div class="left-buttons">
+				<button type="button" class="btn btn-normal" onclick="app.drypfx.add.open();">添加</button>
+				<button type="button" class="btn btn-border" onclick="app.drypfx.deleteMutiple();">删除</button>
+				<button type="button" class="btn btn-border" onclick="app.drypfx.search.init();">刷新</button>
+			</div>
+			<div class="right-buttons"></div>
+		</div>
+		<!-- 操作按钮end -->
+		<!-- 数据表格start -->
+		<div class="table-box">
+			<table class="table table-bordered my-table-striped my-table-condensed">
+				<thead>
+					<tr>
+						<th class="checks td-width-1">
+							<label class="check">
+								<input type="checkbox" name="r2" value="1" id="Checkall" class="check-all">
+								<span>全选</span>
+							</label>
+						</th>
+						<th class="td-width-2">可疑人群编号</th>
+						<th class="td-width-2">人群名称</th>
+						<th class="td-width-1">人群类型</th>
+						<th class="td-width-1">人群规模</th>
+						<th class="td-width-2">导入时间</th>
+						<th class="td-width-1">导入人</th>
+						<th>研制原因</th>
+						<th class="td-width-3">操作</th>
+					</tr>
+				</thead>
+				<tbody class="table-body">
+					<!-- <tr data-id="1111">
+                        <td>
+                            <label class="check">
+                                <input type="checkbox" name="task" value="1">
+                                <span> </span>
+                            </label>
+                        </td>
+                        <td>a00000123</td>
+                        <td>团伙</td>
+                        <td>危险</td>
+                        <td>1000人次</td>
+                        <td>1900-2000</td>
+                        <td>admin</td>
+                        <td>无聊了</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary" onclick="app.drypfx.import.open(this);">导入</button>
+                            <button class="btn btn-sm btn-primary" style="margin-left:3px;" onclick="app.ckrqcy.search.open();">人员</button>
+                            <button class="btn btn-sm btn-primary" style="margin-left:3px;" onclick="app.drypfx.check.open(this);">查看</button>
+                            <button class="btn btn-sm btn-info" style="margin-left:3px;" onclick="app.drypfx.update.open(this);">修改</button>
+                            <button class="btn btn-sm btn-danger" style="margin-left:3px;" onclick="app.drypfx.deleteSingle(this);">删除</button>
+                            <button class="btn btn-sm btn-danger" style="margin-left:3px;">到图析</button>
+                            <button class="btn btn-sm btn-danger" style="margin-left:3px;">关系碰撞</button>
+                        </td>
+                    </tr> -->
+				</tbody>
+			</table>
+
+			<ul id="drypfxPagination" class="pagination pagination-sm"></ul>
+		</div>
+		<!-- 数据表格end -->
+
+	</div>
+
+
+	<script>
+		app.drypfx.search.init();
+	</script> 
+
+</div>
+	

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>背景审查详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bjscxq.css">
+    <link rel="stylesheet" type="text/css" href="../css/backgroundReview.css" />
+</head>
+
+<body>
+    <!-- 页面头部start -->
+    <div class="nav-bar">
+        <div class="logo-box">
+            <img src="../img/bjscxq/logo.png" alt="警徽">
+        </div>
+        <img class="logo-word" src="../img/bjscxq/logo-word.png" alt="背景审查平台">
+
+        <div class="login-state">
+            <div class="person-icon">
+                <img src="../img/bjscxq/person-icon.png" alt="You">
+            </div>
+            <div class="login-info">
+                <span class="admin-word">admin</span>
+                <span>人事、管理员、管理部门</span>
+                <span class="triangle-icon"></span>
+            </div>
+        </div>
+        <div class="email-box">
+            <img class="email-icon" src="../img/bjscxq/email-icon.png" alt="power">
+            <div class="note blue">
+                <span>6</span>
+            </div>
+        </div>
+        <div class="volume-box">
+            <img class="volume-icon" src="../img/bjscxq/volume-icon.png" alt="power">
+            <div class="note orange">
+                <span>8</span>
+            </div>
+        </div>
+        <img class="power-icon" src="../img/bjscxq/power-icon.png" alt="power">
+    </div>
+    <!-- 页面头部end -->
+
+    <!-- 搜索栏start -->
+    <div class="search-bar">
+        <div class="content-box">
+            <div class="search-type">
+                <span class="active">背景审查</span> |
+                <span>情况摸排</span>
+            </div>
+            <input type="text" id="task_text" class="form-control input" placeholder="">
+            <!-- 背景审查按钮start -->
+            <div class="bjsc-buttons" style="">
+                <div class="button check" id="task_btn">
+                    <img src="../img/bjscxq/check.png" alt="check">
+                    <span>背景审查</span>
+                </div>
+                <div class="button upload" id="shangchuan">
+                    <img src="../img/bjscxq/upload.png" alt="check">
+                    <span>批量上传</span>
+                </div>
+                <div class="button download" id="moban">
+                    <img src="../img/bjscxq/download.png" alt="check">
+                    <span>模板下发</span>
+                </div>
+            </div>
+            <!-- 背景审查按钮end -->
+        </div>
+    </div>
+    <!-- 搜索栏end -->
+    
+    <div class="tankuang">
+			<div class="head-bar"><p class="close">X</p></div>
+			<div class="hecha">
+				<label><input type="text" class="hecha_input" placeholder="输入核查任务名" /><span class="panduan">请输入核查任务名</span></label>
+			</div>
+			<div class="liulan">
+				<form method="post" enctype="multipart/form-data" id="liulan-form">
+					<input type="file" name="file" class="liulan_file" /><span class="panfile">请选择文件</span>
+				</form> 
+			</div>
+			<p class="info_p">是否上传？</p>
+			<div class="sure"><button class="btn btn-inverse esc">取消</button><button class="btn btn-success ok">确定</button></div>
+	</div>
+	<div class="tankuang1">
+			<div class="tankuang1_content">
+				成功文件数：<span class="tankuang1_success"></span>失败文件数：<span class="tankuang1_fail"></span>
+			</div>
+			<p class="info_p">是否上传？</p>
+			<div class="sure"><button class="btn btn-inverse esc1">取消</button><button class="btn btn-success ok1">确定</button></div>
+	</div>
+    
+    <!-- 搜索结果start -->
+    <div class="result-table-box" >
+        <!-- 结果列表start -->
+        <div class="results-list">
+            <!-- <div class="result-box">
+                <div class="head-icon-box">
+                    <img src="../img/bjscxq/head-icon.png" alt="head-icon">
+                </div>
+                <div class="person-info-box">
+                    <div class="top-right-part">
+                        <div class="basic-info-box">
+                            <h3 class="person-name">王明奇乐图</h3>
+                            <div class="person-info-row row">
+                                <div class="col-md-5">身份证号：<span class="person-sfzh">150108199208032322</span></div>
+                                <div class="col-md-5">职业：<span class="person-occupation">退役军人，教师，出租车司机</span></div>
+                                <div class="col-md-2">性别：<span class="person-sex">女</span></div>
+                            </div>
+                            <div class="person-info-row row">
+                                <div class="col-md-2">民族：<span class="person-nation">汉</span></div>
+                                <div class="col-md-5">户籍地：<span class="person-domicile">内蒙古呼和浩特市</span></div>
+                                <div class="col-md-5">现住地：<span class="person-residence">内蒙古包头市XX区XX路</span></div>
+                            </div>
+                        </div>
+                        <div class="occupation-box">
+                            <span class="occu-label">职业：</span>
+                            <ol>
+                                <li>退役军人：2017-08-06至2017-08-15     在XX部队入伍</li>
+                                <li>教师：2017-08-06至2017-08-15     在XX职业高中任职</li>
+                                <li>教师：2017-08-06至2017-08-15     在XX职业高中任职</li>
+                            </ol>
+                        </div>
+                        <div class="view-details-button">
+                            <div class="button">
+                                <img src="../img/bjscxq/page-icon.png" alt="check">
+                                <span>查看详情</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-right-part">
+                        <div class="tags row">
+                            <div class="col-md-1 label-word">标签：</div>
+                            <div class="col-md-11 labels">
+                                <span class="label label-danger">部下发涉稳人员</span>
+                                <span class="label label-danger">部下发上访人员</span>
+                                <span class="label label-warning">打处记录</span>
+                                <span class="label label-warning">经侦黑名单</span>
+                                <span class="label label-warning">工作对象</span>
+                                <span class="label label-info">进京上访</span>
+                                <span class="label label-info">跨市活动</span>
+                                <span class="label label-info">频繁更换酒店</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- 结果列表end -->
+
+    </div>
+    <!-- 搜索结果end -->
+    
+    <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+	<script src="../js/plugins/jquery.form.js"></script>
+	<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/fetch.js"></script>
+	<script type="text/javascript" src="../js/plugins/moment.js"></script>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script type="text/javascript" src="../js/web/index.js"></script>
+	
+</body>
+
+</html>

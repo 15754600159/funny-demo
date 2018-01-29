@@ -1,0 +1,51 @@
+<div class="breadnavbg"></div>
+<div class="breadnav">
+	<ul role="nav" class="list-unstyled list-inline modeltype">
+		<li class="breadnav-graph"><a href="#!scopa/graph">图析模式</a></li>
+		<li class="breadnav-map active"><a href="#!scopa/map" class="hassplit">轨迹模式</a></li>
+		<li class="breadnav-ticket"><a href="#!scopa/ticket">话单模式</a></li>
+	</ul>
+</div>
+	
+<!-- 图析左侧部分 start -->
+<div class="grahpside">
+	<!-- 图展示 start -->
+	<div class="graph">
+		<div class="toolbar">
+			<ul>
+				<li class="actionbtn undo"><span class="scopaicon scopaicon-houtui"></span><span class="text">后退</span></li>
+				<li class="actionbtn redo"><span class="scopaicon scopaicon-qianjin"></span><span class="text">前进</span></li>
+				<li class="actionbtn circlesearch"><span class="scopaicon scopaicon-banjingsousuo"></span><span class="text">半径搜索</span></li>
+				<li class="actionbtn pathsearch"><span class="scopaicon scopaicon-lujingsousuo"></span><span class="text">路径搜索</span></li>
+				<!--<li class="actionbtn formatpath"><span class="scopaicon scopaicon-guijinihe"></span><span class="text">轨迹拟合</span></li>-->
+				<li class="actionbtn viewgraph"><span class="scopaicon scopaicon-daotuxi"></span><span class="text">到图析</span></li>
+				<li class="actionbtn viewfile"><span class="scopaicon scopaicon-daodangan"></span><span class="text">到档案</span></li>
+				<li class="actionbtn openevent"><span class="scopaicon scopaicon-shijianleibie"></span><span class="text">事件列表</span></li>
+			</ul>
+			<ul>
+				<li class="actionbtn select-multi"><span class="scopaicon scopaicon-duoxuan"></span><span class="text">选择多个</span></li>
+				<!--<li class="actionbtn save-snapshot"><span class="scopaicon scopaicon-kuaizhao"></span><span class="text">保存快照</span></li>-->
+				<li class="actionbtn clearall"><span class="scopaicon scopaicon-qingkong"></span><span class="text">清空地图</span></li>
+			</ul>
+		</div>
+		<div id="mapGraph" style="width:100%;"></div>
+	</div>
+	<!-- 图展示 end -->
+	<!-- 时间线展示 start -->
+	<div class="timeline">
+		<div class="scalebox">
+			<a class="scalebtn scalebtn-full" href="javascript:;" title="收起"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
+			<a class="scalebtn scalebtn-small" href="javascript:;" title="展开"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+			<div class="scaleimg"></div>
+		</div>
+		<div class="legendbox">
+			<div class="legendtree ztree"></div>
+		</div>
+		<div class="chartbox"></div>
+	</div>
+	<!-- 时间线展示 end -->
+</div>
+<!-- 图析左侧部分 end -->
+<!-- 图析右侧部分 start -->
+<div class="infoside"></div>
+<!-- 图析右侧侧部分 end -->

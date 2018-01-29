@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>人员核录统计</title>
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="../css/ryhc.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/jquery-confirm.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap-datetimepicker.css" />
+	<style type="text/css" media="screen">
+		   .main{
+		   		display: flex;
+		   	} 
+	</style>
+</head>
+<body>
+	<div class="all">
+		<div class="top">
+              <a href="#"><img src="../img/nav-logo.png"></a>
+              <div class="role">
+                    <a href="#">admin</a>
+              </div>
+        </div>
+        <div class="serach-box content">
+        	<div class="title">
+        		<span>人员核录统计</span>
+        	</div>
+			<table class="serach-tab">
+				<tbody>
+					<tr>
+						<td>开始日期：</td>
+						<td><input type="text" class="form-control2 form_datetime" placeholder='开始日期' id="ksrq"></td>
+						<td>结束日期：</td>
+						<td><input type="text" class="form-control2 form_datetime" placeholder='结束日期' id="jsrq"></td>
+						<td>
+							<label class="check" style="">
+								<input type="checkbox" name="" id="domicile-query">
+								<span>按户籍区域统计</span>
+							</label>
+						</td>
+						<!-- <td>核录单位：</td>
+						<td><input type="text" class="form-control2" placeholder='核录单位' id="hldw"></td>
+						<td>核录人：</td>
+						<td><input type="text" class="form-control2" placeholder='核录人' id="hlr"></td> -->
+
+						<td><button id="search-ry" class="btn btn-primary">查询</button>
+							<button id="export-ry" class="btn btn-default" style="position: relative;">导出</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="details-box" style="display: flex;">
+			<!-- <table class="tab-details"> -->
+			<table class="table table-bordered table-striped table-hover"  style="width:48%">
+				<thead>
+					<tr>
+						<th class="thead-name">核查区域</th>
+						<th>核查数量</th>
+						<th>比中数量</th>
+					</tr>
+				</thead>
+				<tbody id="tableBody1">
+					<!-- <tr>
+						<td>警局1</td>
+						<td><a data-toggle="modal" data-target="#myModal">100</a></td>
+					</tr>
+					<tr>
+						<td>警局3</td>
+						<td><a>300</a></td>
+					</tr> -->
+				</tbody>
+			</table>
+			<table class="table table-bordered table-striped table-hover" style="width:48%">
+				<thead>
+					<tr>
+						<th class="thead-name">核查区域</th>
+						<th>核查数量</th>
+						<th>比中数量</th>
+					</tr>
+				</thead>
+				<tbody id="tableBody2">
+					<!-- <tr>
+						<td>警局2</td>
+						<td><a>200</a></td>
+					</tr>
+					<tr>
+						<td>警局4</td>
+						<td><a>400</a></td>
+					</tr> -->
+				</tbody>
+			</table>
+		</div>
+		<!-- 分页 -->
+		<!-- <div style="text-align: right">
+			<ul id="pagination" class="pagination">
+			</ul>
+		</div> -->
+		<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+		<div class="main">
+			<!--<div id="main1" style="width: 400px;height:400px;"></div>-->
+    		<div id="main2" style="width: 1400px;height:600px;"></div>
+		</div>
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+		    <div class="modal-dialog">
+		        <div class="modal-content content-color">
+		            <div class="modal-header header-color">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title modal-thead-name" id="myModalLabel">核查单位</h4>
+		            </div>
+		            <div class="modal-body">
+						<table class="table table-bordered table-striped table-hover">
+							<thead>
+								<tr>
+									<th class="modal-thead-name">核查单位</th>
+									<th class="modal-thead-type-name">核查数量</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody_modal">
+								<tr>
+									<td>分局1</td>
+									<td>100</td>
+								</tr>
+								<tr>
+									<td>分局3</td>
+									<td>300</td>
+								</tr>
+							</tbody>
+						</table>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+		
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModalCity" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+		    <div class="modal-dialog">
+		        <div class="modal-content content-color">
+		            <div class="modal-header header-color">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title modal-thead-name" id="myModalLabel">核查单位</h4>
+		            </div>
+		            <div class="modal-body">
+						<table class="table table-bordered table-striped table-hover">
+							<thead>
+								<tr>
+									<th class="modal-thead-name">核查单位</th>
+									<th class="modal-thead-type-name">核查数量</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody_modal_city">
+								<tr>
+									<td>分局1</td>
+									<td>100</td>
+								</tr>
+								<tr>
+									<td>分局3</td>
+									<td>300</td>
+								</tr>
+							</tbody>
+						</table>
+		            </div>
+		            <div class="modal-footer" id="modal-footer">
+		            	
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+    	
+
+		<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+		<script src="../js/plugins/jquery.form.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/fetch.js"></script>
+		<script type="text/javascript" src="../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+		<script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript" src="../js/web/ryhltj.js"></script>
+		<script type="text/javascript" src="../js/common/jquery-confirm.min.js"></script>
+		<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.zh-CN.js"></script>
+		
+	</div>
+</body>
+</html>

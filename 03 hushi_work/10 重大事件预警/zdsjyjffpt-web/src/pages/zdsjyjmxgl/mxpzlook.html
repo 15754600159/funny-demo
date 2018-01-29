@@ -1,0 +1,245 @@
+<div class="new-page">
+
+    <div class="page-content add-qb">
+        <!-- 基本信息start -->
+        <div class="content-block content-block-jbxx">
+            <div class="color-block-title">基本信息</div>
+            <div class="block-content">
+                <form class="alignment-form" action="">
+                    <div class="input-item">
+                        <label>模型名称：</label>
+                        <input name="bt" type="text" class="input" placeholder="请输入线索标题" id="name-inpu" />
+                    </div>
+                    <div class="input-item">
+                        <label>模型类型：</label>
+                        <select name="qbsxlb" class="form-control select" id="mxlx-inpu">
+                            <option value=""></option>
+                            <option value="">涉稳事件预警模型</option>
+                            <option value="">涉疆事件预警模型</option>
+                            <option value="">治安事件预警模型</option>
+                        </select>
+                    </div>
+                    <div class="input-item form-item-width" style="width:26vm">
+                        <label>模型描述：</label>
+                        <input name="bt" type="text" class="input" placeholder="请输入模型描述" id="miaoshu" />
+                    </div>
+                    <div class="input-item">
+                        <label>是否有效：</label>
+                        <select name="cancelstatus" class="form-control select" id="sfyx-inpu">
+                            <option value="">-全部-</option>
+                            <option value="1">-是-</option>
+                            <option value="0">-否-</option>
+                        </select>
+                    </div>
+                    <div class="input-item ">
+                        <label>人员类别：</label>
+                        <input id="rylb" code="" onclick="app.zdsjyjmxgl.add.showMenu('rylb'); return false;" type="text" class="form-control2" placeholder='人员类别'
+                            readonly />
+                    </div>
+                    <div class="input-item ">
+                        <label>本地关注人员：</label>
+                        <select name="cancelstatus" class="form-control select" id="mxpz-bdgzry">
+                            <option value="">-全部-</option>
+                        </select>
+                    </div>
+                    <div class="input-item wfgzry">
+                        <label class="check" style="margin-left:87px">
+                            <input type="checkbox" value="1">
+                            <span>维稳关注人员</span>
+                        </label>
+                    </div>
+                    <div class="input-item ">
+                        <label>群体类别：</label>
+                        <input id="qtlb" code="" onclick="app.zdsjyjmxgl.add.showMenu('qtlb'); return false;" type="text" class="form-control2" placeholder='群体类别'
+                            readonly />
+                    </div>
+                    <div class="input-item ">
+                        <label>户籍：</label>
+                        <input id="citySel" code="" onclick="app.zdsjyjmxgl.add.showMenu('citySel'); return false;" type="text" class="form-control2"
+                            placeholder='户籍地区划' />
+                        <input id="ucodeName" type="hidden">
+                    </div>
+                    <div class="input-item ">
+                        <label>民族：</label>
+                        <select name="mz" class="form-control select" id="minzu-inpu">
+                            <option value="">--</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>性别：</label>
+                        <select name="cancelstatus" class="form-control select" id="sex-inpu">
+                            <option value="">-全部-</option>
+                            <option value="0">-男-</option>
+                            <option value="1">-女-</option>
+                        </select>
+                    </div>
+                    <div class="input-item ">
+                        <label>年龄区间：</label>
+                        <input name="bt" type="text" class="input" placeholder="年龄" style="width: 65px;" id="agestrat-inpu" /> --
+                        <input name="bt" type="text" class="input" placeholder="年龄" style="width: 65px;" id="ageend-inpu" />
+                    </div>
+                    <div class="input-item ">
+                        <label>人员阈值：</label>
+                        <input name="bt" type="text" class="input" placeholder="请输入人员阈值" id="renyuan-inpu" />
+                    </div>
+                    <div class="input-item">
+                        <label>敏感时期：</label>
+                        <select name="cancelstatus" class="form-control select" id="mgsq">
+                            <option value="">-全部-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>预警时段开始时间:</label>
+                        <input name="bt" type="text" class="input" disabled="disabled" id="kssj" />
+                    </div>
+                    <div class="input-item">
+                        <label>预警时段结束时间:</label>
+                        <input name="bt" type="text" class="input" disabled="disabled" id="jssj" />
+                    </div>
+
+                    <!-- <div class="input-item upload-file">
+                            <label>上传附件：</label>
+                            <button type="button" class="btn btn-border">上传文件</button>
+                            <span class="tip">上传文件不能找过5M，仅允许导入”xls”或”xlsx”格式文件。</span>
+                            <ol class="file-list">
+                                <li>
+                                    重点人员名单.xls
+                                    <span>删除</span>
+                                </li>
+                                <li>
+                                    重点人员名单.xls
+                                    <span>删除</span>
+                                </li>
+                            </ol>
+                        </div> -->
+
+                </form>
+            </div>
+        </div>
+        <!-- 基本信息end -->
+        <!-- 关联涉事人员start -->
+        <div class="content-block content-block-glssry">
+            <div class="color-block-title">活动类型信息</div>
+            <div class="block-content" id="lei_check">
+                <div class="single-message message-glssry" style="margin-bottom:20px;">
+                    <div class="input-item" style="float:left;">
+                        <label class="check ">
+                            <input type="checkbox" value="1" id="chw">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="input-item">
+                        <span>活动类型：同行</span>
+                    </div>
+                    <div class="input-item">
+                        <label>出行工具：</label>
+                        <div class="radio-content tx">
+                            <label class="check checkall">
+                                <input type="checkbox" value="3" disabled="disabled">
+                                <span>汽车</span>
+                            </label>
+                            <label class="check checkall">
+                                <input type="checkbox" value="2" disabled="disabled">
+                                <span>火车</span>
+                            </label>
+                            <label class="check checkall">
+                                <input type="checkbox" value="1" disabled="disabled">
+                                <span>飞机</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-item tx tcc">
+                        <label>是否同车次：</label>
+                        <div class="radio-content">
+                            <label class="check">
+                                <input type="radio" name="tcc" value="1" checked disabled="disabled">
+                                <span>是</span>
+                            </label>
+                            <label class="check">
+                                <input type="radio" name="tcc" value="0" disabled="disabled">
+                                <span>否</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-item tx cfd">
+                        <label>出发地是否相同：</label>
+                        <div class="radio-content">
+                            <label class="check">
+                                <input type="radio" name="cfd" value="1" checked disabled="disabled">
+                                <span>是</span>
+                            </label>
+                            <label class="check">
+                                <input type="radio" name="cfd" value="0" disabled="disabled">
+                                <span>否</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-item tx">
+                        <label>目的地：</label>
+                        <select name="cancelstatus" class="form-control select" id="hc-inpu" disabled="disabled">
+                            <option value="0">呼和浩特</option>
+                            <option value="1">北京</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="single-message message-glssry" style="margin-bottom:20px;">
+                    <div class="input-item" style="float:left;">
+                        <label class="check checkall">
+                            <input type="checkbox" value="4" id="bg">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="input-item">
+                        <span>活动类型：宾馆同住</span>
+                    </div>
+                    <div class="input-item txx">
+                        <label>是否同屋同住：</label>
+                        <div class="radio-content twtz">
+                            <label class="check ">
+                                <input type="radio" name="sfzdr" value="1" checked disabled="disabled">
+                                <span>是</span>
+                            </label>
+                            <label class="check">
+                                <input type="radio" name="sfzdr" value="0" disabled="disabled">
+                                <span>否</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-message message-glssry" style="margin-bottom:20px;">
+                    <div class="input-item" style="float:left;">
+                        <label class="check checkall">
+                            <input type="checkbox" value="5">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="input-item" style="    line-height: 30px;">
+                        <span>活动类型：网吧同上网</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 关联涉事人员end -->
+
+    </div>
+    <!-- 操作按钮start -->
+    <div class="buttons">
+        <button type="button" class="btn btn-border " onclick="app.zdsjyjmxgl.look.close()">取消</button>
+        <button type="button" class="btn btn-normal btn_save" onclick="app.zdsjyjmxgl.look.updata()">保存</button>
+    </div>
+    <!-- 操作按钮end -->
+    <div id="citySelContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+        <ul id="citySelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+    </div>
+    <div id="rylbContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+        <ul id="rylbUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+    </div>
+    <div id="qtlbContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+        <ul id="qtlbUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+    </div>
+    <script>
+        app.zdsjyjmxgl.add.init();
+    </script> 
+
+</div>

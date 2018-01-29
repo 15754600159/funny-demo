@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>本地关注车辆</title>
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="../css/ryhc.css" />
+
+	<link rel="stylesheet" type="text/css" href="../css/plugins/jquery-confirm.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap-datetimepicker.css" />
+</head>
+<body>
+	<div class="all">
+		<div class="top">
+          <a href="#"><img src="../img/nav-logo.png"></a>
+     
+          <div class="role">
+                <a href="#">admin</a>
+          </div>
+        </div>
+        <div class="serach-box content">
+        	<div class="title">
+        		<span>本地关注车辆</span>
+        	</div>
+			<table class="serach-tab">
+				<tbody>
+					<tr>
+						<td>机动车所有人：</td>
+						<td><input type="text" class="form-control2" placeholder='机动车所有人' id="bhr_xm"></td>
+						<td>身份证号：</td>
+						<td><input type="text" class="form-control2" placeholder='身份证号' id="bhlr_sfzh"></td>
+						<td>车牌号：</td>
+						<td><input type="text" class="form-control2" placeholder='车牌号' id="cph"></td>
+						
+						<td><button id="search-bdry" class="btn btn-primary">查询</button></td>
+					</tr>
+					<tr>
+						<td>车辆类型：</td>
+						<td>
+							<select class="form-control2" id="cllx">
+								<option value="">-全部-</option>
+								
+							</select>
+						</td>
+						<td>关注类型：</td>
+						<td>
+							<select class="form-control2" id="gzlx" onchange="change(this.options[this.options.selectedIndex].value)">
+								<option value="">-全部-</option>
+							</select>
+						</td>
+						<td>车辆关注类型：</td>
+						<td>
+							<select class="form-control2" id="clgzlx" onchange="xichange(this.options[this.options.selectedIndex].value)">
+								<option value="">-全部-</option>
+								
+							</select>
+						</td>
+						
+					</tr>
+					<tr>
+						<td>导入时间起：</td>
+						<td><input type="text" class="form-control2  form_datetime" placeholder='导入时间起' id="drsj_start"></td>
+						<td>导入时间止：</td>
+						<td><input type="text" class="form-control2 form_datetime" placeholder='导入时间止' id="drsj_end"></td>
+						<td>导入人：</td>
+						
+						<td><input type="text" class="form-control2" placeholder='导入人' id="drr_xm"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="tools-box">
+			<div  style="position: absolute;right: 20px">
+			<button id="plxg" class="btn btn-success"  onclick="confire('批量修改')">批量修改</button>
+			<button id="plcx" class="btn btn-danger" onclick="chexiao()" >批量撤销</button>
+			<button id="plhf" class="btn btn-warning" onclick="reset()" >批量恢复</button>
+			<button id="download-cl" class="btn btn-default" >模板下载</button>
+			<button id="import-cl" class="btn btn-default" data-toggle="modal" data-target="#myModal">导入</button>
+			<button id="export-bdcl" class="btn btn-default" >导出</button>
+			</div>
+		</div>
+		<div class="details-box">
+			<!-- <table class="tab-details"> -->
+			<table class="table table-bordered table-striped table-hover" style="table-layout: fixed;">
+				<thead>
+					<tr>
+						<th style="width:4.5%;">
+						<label class="checkbox-inline">
+						<input type="checkbox" id="ckAll" value="" name="12"> 全选
+						</label>
+						</th>
+						<th style="width:5%">关注类型</th>
+						<th style="width:7%">车辆关注类型</th>
+						<th style="width:5%">机动车所有人</th>
+						<th style="width:167px">身份证号</th>
+						<th style="width:6%">车牌号</th>
+						<th style="width:5.5%">车辆类型</th>
+						<!-- <th style="width:x">中文品牌名称</th> -->
+						<th style="width:5.5%">户籍地区</th>
+						<th style="width:5.99%">户籍地详址</th>
+						<th style="width:5.5%">现住地区</th>
+						<th style="width:4%">事由</th>
+						<th style="width:5%">处置要求</th>
+						<th style="width:146px">比对截止日期</th>
+						<th style="width:4.5%">导入人</th>
+						<th style="width:146px">导入时间</th>
+						<th style="width:100px">操作</th>
+					</tr>
+				</thead>
+				<tbody id="tableBody">
+				</tbody>
+			</table>
+		</div>
+		<!-- 分页 -->
+		<div style="text-align: right">
+			<ul id="pagination" class="pagination">
+			</ul>
+		</div>
+		
+        <!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+		    <div class="modal-dialog" style="width: 650px;">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel">本地关注车辆导入</h4>
+		            </div>
+		            <div class="modal-body">
+						<div class="add form-horizontal">
+				            <form class="uploadfj" onsubmit="return false;" enctype="multipart/form-data">
+				                <div class="form-group"><label class="col-sm-2 control-label">*选择文件</label>
+				                    <div class="col-sm-8"><input type="file" name="file" id="excel-import" class="form-control add" style="height: 30px;"><span class="error hide">请选择要导入的excel文件</span>
+				                    </div>
+				                </div>
+				            </form>
+				            <div class="form-group">
+				                <label class="col-sm-2 control-label"></label>
+				                <div class="col-sm-10">
+				                    <button class="btn-current import-cl-ok">确定</button>
+				                </div>
+				            </div>
+				        </div>
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		                <!-- <button type="button" class="btn btn-primary">提交更改</button> -->
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+		    <div class="modal-dialog">
+		        <div class="modal-content content-color">
+		            <div class="modal-header header-color">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel2"></h4>
+		            </div>
+		            <div class="modal-body">
+		            	<table class="table table-bordered table-striped table-hover">
+							<tbody id="tableBody_modal2" tid="">
+								<tr>
+									<td>姓名</td>
+									<td><input type="text" id="xm_a"></td>
+									<td>身份证号</td>
+									<td><input type="text" id="sfzh_a"></td>
+								</tr>
+								<tr>
+									<td>车牌号</td>
+									<td>
+										<input type="text" id="cph_a">
+									</td>
+									<td>车辆类型</td>
+									<td>
+										<input type="text" id="cllx_a">
+									</td>
+								</tr>
+								<tr>
+									<td>中文品牌名称</td>
+									<td colspan="3"><input type="text" id="zwppmc_a"></td>
+								</tr>
+								<tr>
+									<td>户籍地区</td>
+									<td colspan="3"><input type="text" id="hjdq_a"></td>
+								</tr>
+								<tr>
+									<td>户籍地祥址</td>
+									<td colspan="3"><input type="text" id="hjdxz_a"></td>
+								</tr>
+								<tr>
+									<td>现住地区</td>
+									<td colspan="3"><input type="text" id="xzdq_a"></td>
+								</tr>
+								<tr>
+									<td>事由</td>
+									<td colspan="3"><input type="text" id="sy_a"></td>
+								</tr>
+								<tr>
+									<td>处置要求</td>
+									<td colspan="3"><input type="text" id="czyq_a"></td>
+								</tr>
+								<tr>
+									<td>关注类型</td>
+									<td><input type="text" id="sjlx_a"></td>
+									<td>比对截至日期</td>
+									<td><input type="text" class="daterangepicker8" id="bdzq_a"></td>
+								</tr>
+							</tbody>
+						</table>
+		            </div>
+		            <div class="modal-footer">
+						<button id="alert_ok" class="btn btn-default">确定</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+
+
+<!-- 查看模态框（Modal） -->
+		<div class="modal fade" id="myModal_see" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+		    <div class="modal-dialog">
+		        <div class="modal-content content-color">
+		            <div class="modal-header header-color">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel_see"></h4>
+		            </div>
+		            <div class="modal-body_see">
+		            	<table class="table table-bordered table-striped table-hover">
+							<tbody id="tableBody_modal_see">
+								
+							</tbody>
+						</table>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+		    <div class="modal-dialog">
+		        <div class="modal-content content-color">
+		            <div class="modal-header header-color">
+		               
+		                <h4 class="modal-title" id="myModalLabel3">
+						比对止期
+		                </h4>
+		            </div>
+		            <div class="modal-body"><span>请选择比对止期:</span>
+		     			 <input size="16" type="text"  readonly class="form_datetime biduizhiqi" style="width:146px">
+		            </div>
+		            <p class="jinggao" style="color: red;margin-left: 18px;display: none">请选择时间</p>
+		            <div class="modal-footer">
+						<button id="ok" class="btn btn-default">确定</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+		
+		<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+		<script src="../js/plugins/jquery.form.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/jquery.form.js"></script>
+		<script type="text/javascript" src="../js/plugins/fetch.js"></script>
+		<script type="text/javascript" src="../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+
+		<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script type="text/javascript" src="../js/common/jquery-confirm.min.js"></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript" src="../js/web/bdgzcl.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/plugins/jquery-confirm.min.css" />
+		<script type="text/javascript" src="../js/common/jquery-confirm.min.js"></script>
+		
+	</div>
+</body>
+</html>

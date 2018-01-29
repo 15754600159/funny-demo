@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>人员核录统计</title>
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="../css/ryhc.css" />
+	<link rel="stylesheet" type="text/css" href="../css/EzServerClient.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/popup.css" />
+	<style type="text/css" media="screen">
+		   .main{
+		   		display: flex;
+		   	} 
+	</style>
+</head>
+<body>
+	<div class="all">
+		<div class="top">
+              <a href="#"><img src="../img/nav-logo.png"></a>
+              <div class="role">
+                    <a href="#">admin</a>
+              </div>
+        </div>
+        <div class="serach-box content">
+        	<div id="map" style="width:100%;height:100%;"></div>
+		</div>
+		<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/EzMapAPI.js"></script>
+		<script type="text/javascript" src="../js/plugins/EzServerClient.min.js"></script>
+		<script src="../js/plugins/jquery.form.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/fetch.js"></script>
+		<script type="text/javascript" src="../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+		<script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript">
+			 map = new EzMap('map');
+			 var hosturl = "http://10.101.139.22:9897";
+			 $.ajax({
+			 	url: hosturl+"/personcheck/info/findpageCompare",
+			 	type: 'post',
+			 	dataType: 'json',
+			 	data: { 
+			 		pageno:1, 
+        			size: 99999
+        		},
+			 })
+			 .done(function(data) {
+			 	console.log(data.result); 
+			 	var data = data.result;
+			 	//[0].checkLocation;
+			 	for (var i = 0; i < data.length; i++) {
+			 		if(data[i].checkLocation){
+			 		var jd = data[i].checkLocation.split(",")[0];
+			 		var wd = data[i].checkLocation.split(",")[1];
+                    var position = new EzCoord(jd,wd);
+                    var marker = new EzMarker(position);
+                    map.addOverlay(marker);
+
+			 		}
+			 		
+                                       
+                };
+                markerclick(data)
+			 })
+			 .fail(function() {
+			 	console.log("error");
+			 })
+			 .always(function() {
+			 	console.log("complete");
+			 });
+
+		map.addMapEventListener(Ez.Event.MAP_MOUSEMOVE,function(evt){
+		var pixel = evt.pixel;
+		var marker = map.forEachFeatureAtPixel(pixel,function(feature,layer){
+			if (feature instanceof EzMarker) {
+				return feature;
+			}
+		});
+		if (marker) {
+			this.getViewport().style.cursor = 'pointer';
+		} else {
+			this.getViewport().style.cursor = '';
+		}
+	},map);
+		var markerclick = function(data){
+		map.addMapEventListener(Ez.Event.MAP_CLICK,function(evt){
+
+		   var pixel = evt.pixel;
+		   var coord = evt.coordinate;
+		   
+		   var marker = map.forEachFeatureAtPixel(pixel,function(feature,layer){
+		       if (feature instanceof EzMarker) {
+		           return feature;
+		       }
+		   });
+
+		   if (marker) {
+		    
+		      if (data) {
+		      	$(".ol-overlaycontainer").html("")
+		        for (var i = 0; i < data.length; i++) {
+		            var arry = new Array;
+		            if(data[i].checkLocation){
+		            	 arry = [Number(data[i].checkLocation.split(",")[0]).toFixed(6),Number(data[i].checkLocation.split(",")[1]).toFixed(6)];
+		            var oldstring = arry.toString();
+
+		            var arryold = new Array;
+
+		            arryold = [Number(marker.getPoint().coordinate_[0]).toFixed(6),Number(marker.getPoint().coordinate_[1]).toFixed(6)];
+		            var newstring = arryold.toString();
+		            if(newstring === oldstring){
+		                console.info(data[i]);
+		                var strHTML1 = '<p>名字:</br>'+data[i].name+'</p><p>性别:'+data[i].sex+'</p><p>身份证号:</br>'+data[i].idcardNo+'<p>警员:</br>'+data[i].policeName+'<p>';
+		                marker.openInfoWindow(strHTML1)
+		            }
+		            }
+		           
+		        }
+		      }
+		   }
+		},map);  
+		} 
+		</script>
+		
+	</div>
+</body>
+</html>

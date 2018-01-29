@@ -1,0 +1,70 @@
+'use strict';
+
+$(function () {
+    /**-----mian----------------------------------------------------------------------------------------------------------------------------- */
+    // 页面初始化
+    initPage();
+
+    /**
+     * @desc: 页面初始化
+     * @param: none
+     * @return: undefined 
+     */
+    function initPage() {
+        resizeFunc();
+
+        // 页面窗口大小变化 重新计算布局
+        $(window).resize(resizeFunc);
+
+        // 点击事件监听
+        bindClickFunc();
+
+    }
+
+    /**-----逻辑方法----------------------------------------------------------------------------------------------------------------------- */
+
+    /**
+     * @desc: 改变页面html的font-size大小 和 搜索结果result-table-box 元素的top值
+     * @param: none
+     * @return: undefined 
+     */
+    function resizeFunc() {
+        //重新设置html的font-size
+        var width = document.body.clientWidth;
+        var fontSize = (width - 1680) * 0.0298 + 50;
+        $('html').css('font-size', fontSize);
+
+    }
+
+
+    /**
+     * @desc: 页面点击事件绑定
+     * @param: none
+     * @return: undefined 
+     */
+    function bindClickFunc() {
+
+    }
+
+
+
+
+
+
+    /**-------工具方法----------------------------------------------------------------------------------------------------------------------------------*/ 
+
+    /**
+     * @desc 比较两个字符串是否相等 相等返回true
+     * @param {*字符串1} str1 String
+     * @param {*字符串2} str2 String
+     * @return Boolean
+     */
+    function compareStr(str1, str2){
+        return $.trim(str1) === $.trim(str2);
+    }
+
+
+
+
+
+})

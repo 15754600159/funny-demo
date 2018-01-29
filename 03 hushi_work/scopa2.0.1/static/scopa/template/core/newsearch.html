@@ -1,0 +1,147 @@
+<div class='search-container flex-box'>
+		<!--检索卡片 start-->
+		<div class='search-card'>
+			<div class='search-keyword'>
+				<input type="text" class='key-word' placeholder="请输入身份证号、姓名、车牌号、手机号等">
+				<span class='clear-key'>×</span>
+				<i class="iconfont">&#xe627;</i>
+			</div>
+			<!--tab标签 start-->
+			<div class='search-tabs'>
+				<p class='tabs-title'>切换标签</p>
+				<div class='flex-box tabs-chip'>
+					<div class='tab-item current' data-value='all'>
+						<i class="iconfont">&#xe62b;</i>
+						<p>全部</p>
+					</div>
+					<div class='tab-item' data-value='entity'>
+						<i class="iconfont">&#xe62d;</i>
+						<p>实体</p>
+					</div>
+					<div class='tab-item' data-value='media'>
+						<i class="iconfont">&#xe62c;</i>
+						<p>文本</p>
+					</div>
+				</div>
+			</div>
+			<!--tab标签 end-->
+			<div class='super-search'>
+				<p class='super-search-title'>高级搜索设置<i class="iconfont">&#xe628;</i></p>
+				<div class='super-card'>
+					<div class='search-item search-label'>
+						<div class='select-chip legal-case'>
+							<span class='select-title'><span>请选择</span><i class="iconfont">&#xe628;</i></span>
+							<dl class='select-option'>
+								<dd data-value='-1'>请选择</dd>
+								<dd data-value='PERSON'>人</dd>
+								<dd data-value='VEHICLE'>车</dd>
+								<dd data-value='CASE'>案件</dd>
+							</dl>
+						</div>
+						<span>满足任意以下条件</span>
+						<button class='clear-conditions'>清除全部条件</button>
+					</div>
+					<!--模版holder start-->
+					<div class='condition-card'>				
+					</div>
+					<!--模版holder end-->
+					<div class='super-search-btn'>
+						<button>开始检索</button>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<!--检索卡片 end-->
+		<!--结果集卡片 start-->
+		<div class='result-card data-page'><!--page-event-->
+			<div class='scroll-view'>
+				<div class='table'>
+					<div class='loading'></div>
+				</div>
+			</div>
+			<div class='data-page'>
+				<div class="pull-left">当前浏览至第<span class='current-page'>1</span>页，共<span class='total-num'>0</span>条</div>
+				<div class='pages pull-right'></div>
+			</div>
+		</div>
+		<!--结果集卡片 end-->
+	</div>
+	<!--underscore模版：条件列项 -->
+	<script type="text/template" id="condition-tpl">
+		<div class='condition-chip'>
+			<div class='select-chip'>
+				<span class='select-title'><span><%=title%></span><i class="iconfont">&#xe628;</i></span>
+				<dl class='select-option'>
+					<div class='select-scroll'>
+					<%_.each(items, function (option,index) {%>
+						<%if(index==0){%>
+							<dd><%=option%></dd>
+						<%}else{%>
+							<dd><%=option%></dd>
+						<%}%>
+					<%})%>
+					<div>
+				</dl>
+			</div>		
+		</div>
+		<div class='condition-value'>
+			<input type='text' id='case-date' name='casedate' placeholder='请选择起止日期'/>
+			<div class='select-chip'>
+				<span class='select-title'><span><%=values[0]%></span><i class="iconfont">&#xe628;</i></span>
+				<dl class='select-option'>
+					<div class='select-scroll'>
+					<%_.each(values, function (option,index) {%>
+						<%if(index==0){%>
+							<dd><%=option%></dd>
+						<%}else{%>
+							<dd><%=option%></dd>
+						<%}%>
+					<%})%>
+					</div>
+				</dl>
+			</div>		
+		</div>
+		<i class="iconfont add-condition">&#xe62a;</i>
+		<i class="iconfont remove-condition">&#xe629;</i>
+	</script>
+	<!--underscore模版：检索结果 -->
+	<script type="text/template" id="result-tpl">
+		<%
+			_.each(record,function(item){
+			var data = item.v[0],
+				high = item.highlight[0],
+				icon = mining.mappingutils.getGraphIcon(data,'big'),//①头像
+				icon2 = mining.mappingutils.getGraphIcon(data),//①头像
+				title = mining.mappingutils.getTitle(data),//②标题
+				property = mining.mappingutils.getProperties(data,'primary');//③主属性
+		%>
+		<div class='result-item row'>
+			<div class='item-icon'>
+				<img class="entityimg" src='<%=icon%>' _src='<%=icon2%>'/>
+			</div>
+			<div class='item-info'>
+				<p>
+					<strong><%=title%></strong>
+					<span class='to-do'>
+						<a class="action-file" data-gid='<%=data.gid%>' href="javascript:;" title="添加到档案"><span class="icon icon-toarchives"></span></a>
+						<a class="action-graph" data-gid='<%=data.gid%>' href="javascript:;" title="添加到图析"><span class="icon icon-tomappinganalysis"></span></a>
+					</span>
+				</p>
+				<%_.each(property,function(item){%>
+					<p><strong><%=item.name%>：</strong><%=item.value%><p>
+				<%})%>
+
+				<%
+				var detailInfo=[];
+				_.each(high,function(item){
+				 detailInfo.push(item);
+				});
+				detailInfo=detailInfo.join('.');
+				%>
+				<p><strong>详情：</strong>
+				<%=detailInfo%>
+				</p>
+			</div>
+		</div>
+		<%})%>
+	</script>

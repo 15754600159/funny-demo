@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)http://10.101.139.21:8777/taskManagement.html?sessionId=1&cookieUserId=99ca3cb2b54a0c86c432 -->
+<html lang="zh-cn">
+
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>任务管理</title>
+
+      <link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../css/backgroundReview.css">
+</head>
+
+<body>
+      <div class="all">
+
+            <!-- 头部start -->
+            <div class="top">
+                  <a href="http://10.101.139.21:8777/taskManagement.html?sessionId=1&amp;cookieUserId=99ca3cb2b54a0c86c432#"><img src="../img/nav-logo.png"></a>
+                  <div class="title">
+                        <a href="http://10.101.139.21:8777/backgroundReciew.html?sessionId=1">背景审查</a>
+                  </div>
+                  <div class="title">
+                        <a href="http://10.101.139.21:8777/taskManagement.html?sessionId=1">任务列表</a>
+                  </div>
+                  <div class="role"><a href="http://10.101.139.21:8777/taskManagement.html?sessionId=1&amp;cookieUserId=99ca3cb2b54a0c86c432#">明略管理员,您好</a></div>
+            </div>
+            <!-- 头部end -->
+
+            <!-- 内容main部分start -->
+            <div class="container-fluid content">
+                  <!-- 副标题切换start -->
+                  <div class="subtitle-box">
+                        <span class="bjsc active">背景审查任务列表</span> |
+                        <span class="qkmp">情况摸排任务列表</span>
+                  </div>
+                  <!-- 副标题切换end -->
+
+                  <!-- 查询任务名栏start -->
+                  <form class="task-management">
+                        <input type="text" class="form-control" placeholder="请输入要查找的任务名" id="chaxun_input">
+                        <button type="button" class="btn btn-default" id="chaxun">查询</button>
+                  </form>
+                  <!-- 查询任务名栏end -->
+
+                  <!-- 搜索结果列表start -->
+
+                  <!-- 背景审查表  1  start -->
+                  <table class="table table-bjsc table-bordered table-striped table-hover" id="task_table">
+                        <thead>
+                              <tr>
+                                    <th>任务名</th>
+                                    <th>上传人</th>
+                                    <th>上传时间</th>
+                                    <th>上传条数</th>
+                                    <th>审查进度</th>
+                                    <th></th>
+                                    <th></th>
+                              </tr>
+                        </thead>
+                        <tbody id="task_tbody">
+                              <tr>
+                                    <td>ttt</td>
+                                    <td>admin</td>
+                                    <td>2017/08/17 09:11:04</td>
+                                    <td>4</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 100%;">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(897)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(897,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>tetttt</td>
+                                    <td>admin</td>
+                                    <td>2017/08/06 09:01:05</td>
+                                    <td>4</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(889)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(889,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>test1</td>
+                                    <td>admin</td>
+                                    <td>2017/08/04 07:47:59</td>
+                                    <td>4</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(887)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(887,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>pasf</td>
+                                    <td>admin</td>
+                                    <td>2017/07/31 11:13:36</td>
+                                    <td>143</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(879)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(879,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>重点人员</td>
+                                    <td>admin</td>
+                                    <td>2017/07/24 06:59:59</td>
+                                    <td>0</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(867)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(867,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>17720</td>
+                                    <td>admin</td>
+                                    <td>2017/07/20 01:40:05</td>
+                                    <td>2857</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(865)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(865,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>20170720</td>
+                                    <td>admin</td>
+                                    <td>2017/07/20 01:37:49</td>
+                                    <td>0</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(863)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(863,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>人员审查</td>
+                                    <td>admin</td>
+                                    <td>2017/07/15 01:50:55</td>
+                                    <td>169531</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(861)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(861,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>学生</td>
+                                    <td>admin</td>
+                                    <td>2017/07/14 08:44:26</td>
+                                    <td>3010</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(859)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(859,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>背景审查</td>
+                                    <td>admin</td>
+                                    <td>2017/07/14 08:33:55</td>
+                                    <td>545</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(849)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(849,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>333</td>
+                                    <td>admin</td>
+                                    <td>2017/06/19 12:03:35</td>
+                                    <td>5</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(845)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(845,this)">删除</td>
+                              </tr>
+                              <tr>
+                                    <td>111</td>
+                                    <td>admin</td>
+                                    <td>2017/06/19 11:56:02</td>
+                                    <td>3</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="taskDetail1" onclick="DataDetail(843)">详情</td>
+                                    <td class="taskDel1" onclick="DelData(843,this)">删除</td>
+                              </tr>
+                        </tbody>
+                  </table>
+                  <!-- 背景审查表  1  end -->
+
+                  <!-- 情况摸排表  2  start -->
+                  <table class="table table-qkmp table-bordered table-striped table-hover" id="task_table" style="display:none;">
+                        <thead>
+                              <tr>
+                                    <th>任务名</th>
+                                    <th>操作人</th>
+                                    <th>摸排开始时间</th>
+                                    <th>摸排结束时间</th>
+                                    <th>任务状态</th>
+                                    <th>任务进度</th>
+                                    <th>操作</th>
+                              </tr>
+                        </thead>
+                        <tbody id="task_tbody">
+                              <tr>
+                                    <td>重点人员</td>
+                                    <td>admin</td>
+                                    <td>2017/08/17 09:11:04</td>
+                                    <td>2017-08-23 09:09:34</td>
+                                    <td>进行中</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 80%;">80%</div>
+                                          </div>
+                                    </td>
+                                    <td class="">
+                                          <a href="#">查看摸排结果</a>
+                                          <a href="#">查看</a>
+                                          <a href="#">修改</a>
+                                          <a href="#">删除</a>
+                                    </td>
+                              </tr>
+                              <tr>
+                                    <td>学生审查</td>
+                                    <td>admin</td>
+                                    <td>2017/08/17 09:11:04</td>
+                                    <td>2017-08-23 09:09:34</td>
+                                    <td>成功</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 100%;">100%</div>
+                                          </div>
+                                    </td>
+                                    <td class="">
+                                          <a href="#">查看摸排结果</a>
+                                          <a href="#">查看</a>
+                                          <a href="#">修改</a>
+                                          <a href="#">删除</a>
+                                    </td>
+                              </tr>
+                              <tr>
+                                    <td>重点人员</td>
+                                    <td>admin</td>
+                                    <td>2017/08/17 09:11:04</td>
+                                    <td>2017-08-23 09:09:34</td>
+                                    <td>失败</td>
+                                    <td>
+                                          <div class="progress">
+                                                <div class="progress-bar" role="progressbar" style="width: 80%;">80%</div>
+                                          </div>
+                                    </td>
+                                    <td class="">
+                                          <a href="#">查看摸排结果</a>
+                                          <a href="#">查看</a>
+                                          <a href="#">修改</a>
+                                          <a href="#">删除</a>
+                                    </td>
+                              </tr>
+                        </tbody>
+                  </table>
+                  <!-- 情况摸排表end  2   -->
+
+                  <!-- 搜索结果列表end -->
+
+                  <!-- 分页 -->
+                  <div style="text-align: right">
+                        <nav style="width: 100%;">
+                              <ul id="pagination" class="pagination">
+                                    <li class="disabled"><span>本页12条记录/共12条记录</span></li>
+                                    <li>
+                                          <div class="input-group dropup" style="float: left;"><button class="btn btn-default dropdown-toggle pagesize-fix-center" type="button"
+                                                      data-toggle="dropdown" aria-expanded="true">每页显示<span class="pagesize">15</span>条记录<span class="caret"></span></button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">5</a></li>
+                                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">10</a></li>
+                                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">20</a></li>
+                                                </ul>
+                                          </div>
+                                    </li>
+                                    <li class="disabled"><a href="javascript:;">首页</a></li>
+                                    <li class="disabled"><a href="javascript:;">上一组</a></li>
+                                    <li class="disabled"><a href="javascript:;">上一页</a></li>
+                                    <li class="active"><a href="javascript:;">1</a></li>
+                                    <li class="disabled"><a href="javascript:;">下一页</a></li>
+                                    <li class="disabled"><a href="javascript:;">下一组</a></li>
+                                    <li class="disabled"><a href="javascript:;">尾页</a></li>
+                                    <li>
+                                          <div class="input-group page-input"><input type="text" class="form-control" placeholder="GO"></div>
+                                    </li>
+                                    <li class="disabled"><span>第1页/共1页</span></li>
+                              </ul>
+                        </nav>
+                  </div>
+            </div>
+            <!-- 内容main部分end -->
+
+      </div>
+
+
+      <script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+      <script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+      <script src="../js/plugins/jquery.tablesorter.min.js"></script>
+      <script type="text/javascript" src="../js/plugins/fetch.js"></script>
+      <script type="text/javascript" src="../js/plugins/moment.js"></script>
+      <script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+      <script type="text/javascript" src="../js/common/common.js"></script>
+      <script type="text/javascript" src="../js/web/task.js"></script>
+
+
+
+</body>
+
+</html>

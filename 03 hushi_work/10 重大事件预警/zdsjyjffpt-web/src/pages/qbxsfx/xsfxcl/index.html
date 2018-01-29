@@ -1,0 +1,303 @@
+<div class="new-page">
+
+    <div class="page-content xsfxcl">
+        <!-- 页面上部start -->
+        <div class="top-part">
+            <div class="input-item">
+                <label>情报名称：</label>
+                <input name="bt" type="text" class="input" readonly="readonly" />
+            </div>
+            <div class="input-item">
+                <label>产生时间：</label>
+                <input name="tbsj" type="text" class="input" readonly="readonly" />
+            </div>
+            <div class="input-item">
+                <label>涉及地点：</label>
+                <input name="fsdxz" type="text" class="input" readonly="readonly" />
+            </div>
+            <div class="input-item">
+                <label>涉事类型：</label>
+                <select name="sslb" class="form-control select" disabled="disabled">
+                    <option value="">-请选择-</option>
+                    <option value="">-涉稳人员-</option>
+                    <option value="">-涉藏人员-</option>
+                </select>
+            </div>
+            <div class="input-item">
+                <label>主体人员：</label>
+                <input name="xm" type="text" class="input" readonly="readonly" />
+            </div>
+            <div class="input-item text-area">
+                <label>情报内容：</label>
+                <textarea name="xxzw" readonly="readonly"></textarea>
+            </div>
+        </div>
+        <!-- 页面上部end -->
+        <!-- 页面下部start -->
+        <div class="bottom-part">
+            <div class="tab-bar">
+                <!-- <div class="title">情报分析研判</div> -->
+                <div class="tabs">
+                    <span data-subpage="glssqt" class="active">关联涉事群体</span>
+                    <span data-subpage="glssry">关联涉事人员</span>
+                    <span data-subpage="xsxsjl">相似线索聚类</span>
+                    <span data-subpage="ystq">要素提取</span>
+                    <!-- <span data-subpage="xfgj">相符轨迹</span> -->
+                </div>
+            </div>
+            <div class="tab-content">
+                <!-- 关联涉事群体 -->
+                <div class="sub-page glssqt active">
+                    <div class="group-select">
+                        <div class="input-item">
+                            <label>涉事群体：</label>
+                            <select name="ssqt" class="form-control select">
+                                <!-- <option value="">-涉藏人员-</option> -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div class="sub-left-part">
+                            <div class="message-item qtmc">
+                                <label>群体名称：</label>
+                                <span></span>
+                            </div>
+                            <div class="message-item qtlx">
+                                <label>群体类型：</label>
+                                <span></span>
+                            </div>
+                            <div class="message-item text-area qtcyin">
+                                <label>群体成因：</label>
+                                <span></span>
+                            </div>
+                            <div class="message-item text-area qtgm">
+                                <label>群体规模：</label>
+                                <span></span>
+                            </div>
+                            <!-- <div class="message-item select-item qtcyuan">
+                                <label>群体成员：</label>
+                                <div class="group-members">
+                                    <div class="single-message">
+                                        <span class="name">张三</span>
+                                        <span class="phone">1501051984876782</span>
+                                    </div>
+                                    <div class="single-message">
+                                        <span class="name">李四</span>
+                                        <span class="phone">1501051984876782</span>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <div class="sub-right-part">
+                            <h5 class="table-title">相似线索</h5>
+                            <table class="table table-bordered my-table-striped my-table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th class="td-width-2">线索名称</th>
+                                        <th>线索内容</th>
+                                        <th class="td-width-2">是否有效</th>
+                                        <th class="td-width-2">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body">
+                                    <!-- <tr>
+                                        <td class="intelligence-name">善心汇涉访群体上访善心汇涉</td>
+                                        <td>多个善心汇成员聚集讨论要进京上访多个善心汇成员聚集讨论要进京上访多个善心汇成员聚集讨论要进京上访</td>
+                                        <td class="invalid">无效</td>
+                                        <td class="operate">
+                                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="情报分析"></span>
+                                            <span class="glyphicon glyphicon-link" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="取消关联"></span>
+                                        </td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+
+                            <ul id="glssqtPagination" class="pagination pagination-sm"></ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 关联涉事人员 -->
+                <div class="sub-page glssry">
+
+                    <div class="sub-left-part">
+                        <h5 class="table-title">关联涉事人员</h5>
+                        <table class="table table-bordered my-table-striped my-table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="td-width-2">姓名</th>
+                                    <th>身份证号</th>
+                                    <th class="td-width-2">性别</th>
+                                    <th>人员类别</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <!-- <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+
+                        <!-- <ul id="glssryPagination" class="pagination"></ul> -->
+                    </div>
+
+                    <div class="sub-right-part">
+                        <h5 class="table-title">相似线索</h5>
+                        <table class="table table-bordered my-table-striped my-table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="td-width-2">线索名称</th>
+                                    <th>线索内容</th>
+                                    <th class="td-width-2">是否有效</th>
+                                    <th class="td-width-2">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <!-- <tr>
+                                    <td class="intelligence-name">善心汇涉访群体上访善心汇涉</td>
+                                    <td>多个善心汇成员聚集讨论要进京上访多个善心汇成员聚集讨论要进京上访多个善心汇成员聚集讨论要进京上访</td>
+                                    <td class="invalid">无效</td>
+                                    <td class="operate">
+                                        <span class="glyphicon glyphicon-list-alt btn_qbfx" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="情报分析"></span>
+                                        <span class="glyphicon glyphicon-link btn_qxgl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="取消关联"></span>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+
+                        <ul id="glssryPagination" class="pagination pagination-sm"></ul>
+                    </div>
+
+                </div>
+                <!-- 相似线索聚类 -->
+                <div class="sub-page xsxsjl">
+                    <table class="table table-bordered my-table-striped my-table-condensed">
+                        <thead>
+                            <tr>
+                                <th class="td-width-2">线索名称</th>
+                                <th>线索内容</th>
+                                <th class="td-width-1">是否有效</th>
+                                <th class="td-width-1">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            <tr>
+                                <td class="intelligence-name">善心汇涉访群体上访善心汇涉</td>
+                                <td>多个善心汇成员聚集讨论要进京上访多个善心汇成员聚集讨论要进京上访多个善心汇成员聚集讨论要进京上访</td>
+                                <td class="invalid">无效</td>
+                                <td class="operate">
+                                    <span class="glyphicon glyphicon-list-alt btn_qbfx" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="情报分析"></span>
+                                    <span class="glyphicon glyphicon-link btn_qxgl" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="取消关联"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <ul id="xsxsjlPagination" class="pagination pagination-sm"></ul>
+                </div>
+                <!-- 要素提取 -->
+                <div class="sub-page ystq">
+
+                    <div class="input-item-box">
+                        <div class="input-item">
+                            <label>姓名：</label>
+                            <input name="xm" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <br/>
+                        <div class="input-item">
+                            <label>身份证号：</label>
+                            <input name="sfz" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>手机号：</label>
+                            <input name="sjh" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>QQ号：</label>
+                            <input name="qq" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>性别：</label>
+                            <input name="xb" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item payment">
+                            <label>费用：</label>
+                            <input name="fy" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            <span>元</span>
+                        </div>
+                        <div class="input-item">
+                            <label>行为：</label>
+                            <input name="xw" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>关系：</label>
+                            <input name="gx" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>行为对象：</label>
+                            <input name="xwdx" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>邮箱：</label>
+                            <input name="email" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>微信：</label>
+                            <input name="wx" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>微博：</label>
+                            <input name="wb" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>物品名称：</label>
+                            <input name="wpmc" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item input-item-col2">
+                            <label>地址：</label>
+                            <input name="zz" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                        <div class="input-item">
+                            <label>手段特征：</label>
+                            <input name="sdtz" type="text" class="input" />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="buttons-box">
+                        <button type="button" class="btn btn-border reset">重置</button>
+                        <button type="button" class="btn btn-normal save">保存</button>
+                    </div>
+
+                </div>
+                <!-- 相符轨迹 -->
+                <div class="sub-page xfgj"></div>
+            </div>
+        </div>
+        <!-- 页面下部edn -->
+    </div>
+
+    <script>
+        app.qbxsfx.xsfxcl.init();
+    </script>
+
+</div>

@@ -1,0 +1,28 @@
+<div class="container bgmask">
+	<div class="window" style="width: 460px; height: 400px;" id="window-department-excelWindow">
+		<header>
+			<h1>Excel导入人员</h1>
+			<a class="close btn-window-close">&times;</a>
+		</header>
+		<div class="content">
+			<div class="field-fileupload">
+				<div class="field-fileupload-desc">
+					<span>请选择证件号Excel文件</span>
+					<a class="btn-link p-link" href="/template/部门模版.xlsx" target="_blank">模版文件下载</a>
+				</div>
+				<a class="btn btn-small fileinput-button">
+					<span>选择文件</span>
+					<input id="fileupload-department" type="file" name="file">
+				</a>
+			</div>
+		</div>
+		<footer>
+			<!-- <a class="btn" id="btn-ok-department-excel">确定</a> -->
+			<a class="btn btn-outline btn-window-close">取消</a>
+		</footer>
+	</div>
+</div>
+
+<script>
+	app.department.excelWindow.init();
+</script>

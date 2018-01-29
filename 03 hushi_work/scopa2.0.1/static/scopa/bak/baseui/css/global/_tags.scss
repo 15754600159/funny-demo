@@ -1,0 +1,22 @@
+.tag-current {
+	display: inline-block;
+	padding: 2px 9px;
+	margin-right: 10px;
+	border: 1px solid $tag-current-border;
+	color: $tag-current-txt;
+	border-radius: 2px;
+	line-height: 20px;
+	cursor: pointer;
+	position: relative;
+	background-color: $tag-current-bg;
+	&:hover{
+		color: $white;
+		background-color: $hover-color;
+		box-shadow: 0 0 6px rgba(23, 84, 188, 0.5);
+	}
+	&.active {
+		color: $white;
+		background-color: $hover-color;
+		border-color: $hover-color;
+	}
+}

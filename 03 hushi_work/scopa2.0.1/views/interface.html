@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+	<head>
+		<title>Tuning API - Scopa</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../static/scopa/theme/default/images/common/favicon.ico" rel="shortcut icon">
+		<link href="../static/common/gallery/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../static/scopa/theme/default/common.css" rel="stylesheet">
+		<link href="../static/scopa/theme/default/core.css" rel="stylesheet">
+		<script src="../static/common/stacktrace.js" type="text/javascript"></script>
+		<script src="../static/common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+		<script>
+			var _href = window.location.href,
+				_index = window.location.href.indexOf("/views/");
+			staticUrl = (-1 == _index ? "" : _href.slice(0, _index)) + "/static";
+		</script>
+		<script src="../static/common/config.js" type="text/javascript"></script>
+		<style>
+			body{padding:20px;}
+			h1{ padding:10px 0;}
+			pre{ margin-bottom:20px;}
+		</style>
+	</head>
+
+	<body>
+		<a href="graphicon.html" target="_blank" style="position:fixed;right:10px;top:10px;opacity:0.5;">
+			<button class="btn btn-sm btn-primary">图析图标</button>
+		</a>
+		<div id="makeIcon"></div>
+		<h1>API地址：<a href="http://confluence.mininglamp.com/display/SCOPA/Tuning" target="_blank">http://confluence.mininglamp.com/display/SCOPA/Tuning</a></h1>
+		<p>注：以下罗列了 SCOPA 2.3 CORE 中用到的接口，海洋会逐步完善到 <a href="http://confluence.mininglamp.com/display/SCOPA/Tuning" target="_blank">Confluence API</a> 中。</p>
+		<h1>公共</h1>
+		<pre><code>
+		mining.baseurl.pass + '/login',
+		mining.baseurl.pass + '/logout',
+		requestUrl = {
+			search: mining.baseurl + '/tuning/query/search'					//content  type: all,entity,relation,event,media
+		},
+		requestUrl = {
+			get: mining.baseurl.pass + '/getUserInfo',
+			alluser: mining.baseurl.console + '/user/allUsers',
+			allgroup: mining.baseurl.console + '/user/allGroups'
+		};
+		_baseurl + '/console/elementparameter/getMapping'
+		</code></pre>
+		<h1>首页</h1>
+		<pre><code>
+		requestUrl = {
+			infolist: mining.baseurl.core + '/mining/listAll',				//列出所有挖掘结果，参数：pageNo, pageSize
+			getvertex: mining.baseurl + '/tuning/query/getVertexByIndex', 			//根据身份证号码获取点信息 ?value=370105198202223003&index=key
+			getpath: mining.baseurl + '/tuning/query/getPath', 				//根据点 ID ?vids=[16784,819216880,163856552]&hop=1
+			snapshotlist: mining.baseurl.core + '/snapshot/listAll',			// user_id, pageSize, pageNo, keyword(name desc author), starttime, endtime
+			load: mining.baseurl + '/tuning/snapshot/load',					//sid
+			search: mining.baseurl + '/tuning/query/search',				//content  type: all,entity,relation,event,media
+			search_snapshot: mining.baseurl + '/tuning/snapshot/listByEntity',		//entity:'实体id'  pageNo  pageSize
+			expandEdge: mining.baseurl + '/tuning/query/expandEdge'	//?eid=XXX&label=XXX
+		},
+		requestUrl = {
+			load: mining.baseurl + '/tuning/snapshot/load',					//sid
+			search: mining.baseurl + '/tuning/query/search',				//content  type: all,entity,relation,event,media
+			search_media: mining.baseurl + '/tuning/query/getByLabel',			//?vid='+_id+'&labels=[media_doc]
+			search_snapshot: mining.baseurl.core + '/snapshot/listByEntity',		//keyword: 关键词type: [0: graph, 1: map]pageNo:pageSize:starttime:endtime:
+			search_comment: mining.baseurl.core + '/comment/getByElementId',
+			expandEdge: mining.baseurl + '/tuning/query/expandEdge'				//?eid=XXX&label=XXX
+		},
+		mining.baseurl.core + '/snapshot/getThumbnail?sid=' + n.id
+		</code></pre>
+		
+		<h1>图析</h1>
+		<pre><code>
+		requestUrl = {
+			getByLabel: mining.baseurl + '/tuning/query/getByLabel',			//?vid='+_id+'&labels=[railway_record]
+			getByHop: mining.baseurl + '/tuning/query/getByHop',				//?vid=12322&hop=3&limit=300&filters=[gmsfzhm:130xxxxxx,mz:eq:01]
+			getPath: mining.baseurl + '/tuning/query/getPath',				//?vids=[16384,xxxxx,xxxx]&labels=[label1,label2]&hop=3
+			expandEdge: mining.baseurl + '/tuning/query/expandEdge',			//?eid=XXX&label=XXX
+			//getEventsByType: mining.baseurl + '/tuning/archive/getEventsByType',		//?objId=130533198110084118&type=railway&pageNo=1&pageSize=10
+			getEvents: mining.baseurl + '/tuning/archive/getEventsByType',			//参数:objId 实体ID types 事件类型 JSONArray [hotel, railway] pageNo pageSize'
+			merge: mining.baseurl + '/tuning/query/merge',					//POST 调用：参数 ids, events, rules, keyword(ids, events, rules 都是 JSONArray)
+			getrule: mining.baseurl.console + '/rule/get'
+		},
+		mining.baseurl.analysis + '/score',
+		requestUrl = {
+			merge: mining.baseurl + '/tuning/query/merge',					//POST 调用：参数 ids, events, rules, keyword(ids, events, rules 都是 JSONArray)
+			getrule: mining.baseurl.console + '/rule/get',
+			expandEdge: mining.baseurl + '/tuning/query/expandEdge',			//?eid=XXX&label=XXX
+			expandHartsEdge: mining.baseurl + '/tuning/query/expandHartsEdge'		//?eid0=110104198403160432&eid1=130102198807150610&events=railway,hotel身份证号
+		},
+		mining.baseurl.analysis + '/layout'
+		</code></pre>
+		
+		<h1>地图</h1>
+		<pre><code>
+		requestUrl = {
+			circle: mining.baseurl + '/tuning/map/searchCircle', 				//vertexGeo: JSON.stringify({lat,lng,radius}),labels
+			buffer: mining.baseurl + '/tuning/map/searchBuffer'  				//vertexGeo: JSON.stringify({bufferRadius, points:[{lat, lng}]}),labels
+		},
+		</code></pre>
+		
+		<h1>档案</h1>
+		<pre><code>
+		requestUrl = {
+			expandEdge: mining.baseurl + '/tuning/query/expandEdge',			//?eid=XXX&label=XXX
+			search_media: mining.baseurl + '/tuning/query/getByLabel',  			//?vid='+_id+'&labels=[media_doc]
+			search_snapshot: mining.baseurl.core + '/snapshot/listByEntity',    		//keyword: 关键词type: [0: graph, 1: map]pageNo:pageSize:starttime:endtime:
+			getrule: mining.baseurl.console + '/rule/get',
+			merge: mining.baseurl + '/tuning/query/merge',					//POST 调用：参数 ids, events, rules, keyword(ids, events, rules 都是 JSONArray)
+			expandHartsEdge: mining.baseurl + '/tuning/query/expandHartsEdge'		//?eid0=110104198403160432&eid1=130102198807150610&events=railway,hotel身份证号
+		},
+		requestUrl = {
+			getByLabel: mining.baseurl + '/tuning/query/getByLabel',			//?vid='+_id+'&labels=[railway_record]
+			getEventsByType: mining.baseurl + '/tuning/archive/getEventsByType',		//?objId=130533198110084118&type=railway&pageNo=1&pageSize=10
+			getPath: mining.baseurl + '/tuning/query/getPath'				//?vids=[16384,xxxxx,xxxx]&labels=[label1,label2]&hop=3
+		}
+		requestUrl = {
+			get: mining.baseurl.core + '/comment/getByCommentId',				//获取单个标注：[get]  id(标注ID)
+			list: mining.baseurl.core + '/comment/getByElementId',				//获取标注列表：[post] id(实体/关系/事件ID) pageNo pageSize
+			add: mining.baseurl.core + "/comment/add",					//添加标注：[post] uid(用户ID) eid(实体/关系/事件ID) type comment
+			del: mining.baseurl.core + "/comment/del"					//删除标注：[get] id(评论ID)
+		}
+		</code></pre>
+		
+		<h1>协作</h1>
+		<pre><code>
+		requestUrl = {
+			page: staticUrl + '/whale/template/cooperate.html',
+			list: mining.baseurl.core + '/snapshot/list',					// pageSize, pageNo, keyword(name desc author), starttime, endtime
+			listByUser: mining.baseurl.core + '/snapshot/listByUser',			// user_id, pageSize, pageNo, keyword(name desc author), starttime, endtime
+			listFeeds: mining.baseurl.core + '/snapshot/listFeeds'	,			// user_id, pageSize, pageNo, keyword(name desc author), starttime, endtime
+			listAll:mining.baseurl.core + '/snapshot/listAll',
+			listPushedFeeds:mining.baseurl.core + '/snapshot/listPushedFeeds',
+			getProject:mining.baseurl.core + '/snapshot/getProject'
+		},
+		requestUrl = {
+			get: mining.baseurl.core + '/snapshot/load',					//获取快照：[get]  sid(快照ID)
+			save: mining.baseurl.core + '/snapshot/save',					//创建快照：[post] user_id(用户ID) name(快照名称) description(描述) graphData(json数据) thumbnail(缩略图) type(0为图析快照，1为地图快照) parent(父级快照ID)
+			share: mining.baseurl.core + '/snapshot/shareProject',				//分享快照：[get]  sid(快照ID)
+			push: mining.baseurl.core + '/snapshot/pushProject',				//推送快照：[post] sid(快照ID) fid(推送者id) tid(被推送者id) comment(评论) type(0为用户推用户，1为用户推群组)
+			delPic: mining.baseurl.core + '/snapshot/delete',				//删除快照：[get]  sid(快照ID)
+			del: mining.baseurl.core + '/snapshot/deleteProject',				//删除快照：[get]  sid(快照ID)
+			thumbnail: mining.baseurl.core + "/snapshot/getThumbnail",			//获取快照缩略图：sid(快照ID)
+			checkname: mining.baseurl.core + '/snapshot/nameExists'	,		//(name, type)
+			sharePic:mining.baseurl.core + '/snapshot/share',
+			pushPic:mining.baseurl.core + '/snapshot/push'
+		}
+		</code></pre>
+	</body>
+
+</html>

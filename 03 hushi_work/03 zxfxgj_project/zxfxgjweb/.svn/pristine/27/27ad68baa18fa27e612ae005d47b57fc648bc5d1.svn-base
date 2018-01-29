@@ -1,0 +1,45 @@
+app.api.gzqt = {
+
+    viewgrouptype: function(settings) {
+        app.api.ajax({
+            url: '/zx/sysDict/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    add: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/',
+            type: 'POST',
+            data: settings.data
+        }, settings);
+    },
+    view: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/' + settings.data.id + '/',
+            type: 'GET'
+        }, settings);
+    },
+    update: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/' + settings.data.zdqtbh + '/',
+            type: 'PUT',
+            data: settings.data
+        }, settings);
+    },
+    del: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/',
+            type: 'DELETE'
+        }, settings);
+    },
+
+    search: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    }
+};

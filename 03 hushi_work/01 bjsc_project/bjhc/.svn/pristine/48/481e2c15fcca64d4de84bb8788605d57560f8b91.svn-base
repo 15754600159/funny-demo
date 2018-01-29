@@ -1,0 +1,65 @@
+.content-card{
+    position: absolute;
+    top: 1.3123rem;
+    bottom: .2975rem;
+    left: .2975rem;
+    right: .2975rem;
+    background-color: #fcfcfc;
+    box-shadow: 1px 1.7px 4px 0 rgba(210, 210, 210, 0.75);
+    padding: .21rem;
+    font-family: SourceHanSansCN;
+    color: #343434;
+}
+
+.own-info-box{
+    height: 8.6614rem;
+}
+
+.own-info-box .blue-label{
+    display: inline-block;
+    height: 100%;
+    width: .1225rem;
+    background: #006AE4;
+}
+
+.own-info-box .own-info-card{
+    height: 100%;
+    display: inline-block;
+    width: calc(100% - .25rem);
+    vertical-align: top;
+}
+
+.own-info-box .own-info-card .own-basic-info-box{
+    height: 5.4418rem;
+    border-bottom: 1px solid rgba(210, 210, 210, 0.75);
+}
+
+.own-info-box .own-basic-info-box .head-icon-box{
+    display: inline-block;
+    height: 100%;
+    width: 3.7095rem;
+    text-align: center;
+    padding-top: .5424rem;
+}
+
+.own-info-box .own-basic-info-box .head-icon-box img{
+    width: 2.2047rem;
+}
+
+.own-info-box .own-basic-info-box .own-basic-info{
+    display: inline-block;
+    vertical-align: top;
+    height: 98%;
+    width: 9rem;
+    border-right: 1px solid rgba(210, 210, 210, 0.75);
+}
+
+.own-info-box .own-basic-info-box .own-basic-info h3{
+    font-size: .35rem;
+    margin-top: .6rem;
+    margin-bottom: .4rem;
+}
+
+.own-info-box .own-basic-info-box .own-basic-info p{
+    font-size: .245rem;
+}

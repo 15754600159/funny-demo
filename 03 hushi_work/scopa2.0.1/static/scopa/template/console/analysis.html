@@ -1,0 +1,80 @@
+<div class="analysis">
+    <div class="leftType">
+        <div id="accordion" class="accordion leftMenu">
+        <span class="title  "><span class="icon icon-rule"></span> 规则
+            <button id="btnAddRule" class="data-icon add"></button>
+        </span>
+            <div class="detail">
+                <ul id="listContainer_rule" class="listContainer">
+                </ul>
+            </div>
+            <span class="title "><span class="icon  icon-method"></span> 战法  <button
+                    id="addBatch" class="data-icon add"></button></span>
+            <div class="detail">
+                <ul id="listContainer_batch" class="listContainer">
+
+                </ul>
+            </div>
+            <span class="title  "><span class=" icon icon-task"></span> 任务 <button
+                    id="btnAddTask" class="data-icon add"></button></span>
+            <div class="detail">
+                <ul id="listContainer_event" class="listContainer">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="d_rule row">
+            <diw class="row">
+
+                <div class="col-xs-12">状态 <select name="select_status" id="select_status" class="select">
+                    <option value="true">启用</option>
+                    <option value="false">禁用</option>
+                </select></div>
+            </diw>
+            <div class="rule_content">
+                <div class="row">
+                    <div class="col-xs-1 label">事件</div>
+                    <div class="col-xs-11"><select name="select_event" id="select_event" class="select"></select></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1 label">规则</div>
+                    <div class="col-xs-11"><textarea name="rule" id="rule" cols="30" rows="10" class="txt"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="d_tactics row hidden">
+
+            <div class="rule_content">
+                <div class="row">
+                    <div class="col-xs-1 label">描述</div>
+                    <div class="col-xs-11"><textarea name="rule" id="desc" cols="30" rows="10" class="txt"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1 label">配置</div>
+                    <div class="col-xs-11"><textarea name="rule" id="config" cols="30" rows="10" class="txt"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1 label">执行任务</div>
+                    <div class="col-xs-11"><textarea name="rule" id="command" cols="30" rows="10"
+                                                     class="txt"></textarea></div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class=" row button-bar">
+            <button id="btnSave" class="btn button_hover pull-right"><span class=" analysis-icon save "></span>保存
+            </button>
+            <button id="btnTest" class="btn button_hover pull-right"><span class=" analysis-icon test "></span>测试
+            </button>
+        </div>
+    </div>
+
+</div>

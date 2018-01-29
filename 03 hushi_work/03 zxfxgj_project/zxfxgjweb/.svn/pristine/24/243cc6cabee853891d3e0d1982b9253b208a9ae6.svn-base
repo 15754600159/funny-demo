@@ -1,0 +1,119 @@
+app.zxrygl.add = {
+	url: 'pages/zxrygl/addWindow.html',
+	callback: null,
+	vehicles: null,
+	open: function() {
+		$m.page.openPage(app.zxrygl.add.url, 'fade', 'container-wrapper');
+	},
+	close: function() {
+		app.zxrygl.add.clear();
+		$m.page.closePage(app.zxrygl.add.url, 'fade', 'container-wrapper');
+	},
+	init: function() {
+		$('#window-zxrygl-addWindow').addClass('popIn');
+		$('#window-zxrygl-addWindow .btn-window-close').on('click', function() {
+			$('#window-zxrygl-addWindow').addClass('popOut');
+			app.zxrygl.add.close();
+		});
+		$('#btn-ok-person-excel').on('click', function() {
+			app.zxrygl.add.close();
+			app.zxrygl.add.updata();
+		});
+		app.zxrygl.add.initForm();
+		app.time.init();
+	},
+	clear: function() {
+		app.zxrygl.add.callback = null;
+		app.zxrygl.add.vehicles = null;
+	},
+	initForm: function() {
+	},
+	updata: function() {
+		// 参数
+		var xm = $('.xm').val();
+		var bmch = $('.bmch').val();
+		var xb = $('.xb').val();
+		var csrq = $('#birday').val();
+		var sfzh = $('.sfzh').val();
+		var mz = $('#user-add-nationCode').val();
+		var rylb = $('#user-add-politicsStatus').val();
+		var lkyy = $('.lkyy').val();
+		var lxfs = $('.lxfs').val();
+		var jfts = $('.jtfs').val();
+		var hjdqh = $('.hjdqh').val();
+		var jzdqh = $('.jzdqh').val();
+		var hjdxz = $('.hjdxz').val();
+		var hjdpcs = $('.hjdpcs').val();
+		var zjlx = $('.zjlx').val();
+		var zjhm = $('.zjhm').val();
+		var sfgx = $('.gongxiang').val();
+		var sfhqqggj = $('.guiji').val();
+		var cjry = $('.caiji').val();
+		var cjrlxfs = $('.caijiph').val();
+		var cjdw = $('.caijicode').val();
+		var cjsj = $('#cjsj').val();
+		app.api.zxrygl.updata({
+			data: {
+				xm: xm,
+				bmch: bmch,
+				xb: xb,
+				csrq: csrq,
+				sfzh: sfzh,
+				mz: mz,
+				rylb: rylb,
+				lkyy: lkyy,
+				lxfs: lxfs,
+				jfts: jfts,
+				hjdqh: hjdqh,
+				hjdxz: hjdxz,
+				jzdqh: jzdqh,
+				hjdpcs: hjdpcs,
+				zjlx: zjlx,
+				sfgx: sfgx,
+				zjhm: zjhm,
+				sfhqqggj: sfhqqggj,
+				cjry: cjry,
+				cjrlxfs: cjrlxfs,
+				cjdw: cjdw,
+				cjsj: cjsj
+			},
+			success: function(result) {
+				console.info(result);
+				app.zxrygl.search.initSearchForm(0, 1, app.zxrygl.search.pagination);
+			}
+		});
+	},
+	del: function() {
+		var checklist = $("input[type='checkbox']");
+		var ids = [];
+		var idss = '';
+		for (var i = 0; i < checklist.length; i++) {
+			var checkif = $(checklist[i]).prop('checked');
+			if (checkif) {
+				ids.push($(checklist[i]).val());
+			}
+		};
+		if (ids == '') {
+			layer.alert('请选择需要删除的列表');
+		} else {
+			layer.confirm('您确定要删除吗？', {
+				btn: ['确定', '取消'],
+				title: '删除'
+			}, function(index) {
+				idss = ids.join();
+				console.info(typeof (idss))
+				app.api.zxrygl.delete({
+					data: {
+						ids: idss
+					},
+					success: function(result) {
+						console.info(result);
+						app.zxrygl.search.initSearchForm(0, 1, app.zxrygl.search.pagination);
+					}
+				});
+				layer.close(index);
+			});
+		}
+
+	}
+};

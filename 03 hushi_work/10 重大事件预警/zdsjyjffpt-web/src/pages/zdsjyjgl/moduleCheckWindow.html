@@ -1,0 +1,58 @@
+<div class="container bgmask module-check">
+    <div class="window popIn" style="width: 50%; height: 50%;">
+
+        <!-- 弹框头部start -->
+        <header>
+            <h1>查看详情</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <!-- 弹框头部end -->
+
+        <!-- 弹框正文start -->
+        <div class="content">
+            <form class="form two-column-form">
+                <div class="input-item">
+                    <label>模型名称：</label>
+                    <input name="modelName" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>预警编号：</label>
+                    <input name="warnId" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>模型类型：</label>
+                    <input name="modelType" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>预警详情：</label>
+                    <input name="warningDetail" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>预警时间：</label>
+                    <input name="warningTime" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>活动时间：</label>
+                    <input name="actTime" type="text" class="input" readonly/>
+                </div>
+                <div class="input-item">
+                    <label>是否有群体：</label>
+                    <input name="isGroup" type="text" class="input" readonly/>
+                </div>
+            </form>
+        </div>
+        <!-- 弹框正文end -->
+
+        <!-- 弹框底部start -->
+        <footer>
+            <!-- <a class="btn btn_submit">确定</a> -->
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+        <!-- 弹框底部end -->
+
+    </div>
+</div>
+
+<script>
+    app.zdsjyjgl.module.check.init();
+</script>

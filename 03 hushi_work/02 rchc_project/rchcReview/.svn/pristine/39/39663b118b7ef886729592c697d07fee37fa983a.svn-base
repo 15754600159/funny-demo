@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>人员核录统计</title>
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="../css/ryhc.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/jquery-confirm.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap-datetimepicker.css" />
+	<style type="text/css" media="screen">
+		   .main{
+		   		display: flex;
+		   	}
+		   	table th,td {
+		   		text-align:center;
+		   	}
+		   	.text-left {
+		   		text-align:left;
+		   	}
+		   	.btn-modal {
+		   		    padding: 2px 6px;
+		   	}
+		   	
+			.modal-dialog { 
+			    position: absolute; 
+			    top: 0; 
+			    bottom: 0; 
+			    left: 0; 
+			    right: 0; 
+			} 
+
+			.modal-content { 
+			    /*overflow-y: scroll; */ 
+			    position: absolute; 
+			    top: 0; 
+			    bottom: 0; 
+			    width: 100%; 
+			} 
+
+			.modal-body { 
+			    overflow-y: scroll; 
+			    position: absolute; 
+			    top: 55px; 
+			    bottom: 65px; 
+			    width: 100%; 
+			} 
+
+			.modal-header .close {margin-right: 15px;} 
+
+			.modal-footer {
+			    position: absolute; 
+			    width: 100%; 
+			    bottom: 0; 
+			}
+	</style>
+</head>
+<body>
+	<div class="all">
+		<div class="top">
+              <a href="#"><img src="../img/nav-logo.png"></a>
+              <div class="role">
+                    <a href="#">admin</a>
+              </div>
+        </div>
+        <div class="serach-box content">
+        	<div class="title">
+        		<span>人员核录统计</span>
+        	</div>
+			<table class="serach-tab">
+				<tbody>
+					<tr>
+						<td>开始日期：</td>
+						<td><input type="text" class="form-control2 form_datetime2" placeholder='开始日期' id="ksrq"></td>
+						<td>结束日期：</td>
+						<td><input type="text" class="form-control2 form_datetime2" placeholder='结束日期' id="jsrq"></td>
+						<td>设备类型：</td>
+						<td>
+							<select class="form-control2" id="hlsblx">
+								<option value="jwt">警务通</option>
+								<option value="jj">交警人证核验机</option>
+								<option value="zj">闸机</option>
+								<option value="xfj">信访局</option>
+								<option value="lte">LTE</option>
+							</select>
+						</td>
+						<td class="jcztj"><input id="jcz-tj" type="checkbox"></td>
+						<td class="jcztj"><span>检查站统计</span></td>
+
+						<td><button id="jwt-search-ry" class="btn btn-primary">查询</button>
+							<button id="jwt-export-ry" class="btn btn-default" style="position: relative;">导出</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="details-box">
+			<!-- <table class="tab-details"> -->
+			<table id="jwt-table" class="table table-bordered table-striped table-hover"  style="width:98%">
+				<thead id="jwt-tableHead">
+					<tr>
+						<th style="height: 78px;padding-bottom: 46px;" rowspan="2" class="text-left"><input name="jwtCols" exp="name" type="checkbox" checked="checked" disabled="true"><span id="dwdw"> 核查单位</span></th>
+						<th style="height: 78px;padding-bottom: 46px;" rowspan="2"><input name="jwtCols" exp="checkCount" type="checkbox" checked="checked" ><span> 核查数</span></th>
+						<th style="height: 78px;padding-bottom: 46px;" rowspan="2"><input name="jwtCols" exp="comparCount" type="checkbox" checked="checked" ><span> 比中数</span></th>
+						<th style="height: 78px;padding-bottom: 46px;" rowspan="2"><input name="jwtCols" exp="warnCount" type="checkbox" checked="checked" ><span> 预警数</span></th>
+						<th colspan="6"><input name="jwtCols" exp="ztCount,sdCount,sfCount,sjCount,skCount,swCount" type="checkbox" checked="checked" ><span> 预警细项</span></th>
+						<th style="height: 78px;padding-bottom: 46px;" rowspan="2"><input id="sbs" name="jwtCols" exp="deviceCount" type="checkbox" checked="checked" ><span id="lastCol"> 设备数</span></th>
+
+						<th style="height: 78px;padding-bottom: 46px;display: none;" rowspan="2" ><input id="jzCol" name="jwtCols" exp="jzCount" type="checkbox" ><span id="jzlastCol"> 进站</span></th>
+						<th style="height: 78px;padding-bottom: 46px;display: none;" rowspan="2"><input id="czCol" name="jwtCols" exp="czCount" type="checkbox" ><span id="czlastCol"> 出站</span></th>
+					</tr>
+					<tr><th>在逃</th><th>涉毒</th><th>上访</th><th>涉疆</th><th>涉恐</th><th>涉稳</th></tr>
+				</thead>
+				<tbody id="jwt-tableBody">
+				</tbody>
+			</table>
+			<table id="jj-table" class="table table-bordered table-striped table-hover hide"  style="width:98%">
+				<thead>
+					<tr>
+						<th rowspan="2"><input type="checkbox"><span> 核查点位</span></th>
+						<th rowspan="2"><input type="checkbox"><span> 核查数</span></th>
+						<th rowspan="2"><input type="checkbox"><span> 比中数</span></th>
+						<th rowspan="2"><input type="checkbox"><span> 预警数</span></th>
+						<th colspan="6"><input type="checkbox"><span> 预警细项</span></th>
+					</tr>
+					<tr>
+						<td>在逃</td>
+						<td>涉毒</td>
+						<td>上访</td>
+						<td>涉疆</td>
+						<td>涉恐</td>
+						<td>涉稳</td>
+					</tr>
+				</thead>
+				<tbody id="jj-tableBody">
+				</tbody>
+			</table>
+			<table id="zj-table" class="table table-bordered table-striped table-hover hide"  style="width:98%">
+				<thead>
+					<tr>
+						<th rowspan="2"><input type="checkbox"><span> 核查点位</span></th>
+						<th rowspan="2"><input type="checkbox"><span> 核查数</span></th>
+						<th rowspan="2"><input type="checkbox"><span> 比中数</span></th>
+						<th rowspan="2"><input type="checkbox"><span> 预警数</span></th>
+						<th colspan="6"><input type="checkbox"><span> 预警细项</span></th>
+						<th rowspan="2"><input type="checkbox"><span> 进站</span></th>
+						<th rowspan="2"><input type="checkbox"><span> 出站</span></th>
+					</tr>
+					<tr><th>在逃</th><th>涉毒</th><th>上访</th><th>涉疆</th><th>涉恐</th><th>涉稳</th></tr>
+				</thead>
+				<tbody id="zj-tableBody">
+				</tbody>
+			</table>
+		</div>
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+		    <div class="modal-dialog">
+		        <div class="modal-content content-color">
+		            <div class="modal-header header-color" style="height: 60px;">
+		             <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+		                <h4 class="modal-title modal-thead-name" id="myModalLabel">
+		                	
+		                </h4>
+		            </div>
+		            <div class="modal-body">
+						<table class="table table-bordered table-striped table-hover">
+						</table>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+
+		<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+		<script src="../js/plugins/jquery.form.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/fetch.js"></script>
+		<script type="text/javascript" src="../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+		<script type="text/javascript" src="../js/plugins/echarts.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript" src="../js/web/rybb.js"></script>
+		<script type="text/javascript" src="../js/common/jquery-confirm.min.js"></script>
+		<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.zh-CN.js"></script>
+		
+	</div>
+</body>
+</html>

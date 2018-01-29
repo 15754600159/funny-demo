@@ -1,0 +1,209 @@
+<div class="bread-nav">
+    <ol class="breadcrumb">
+        <li class="goApp">应用</li>
+        <li class="tab-page">重大分析</li>
+        <li class="tab-other hidden"></li>
+    </ol>
+</div>
+<div class="events-box">
+    <div class="list-container">
+        <div class="tab tab-top">
+            <ul>
+                <li serverLog="400" tab="events">事件分析</li>
+                <li serverLog="401" tab="intelligence">情报收集</li>
+                <li serverLog="402" tab="report">报送管理</li>
+                <li serverLog="403" tab="eventforewarn">事件预警</li>
+                <li serverLog="404" tab="labels">群体分类</li>
+            </ul>
+        </div>
+        <div class="events event-container">
+            <div class="chart-panel">
+                <div class="members-chart pull-left">
+                    <div class="banner-title">骨干人员关联度统计</div>
+                    <div class="chart-filter">
+                    </div>
+                    <div id="members-chart"></div>
+                </div>
+                <div class="info-events-chart pull-left">
+                    <div class="banner-title">群体情报与重大事件统计</div>
+                    <div class="chart-filter">
+                    </div>
+                    <div id="info-chart"></div>
+                    <div id="events-chart"></div>
+                </div>
+            </div>
+            <div class="data-list">
+                <table class="grid tablesorter newtable">
+                    <thead>
+                    <tr>
+                        <th class="ellipsis width5">序号</th>
+                        <th class="ellipsis width25">群体分类<span class="btn-current label-filter">标签选择</span></th>
+                        <th class="ellipsis width10">骨干人员数量</th>
+                        <th class="ellipsis width10">情报数量</th>
+                        <th class="ellipsis width10">重大事件数量</th>
+                        <th class="ellipsis width20">最新活动时间</th>
+                        <th class="ellipsis width20">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="intelligence event-container hidden">
+            <div class="filters">
+                <span class="btn-current label-filter">标签选择</span>
+                <div class="searchbox ">
+                    <label><input name="keyword" class="searchbox-ipt" placeholder="请输入搜索内容" type="text"></label>
+                    <a class="searchbox-btn" href="javascript:;"></a>
+                </div>
+                <div class="yjqb-types">
+                    <select class="qb-types select">
+                        <option value="default">全部情报</option>
+                        <option value="1">情报指令</option>
+                        <option value="2">常规情报</option>
+                        <option value="3">事件预警</option>
+                    </select>
+                </div>
+                <span class="btn-current btn-cancel pull-right hidden">取消串并</span>
+                <span class="btn-current-disabled btn-combination pull-right">组合报送</span>
+            </div>
+            <div class="data-list">
+                <div class="label-tags-box pull-left hidden">
+                    <div class="labels-panel"></div>
+                </div>
+                <div class="data-box pull-left narrow">
+                    <div class="data-table">
+                        <table class="grid tablesorter newtable">
+                            <thead>
+                                <tr>
+                                    <th class="ellipsis width5"><input class="checkAllBox" type="checkbox"></th>
+                                    <th class="ellipsis width10">信息文号</th>
+                                    <th class="ellipsis width20">情报标题</th>
+                                    <th class="ellipsis width10">群体类别</th>
+                                    <th class="ellipsis width10">紧急程度</th>
+                                    <th class="ellipsis width10">填报时间</th>
+                                    <th class="ellipsis width15">报送单位</th>
+                                    <th class="ellipsis width10">情报类型</th>
+                                    <th class="ellipsis width10">处理状态</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="data-page">
+                        <div class="totalcount">
+                        </div>
+                        <div class="pages pull-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="report event-container hidden">
+            <div class="filters">
+                <span class="btn-current label-filter">标签选择</span>
+                <div class="searchbox ">
+                    <label><input name="keyword" class="searchbox-ipt" placeholder="请输入搜索内容" type="text"></label>
+                    <a class="searchbox-btn" href="javascript:;"></a>
+                </div>
+                <div class="yjsb-types">
+                    <select class="qb-types select">
+                        <option value="default">全部情报</option>
+                        <option value="1">情报指令</option>
+                        <option value="2">常规情报</option>
+                        <option value="3">事件预警</option>
+                    </select>
+                </div>
+                <span class="btn-current btn-combination pull-right">新建情报</span>
+            </div>
+            <div class="data-list">
+                <div class="data-box">
+                    <div class="data-table">
+                        <table class="grid tablesorter newtable">
+                            <thead>
+                            <tr>
+                                <th class="ellipsis width15">信息文号</th>
+                                <th class="ellipsis width20">情报标题</th>
+                                <th class="ellipsis width10">群体类别</th>
+                                <th class="ellipsis width10">紧急程度</th>
+                                <th class="ellipsis width10">填报时间</th>
+                                <th class="ellipsis width15">报送单位</th>
+                                <th class="ellipsis width10">情报类型</th>
+                                <th class="ellipsis width10">处理状态</th>
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="data-page">
+                        <div class="totalcount">
+                        </div>
+                        <div class="pages pull-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="eventforewarn event-container hidden">
+            <div class="filters">
+                <span class="btn-current label-filter">标签选择</span>
+                <div class="searchbox ">
+                    <label><input name="keyword" class="searchbox-ipt" placeholder="请输入搜索内容" type="text"></label>
+                    <a class="searchbox-btn" href="javascript:;"></a>
+                </div>
+                <div class="qbyj-types">
+                    <select class="qb-types select">
+                        <option value="default">全部情报</option>
+                        <option value="1">情报指令</option>
+                        <option value="2">常规情报</option>
+                        <option value="3">事件预警</option>
+                    </select>
+                </div>
+            </div>
+            <div class="data-list">
+                <div class="data-box">
+                    <div class="data-table">
+                        <table class="grid tablesorter newtable">
+                            <thead>
+                            <tr>
+                                <th class="ellipsis width15">信息文号</th>
+                                <th class="ellipsis width20">情报标题</th>
+                                <th class="ellipsis width10">群体类别</th>
+                                <th class="ellipsis width10">紧急程度</th>
+                                <th class="ellipsis width10">填报时间</th>
+                                <th class="ellipsis width15">报送单位</th>
+                                <th class="ellipsis width10">情报类型</th>
+                                <th class="ellipsis width10">处理状态</th>
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="data-page">
+                        <div class="totalcount">
+                        </div>
+                        <div class="pages pull-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="labels event-container hidden">
+            <div class="label-box">
+                <div class="label-list">
+                </div>
+            </div>
+            <div class="label-third hidden"></div>
+        </div>
+        <div class="report-detail event-container hidden">
+            <div class="detail-title">预警事件详情-常规情报</div>
+            <div class="detail-content">
+            </div>
+        </div>
+        <div class="report-add event-container hidden">
+            <div class="detail-title">新建</div>
+            <div class="add-report">
+            </div>
+        </div>
+    </div>
+</div>

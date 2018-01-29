@@ -1,0 +1,350 @@
+<div class="new-page">
+
+    <div class="page-content xsfxcl">
+        <!-- 页面上部start -->
+        <div class="top" style=" width: 99%;margin: .5%;border: solid 1px #dfdfdf;padding: 10px;position: relative;padding-bottom:40px">
+            <div class="input-item">
+                <label>群体名称：</label>
+                <input name="bt" type="text" class="input" placeholder="请输入群体名称" id="qtmc" />
+            </div>
+            <div class="input-item">
+                <label>群体类型：</label>
+                <select name="qbsxlb" style="width: 120px;" class="form-control select" id="qtlx">
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="input-item">
+                <label>群体规模：</label>
+                <input name="bt" type="text" class="input" placeholder="请输入群体名称" id="qtgm" />
+            </div>
+            <div class="input-item">
+                <label>产生时间：</label>
+                <div class="time-select">
+                    <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly id="startDate" />
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    --
+                    <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly id="endDate" />
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="filter-button-box" style="margin-top:2px;">
+                <button type="button" class="btn btn-normal btn_search" onclick="app.qbfxyp.search()">查 询</button>
+            </div>
+            <div class="qtlist">
+                <table class="table table-striped table-bordered"  >
+                    <thead>
+                        <tr style="height:30px">
+                            <th>群体名称</th>
+                            <th>群体类型</th>
+                            <th>群体规模</th>
+                            <th style="width:199px;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table_all">
+
+                    </tbody>
+                </table>
+                <ul id="qtcypagination" class="pagination pagination-sm" style="">
+                </ul>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        <!-- 页面上部end -->
+        <!-- 页面下部start -->
+        <div class="bottom-part">
+            <div class="tab-bar">
+                <div class="tabs">
+                    <span data-subpage="glssqt" class="active" tags="1">群体新成员挖掘</span>
+                    <span data-subpage="glssry" tags="2">群体关联重点人</span>
+                    <span data-subpage="xsxsjl" tags="3">群体成员关联新群体</span>
+                    <span data-subpage="ystq" tags="4">群体成员</span>
+                    <span data-subpage="qtqbtj" tags="5">群体情报统计</span>
+                    <!-- <span data-subpage="xfgj">相符轨迹</span> -->
+                </div>
+            </div>
+            <div class="tab-content">
+                <!-- 关联涉事群体 -->
+                <div class="sub-page glssqt active">
+                    <div class="group-select">
+                        <div class="input-item">
+                            <label>群体名称：</label>
+                            <span style="color:#008ae1" class="bot-qtmc">善心汇成员上访</span>
+                        </div>
+                        <div class="input-item">
+                            <label>类型：</label>
+                            <span style="color:#008ae1" class="bot-lx">涉访群体</span>
+                        </div>
+                        <div class="input-item">
+                            <label>群体成因：</label>
+                            <span style="color:#008ae1" class="bot-qtcy">征地拆迁</span>
+                        </div>
+                        <div class="input-item">
+                            <label>群体规模：</label>
+                            <span style="color:#008ae1" class="bot-qtgm">10</span>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div class="sub-left-part" style="width:50%;padding-top:0">
+                            <h5 class="table-title">新挖掘成员</h5>
+                            <table class="table table-bordered my-table-striped my-table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th class="td-width-1">姓名</th>
+                                        <th class="td-width-1">身份证号</th>
+                                        <th class="td-width-1">人员类型</th>
+                                        <th class="td-width-1">关联成因</th>
+                                        <th class="td-width-1">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body xinwajue">
+                                </tbody>
+                            </table>
+                            <ul id="newspagination" class="pagination pagination-sm"></ul>
+                        </div>
+                        <div class="sub-right-part" style="width:50%">
+                            <h5 class="table-title">原群体成员</h5>
+                            <table class="table table-bordered my-table-striped my-table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th class="td-width-1">姓名</th>
+                                        <th class="td-width-1">身份证</th>
+                                        <th class="td-width-1">人员类别</th>
+                                        <th class="td-width-1">是否骨干</th>
+                                        <th class="td-width-1">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body oldchengyuan">
+                                </tbody>
+                            </table>
+                            <ul id="oldPagination" class="pagination pagination-sm"></ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 关联涉事人员 -->
+                <div class="sub-page glssry">
+                    <div class="group-select" style="height:60px">
+                        <div class="input-item" style="margin:15px 20px">
+                            <label>群体名称：</label>
+                            <span style="color:#008ae1" class="bot-qtmc">善心汇成员上访</span>
+                        </div>
+                        <div class="input-item" style="margin:15px 20px">
+                            <label>类型：</label>
+                            <span style="color:#008ae1" class="bot-lx">涉访群体</span>
+                        </div>
+                        <div class="input-item" style="margin:15px 20px">
+                            <label>群体成因：</label>
+                            <span style="color:#008ae1" class="bot-qtcy">征地拆迁</span>
+                        </div>
+                        <div class="input-item" style="margin:15px 20px">
+                            <label>群体规模：</label>
+                            <span style="color:#008ae1" class="bot-qtgm">10</span>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="sub-left-part" style="width:50%;padding:0">
+                            <h5 class="table-title">新挖掘重点人</h5>
+                            <table class="table table-bordered my-table-striped my-table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th class="td-width-1">关联重点人姓名</th>
+                                        <th class="td-width-1">关联重点人身份证号</th>
+                                        <th class="td-width-1">群体名称</th>
+                                        <th class="td-width-1">群体成员姓名</th>
+                                        <th class="td-width-1">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body xinwajuezdr">
+                                </tbody>
+                            </table>
+                            <ul id="zdrnewspagination" class="pagination pagination-sm"></ul>
+                        </div>
+                        <div class="sub-right-part" style="width:50%">
+                            <h5 class="table-title">原群体成员</h5>
+                            <table class="table table-bordered my-table-striped my-table-condensed">
+                                <thead>
+
+                                    <tr>
+                                        <th class="td-width-1">姓名</th>
+                                        <th class="td-width-1">身份证</th>
+                                        <th class="td-width-1">人员类别</th>
+                                        <th class="td-width-1">是否骨干</th>
+                                        <th class="td-width-1">操作</th>
+                            
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body zdrchengyuan">
+                                </tbody>
+                            </table>
+                            <ul id="zdroldPagination" class="pagination pagination-sm"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 关联新群体 -->
+                <div class="sub-page xsxsjl">
+                    <div class="group-select" style="height:60px">
+                        <div class="input-item" style="margin:15px 20px">
+                            <label>群体名称：</label>
+                            <span style="color:#008ae1" class="bot-qtmc">善心汇成员上访</span>
+                        </div>
+                        <div class="input-item" style="margin:15px 20px">
+                            <label>类型：</label>
+                            <span style="color:#008ae1" class="bot-lx">涉访群体</span>
+                        </div>
+                        <div class="input-item" style="margin:15px 20px">
+                            <label>群体成因：</label>
+                            <span style="color:#008ae1" class="bot-qtcy">征地拆迁</span>
+                        </div>
+                        <div class="input-item" style="margin:15px 20px">
+                            <label>群体规模：</label>
+                            <span style="color:#008ae1" class="bot-qtgm">10</span>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="sub-left-part" style="width:50%;padding:0">
+                            <h5 class="table-title">原群体成员</h5>
+                            <table class="table table-bordered my-table-striped my-table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th class="td-width-1">成员名称</th>
+                                        <th class="td-width-1">身份证</th>
+                                        <th class="td-width-1">群体类型</th>
+                                        <th class="td-width-1">是否骨干</th>
+                                        <th class="td-width-1">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body glyuanqunti">
+                                </tbody>
+                            </table>
+                            <ul id="gloldpagination" class="pagination pagination-sm"></ul>
+                        </div>
+                        <div class="sub-right-part" style="width:50%">
+                            <h5 class="table-title">新群体成员</h5>
+                            <table class="table table-bordered my-table-striped my-table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th class="td-width-1">成员名称</th>
+                                        <th class="td-width-1">身份证</th>
+                                        <th class="td-width-1">群体类型</th>
+                                        <th class="td-width-1">是否骨干</th>
+                                        <th class="td-width-1">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body glchengyuan">
+                                </tbody>
+                            </table>
+                            <ul id="glpagination" class="pagination pagination-sm"></ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 群体成员 -->
+                <div class="sub-page ystq">
+                    <div class="qtlist">
+                        <table class="table table-striped table-bordered" style="margin-bottom:60px;">
+                            <thead>
+                                <tr style="height:30px">
+                                    <th>成员名称</th>
+                                    <th>身份证</th>
+                                    <th>群体类型</th>
+                                    <th>是否骨干</th>
+                                    <th >操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table_qtcy">
+
+                            </tbody>
+                        </table>
+                        <ul id="cypagination" class="pagination pagination-sm">
+                        </ul>
+                    </div>
+                </div>
+                <!-- 群体情报统计 -->
+                <div class="sub-page qtqbtj">
+                    <div class="qtjbtj" style="height:auto;padding:15px 30px;">
+                        <div class="input-item">
+                            <label>情报名称：</label>
+                            <input name="bt" type="text" class="input" placeholder="请输入群体名称" id="bt" />
+                        </div>
+                        <div class="input-item">
+                            <label>情报内容：</label>
+                            <input name="bt" type="text" class="input" placeholder="请输入情报内容" id="xxzw" />
+                        </div>
+                        <div class="input-item">
+                            <label>关键词：</label>
+                            <input name="bt" type="text" class="input" placeholder="请输入关键词" id="gjc" />
+                        </div>
+                        <div class="input-item">
+                            <label>涉事类别：</label>
+                            <select name="qbsxlb" style="width: 120px;" class="form-control select" id="sslx">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="input-item">
+                            <label>产生时间：</label>
+                            <div class="time-select">
+                                <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly id="ypstartDate" />
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                --
+                                <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly id="ypendDate" />
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="input-item">
+                            <label>是否有效：</label>
+                            <select name="qbsxlb" style="width: 120px;" class="form-control select" id="cancelstatus">
+                                <option value="">请选择</option>
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+                        <div class="filter-button-box" style="margin-top:6px;float:none">
+                            <button type="button" class="btn btn-normal btn_search" onclick="app.qbfxyp.resatchart()">查 询</button>
+                        </div>
+                    </div>
+                    <div class="chartall">
+                        <div class="nowrap-block">
+                            <div class="clue-statistics-box">
+                                <div class="color-block-title">
+                                    群体关联线索关键词统计
+                                </div>
+                                <div class="clue-statistics-content" id="fuck" style="width:100%;height:126px;height:220px">
+                                </div>
+                            </div>
+
+                            <div class="clue-relation-box">
+                                <div class="color-block-title">
+                                    群体关联线索趋势分析
+                                </div>
+                                <div class="clue-relation-content" id="listSsqtRksjChart" style="width:100%;height:126px;height:220px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tables" style="margin-top:20px;">
+                        <table class="table table-bordered my-table-striped my-table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="td-width-1">情报标题</th>
+                                    <th class="td-width-1">情报内容</th>
+                                    <th class="td-width-1">情报来源</th>
+                                    <th class="td-width-1">涉事类型名称</th>
+                                    <th class="td-width-1">填报时间</th>
+                                    <th class="td-width-1">是否有效</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body xschengyuan">
+                            </tbody>
+                        </table>
+                        <ul id="xspagination" class="pagination pagination-sm"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 页面下部edn -->
+    </div>
+
+    <script>
+        app.qbfxyp.init();
+    </script>
+
+</div>

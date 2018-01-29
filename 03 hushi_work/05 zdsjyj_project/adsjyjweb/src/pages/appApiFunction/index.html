@@ -1,0 +1,43 @@
+<div class="page">
+	<div class="tab-div">
+		<ul class="tabs">
+			<li onclick="javascript:app.userRole.toPage();"><a>用户权限</a></li>
+			<li class="active"><a>系统权限</a></li>
+		</ul>
+	</div>
+	
+	<div class="role-set">
+		<div class="h-box col2" style="width:85%;">
+			<div style="width:50%;" class="select-div">
+				<ul class="breadcrumb">
+					<li>
+						<a>系统列表</a>
+					</li>
+				</ul>
+				<div id="app-api-appList" class="select-list select-content">
+				
+				</div>
+			</div>
+			<div class="check-div" style="width:50%;">
+				<ul class="breadcrumb">
+					<li>
+						<a>接口列表</a>
+					</li>
+				</ul>
+				<form id="form-appApiFunction-save">
+				<input name="appId" id="appApiFunction-save-appId" type="hidden">
+				<div id="app-api-apiList" class="head-select-list select-content">
+				
+				</div> 
+				<footer>
+					<button class="btn" type="submit" id="app-api-apiList-button">保存</button>
+				</footer>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+	app.appApiFunction.search.init();
+	</script>
+	
+</div>

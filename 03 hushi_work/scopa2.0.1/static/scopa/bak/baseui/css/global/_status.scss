@@ -1,0 +1,95 @@
+a.link-current{
+  color: $link-current-default;
+  text-decoration: none;
+  &:hover{
+    color: $link-current-hover;
+    text-decoration: none;
+  }
+}
+.link-current-disabled{
+  color: $link-current-disabled;
+  text-decoration: line-through;
+}
+.status-minor{
+  color: $status-minor;
+}
+.status-safe{
+  color: $status-safe;
+}
+.status-warning{
+  color: $status-warning;
+}
+.status-locking{
+  color: $status-locking;
+}
+.status-icon-running{
+  background: url("images/common/status-running.png") no-repeat;
+  color: $status-running;
+  padding-left: 20px;
+}
+.status-icon-stop{
+  background: url("images/common/status-stop.png") no-repeat;
+  color: $status-stop;
+  padding-left: 20px;
+}
+.status-icon-past{
+  background: url("images/common/status-past.png") no-repeat;
+  color: $status-warning;
+  padding-left: 20px;
+}
+.status-icon-locking{
+  background: url("images/common/status-locking.png") no-repeat;
+  color: $status-locking;
+  padding-left: 20px;
+}
+.status-loading{
+  line-height: 21px;
+  color: $status-minor;
+  display: block;
+  .loading-icon{
+    @include size(21px, 21px);
+    margin-right: 3px;
+  }
+}
+.loading-icon{
+  @include size(100%,100%);
+  display: inline-block;
+  vertical-align: middle;
+  background: url("images/common/loading.gif") no-repeat;
+  background-size: 100%;
+}
+.information-current{
+  @include size(33px, 32px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url("images/common/prompt-info.png") no-repeat;
+  background-size: 100%;
+}
+.question-current{
+  @include size(32px, 32px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url("images/common/prompt-question.png") no-repeat;
+  background-size: 100%;
+}
+.warning-current{
+  @include size(33px, 32px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url("images/common/prompt-warning.png") no-repeat;
+  background-size: 100%;
+}
+.right-current{
+  @include size(32px, 32px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url("images/common/prompt-right.png") no-repeat;
+  background-size: 100%;
+}
+.wrong-current{
+  @include size(32px, 32px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url("images/common/prompt-wrong.png") no-repeat;
+  background-size: 100%;
+}

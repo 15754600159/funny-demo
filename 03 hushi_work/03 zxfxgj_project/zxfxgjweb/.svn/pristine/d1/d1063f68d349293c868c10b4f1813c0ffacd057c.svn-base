@@ -1,0 +1,18 @@
+app.api.qtdwfx = {
+	// 群体多维分析
+    search: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/qtdwcx/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    // 分组查询（群体在线挖掘）
+    searchGroup: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/qtwj/online/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    }
+},

@@ -1,0 +1,79 @@
+<div class="container bgmask">
+	<div class="window" style="width: 80%; height:90%;" id="window-qtwj-personSearchWindow">
+		<header>
+			<h1>群体挖掘人员</h1>
+			<a class="close btn-window-close">&times;</a>
+		</header>
+		<div class="content gzqt_body">
+			<div class="gzqt_cont">
+	            <div class="gzqt_tj" style="width:98%;">
+					<form class="form-search-bar" id="form-qtwj-person-search">
+						<div class="input-item">
+							<label>身份证号：</label>
+							<input name="sfzh" type="text" class="input" placeholder="请输入身份证号" />
+						</div>
+						<div class="input-item">
+							<label>姓名：</label>
+							<input name="xm" type="text" class="input" placeholder="请输入姓名" />
+						</div>
+					</form>
+	            </div>
+	            <div class="gzqt_all" style="width:98%;">
+	                <div class="search-btn-div">
+	                    <div class="left-btn-side">
+	                        <button type="button" class="btn btn-border" id="form-qtwj-person-export">导出</button>
+	                        <button type="button" class="btn btn-border" id="form-qtwj-person-refresh">刷新</button>
+	                    </div>
+	                    <div class="right-btn-side">
+	                        <button type="button" class="btn btn-normal" id="form-qtwj-person-submit">查询</button>
+	                        <button type="button" class="btn btn-normal" id="form-qtwj-person-reset">重置</button>
+	                    </div>
+	                    <div class="qtgzbd">
+	                        <table class="table table-bordered my-table-striped my-table-condensed">
+	                            <thead>
+	                                <tr>
+	                                    <th style="width: 15%;">身份证号</th>
+	                                    <th style="width: 10%;">姓名</th>
+	                                    <th style="width: 10%;">性别</th>
+	                                    <th style="width: 10%;">民族</th>
+	                                    <th style="width: 15%;">籍贯</th>
+	                                    <th style="width: 15%;">活动类型</th>
+	                                    <th style="width: 15%;">活动地址</th>
+	                                    <th style="width: 10%;">活动日期</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody id="list-qtwj-person-search">
+	                               
+	                            </tbody>
+	                        </table>
+	                        <ul id="qtwj-search-person-pagebtn" class="pagination">
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+		<footer>
+			<a class="btn btn-outline btn-window-close">关闭</a>
+		</footer>
+	</div>
+</div>
+
+<!-- 群体挖掘人员列表 -->
+<script type="text/html" id="tmpl-list-qtwj-person-search">
+		<!--% for (var i in o) { %-->
+		<tr>
+			<td>{%=o[i].sfzh%}</td>
+			<td>{%=o[i].xm%}</td>
+			<td>{%=o[i].xb%}</td>
+			<td>{%=o[i].mz%}</td>
+			<td>{%=o[i].jiguan%}</td>
+			<td>{%=o[i].hdlx%}</td>
+			<td>{%=o[i].hddz%}</td>
+			<td>{%=o[i].hdrq%}</td>
+		</tr>
+		<!--% } %-->
+</script>
+<script>
+	app.qtwj.personSearchWindow.init();
+</script>

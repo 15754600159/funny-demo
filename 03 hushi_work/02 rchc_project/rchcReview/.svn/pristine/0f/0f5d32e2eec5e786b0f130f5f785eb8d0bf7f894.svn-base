@@ -1,0 +1,720 @@
+var exportTotal;
+$(document).ready(function($) {
+    initSelect('cllb',cllxMap);
+    initSelect('hpzl',cllxMap);
+    initSelect('cl_hldd',hsXzqhMap);
+    initSelect('yjlx',yjlxC);
+    select();
+	var today = new Date();
+	$('.daterangepicker8').daterangepicker({
+	    "singleDatePicker": true,
+        "startDate": today,
+        "endDate": today,
+        "showDropdowns": false,  
+        "showWeekNumbers": false,  
+        "timePicker": true,   
+        "timePickerIncrement": 1, 
+        "timePicker24Hour": true,  
+        "format": 'YYYY-MM-DD HH:mm:ss'
+	});
+    
+    $("#cl_endTime").val(now());
+    
+     $("#cl_startTime").val(lastweek());
+	//绑定查询按钮事件
+    $("#search-ry").bind('click', function () {
+        var a =  timechuo($('#cl_startTime').val(),$('#cl_endTime').val());
+        if(a ==1){
+            return
+        }
+        pagipationQuery(1,10,pagination);
+        mapload(1,10);
+    });
+    mapload(1,10);
+	pagipationQuery(1,10,pagination); 
+    $(".map").css('display', 'none');
+
+    // 重置按钮功能
+    $('.serach-tab input[type="reset"]').on('click', function(){
+        // 还原之前的时间
+        setTimeout(function(){
+            $("#cl_startTime").val(lastweek());
+            $("#cl_endTime").val(now());
+        }, 10)
+    })
+});
+function select(){
+    $.ajax({
+        url: host+'/importantCarCategory/listCategory',
+        type: 'get',
+        dataType: 'json',
+    })
+    .done(function(data) {
+        var list="<option value='' tid=''>-全部-</option>";
+        for (var i = 0; i < data.length; i++) {
+             list+="<option value='"+data[i].code+"' tid='"+data[i].name+"'>"+data[i].name+"</option>";
+           
+        }
+         $("#clbq").html(list);
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+    
+}
+function change(a){
+    console.info(a);
+    if(a){
+       $.ajax({
+              url: host+'/importantCarCategory/listCategoryByCode?code='+a,
+              type: 'get',
+              dataType: 'json',
+          })
+          .done(function(data) {
+              console.log(data[0].name);
+              $("#clbq").attr('code', a);
+               var list="<option value=''>-全部-</option>";
+              for (var i = 0; i < data.length; i++) {
+                   list+="<option value='"+data[i].name+"'>"+data[i].name+"</option>";
+                 
+              }
+               $("#clgzlx").html(list);
+          })
+          .fail(function() {
+              console.log("error");
+          })
+          .always(function() {
+              console.log("complete");
+          });
+    }else{
+      var list="<option value=''>-全部-</option>";
+      $("#clgzlx").html(list);
+    }   
+}
+function xichange(a){
+    console.info(a);
+    $("#clgzlx").attr('code', a);
+}
+
+function mapload(pageIndex,pageSize){
+                map.clear();
+                 $("#loading").css('display', 'block');
+                 var startTime=$("#hlsj_start").val();
+                 var endTime = $("#hlsj_end").val();
+                 $.ajax({
+                    url: rchcIp+":9897/carcheck/info/findpageCompare",
+                    type: 'post',
+                    dataType: 'json',
+                    data: { 
+                        pageno:pageIndex, 
+                        size: pageSize,
+                        personif:    $('#yj').val(),
+                        clchTag2:    $('#yjlx').val(),
+                        clchTag:     $('#clbq').find("option:selected").attr('tid'),
+                        dataType:    $('#clgzlx').val(),
+                        plateNo:     $('#cph').val(),
+                        ucode:       getUcode(),
+                        beginTime:   $('#cl_startTime').val(),
+                        endTime:     $('#cl_endTime').val(),
+                        plateType:   $('#cllb').val(),
+                        policeName:  $('#cl_hlr').val(),
+                        checkAddress:$('#cl_hldd').val(),
+                        ownerName:   $('#xm').val(),
+                        pcode:       $("#jyh").val(),
+                        checkSource: $("#hcly").val()
+                    },
+                 })
+
+                 .done(function(data) {
+                    console.log(data.result); 
+                    var data = data.result;
+                     $("#loading").css('display', 'none');
+                    //[0].checkLocation;
+                    console.info(data)
+                    for (var i = 0; i < data.length; i++) {
+                        if(data[i].checkLocation){
+                            if(Number(data[i].clhcFlag)>0){
+                            var jd = data[i].checkLocation.split(",")[0];
+                            var wd = data[i].checkLocation.split(",")[1];
+                            var position = new EzCoord(jd,wd);
+                            var icon3 = new EzIcon({
+                            src: '../images/yellowmarker.png',
+                            });
+                            var marker = new EzMarker(position,icon3);
+                            map.addOverlay(marker);
+                            }else{
+                            var jd = data[i].checkLocation.split(",")[0];
+                            var wd = data[i].checkLocation.split(",")[1];
+                            var position = new EzCoord(jd,wd);
+
+                            var marker = new EzMarker(position);
+                            map.addOverlay(marker);
+                            }
+
+                        }                    
+                    };
+                    markerclick(data)
+                 })
+                 .fail(function() {
+                    console.log("error");
+                 })
+                 .always(function() {
+                    console.log("complete");
+                 });
+
+            map.addMapEventListener(Ez.Event.MAP_MOUSEMOVE,function(evt){
+            var pixel = evt.pixel;
+            var marker = map.forEachFeatureAtPixel(pixel,function(feature,layer){
+                if (feature instanceof EzMarker) {
+                    return feature;
+                }
+            });
+            if (marker) {
+                this.getViewport().style.cursor = 'pointer';
+            } else {
+                this.getViewport().style.cursor = '';
+            }
+        },map);
+            var markerclick = function(data){
+            map.addMapEventListener(Ez.Event.MAP_CLICK,function(evt){
+
+               var pixel = evt.pixel;
+               var coord = evt.coordinate;
+               
+               var marker = map.forEachFeatureAtPixel(pixel,function(feature,layer){
+                   if (feature instanceof EzMarker) {
+                       return feature;
+                   }
+               });
+
+               if (marker) {
+                
+                  if (data) {
+                    console.info(data)
+                    $(".ol-overlaycontainer").html("")
+                    for (var i = 0; i < data.length; i++) {
+                        var arry = new Array;
+                        if(data[i].checkLocation){
+                             arry = [Number(data[i].checkLocation.split(",")[0]).toFixed(6),Number(data[i].checkLocation.split(",")[1]).toFixed(6)];
+                        var oldstring = arry.toString();
+                        var arryold = new Array;
+                        arryold = [Number(marker.getPoint().coordinate_[0]).toFixed(6),Number(marker.getPoint().coordinate_[1]).toFixed(6)];
+                        var newstring = arryold.toString();
+                        if(newstring === oldstring){
+                            console.info(data[i]);
+                            var strHTML1 = '<p>车牌号:</br>'+(data[i].plateNo==undefined?'':data[i].plateNo)+'</p>'+'<p>所有人:</br>'+data[i].ownerName+'</p><p>车辆品牌:'+(data[i].carBrand==undefined?'':data[i].carBrand)+'</p><p> 公民身份证号:</br>'+data[i].ownerIdcardNo+'<p>警员:</br>'+data[i].policeName+'<p>';
+                            marker.openInfoWindow(strHTML1)
+                        }
+                        }
+                       
+                    }
+                  }
+               }
+            },map);  
+            } 
+}
+
+/**
+ * 分页控件
+ * @param total
+ */
+function pagination(data) {
+    BootstrapPagination(
+        $("#pagination"), {
+        layoutScheme: "lefttext,pagesizelist,firstpage,prevgrouppage,prevpage,pagenumber,nextpage,nextgrouppage,lastpage,pageinput,righttext",
+        //记录总数。
+        total: data.total,
+        //分页尺寸。指示每页最多显示的记录数量。
+        pageSize: data.pageSize,
+        //当前页索引编号。从其开始（从0开始）的整数。
+        pageIndex: data.pageNo-1,
+        //指示分页导航栏中最多显示的页索引数量。
+        pageGroupSize: 10,
+        //位于导航条左侧的输出信息格式化字符串
+        leftFormateString: "本页{count}条记录/共{total}条记录",
+        //位于导航条右侧的输出信息格式化字符串
+        rightFormateString: "第{pageNumber}页/共{totalPages}页",
+        //页码文本格式化字符串。
+        pageNumberFormateString: "{pageNumber}",
+        //分页尺寸输出格式化字符串
+        pageSizeListFormateString: "每页显示{pageSize}条记录",
+        //上一页导航按钮文本。
+        prevPageText: "上一页",
+        //下一页导航按钮文本。
+        nextPageText: "下一页",
+        //上一组分页导航按钮文本。
+        prevGroupPageText: "上一组",
+        //下一组分页导航按钮文本。
+        nextGroupPageText: "下一组",
+        //首页导航按钮文本。
+        firstPageText: "首页",
+        //尾页导航按钮文本。
+        lastPageText: "尾页",
+        //设置页码输入框中显示的提示文本。
+        pageInputPlaceholder: "GO",
+        //接受用户输入内容的延迟时间。单位：毫秒
+        pageInputTimeout: 800,
+        //分页尺寸列表。
+        pageSizeList: [5, 10, 20],
+        //当分页更改后引发此事件。
+        pageChanged: function (pageIndex, pageSize) {
+            pagipationQuery(pageIndex+1,pageSize,pagination);
+            mapload(pageIndex+1,pageSize)
+        },
+    });
+}
+
+function getUcode(){
+	var ucode="";
+	ucode = $('#citySel').val();
+	if(ucode!=""){
+		if($("#ucodeName").val()==ucode){
+			ucode = $('#citySel').attr('code');
+		}else{
+			ucode = $('#citySel').val();
+		}
+	}
+	return ucode;
+}
+
+/*关系研判*/
+$(document).on('click','.btn-gxyp',function(){
+    var data = $(this).parent('td').attr('tid');
+    //console.log(data)
+    //console.log(userNo)
+    window.open('http://yp.hsga.nn/core.html?username='+userNo+'#!scopa/graph/key/'+data);
+});
+/*档案*/
+$(document).on('click','.btn-da',function(){
+    
+    var data = $(this).html();
+    // console.log(data)
+    // console.log(userNo)
+    window.open('http://yp.hsga.nn/core.html?username='+userNo+'#!scopa/file/key/'+data);
+});
+
+$(document).on('click','#export-cl',function(){
+  if(exportTotal>10000){
+        $.confirm({
+            title: '提示',
+            content: '导出数据量较大，页面导出仅支持最多10000条数据的导出，如果要全部导出，请联系系统管理员',
+            buttons: {
+                确定: function () {
+                    window.location.href=host+'/carcheck/info/exportCompare?pageno=1&size=10000&carBrand='+
+                                                      '&plateNo='+$('#cph').val()+
+                                                      '&ucode='+getUcode()+
+                                                      '&beginTime='+$('#cl_startTime').val()+
+                                                      '&endTime='+$('#cl_endTime').val()+
+                                                      '&plateType='+$('#cllb').val()+
+                                                      '&policeName='+$('#cl_hlr').val()+
+                                                      '&checkAddress='+$('#cl_hldd').val()+
+                                                      '&pcode='+$("#jyh").val()+
+                                                      '&checkSource='+$("#hcly").val()+
+                                                      '&ownerName='+$('#xm').val()+
+                                                      '&personif='+$('#yj').val()+
+                                                      '&clchTag2='+$('#yjlx').val()+
+                                                      '&clchTag='+$('#clbq').find("option:selected").attr('tid')+
+                                                      '&dataType='+$('#clgzlx').val();
+                },
+                取消: function () {
+                   
+                },
+            }
+        })
+    }else{
+        window.location.href=host+'/carcheck/info/exportCompare?pageno=1&size=10000&carBrand='+
+                                                      '&plateNo='+$('#cph').val()+
+                                                      '&ucode='+getUcode()+
+                                                      '&beginTime='+$('#cl_startTime').val()+
+                                                      '&endTime='+$('#cl_endTime').val()+
+                                                      '&plateType='+$('#cllb').val()+
+                                                      '&policeName='+$('#cl_hlr').val()+
+                                                      '&checkAddress='+$('#cl_hldd').val()+
+                                                      '&pcode='+$("#jyh").val()+
+                                                      '&checkSource='+$("#hcly").val()+
+                                                      '&ownerName='+$('#xm').val()+
+                                                      '&personif='+$('#yj').val()+
+                                                      '&clchTag2='+$('#yjlx').val()+
+                                                      '&clchTag='+$('#clbq').find("option:selected").attr('tid')+
+                                                      '&dataType='+$('#clgzlx').val();
+    }
+    
+});
+
+/**
+ * 分页器查询
+ * @param pageIndex 当前页数
+ * @param pageSize 每页显示条数
+ */
+function pagipationQuery(pageIndex,pageSize, pagination){
+    Post("/carcheck/info/findpageCompare",$.param({
+        personif:    $('#yj').val(),
+        clchTag2:    $('#yjlx').val(),
+        clchTag:     $('#clbq').find("option:selected").attr('tid'),
+        dataType:    $('#clgzlx').val(),
+        plateNo:     $('#cph').val(),
+        ucode:       getUcode(),
+        beginTime:   $('#cl_startTime').val(),
+        endTime:     $('#cl_endTime').val(),
+        plateType:   $('#cllb').val(),
+        policeName:  $('#cl_hlr').val(),
+        checkAddress:$('#cl_hldd').val(),
+        ownerName:   $('#xm').val(),
+        pageno:      pageIndex, 
+        size:        pageSize,
+        pcode:       $("#jyh").val(),
+        checkSource: $("#hcly").val()
+    }), function (data) {
+        var htmlobj="";
+        $("#tableBody").empty();
+        count=data.result.length;
+        if(data.result && data.result.length > 0 ) {
+          exportTotal = data.total;
+            $.each(data.result, function (index, item) {
+                var tags = '';
+                if(item.clchTag.indexOf("无背景")>-1||item.clchTag.indexOf("无资料")>-1||item.clchTag==''){
+                     tags = "<span class='btn btn-success'>无背景</span>";
+                }else if(item.clchTag&&item.clchTag!=''){
+                     $.each(item.clchTag.split(','), function(index, item){
+                         tags += "<span class='btn btn-danger'>"+item+"</span>";
+                     });
+                }
+                  var led = '';
+                if (item.clhcFlag== 1) {
+                    led ="<img src='../images/waring.png' style='width:26px;height:auto'>";
+                }
+                $("#tableBody").append(
+                    "<tr>"+
+                    "<td>"+led+"</td>"+
+                    "<td class='aa lineh' title='"+(item.plateNo==undefined?'':item.plateNo)+"'><a class='btn-da'>"+(item.plateNo==undefined?'':item.plateNo)+"</a></td>"+
+                    "<td class='aa lineh' title='"+(dataJx(item.plateType,cllxMap))+"'>"+(dataJx(item.plateType,cllxMap))+"</td>"+
+                    "<td class='aa lineh' title='"+(ysJx(item.bodyColor,csysMap))+"'>"+(ysJx(item.bodyColor,csysMap))+"</td>"+
+                    "<td class='aa lineh' title='"+(item.ownerName==undefined?'':item.ownerName)+"'>"+(item.ownerName==undefined?'':item.ownerName)+"</td>"+
+                    "<td class='aa lineh' title='"+(item.ownerIdcardNo==undefined?'':item.ownerIdcardNo)+"'>"+(item.ownerIdcardNo==undefined?'':item.ownerIdcardNo)+"</td>"+
+                    "<td class='aa lineh' title='"+(item.checkTime==undefined?'':item.checkTime)+"'>"+(item.checkTime==undefined?'':item.checkTime)+"</td>"+
+                    "<td class='aa lineh' title='"+(dataJx(item.checkAddress,nmXzqhMap))+"'>"+(dataJx(item.checkAddress,nmXzqhMap))+"</td>"+
+                    "<td class='aa lineh' title='"+(dataJx(item.ucode,dwdm))+"'>"+(dataJx(item.ucode,dwdm))+"</td>"+
+                    "<td class='aa lineh' title='"+(item.checkSource == undefined ? '':item.checkSource)+"'>"+(item.checkSource == undefined ? '':item.checkSource)+"</td>"+
+                    "<td class='aa lineh' title='"+(item.policeName==undefined?'':item.policeName)+"'>"+(item.policeName==undefined?'':item.policeName)+"</td>"+
+                    "<td class='aa lineh' title='"+(item.pcode == undefined ? '':item.pcode)+"'>"+(item.pcode == undefined ? '':item.pcode)+"</td>"+
+                    "<td class='aa lineh' title='"+(item.policePhone == undefined ? '':item.policePhone)+"'>"+(item.policePhone == undefined ? '':item.policePhone)+"</td>"+
+                    "<td class='clTag aa' pn='"+item.plateNo+"' pt='"+item.plateType+"'>"+tags+"</td>"+
+                    "<td class='aa lineh' title='"+(item.dataType==undefined?'':item.dataType)+"'>"+(item.dataType==undefined?'':item.dataType)+"</td>"+
+                    "<td tid='"+item.plateNo+"'><img title='关系研判' class='cz btn-gxyp' src='../img/gxyp.png'>&nbsp;<img title='查看' class='cz see' data='"+JSON.stringify(item)+"' src='../img/ck.png'>&nbsp;<img title='地图' plateNo='"+(item.plateNo==undefined?'':item.plateNo)+"' class='cz ditu lineh' src='../img/dt.png'></td>"+
+                    "</tr>"
+                );
+            });
+        }
+        else{
+            $("#tableBody").append(
+                "<tr>"+
+                "<td colspan='999'>"+ "搜索结果为空" + "</td>" +
+                "</tr>"
+            )
+        }
+        $(".clTag").mCustomScrollbar({
+           axis:"x", // horizontal scrollbar
+           theme:'minimal-dark'
+        });
+		pagination && pagination(data);
+    })
+} 
+/*标签详情*/
+$(document).on('click','.clTag span',function(){
+    $('#myModal').modal('show');
+    $('.modal-body').html('');
+    $('#myModalLabel').html('');
+    var plateNo = $(this).parents('td').attr('pn');
+    var plateType = $(this).parents('td').attr('pt');
+    var tag = $(this).html();
+    if(tag.indexOf("无背景")==-1){
+      $.ajax({
+          url: host+'/carcheck/info/findTag/'+plateNo+'/'+tag+'/'+plateType,
+          type: 'GET',
+          dataType: 'json',
+          success: function(data){
+              $('#myModalLabel').html(tag);
+              $.each(data, function(index, item) {
+                  console.log(item);
+                  $('.modal-body').append('<span>数据来源：</span><span>'+eval('(' + item.tagInfo + ')').source+'</span><br>'); 
+                  var tagInfos = eval('(' + item.tagInfo + ')').fields;
+                  $.each(tagInfos, function(index1, item1) {
+                      item1 = brReg(item1);
+                      if(index1=='重点人员细类'){
+                          if(item1){
+                              if(item1.indexOf(',')!=-1){
+                                  var ite = item1.split(',');
+                                  var item2 = '';
+                                  $.each(ite,function(index, el) {
+                                    item2 += dataJx(el,zdryxlMap)+',';
+                                  });
+                              }else{
+                                item2 = dataJx(item1,zdryxlMap);
+                              } 
+                               $('.modal-body').append('<span>'+index1+'：</span><span>'+(item2=="null"?'':item2)+'</span><br>'); 
+                          }
+                      }else{
+                           $('.modal-body').append('<span>'+index1+'：</span><span>'+(item1=="null"?'':item1)+'</span><br>'); 
+
+                      }
+                  });
+                  $('.modal-body').append('<span style="color:#3b72d2;">———————————————————————————————</span>');
+                  $('.modal-body').append('<br>');
+                  
+              });
+          }
+      });
+    }else{
+      $('.modal-body').html('无背景');
+    }
+    
+});
+$(document).on('click','.see',function(){
+    var data = JSON.parse($(this).attr('data'));
+    console.log(data);
+    //$('#myModal_see').modal('show');
+    $('#tableBody_modal_see').html('');
+    $('#tableBody_modal_see').append(
+            '<tr><td>车牌号</td><td><span>'+(data.plateNo==undefined?'':data.plateNo)+'</span></td></tr>'+
+            '<tr><td>车辆类型</td><td><span>'+(data.plateType==undefined?'':data.plateType)+'</span></td></tr>'+
+            '<tr><td>车身颜色</td><td><span>'+(dataJx(data.bodyColor,csysMap))+'</span></td></tr>'+
+            '<tr><td>机动车所有人</td><td><span>'+data.ownerName+'</span></td></tr>'+
+            '<tr><td>身份证号</td><td><span>'+data.ownerIdcardNo+'</span></td></tr>'+
+            '<tr><td>核录时间</td><td><span>'+data.checkTime+'</span></td></tr>'+
+            '<tr><td>核录地点</td><td><span>'+(dataJx(data.checkAddress,nmXzqhMap))+'</span></td></tr>'+
+            '<tr><td>核录单位</td><td><span>'+(dataJx(data.ucode,dwdm))+'</span></td></tr>'+
+            '<tr><td>核查来源</td><td><span>'+(data.checkSource==undefined?'':data.checkSource)+'</span></td></tr>'+
+            '<tr><td>核录原因</td><td><span>'+(data.checkReason==undefined?'':data.checkReason)+'</span></td></tr>'+
+            '<tr><td>警员姓名</td><td><span>'+data.policeName+'</span></td></tr>'+
+            '<tr><td>警员警号</td><td><span>'+data.pcode+'</span></td></tr>'+
+            '<tr><td>警员手机号</td><td><span>'+data.policePhone+'</span></td></tr>'+
+            '<tr><td>车辆标签</td><td><span>'+data.clchTag+'</span></td></tr>'+
+            '<tr><td>车辆关注类型</td><td><span>'+(data.dataType==undefined?'':data.dataType)+'</span></td></tr>'
+    );
+    console.log(data);
+    var plateNo = data.plateNo;
+    var plateType = data.plateType;
+    console.log(plateNo + plateType);
+    if(data.clchTag){
+         $('#tableBody_modal_see').append('<tr><th colspan="2">车辆标签详情</td></tr>'); 
+            $.each(data.clchTag.split(','), function(indexq, itemq){
+                $.ajax({
+                    url: host+'/carcheck/info/findTag/'+plateNo+'/'+itemq+'/'+plateType,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data){
+                        $('#tableBody_modal_see').append('<tr><td colspan="2">'+itemq+'</td></tr>'); 
+                        $('#tableBody_modal_see').append('<tr><td colspan="2" id="tag'+indexq+'"></td></tr>'); 
+                        $.each(data, function(index, item) {
+                            $('#tableBody_modal_see #tag'+indexq).append('<span>数据来源：</span><span>'+eval('(' + item.tagInfo + ')').source+"</span><br>"); 
+                            var tagInfos = eval('(' + item.tagInfo + ')').fields;
+                            console.log(tagInfos);
+                            $.each(tagInfos, function(index1, item1) {
+                               if(index1=='重点人员类别标记'){
+                                if(item1){
+                                    item1 = zdrylbbj[item1.split(',')[1].substring(0,4)];
+                                }
+                            }else if(index1=='重点人员细类'){
+                                if(item1){
+                                    if(item1.indexOf(',')!=-1){
+                                        var ite = item1.split(',');
+                                        var item2 = '';
+                                        $.each(ite,function(index, el) {
+                                          item2 += zdryxlMap[el]+',';
+                                        });
+                                    }else{
+                                      item2 = dataJx(item1,zdryxlMap);
+                                    } 
+                                    $('#tableBody_modal_see #tag'+indexq).append('<span>'+index1+'：</span><span>'+(item2=="null"?'':item2)+'</span><br>'); 
+                                }
+                            }else{
+                                $('#tableBody_modal_see #tag'+indexq).append('<span>'+index1+'：</span><span>'+(item1=="null"?'':item1)+'</span><br>'); 
+                            }
+                            });
+                                
+                            if(index!=(data.length-1)){
+                                $('#tableBody_modal_see #tag'+indexq).append('<span  style="display: block;color:#3b72d2;margin: 3px 0px;">—————————————————————————————————</span>');
+                            }
+                        });
+                    }
+                });
+            });
+    }
+    
+    $('#myModal_see').modal('show');
+});
+
+$(document).on('click', '.ditu', function(event) {
+    console.info(this);
+    var no = $(this).attr('plateNo');
+    gomap(no);
+    /* Act on the event */
+});
+$(document).on('click', '#gomap', function(event) {
+ gomap("reload");
+});
+function gomap(data){
+     if(data =="reload"){
+         var text = $("#gomap").html();
+      var startTime,endTime
+      if (text=="到地图") {
+        $(".tableall").addClass('animated bounceOutLeft');
+        $("#gomap").html("到表格")
+        setTimeout(function(){
+        $(".tableall").css('display',"none");
+        $(".map").css('display', 'block');
+        $(".tableall").removeClass('bounceOutLeft');
+        $(".map").addClass('animated bounceInRight');
+        },500);
+        setTimeout(function(){
+         $(".map").removeClass('bounceInRight');
+        },1500);
+    }else{
+        $("#gomap").html("到地图");
+        $(".map").addClass('bounceOutLeft');
+        $(".map").css('display', 'none');
+        setTimeout(function(){
+        $(".map").removeClass('bounceOutLeft');
+        $(".tableall").css('display', 'block');
+         $(".tableall").addClass('bounceInRight');
+        },500)
+    };
+   
+
+     }else{
+     var text = $("#gomap").html();
+      var startTime,endTime
+      if (text=="到地图") {
+        $(".tableall").addClass('animated bounceOutLeft');
+        $("#gomap").html("到表格")
+        setTimeout(function(){
+        $(".tableall").css('display',"none");
+        $(".map").css('display', 'block');
+        $(".tableall").removeClass('bounceOutLeft');
+        $(".map").addClass('animated bounceInRight');
+        },500);
+        setTimeout(function(){
+         $(".map").removeClass('bounceInRight');
+        },1500);
+    }else{
+        $("#gomap").html("到地图");
+        $(".map").addClass('bounceOutLeft');
+        $(".map").css('display', 'none');
+        setTimeout(function(){
+        $(".map").removeClass('bounceOutLeft');
+        $(".tableall").css('display', 'block');
+         $(".tableall").addClass('bounceInRight');
+        },500)
+
+    };
+    console.info(data)
+
+     pointpop(data);
+     }
+}
+
+function pointpop(data){
+        var data =data;
+        console.info(data)
+         map.clear();
+             var hosturl = "http://10.101.139.22:9897";
+             $("#loading").css('display', 'block');
+
+             $.ajax({
+                url: hosturl+"/carcheck/info/findByPlateNo/"+data,
+                type: 'get',
+                dataType: 'json',
+             })
+
+             .done(function(data) {
+                console.log(data); 
+                var data = data;
+                 $("#loading").css('display', 'none');
+                //[0].checkLocation;
+               for (var i = 0; i < data.length; i++) {
+                    if(data[i].checkLocation){
+                        if(Number(data[i].ryhcFlag)>0){
+                        var jd = data[i].checkLocation.split(",")[0];
+                        var wd = data[i].checkLocation.split(",")[1];
+                        var position = new EzCoord(jd,wd);
+                        var icon3 = new EzIcon({
+                        src: '../images/yellowmarker.png',
+                        });
+                        var marker = new EzMarker(position,icon3);
+                        map.addOverlay(marker);
+                        }else{
+                        var jd = data[i].checkLocation.split(",")[0];
+                        var wd = data[i].checkLocation.split(",")[1];
+                        var position = new EzCoord(jd,wd);
+
+                        var marker = new EzMarker(position);
+                        map.addOverlay(marker);
+                        }
+
+                    }
+                    
+                                       
+                };
+                markerclick(data)
+             })
+             .fail(function() {
+                console.log("error");
+             })
+             .always(function() {
+                console.log("complete");
+             });
+
+        map.addMapEventListener(Ez.Event.MAP_MOUSEMOVE,function(evt){
+        var pixel = evt.pixel;
+        var marker = map.forEachFeatureAtPixel(pixel,function(feature,layer){
+            if (feature instanceof EzMarker) {
+                return feature;
+            }
+        });
+        if (marker) {
+            this.getViewport().style.cursor = 'pointer';
+        } else {
+            this.getViewport().style.cursor = '';
+        }
+    },map);
+        var markerclick = function(data){
+        map.addMapEventListener(Ez.Event.MAP_CLICK,function(evt){
+
+           var pixel = evt.pixel;
+           var coord = evt.coordinate;
+           
+           var marker = map.forEachFeatureAtPixel(pixel,function(feature,layer){
+               if (feature instanceof EzMarker) {
+                   return feature;
+               }
+           });
+
+           if (marker) {
+            
+              if (data) {
+                console.info(data)
+                $(".ol-overlaycontainer").html("")
+                for (var i = 0; i < data.length; i++) {
+                    var arry = new Array;
+                    if(data[i].checkLocation){
+                         arry = [Number(data[i].checkLocation.split(",")[0]).toFixed(6),Number(data[i].checkLocation.split(",")[1]).toFixed(6)];
+                    var oldstring = arry.toString();
+                    var arryold = new Array;
+                    arryold = [Number(marker.getPoint().coordinate_[0]).toFixed(6),Number(marker.getPoint().coordinate_[1]).toFixed(6)];
+                    var newstring = arryold.toString();
+                    if(newstring === oldstring){
+                        console.info(data[i]);
+                        var strHTML1 = '<p>车牌号:</br>'+(data[i].plateNo==undefined?'':data[i].plateNo)+'</p>'+'<p>所有人:</br>'+data[i].ownerName+'</p><p>车辆品牌:'+(data[i].carBrand==undefined?'':data[i].carBrand)+'</p><p> 公民身份证号:</br>'+data[i].ownerIdcardNo+'<p>警员:</br>'+data[i].policeName+'<p>';
+                        marker.openInfoWindow(strHTML1)
+                    }
+                    }
+                   
+                }
+              }
+           }
+        },map);  
+        } 
+}

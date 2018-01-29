@@ -1,0 +1,231 @@
+<div class="new-page">
+    <div class="page-content zdsjyjgl">
+        <!-- 头部图标框start -->
+        <div class="content-block content-block-jbxx">
+            <div class="color-block-title">基本信息</div>
+            <div class="block-content">
+                <form class="alignment-form" action="">
+                    <div class="input-item ">
+                        <label>人员类别：</label>
+                        <input id="rylb" code="" onclick="app.zdsjyjgl.yjzxcx.showMenu('rylb'); return false;" type="text" class="form-control2" placeholder='人员类别'
+                            readonly />
+                    </div>
+                    <div class="input-item ">
+                        <label>本地关注人员：</label>
+                        <select name="cancelstatus" class="form-control select" id="mxpz-bdgzry">
+                            <option value="">-全部-</option>
+                        </select>
+                    </div>
+                    <div class="input-item wfgzry">
+                        <label class="check" style="margin-left:87px">
+                            <input type="checkbox" value="1">
+                            <span>维稳关注人员</span>
+                        </label>
+                    </div>
+                    <div class="input-item ">
+                        <label>群体类别：</label>
+                        <input id="qtlb" code="" onclick="app.zdsjyjgl.yjzxcx.showMenu('qtlb'); return false;" type="text" class="form-control2" placeholder='群体类别'
+                            readonly />
+                    </div>
+                    <div class="input-item ">
+                        <label>户籍：</label>
+                        <input id="citySel" code="" onclick="app.zdsjyjgl.yjzxcx.showMenu('citySel'); return false;" type="text" class="form-control2"
+                            placeholder='户籍地区划' />
+                        <input id="ucodeName" type="hidden">
+                    </div>
+                    <div class="input-item ">
+                        <label>民族：</label>
+                        <select name="mz" class="form-control select" id="minzu-inpu">
+                            <option value="">--</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>性别：</label>
+                        <select name="cancelstatus" class="form-control select" id="sex-inpu">
+                            <option value="">-全部-</option>
+                            <option value="0">-男-</option>
+                            <option value="1">-女-</option>
+                        </select>
+                    </div>
+                    <div class="input-item ">
+                        <label>年龄区间：</label>
+                        <input name="bt" type="text" class="input" placeholder="年龄" style="width: 65px;" id="agestrat-inpu" /> --
+                        <input name="bt" type="text" class="input" placeholder="年龄" style="width: 65px;" id="ageend-inpu" />
+                    </div>
+                    <div class="input-item ">
+                        <label>人员阈值：</label>
+                        <input name="bt" type="text" class="input" placeholder="请输入人员阈值" id="renyuan-inpu" />
+                    </div>
+                    <div class="input-item">
+                        <label>敏感时期：</label>
+                        <select name="cancelstatus" class="form-control select" id="mgsq">
+                            <option value="">-全部-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>活动开始时间:</label>
+                        <input name="bt" type="text" class="input form_datetime"  id="kssj"  readonly="readonly"/>
+                    </div>
+                    <div class="input-item">
+                        <label>活动结束时间:</label>
+                        <input name="bt" type="text" class="input form_datetime"  id="jssj" readonly="readonly" />
+                    </div>
+                    <div class="input-item ">
+                        <label>辖区：</label>
+                        <input name="bt" type="text" class="input" placeholder="请输入辖区" id="area" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="sub-page model active">
+            <!-- 筛选条件框start -->
+            <div class="content-block content-block-glssry">
+                <div class="color-block-title">活动类型信息</div>
+                <div class="block-content" id="lei_check">
+                    <div class="single-message message-glssry" style="margin-bottom:20px;">
+                        <div class="input-item" style="float:left;">
+                            <label class="check ">
+                                <input type="checkbox" value="1" id="chw">
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="input-item">
+                            <span>活动类型：同行</span>
+                        </div>
+                        <div class="input-item">
+                            <label>出行工具：</label>
+                            <div class="radio-content tx">
+                                <label class="check checkall">
+                                    <input type="checkbox" value="3" disabled="disabled">
+                                    <span>汽车</span>
+                                </label>
+                                <label class="check checkall">
+                                    <input type="checkbox" value="2" disabled="disabled">
+                                    <span>火车</span>
+                                </label>
+                                <label class="check checkall">
+                                    <input type="checkbox" value="1" disabled="disabled">
+                                    <span>飞机</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-item tx tcc">
+                            <label>是否同车次：</label>
+                            <div class="radio-content">
+                                <label class="check">
+                                    <input type="radio" name="tcc" value="1" checked disabled="disabled">
+                                    <span>是</span>
+                                </label>
+                                <label class="check">
+                                    <input type="radio" name="tcc" value="0" disabled="disabled">
+                                    <span>否</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-item tx cfd">
+                            <label>出发地是否相同：</label>
+                            <div class="radio-content">
+                                <label class="check">
+                                    <input type="radio" name="cfd" value="1" checked disabled="disabled">
+                                    <span>是</span>
+                                </label>
+                                <label class="check">
+                                    <input type="radio" name="cfd" value="0" disabled="disabled">
+                                    <span>否</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-item tx">
+                            <label>目的地：</label>
+                            <select name="cancelstatus" class="form-control select" id="hc-inpu" disabled="disabled">
+                                <option value="0">呼和浩特</option>
+                                <option value="1">北京</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="single-message message-glssry" style="margin-bottom:20px;">
+                        <div class="input-item" style="float:left;">
+                            <label class="check checkall">
+                                <input type="checkbox" value="4" id="bg">
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="input-item">
+                            <span>活动类型：宾馆同住</span>
+                        </div>
+                        <div class="input-item txx">
+                            <label>是否同屋同住：</label>
+                            <div class="radio-content twtz">
+                                <label class="check ">
+                                    <input type="radio" name="sfzdr" value="1" checked disabled="disabled">
+                                    <span>是</span>
+                                </label>
+                                <label class="check">
+                                    <input type="radio" name="sfzdr" value="0" disabled="disabled">
+                                    <span>否</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-message message-glssry" style="margin-bottom:20px;">
+                        <div class="input-item" style="float:left;">
+                            <label class="check checkall">
+                                <input type="checkbox" value="5">
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="input-item" style="    line-height: 30px;">
+                            <span>活动类型：网吧同上网</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="operate-buttons-box">
+                <div class="right-buttons">
+                    <button type="button" class="btn btn-normal" onclick="app.zdsjyjgl.yjzxcx.search();">查询</button>
+                </div>
+            </div>
+
+            <!-- 筛选条件框end -->
+            <!-- 数据表格start -->
+            <div class="table-box">
+                <table class="table table-bordered my-table-striped my-table-condensed">
+                    <thead>
+                        <tr>
+                                <th class="td-width-1">姓名</th>
+                                <th class="td-width-2">身份证号</th>
+                                <th class="td-width-2">人员类型</th>
+                                <th class="td-width-2">管辖地区</th>
+                                <th class="td-width-1">活动类型</th>
+                                <th class="td-width-2">活动时间</th>
+                                <th class="td-width-2">预警时间</th>
+                                <th class="td-width-2">预警详情</th>
+                                <th class="td-width-1">班次</th>
+                                <th class="td-width-1">出发地</th>
+                                <th class="td-width-1">目的地</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                    </tbody>
+                </table>
+
+                <ul id="Paginationzxcx" class="pagination pagination-sm"></ul>
+            </div>
+            <!-- 数据表格end -->
+        </div>
+
+        <div id="citySelContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+            <ul id="citySelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+        </div>
+        <div id="rylbContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+            <ul id="rylbUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+        </div>
+        <div id="qtlbContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+            <ul id="qtlbUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+        </div>
+        <script>
+            app.zdsjyjgl.yjzxcx.init(); 
+        </script>
+
+    </div>

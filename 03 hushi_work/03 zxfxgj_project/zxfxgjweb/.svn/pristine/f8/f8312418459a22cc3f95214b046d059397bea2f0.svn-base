@@ -1,0 +1,32 @@
+app.api.fxmxgl = {
+    qtwjgzCxUrl: app.api.url + "/zx/group/qtwj/rule/", //群体挖掘规则查询
+    jhlx_jhztCxUrl: app.api.url + '/zx/sysDict/?types=TASK_TYPE,TASK_STATUS', //码表：计划类型、计划状态
+    qtwjrwxzUrl: app.api.url + '/zx/group/qtwj/task/', // 群体挖掘任务新增
+    qtwjrwscUrl: app.api.url + '/zx/group/qtwj/task/', // 群体挖掘任务删除
+    qtwjrwxqCxUrl: app.api.url + '/zx/group/qtwj/task/', // 根据id查询群体挖掘任务查询
+    qtwjrwXgUrl: app.api.url + '/zx/group/qtwj/task/', // 群体挖掘任务修改
+
+
+
+    // RULE_STATUS 规则状态
+    // tb_d_qgxzqh 户籍、辖区
+    // nation 民族
+    // sex 性别
+    // tb_d_zdryxl 人员类别
+    // RULE_TYPE 活动场所类别
+    qtwjgzMbCxUrl: app.api.url + '/zx/sysDict/?types=RULE_STATUS,tb_d_qgxzqh,nation,sex,tb_d_zdryxl,RULE_TYPE', //群体挖掘规则码表查询
+    qtwjgzCxUrl: app.api.url + '/zx/group/qtwj/rule/', // 群体挖掘规则查询
+    qtwjgzXzUrl: app.api.url + '/zx/group/qtwj/rule/', // 群体挖掘规则新增
+    qtwjgzScUrl: app.api.url + '/zx/group/qtwj/rule/', // 群体挖掘规则删除
+    qtwjgzXqCxUrl: app.api.url + '/zx/group/qtwj/rule/', // 根据id查询群体挖掘规则
+    qtwjgzXgUrl: app.api.url + '/zx/group/qtwj/rule/', // 群体挖掘规则修改
+
+	    
+    getSysDict : function(settings) {
+		app.api.ajax({
+			url : '/zx/sysDict/?types=TASK_TYPE,TASK_STATUS',
+			type : 'GET',
+			data : settings.data
+		}, settings);
+	}
+};

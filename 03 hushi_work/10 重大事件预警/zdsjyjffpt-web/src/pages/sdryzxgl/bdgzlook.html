@@ -1,0 +1,65 @@
+<div class="container bgmask">
+    <div class="window" style="width: 50%; height: 50%;" id="window-zxrygl-addWindow">
+        <header style="background:#77aaff;height:34px">
+            <h1 style="color:#fff;line-height:34px">查看</h1>
+            <a class="close btn-window-close" style="line-height:34px; text-decoration:none">&times;</a>
+        </header>
+        <div class="contents" style="width:98%;margin:40px auto 0;">
+            <div class="input-item">
+                <label>被核录人：</label>
+                <input id="f-xm" type="text" class="input" placeholder="被核录人：" />
+            </div>
+            <div class="input-item">
+                <label>身份证号：</label>
+                <input id="f-sfzh" type="text" class="input" placeholder="请输入公民身份证号" />
+            </div>
+            <div class="input-item">
+                <label>民族：</label>
+                <select id="f-mz" class="form-control select">
+                    <option value="">-全部-</option>
+                </select>
+            </div>
+            <div class="input-item">
+                <label>性别：</label>
+                <select id="f-fmzdm" class="form-control select">
+                    <option value="">-全部-</option>
+                    <option value="0">-男-</option>
+                    <option value="1">-女-</option>
+                </select>
+            </div>
+            <div class="input-item">
+                <label>列管单位：</label>
+                <input id="f-lgdw" type="text" class="input" placeholder="请输入列管单位" />
+            </div>
+            <div class="input-item">
+                <label>事由：</label>
+                <input id="f-sy" type="text" class="input" placeholder="请输入事由" />
+            </div>
+            <div class="input-item">
+                <label>处置要求：</label>
+                <input id="f-czyq" type="text" class="input" placeholder="请输入处置要求" />
+            </div>
+            <div class="input-item">
+                <label>比对截止日期：</label>
+                <input type="text" class="form-control2 form_datetime jzrq" readonly placeholder="导入时间止">
+            </div>
+
+        </div>
+        <footer style="background:#77aaff;height:40px" class="chakan">
+            <a class="btn" id="btn-ok-person-excel">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+    </div>
+</div>
+<div id="cjdwcodeContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+    <ul id="cjdwUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+</div>
+<div id="citySelContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+    <ul id="citySelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+</div>
+<div id="jzdSelContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+    <ul id="jzdSelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+</div>
+<script>
+    app.zxrygl.bdgzlook.init();    
+</script>

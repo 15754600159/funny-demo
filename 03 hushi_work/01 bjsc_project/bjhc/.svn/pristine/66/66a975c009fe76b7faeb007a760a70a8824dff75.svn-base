@@ -1,0 +1,438 @@
+a:hover {
+      text-decoration: none;
+}
+
+body{
+	background-color: #f6f7f9;
+}
+button{
+	outline: none;
+}
+.top {
+      height: 70px;
+      background-color: #1A427D;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+}
+
+.top>a {
+      float: left;
+      margin: 17px 20px;
+}
+
+.top .title {
+      font-size: 20px;
+      color: #fff ! important;
+      padding-left: 30px;
+      padding-top: 18px;
+      float: left;
+}
+.top .title a{
+	color: #337ab7
+}
+.top .title a:hover{
+	color: #fff;
+}
+.top .role {
+      font-size: 18px;
+      color: #6DA7E7 ! important;
+      padding-right: 30px;
+      float: right;
+}
+
+.top .role a {
+      line-height: 70px;
+}
+
+.top .role a:hover {
+      color: #fff;
+}
+
+
+
+/*背景审查页面-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.content .background-review {
+      margin: 15% auto;
+      width: 60%;
+}
+.tankuang,.tankuang1{
+	display: none;
+	position: absolute;
+	left: 35%;
+	top: 25%;
+	width: 500px;
+	height: 300px;
+	background: #fff;
+}
+.tankuang1{
+	height: 200px;
+}
+.all .tankuang .liulan button,.all .tankuang .sure button{
+	outline: none;
+}
+.hecha{
+	margin-top: 8%;
+	margin-left: 30%;
+}
+.hecha input{
+	height: 35px;
+}
+.liulan{
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.tankuang1_content{
+	margin-left: 25%;
+	margin-top: 5%;
+}
+.tankuang1_content span{
+	margin-right: 5%;
+	text-align: center;
+}
+.liulan .liulan_file{
+	width: 185px;
+	background: #fff;
+	height: 35px;
+	outline: none;
+}
+.hecha .panduan{
+	display: none;
+}
+.liulan .panfile{
+	display: none;
+}
+.info_p{
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.sure{
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.esc1{
+	margin-left: -5%;
+}
+.ok1{
+	margin-left: 25%;
+}
+.sure .esc{
+	margin-right: 30%;
+}
+.content .background-review input {
+      width: 50%;
+      float: left;
+}
+
+.content .background-review button {
+      background-color: #0088ff;
+      color: #fff;
+      margin-left: 1%;
+}
+
+.content .background-review button:hover {
+      color: #fff;
+      background-color: #286090;
+      border-color: #204d74;
+}
+.content .progress .progress-bar{
+	width: 100%;
+}
+.content .table tbody tr:nth-child(1) .progress .progress-bar{
+	width: 0;
+}
+/*任务管理页面-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.content .task-management {
+      width: 50%;
+}
+#taskDetail,#taskDel{
+	/*cursor: pointer;*/
+}
+.taskDetail1,.taskDel1{
+	cursor: pointer;
+}
+#pagination{
+	width: 1500px;
+}
+#pagination .form-control{
+	width: 50px;
+}
+.pagination>li{
+	display: inline-block;
+}
+.content .task-management>input {
+      width: 50%;
+      float: left;
+}
+
+.content .task-management>button {
+      margin-left: 1%;
+}
+
+.content .task-management>button + button {
+      margin-left: 2%;
+}
+
+.progress {
+      margin-bottom: 0;
+}
+
+.content>table {
+      margin-top: 3%;
+}
+/*.all .del{
+	width: 200px;
+	height: 160px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: none;
+}*/
+.subtitle-box {
+      background: #ddeaff;
+      line-height: 40px;
+      padding-left: 20px;
+      margin-bottom: 20px;
+     
+}
+.subtitle-box span{
+      cursor:pointer;
+      color:#c0c0c0;
+
+}
+
+.subtitle-box span.active{
+      color: #343434;
+}
+
+
+
+
+
+/*任务详情页面-------------------------------------------------------------------------------------------------------------------------------------*/
+#taskDetail button{
+      background-color: #e6e6e6;
+      outline: none;
+}
+
+#taskDetail button:hover{
+      background-color: grey;
+      color: white;
+}
+#ck_btn{
+	margin-left: 1%;
+}
+.content .task-detail {
+      width: 50%;
+}
+
+.content .task-detail>input {
+      width: 50%;
+      float: left;
+}
+
+.content .task-detail>button {
+      width: 100px;
+}
+
+.content .task-detail>button {
+      margin-left: 1%;
+}
+
+/*.content .task-detail>button + button {
+      margin-left: 8%;
+}*/
+.content .tags{
+	margin-top: 12px;
+}
+.content .tags span{
+	margin-left: 6px;
+}
+.content .check-filter-box {
+      width: 100%;
+      height: 60px;
+      margin-top: 2%;
+      border: 1px solid #dee3eb;
+      border-radius: 15px;
+}
+
+.content .check-filter-box>button {
+      padding: 2px 20px;
+      margin-top: 20px;
+}
+
+.content .check-filter-box>.checkbox-inline{
+      margin-top: 20px;
+}
+
+.content .check-filter-box .checkbox-inline:nth-child(1), .content .check-filter-box>button:last-child{
+      margin-left: 20px;
+}
+
+.content .task-detail-box{
+      margin-top: 2%;
+}
+
+.content .task-detail-box .task-detail-card{
+      position: relative;
+      margin-bottom: 2%;
+      height: 250px;
+      border: 1px solid #dee3eb;
+      background-color: #fff;
+      box-shadow: 5px 5px 5px #888888;
+}
+
+.content .task-detail-card .img-box{
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15%;
+      float: left;
+      display: block;
+}
+
+.content .task-detail-card .detail-box{
+      width: 50%;
+      float: left;
+}
+
+.content .task-detail-card .button-box{
+      display: flex;
+      align-items: center;
+      width: 35%;
+      float: left;
+      height: 100%;
+}
+
+.content .task-detail-card .img-box img{
+      height: 100px;
+      margin: 0 48px;
+}
+
+.detail-box .person-info{
+      height: 160px;
+      padding-top: 30px;
+      width: 60%;
+      float: left;
+}
+
+.detail-box .occupation{
+      height: 160px;
+      padding-top: 30px;
+      width: 40%;
+      float: left;
+}
+
+.detail-box .tags{
+      height: 60px;
+      width: 100%;
+      float: left;
+}
+
+.tags .labels .label{
+      display: inline-block;
+      margin-bottom: 10px;
+}
+
+.task-detail-box .person-info .person-info-row{
+      margin-bottom: 15px;
+}
+
+.content .person-info span{
+      margin-right: 40px;
+}
+
+.content .task-detail-card .button-box button{
+      margin-right: 40px; 
+}
+
+/*页面分页组件样式调整-------------------------------------------------------------------------------------------------------------------------------------*/
+#pagination>li:nth-child(10)>div.input-group{
+      width: 90px;
+      display: inline-block;
+}
+.all-content{
+      width: 98%;
+      padding-bottom: 120px;
+      background: #fff;
+      margin: 80px auto 0;
+}
+#bd_task_tbody td{
+      color: #4f8cf6;
+}
+.cz{
+          display: flex;
+          justify-content:space-evenly;
+}
+.content-title{
+      background: #4f8cf6;
+      line-height: 40px;
+      color: #fff;
+}
+.content-title p{
+      margin-left: 20px;
+}
+.resule-header{
+      padding: 10px;
+      background: #4f8cf6;
+}
+.resule-header p{
+      color:#fff;
+      margin:0;
+}
+.result-content{
+      border-radius: 0;
+}
+.result-body{
+      border:4px solid #4f8cf6;
+      border-top: none;
+}
+.list-content{
+      width: 98%;
+      border: 1px solid #d0d0d0;
+      margin: 0 auto;
+      display: flex;
+}
+.listall{
+      width: 18%;
+}
+.listall p{
+      border-bottom: 1px solid #d0d0d0;
+      margin:0;
+      line-height: 32px;
+      padding-left: 20px;
+      color: #606060;
+      cursor:pointer;
+}
+.listall p:hover{
+     background: #ededed
+}
+.listall p:last-child{
+      border:none;
+}
+.have{
+      color: #0e54cd !important;
+}
+.list-name{
+      border-right: 1px solid #d0d0d0;
+       width: 10%;
+}
+.people{
+      border-right: 1px solid #d0d0d0;
+}
+.car{
+      border-right: 1px solid #d0d0d0;
+}
+.guiji{
+      border-right: 1px solid #d0d0d0;
+}
+.ziyuan{
+      border-right: 1px solid #d0d0d0;
+}
+.bendi{
+      border-right: 1px solid #d0d0d0;
+}

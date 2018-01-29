@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>警情分析</title>
+<link rel="stylesheet" type="text/css" href="./css/analysis.css" />
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="./css/bootstrap-datetimepicker.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/jquery.mCustomScrollbar.css" />
+
+<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=89b8Vh7QRpZABrbNLr6qs0KgNDz2yux9"></script>
+<!--<script type="text/javascript" src="/miningmap/resources/default/js/apiv2.0.1021.min.js"></script>
+<script type="text/javascript" src="/miningmap/resources/default/js/DrawingManager_min.js"></script>
+<link rel="stylesheet" type="text/css" href="/miningmap/resources/default/css/bmap.css"/>
+<link rel="stylesheet" type="text/css" href="/miningmap/resources/default/css/DrawingManager_min.css"/>-->
+<script type="text/javascript" src="/static/common/heatmap.js"></script>
+<script type="text/javascript" src="js/AreaRestriction_min.js"></script>
+<script type="text/javascript" src="js/InfoBox_min.js"></script>
+<script type="text/javascript" src="./js/chart.js"></script>
+<script type="text/javascript" src="./js/bootstrap.js"></script>
+<script type="text/javascript" src="./js/jquery.mCustomScrollbar.js"></script>
+<script src="/static/common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+<script>staticUrl = "/static";</script>
+<script src="/static/common/config.js?t=201609011800" type="text/javascript"></script>
+<script>seajs.use(['core/common/showelement','router','./js/analysis_heat.js','datetimepicker'], function(module){SCOPA_showModule = module;})</script>
+<!--<link href="/static/scopa/css/special.css" rel="stylesheet">-->
+</head>
+<body>
+	<div class="bread-nav">
+		<ol class="breadcrumb" style="font-size:12px;">
+			<!--<li> <span class="goApp" style="  cursor: pointer;">应用</span></li>-->
+			<li><span id="goApp" style="cursor:pointer;">应用</span></li>
+			<li><span id="goUp">治安态势分析</span></li>
+		</ol>
+	</div>
+	<div class="analysis-box">
+		<div class="box-row">
+
+			<div class="row-colmap">
+				<div class="map" id="map">
+					<canvas id='myChart' width='400' height='400'></canvas>
+					<!-- 地图绘制在这里 -->
+				</div>
+			</div>
+			<div class="row-coltable">
+
+				<div class="control">
+					<!-- 控件放在这里 -->
+					<div class="font2">警情</div>
+					<div class="row1">
+						<div class="clounm1" >
+							<input class="checkbox1" type="checkbox" name="checkbox1"
+								value="xsjq" checked="checked" />
+							<div class="color1" style="background-color: #4AA5F0"></div>
+							<span class="font">刑事警情</span>
+						</div>
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox2"
+								value="zajq" checked="checked" />
+							<div class="color1 " style="background-color: #4CB6DA"></div>
+							<span class="font">治安警情</span>
+						</div>
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox3"
+								value="jtjq" checked="checked" />
+							<div class="color1" style="background-color: #4BC6DF"></div>
+							<span class="font">交通警情</span>
+						</div>
+
+					</div>
+					<div class="row1">
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox4"
+								value="xfjq" checked="checked" />
+							<div class="color2" style="background-color: #39A690"></div>
+							<span class="font">消防警情</span>
+						</div>
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox5"
+								value="qzqz" checked="checked" />
+							<div class="color2" style="background-color: #428E66"></div>
+							<span class="font">群众求助</span>
+						</div>
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox6"
+								value="shld" checked="checked" />
+							<div class="color2" style="background-color: #50A455"></div>
+							<span class="font">社会联动</span>
+						</div>
+					</div>
+					<div class="row1">
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox7"
+								value="qtsj" checked="checked" />
+							<div class="color3" style="background-color: #74B353"></div>
+							<span class="font">群体事件</span>
+						</div>
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox8"
+								value="zhsg" checked="checked" />
+							<div class="color3" style="background-color: #9CD765"></div>
+							<span class="font">灾害事故</span>
+						</div>
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox9"
+								value="jbxs" checked="checked" />
+							<div class="color3" style="background-color: #BBE779"></div>
+							<span class="font">举报线索</span>
+						</div>
+					</div>
+					<div class="row1">
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox12"
+								value="tsjd" checked="checked" />
+							<div class="color4" style="background-color: #DCE678"></div>
+							<span class="font">投诉监督</span>
+						</div>
+						<div class="clounm1">
+							<input class="checkbox1" type="checkbox" name="checkbox13"
+								value="qt" checked="checked" />
+							<div class="color4" style="background-color: #FDF697"></div>
+							<span class="font">其他报警类别</span>
+						</div>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+
+					<!--下拉框-->
+					<div>
+						时间： <select class="selectTime" name="selectTime" id="selectTime">
+							<option value="7">近7天</option>
+							<option value="15">近15天</option>
+							<option value="30">近30天</option>
+							<option value="90">近三个月</option>
+							<option value="180">近半年</option>
+							<option value="0">自定义</option>
+						</select>
+					</div>
+					<br>
+					<!--时间控件-->
+
+					<div class="input-append date" id="datetimepicker"
+						data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+						<div class="time1" style="float: left">
+							<input style="padding-left: 8px;" id="input-append date starttime" disabled=true; size="16"
+								type="text" readonly class="form_datetime" value="">
+								<p class="tooltip-options">
+									<a href="#" data-toggle="tooltip"></a>
+								</p>
+							<div class="img1">
+								<img src="./image/xialagray.png" />
+							</div>
+						</div>
+
+						<div class="timefont"
+							style="float: left; margin-left: 110px; margin-top: 3px;">至</div>
+
+						<div class="time2" style="float: left; margin-left: 20px;">
+							<input style="padding-left: 8px;" id="input-append date endtime" disabled=true; size="16"
+								type="text" readonly class="form_datetime" value="">
+							<div class="img2">
+								<img src="./image/xialagray.png" />
+							</div>
+						</div>
+					</div>
+
+					<br>
+					<br>
+					<div>
+						<select class="selectAddress" name="selectAddress"
+							id="selectAddress">
+						</select>
+					</div>
+
+				</div>
+				<div class="table">
+					<!-- 表格放在这里 -->
+					<div class="font1">统计列表</div>
+					<br>
+
+					<table class="grid">
+						<thead>
+							<tr>
+								<th class="th" style="width: 100px;">案件类别</th>
+								<th class="th" style="width: 90px;">案件数量</th>
+								<th class="th" style="width: 80px;">同比</th>
+								<th class="th" style="width: 80px;">环比</th>
+							</tr>
+						</thead>
+						<tbody class="gridTbody">
+						<tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

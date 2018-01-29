@@ -1,0 +1,471 @@
+<div class="filenavtabs">
+	<ul class="tabslist"></ul>
+	<div class="tabsmore hidden"><i class="scopaicon scopaicon-gengduoxiangxia"></i></div>
+	<ul class="tabsmorelist"></ul>
+</div>
+<div class="toolbar">
+	<ul>
+		<li class="actionbtn file-undo"><span class="scopaicon scopaicon-houtui"></span><span class="text">后退</span></li>
+		<li class="actionbtn file-redo"><span class="scopaicon scopaicon-qianjin"></span><span class="text">前进</span></li>
+		<li class="actionbtn file-tograph disable"><span class="scopaicon scopaicon-daotuxi"></span><span class="text">到图析</span></li>
+		<li class="actionbtn file-tomap disable"><span class="scopaicon scopaicon-daoditu18"></span><span class="text">到地图</span></li>
+		<li class="cut-off-toolbar"><span></span></li>
+		<li class="actionbtn file-local"><span class="scopaicon scopaicon-wenjianjia"></span><span class="text">文档列表</span></li>
+		<li class="actionbtn file-import"><span class="scopaicon scopaicon-daorushuju"></span><span class="text">导入</span></li>
+		<li class="actionbtn file-analyze hidden"><span class="scopaicon scopaicon-wendangfenxi"></span><span class="text">分析文档</span></li>
+		<li class="actionbtn file-save hidden"><span class="scopaicon scopaicon-baocun"></span><span class="text">保存</span></li>
+		<li class="actionbtn file-delete hidden"><span class="scopaicon scopaicon-xiangpica"></span><span class="text">清除</span></li>
+	</ul>
+</div>
+<div class="main-box">
+	<div class="fileside pull-left box-shadow">
+		<div class="searchbox">
+			<input class="searchbox-ipt" type="text" name="keywords" placeholder="输入关键字筛选">
+			<a class="searchbar-close hidden" href="javascript:;" title="关闭搜索"></a>
+			<i class="scopaicon scopaicon-shaixuan"></i>
+		</div>
+		<div class="fileitems-box">
+			<div class="filelist hidden" type="group">
+				<div class="title">
+					<span class="scopaicon scopaicon-quntileibie"></span>
+					<span class="text">群体&nbsp;&nbsp;<b>0</b></span>
+					<a class="clearlist hidden" href="javascript:;" title="清空"><span class="scopaicon scopaicon-qingkong" aria-hidden="true"></span></a>
+				</div>
+				<div class="fileitems">
+					<div class="fileitems-list">
+						<ul class="itemlist"></ul>
+					</div>
+				</div>
+			</div>
+			<div class="filelist" type="entity">
+				<div class="title">
+					<span class="scopaicon scopaicon-shitileibie"></span>
+					<span class="text">实体&nbsp;&nbsp;<b>0</b></span>
+					<a class="clearlist hidden" href="javascript:;" title="清空"><span class="scopaicon scopaicon-qingkong" aria-hidden="true"></span></a>
+				</div>
+				<div class="fileitems">
+					<div class="fileitems-list">
+						<p class="list-title" data-type="person">人&nbsp;&nbsp;<b>0</b></p>
+						<ul class="itemlist" data-type="person"></ul>
+						<p class="list-title" data-type="vehicle">车&nbsp;&nbsp;<b>0</b></p>
+						<ul class="itemlist" data-type="vehicle"></ul>
+						<p class="list-title" data-type="case">案件&nbsp;&nbsp;<b>0</b></p>
+						<ul class="itemlist" data-type="case"></ul>
+						<p class="list-title" data-type="other">其他&nbsp;&nbsp;<b>0</b></p>
+						<ul class="itemlist" data-type="other"></ul>
+					</div>
+				</div>
+			</div>
+			<div class="filelist" type="relation">
+				<div class="title">
+					<span class="scopaicon scopaicon-guanxileibie"></span>
+					<span class="text">关系&nbsp;&nbsp;<b>0</b></span>
+					<a class="clearlist hidden" href="javascript:;" title="清空"><span class="scopaicon scopaicon-qingkong" aria-hidden="true"></span></a>
+				</div>
+				<div class="fileitems">
+					<div class="fileitems-list">
+						<p class="list-title" data-type="direct">显性关系&nbsp;&nbsp;<b>0</b></p>
+						<ul class="itemlist" data-type="direct"></ul>
+						<p class="list-title" data-type="indirect">隐性关系&nbsp;&nbsp;<b>0</b></p>
+						<ul class="itemlist" data-type="indirect"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="file-box">
+		
+		<div class="content-box">
+			<div class="filecontent-box entity-box hidden">
+				<div class="filedeails pull-left">
+					<div class="primary-info">
+					</div>
+					<div class="fileinfobox minor-info">
+						<div class="panel-bar">
+							<div class="bar-title pull-left">背景档案</div>
+							<div class="bar-btn pull-right">
+								<ul>
+									<li class="actionbtn show-full-screen hidden">
+										<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="panel-list minor-box">
+							<div class="minorlist"></div>
+						</div>
+					</div>
+					<div class="fileinfobox event-info">
+						<div class="panel-bar">
+							<div class="bar-title pull-left">轨迹档案</div>
+							<div class="bar-btn pull-right">
+								<ul>
+									<li class="actionbtn show-events-list">
+										<span title="显示事件列表"><i class="show-list-btn"></i></span>
+									</li>
+									<li class="actionbtn show-events-view hidden">
+										<span title="显示事件视图"><i class="show-view-btn"></i></span>
+									</li>
+									<li class="actionbtn show-full-screen hidden">
+										<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="panel-list event-box">
+							<div class="events-view">
+								<div class="event-summary">
+									<div class="event-action">
+									</div>
+									<div class="event-type">
+									</div>
+									<div class="event-time">
+									</div>
+								</div>
+								<div class="event-detail hidden">
+									<div class="event-action">
+										<button class="return-back">返回上级</button>
+									</div>
+									<div class="event-type">
+										<div class="bg">
+											<div class="bg-line"></div>
+											<div class="bg-line"></div>
+											<div class="bg-line"></div>
+											<div class="bg-line"></div>
+											<div class="bg-line"></div>
+										</div>
+										<div class="events-data-list">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="events-list hidden">
+								<div class="event-table-tags tags-btn"></div>
+								<div class="event-table-box">
+									<div class="table-list"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="filerelated pull-left">
+					<div class="fileinfobox graph-info">
+						<div class="panel-bar">
+							<div class="bar-title pull-left">关系图谱</div>
+							<div class="bar-btn pull-right">
+								<ul>
+									<li class="actionbtn send-to-list">
+										<span title="发送到左侧列表"><i class="scopaicon scopaicon-daotab send-btn"></i></span>
+									</li>
+									<li class="actionbtn show-full-screen hidden">
+										<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="panel-list">
+							<div class="infolist relatedchart"></div>
+							<div class="filter-tags tags-btn hidden">
+								<div class="filter-bg"></div>
+							</div>
+						</div>
+					</div>
+					<div class="fileinfobox snapshot-info">
+						<div class="panel-bar">
+							<div class="bar-title pull-left">历史研判</div>
+							<div class="bar-btn pull-right">
+								<ul>
+									<li class="actionbtn show-full-screen hidden">
+										<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="panel-list snapshot-box">
+							<div class="slider slider-pre pull-left"><span class="scopaicon scopaicon-xiangzuofan"></span></div>
+							<div class="slider slider-next pull-right"><span class="scopaicon scopaicon-xiangyoufan"></span></div>
+							<div class="infolist snapshot-list pull-left">
+								<ul class="snapshotitem" pSize='0' pNo='1'></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="filecontent-box relation-box hidden">
+				<div class="filedeails pull-left">
+					<div class="primary-info">
+					</div>
+					<div class="ordinary-relation relation hidden">
+						<div class="fileinfobox minor-info">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">背景档案</div>
+								<div class="bar-btn pull-right">
+									<ul>
+										<li class="actionbtn show-full-screen hidden">
+											<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list minor-box">
+								<div class="minorlist"></div>
+							</div>
+						</div>
+						<div class="fileinfobox relation-details">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">关系详情</div>
+								<div class="bar-btn pull-right">
+									<ul>
+										<li class="actionbtn show-full-screen hidden">
+											<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list relation-box">
+								<div class="relation-list">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="harts-relation relation">
+						<div class="fileinfobox enevts-list">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">轨迹档案</div>
+								<div class="bar-btn pull-right">
+									<ul>
+										<li class="actionbtn show-full-screen hidden">
+											<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list">
+								<div class="train-travel harts-box hidden">
+									<div class="relation-list">
+									</div>
+								</div>
+								<div class="flight-travel harts-box hidden">
+									<div class="relation-list">
+									</div>
+								</div>
+								<div class="hotel-live harts-box">
+									<div class="relation-list">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="filerelated pull-left">
+					<div class="fileinfobox graph-info">
+						<div class="panel-bar">
+							<div class="bar-title pull-left">关系图谱</div>
+							<div class="bar-btn pull-right">
+								<ul>
+									<li class="actionbtn send-to-list">
+										<span title="发送到左侧列表"><i class="scopaicon scopaicon-daotab send-btn"></i></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="panel-list">
+							<div class="infolist relatedchart"></div>
+						</div>
+					</div>
+					<div class="fileinfobox snapshot-info">
+						<div class="panel-bar">
+							<div class="bar-title pull-left">历史研判</div>
+							<div class="bar-btn pull-right">
+								<ul>
+									<li class="actionbtn show-full-screen hidden">
+										<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="panel-list snapshot-box">
+							<div class="slider slider-pre pull-left"><span class="scopaicon scopaicon-xiangzuofan"></span></div>
+							<div class="slider slider-next pull-right"><span class="scopaicon scopaicon-xiangyoufan"></span></div>
+							<div class="infolist snapshot-list">
+								<ul class="snapshotitem" pSize='0' pNo='1'>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="filecontent-box group-box hidden">
+				<div class="group-base">
+					<div class="primary-info pull-left">
+					</div>
+					<div class="tags-box pull-left">
+						<div class="tags-list"></div>
+					</div>
+				</div>
+				<div class="group-info">
+					<div class="filedeails pull-left">
+						<div class="fileinfobox group-event">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">群体事件</div>
+								<div class="bar-btn pull-right">
+									<ul>
+										<li class="actionbtn show-full-screen hidden">
+											<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list event-box">
+								<div class="list-box">
+									<div class="eventlist">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="fileinfobox group-member">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">骨干成员</div>
+								<div class="bar-btn pull-right">
+									<ul>
+										<li class="actionbtn show-full-screen hidden">
+											<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list member-box">
+								<div class="list-box">
+									<div class="memberlist">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="filerelated pull-left">
+						<div class="fileinfobox group-information">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">相关情报</div>
+								<div class="bar-btn pull-right">
+									<ul>
+										<li class="actionbtn show-full-screen hidden">
+											<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list information-box">
+								<div class="informationlist">
+									<div class="time-filter hidden">
+										<div class="daterangebox pull-left">
+									        <label><input type="text" name="reservation" class="daterangebox-ipt" value="" placeholder="按周期模糊搜索" readonly=""></label>
+									        <a class="daterangebox-btn" href="javascript:;">日期</a>
+									    </div>
+									</div>
+									<div class="list-box">
+										<ul></ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="fileinfobox graph-info">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">关系图谱</div>
+								<div class="bar-btn pull-right">
+									<ul>
+										<li class="actionbtn send-to-list">
+											<span title="发送到左侧列表"><i class="scopaicon scopaicon-daotab send-btn"></i></span>
+										</li>
+										<li class="actionbtn show-full-screen hidden">
+											<span title="全屏展示"><i class="scopaicon scopaicon-quanpingzhankai"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list">
+								<div class="infolist relatedchart"></div>
+								<div class="filter-tags tags-btn hidden">
+									<div class="filter-bg"></div>
+									<span class="tag-current tags-info ellipsis" title="测试" data-label="">测试</span>
+									<span class="tag-current tags-info ellipsis" title="测试" data-label="">测试</span>
+									<span class="tag-current tags-info ellipsis" title="测试" data-label="">测试</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="filecontent-box fileanalyze-box hidden">
+				<div class="file-show pull-left">
+					<div class="show-box">
+						<div class="content-panel">
+							<div class="title">
+								<div class="document-title pull-left">标题文字</div>
+								<div class="document-size pull-right">512KB</div>
+							</div>
+							<div class="content-text">
+								<div class="content-text-details loading"></div>
+							</div>
+						</div>
+						<div class="fileinfobox attrlist-panel hidden">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">属性列表</div>
+								<div class="bar-btn pull-right">
+									<ul>
+										<li class="actionbtn close-attr-panel">
+											<span class="close-panel" title="关闭属性列表"><i class="scopaicon scopaicon-guanbi"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list">
+								<div class="infolist propertylist">
+									<table class="table">
+										<tbody></tbody>
+									</table>
+								</div>
+							</div>
+							<div class="drag-vertical-line-extend hidden"></div>
+						</div>
+					</div>
+					<div class="drag-horizontal-line-extend hidden"></div>
+					<div class="drag-vertical-line-change hidden"><span class="caret pullToDown"></span></div>
+				</div>
+				<div class="file-info pull-left hidden">
+					<div class="info-box">
+						<div class="fileinfobox graphinfo-panel">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">关系图谱</div>
+								<div class="bar-btn pull-right">
+									<ul>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list fileAnalyzeGraph">
+								<div class="graph-box" id="fileAnalyzeGraph"></div>
+							</div>
+						</div>
+						<div class="fileinfobox statistics-panel">
+							<div class="panel-bar">
+								<div class="bar-title pull-left">统计</div>
+								<div class="bar-btn pull-right">
+									<ul>
+										<li class="actionbtn close-statistics-panel">
+											<span class="close-panel" title="关闭统计列表"><i class="scopaicon scopaicon-guanbi"></i></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel-list grouplist">
+								<div class="groupinfoside"></div>
+							</div>
+							<div class="drag-vertical-line-extend hidden"></div>
+						</div>
+					</div>
+					<div class="drag-vertical-line-change hidden"><span class="caret pullToDown"></span></div>
+				</div>
+				<div class="content-menu hidden"></div>
+			</div>
+		</div>
+	</div>
+</div>

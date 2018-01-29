@@ -1,0 +1,365 @@
+'use strict';
+
+$(function () {
+    /**-----mian---------------------------------------------- */
+    // 页面初始化
+    initPage();
+
+
+
+    /**-----function------------------------------------------ */
+    /**
+     * @desc: 页面初始化
+     * @param: none
+     * @return: undefined 
+     */
+    function initPage() {
+        resizeFunc();
+
+        // 页面窗口大小变化 重新计算布局
+        $(window).resize(resizeFunc);
+
+        // 加载页面左部分标签（表名）
+        initLeftPartTableNames();
+
+        // 点击事件监听
+        bindClickFunc();
+
+        // 页面日期选择器初始化
+        calendar($('.date1'), 'right');
+        calendar($('.date2'), 'left');
+
+        // 页面拖拽功能
+        dragFunc();
+    }
+
+    /**
+     * @desc: 改变页面html的font-size大小 和 搜索结果result-table-box 元素的top值
+     * @param: none
+     * @return: undefined 
+     */
+    function resizeFunc() {
+        //重新设置html的font-size
+        var width = $(document).width();
+        var fontSize = (width - 1680) * 0.0298 + 50;
+        $('html').css('font-size', fontSize);
+
+        //重新设置搜索结果框的top值（包括背景审查、情况摸排）
+        var height = $("body").height() + 18;
+        $('.result-table-box, .qkmp').css('top', height);
+
+    }
+
+    /**
+     * @desc: 初始加载页面左部分标签（表名）
+     * @param: none
+     * @return: undefined 
+     */
+    function initLeftPartTableNames(){
+        var json = {
+            "tables" : [
+                {
+                    "name": "转移登记信息", 
+                    "category": "人员类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "现房签约", 
+                    "category": "人员类", 
+                    "fields": ["姓 名", "证件号码", "学 历", "性 别", "出生日期", "暂住地址"]
+                },
+                {
+                    "name": "期房签约", 
+                    "category": "人员类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "低保人员信息", 
+                    "category": "轨迹类", 
+                    "fields": ["出生日期", "证件号码", "姓 名", "性 别", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "重点人口信息", 
+                    "category": "轨迹类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "违法犯罪人员", 
+                    "category": "轨迹类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "SIS犯罪嫌疑人", 
+                    "category": "轨迹类", 
+                    "fields": ["出生日期", "姓 名", "证件号码", "性 别", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "全国重点人员", 
+                    "category": "轨迹类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+            ]
+        };
+        var htmlCode = '';
+        var tables = json.tables;
+        for(var i in tables){
+            htmlCode += `<div class="item" data-name="${tables[i]['name']}" data-category="${tables[i]['category']}" data-fields="${tables[i]['fields']}"><span>${tables[i]['name']}</span></div>`
+        }
+        $('.left-part .items-box .sub-select-box').html(htmlCode);
+    }
+
+    /**
+     * @desc: 页面点击事件绑定
+     * @param: none
+     * @return: undefined 
+     */
+    function bindClickFunc() {
+        // 情况摸排页面 左边部分标签页切换
+        $('.qkmp .left-part .button-box .button').on('click', function (e) {
+            var target = $(e.currentTarget);
+            target.siblings().removeClass('active');
+            target.addClass('active');
+        })
+
+        // 页面左部分 智能搜索 选择全部点击功能
+        $('.qkmp .left-part .items-box .select-all').on('click', function(){
+            var flag = true; //true为全选状态 false为有选项没被选择
+            $('.qkmp .left-part .items-box .sub-select-box .item').each(function(){
+                if(!($(this).hasClass("active"))){
+                    flag = false;
+                    return false;//跳出循环
+                }
+            })
+            if(flag){
+                $('.qkmp .left-part .items-box .sub-select-box .item').removeClass("active");
+            }else{
+                $('.qkmp .left-part .items-box .sub-select-box .item').addClass("active");
+            }
+        })
+
+        // 页面左部分 智能搜索 下属标签点击功能
+        $(document).on('click', '.qkmp .left-part .items-box .sub-select-box .item', function(){
+            var flag = false, //true为选择状态 false为非选择状态
+                htmlCode = '',
+                tableName = $(this).data('name'),
+                category = $(this).data('category'),
+                fields = $(this).data('fields').split(',');
+
+            if($(this).hasClass("active")){
+                flag = true;
+            }
+            if(flag){
+                $(this).removeClass("active");
+                // 删除目标区表信息
+                $('.right-bottom-part .mbq-info-box .mbq-info-card').each(function(){
+                    var that = $(this);
+                    if(compareStr(that.data('name'), tableName)){
+                        that.remove();
+                        return false;//跳出循环
+                    }
+                })
+            }else{
+                $(this).addClass("active");
+                // 增加目标区表信息
+                htmlCode = `<div class="mbq-info-card" data-name="${tableName}" data-category="${category}">
+                                <div class="main-title">
+                                    ${tableName}
+                                    <span>（来自治安综合防范平台数据）</span>
+                                </div>
+                                <div class="control-buttons">
+                                    <div class="button sjtj-button">
+                                        <img src="../../img/bjscxq/sjtj-icon.png" alt="check">
+                                        <span>数据统计</span>
+                                    </div>
+                                    <div class="button llsj-button">
+                                        <img src="../../img/bjscxq/llsj-icon.png" alt="check">
+                                        <span>浏览数据</span>
+                                    </div>
+                                    <img class="button" src="../../img/bjscxq/wrong-icon.png" alt="delete">
+                                </div>
+                                <div class="filter-conditions-box">
+                                    <div class="orange-label-box">
+                                        <span class="orange-label">关联字段</span>
+                                        <span class="field">使用省份证号</span>
+                                    </div>
+                                    <div class="green-label-box">
+                                        <span class="green-label">约束条件</span>
+                                        <span class="field">活动发生时间</span>：
+                                        <!-- 日期选择 -->
+                                        <div class="input-group dateranger">
+                                            <input type="text" class="daterangebox date2" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fields-box">`
+                for( var i in fields){
+                    htmlCode += `<span class="field">${fields[i]}</span>`
+                }
+                htmlCode += `</div></div>`;
+                $('.right-bottom-part .sub-info-box .mbq-info-box').append(htmlCode);
+                calendar($('.right-bottom-part .sub-info-box .mbq-info-box').last('.mbq-info-card').find('.date2'), 'left');//初始化新加的日期选择控件
+            }
+        })
+
+        // 页面左部分 智能搜索 下部标签点击功能
+        $(document).on('click', '.qkmp .left-part .filter-condition-box .row .col-md-9 .item', function(){
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+
+        // 页面右下部分 标签点击功能
+        $(document).on('click', '.qkmp .right-bottom-part .filter-conditions-box .item', function(){
+            $(this).addClass('active').siblings('.active').removeClass('active');
+        })
+
+        // 页面表信息卡右上角删除按钮（X）点击删除功能
+        $(document).on('click', '.right-top-part .main-info-box .control-buttons img.button', function(){
+            $(this).parentsUntil('.right-top-part').empty(); //直到right-top-part元素 不包括right-top-part元素
+        })
+
+    }
+
+    /**
+     * @desc 初始化日期选择控件
+     * @param {*日期控件jquery对象} dateElem Object
+     * @param {*日期控件弹出的方向} openDirection String
+     * @return undefined
+     */
+    function calendar(dateElem, openDirection){
+    
+        //日期控件中文
+        var locale = {
+            "format": 'YYYY-MM-DD',
+            "separator": " -222 ",
+            "applyLabel": "确定",
+            "cancelLabel": "取消",
+            "fromLabel": "起始时间",
+            "toLabel": "结束时间",
+            "customRangeLabel": "自定义",
+            "weekLabel": "W",
+            "daysOfWeek": ["日", "一", "二", "三", "四", "五", "六"],
+            "monthNames": ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+            "firstDay": 1
+        };
+        // 日期，默认时间设成当日到前30天
+        var startDate = moment(moment().subtract(30, 'days').calendar()).format("YYYY-MM-DD");
+        var endDate = moment().format("YYYY-MM-DD");
+        dateElem.val(startDate + ' - ' + endDate);
+        dateElem.daterangepicker({
+            applyClass:'btn-success',
+            clearClass:'btn-warning',
+            cancelClass:'btn-info',
+            'locale': locale,
+            format:"YYYY-MM-DD",
+            startDate:startDate,
+            endDate:endDate,
+            opens : openDirection, 
+        }, function(start, end) {
+            startDate=start.format('YYYY-MM-DD');
+            endDate=end.format('YYYY-MM-DD');
+        });
+        // 用户不能直接输入日期
+        dateElem.attr("readonly","readonly");
+        
+    }
+
+    /**
+     * @desc 页面标签拖拽功能实现
+     * @param none
+     * @return undefined
+     */
+    function dragFunc(){
+        // 左部分标签的拖拽功能
+        $('.left-part .items-box .sub-select-box .item').draggable({
+            helper: 'clone', //克隆，保留原位置的元素
+            revert: 'invalid', //没有拖入放置容器，飘回来
+            zIndex: 100, //设置拖动的Z-index，避免被position:absolute;的元素覆盖
+        });
+
+        $('.right-top-part').droppable({
+            accept: '.left-part .items-box .sub-select-box .item',//限制可拖入元素的类
+            drop: function(event, ui){ // ui.draggable可获取被拖动的元素；  event.target可获取元素放置的容器
+                var dbyBoxElem = $(event.target),
+                    htmlCode = '',
+                    tableName = $(ui.draggable).data('name'),
+                    category = $(ui.draggable).data('category'),
+                    fields = $(ui.draggable).data('fields').split(',');
+
+                htmlCode = `<div class="dby-info-card" data-name="${tableName}" data-category="${category}">
+                                <div class="main-title"><span>${category}</span>
+                                    ${tableName}
+                                    <span>（来自治安综合防范平台数据）</span>
+                                </div>
+                                <div class="control-buttons">
+                                    <div class="button sjtj-button">
+                                        <img src="../../img/bjscxq/sjtj-icon.png" alt="check">
+                                        <span>数据统计</span>
+                                    </div>
+                                    <div class="button llsj-button">
+                                        <img src="../../img/bjscxq/llsj-icon.png" alt="check">
+                                        <span>浏览数据</span>
+                                    </div>
+                                    <img class="button" src="../../img/bjscxq/wrong-icon.png" alt="delete">
+                                </div>
+                                <div class="filter-conditions-box">
+                                    <div class="orange-label-box">
+                                        <span class="orange-label">关联字段</span>
+                                        <span class="field">使用省份证号</span>
+                                    </div>
+                                    <div class="green-label-box">
+                                        <span class="green-label">约束条件</span>
+                                        <span class="field">活动发生时间</span>：
+                                        <!-- 日期选择 -->
+                                        <div class="input-group dateranger">
+                                            <input type="text" class="daterangebox date2" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fields-box">`
+                for( var i in fields){
+                    htmlCode += `<span class="field">${fields[i]}</span>`
+                }
+                htmlCode += `</div></div>`;
+                //增加元素前先移除之前的
+                var mainInfoBox = dbyBoxElem.find('.main-info-box');
+                mainInfoBox.empty();
+                mainInfoBox.append(htmlCode);
+                //初始化新加的日期选择控件
+                calendar($('.right-top-part .dby-info-card .filter-conditions-box .date2'), 'left');
+            }
+        });
+
+        // 右上部分对比源 下面标签的拖拽功能
+        $('.right-top-part .main-info-box .fields-box .field').draggable({
+            helper: 'clone', 
+            revert: 'invalid', 
+            zIndex: 100, 
+        });
+
+        $('.right-top-part .main-info-box .filter-conditions-box > div').droppable({
+            accept: '.right-top-part .main-info-box .fields-box .field',
+            drop: function(event, ui){ 
+                var fieldElem = $(event.target).find('.field'),
+                    fieldText = $(ui.draggable).text();
+
+                fieldElem.text(fieldText);
+            }
+        });
+
+    }
+
+
+    /**
+     * @desc 比较两个字符串是否相等 相等返回true
+     * @param {*字符串1} str1 String
+     * @param {*字符串2} str2 String
+     * @return Boolean
+     */
+    function compareStr(str1, str2){
+        return $.trim(str1) === $.trim(str2);
+    }
+
+
+
+
+
+})

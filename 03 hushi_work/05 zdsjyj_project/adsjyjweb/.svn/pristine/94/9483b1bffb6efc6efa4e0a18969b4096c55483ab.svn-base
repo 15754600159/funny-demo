@@ -1,0 +1,117 @@
+// 用户名
+.icon-username:before {
+	content: "\e605";
+}
+
+// 密码
+.icon-password:before {
+	content: "\e908";
+}
+
+//分页-第一页
+.icon-page-first:before {
+	content: "\f100";
+}
+
+//分页-前一页
+.icon-page-prev:before {
+	content: "\f104";
+}
+
+//分页-后一页
+.icon-page-next:before {
+	content: "\f105";
+}
+
+//分页-最后一页
+.icon-page-last:before {
+	content: "\f101";
+}
+
+//日期-前一月
+.icon-date-prev:before {
+	content: "\e90f";
+}
+
+//日期-后一月
+.icon-date-next:before {
+	content: "\e910";
+}
+
+//日期-年-向上
+.icon-date-up:before {
+	content: "\e90d";
+}
+
+//日期-年-向下
+.icon-date-down:before {
+	content: "\e90e";
+}
+
+// 列表
+.icon-list:before {
+	content: "\e907";
+}
+
+// 关闭
+.icon-x:before {
+	content: "\e906";
+}
+
+// +
+.icon-plus:before {
+	content: "\e623";
+}
+
+// -
+.icon-minus:before {
+	content: "\e644";
+}
+
+// 组织
+.icon-department:before {
+	content: "\e605";
+}
+
+// 用户
+.icon-user:before {
+	content: "\e605";
+}
+
+// 角色
+.icon-role:before {
+	content: "\e605";
+}
+
+// 功能
+.icon-function:before {
+	content: "\e605";
+}
+
+// 应用
+.icon-application:before {
+	content: "\e605";
+}
+
+// 树结构
+.icon-tree-root:before {
+	content: "\e6b6";
+}
+
+.icon-tree-open:before {
+	content: "\e6a4";
+}
+
+.icon-tree-close:before {
+	content: "\e6c5";
+}
+
+//字典
+.icon-dataDict:before {
+	content: "\e605";
+}
+
+//权限
+.icon-userRole:before {
+	content: "\e605";
+}

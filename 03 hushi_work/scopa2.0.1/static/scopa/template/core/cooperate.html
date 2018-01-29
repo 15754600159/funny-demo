@@ -1,0 +1,66 @@
+<!-- NavTab start -->
+<div class="toolbar box-shadow">
+	<ul class="navtab">
+        <li tab="listAll" class="current">全部</li>
+		<li tab="listByUser">个人</li>
+		<li tab="list">公共</li>
+        <li tab="listFeeds">接受的推送</li>
+        <li tab="listPushedFeeds">已推送</li>
+		<li class="nav-active"></li>
+	</ul>
+</div>
+<!-- NavTab end -->
+<!-- 筛选条 start -->
+<div class="pageheader">
+    <div class="daterangebox pull-left">
+        <input type="text" name="reservation" class="daterangebox-ipt" value="" placeholder="按周期模糊搜索" readonly />
+        <a class="daterangebox-btn" href="javascript:;">日期</a>
+    </div>
+    <div class="searchbox pull-left">
+        <label><input name="keyword" class="searchbox-ipt" placeholder="按名称、描述、作者模糊搜索" type="text"></label>
+        <a class="searchbox-btn" href="javascript:;"></a>
+    </div>
+<div class="pull-right">共 <span class="projectNum" id="totalproject"></span> 个 &nbsp;  &nbsp;当前显示至 <span class="projectNum" id="showproject"></span></div>
+</div>
+<div class="list"><!-- 筛选条 end -->
+    <div class="snapshotlist" tab="listAll">
+
+    </div>
+    <!-- 个人快照列表 start -->
+    <div class="snapshotlist" tab="listByUser">
+
+    </div>
+    <!-- 个人快照列表 end -->
+    <!-- 推送快照列表 start -->
+    <div class="snapshotlist" tab="listfeeds"></div>
+    <!-- 推送快照列表 end -->
+    <!-- 公共快照列表 start -->
+    <div class="snapshotlist" tab="list"></div>
+    <!-- 公共快照列表 end -->
+    <div class="snapshotlist" tab="listFeeds"></div>
+    <div class="snapshotlist" tab="listPushedFeeds"></div></div>
+
+<div class="project" pjname="">
+    <div class="listpic">
+        <div class="pic" ><img id="projectimg" width="380"/>
+            <div class="action">
+                <button class="btnShare" title="分享"><span class="icon icon-share"></span></button>
+                <button class="btnPush" title="推送"><span class="icon icon-push"></span></button>
+                <button class="btnImport" title="导入"><span class="icon icon-import"></span></button>
+                <button class="btnOpen" title="打开"><span class="icon icon-open"></span></button>
+                <button class="btnDelete" title="删除"><span class="icon icon-delete2"></span></button>
+            </div>
+        </div>
+        <div class="listinfo">
+            <div class="listtotal">共 <span id="picNum"></span> 张快照
+                <button class="close" id="btnClose"><span class="icon icon-delete3"></span></button>
+            </div>
+            <div class="projectlist">
+                <ul id="projectlist">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="desc">
+    </div>
+</div>

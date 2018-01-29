@@ -1,0 +1,67 @@
+
+<!-- 输入框 -->
+<div class="input-item">
+    <label>情报名称：</label>
+    <input name="bt" type="text" class="input" placeholder="请输入情报名称" />
+</div>
+
+<!-- 下拉框 -->
+<div class="input-item">
+    <label>人员列表：</label>
+    <select name="rylb" class="form-control select">
+        <option value="">-涉稳人员-</option>
+        <option value="">-涉藏人员-</option>
+    </select>
+</div>
+
+<!-- 时间选择框 -->
+<div class="input-item">
+    <label>报送时间：</label>
+    <div class="time-select">
+        <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        --
+        <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+    </div>
+</div>
+
+<!-- 单选 -->
+<div class="control-item">
+    <div>
+        <label class="check">
+            <input type="checkbox" name="r2" value="1">
+            <span></span>
+            <div class="input-item">
+                <label>预警时间段：</label>
+                <div class="time-select">
+                    <input name="sensitivePStartTime" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    --
+                    <input name="sensitivePEndTime" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+        </label>
+    </div>
+</div>
+
+<!-- 树 -->
+<div class="input-item sslb-tree-item tree-item">
+    <label>涉事类别：</label>
+    <input name="sslbmc" class="input node-name" style="width:200px;" type="text" placeholder="请选择涉事类别" readonly />
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    <input name="sslb" class="input node-code" type="text" style="display: none;" readonly />
+    <div class="ztree sslb-tree-dom tree-dom" style="display: none;"></div>
+</div>
+
+<!-- 操作按钮 -->
+<div class="operate-buttons-box">
+    <div class="left-buttons">
+        <button type="button" class="btn btn-border combine_clue">组合线索</button>
+        <button type="button" class="btn btn-border turn_invalid">转为无效</button>
+    </div>
+    <div class="right-buttons">
+        <button type="button" class="btn btn-normal btn_addNewClue">新增线索</button>
+    </div>
+</div>

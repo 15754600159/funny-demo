@@ -1,0 +1,93 @@
+<div class="container bgmask ckrqcy">
+    <div class="window" style="width: 90%; height: 90%;" id="window-drypfx-addWindow">
+        <header style="background:#4f8cf6">
+            <h1 style="color:#fff">可疑人员列表</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <div class="content" style="padding:20px;">
+
+            <div class="rygl ckrqcy">
+                <form class="form-search-bar" id="form-person-search">
+                    <div class="input-item">
+                        <label>身份证号：</label>
+                        <input name="sfzh" type="text" class="input" placeholder="请输入身份证号" />
+                    </div>
+                    <div class="input-item">
+                        <label>可疑人群编号：</label>
+                        <input name="kyrqbh" type="text" class="input" placeholder="请输入可疑人群编号" />
+                    </div>
+                    <!-- <div class="search-btn-div">
+                        <div class="left-btn-side zxry">
+                            <button type="button" class="btn btn-searchbar" onclick="app.ckrqcy.add.open();">添加</button>
+                            <button type="button" class="btn btn-searchbar" onclick="app.ckrqcy.search.init()">刷新</button>
+                        </div>
+                        <div class="right-btn-side">
+                            <button type="button" class="btn btn-submit" onclick="app.ckrqcy.search.SearchInfo(1, 10);">查询</button>
+                            <button type="button" class="btn btn-submit" onclick="app.ckrqcy.search.reset()">重置</button>
+                        </div>
+                    </div> -->
+                    <div class="operate-buttons-box" style="overflow: hidden; margin: 10px -10px;">
+                        <div class="left-buttons" style="float: left;"> 
+                            <button type="button" class="btn btn-border combine_clue" onclick="app.ckrqcy.add.open();">添加</button>
+                            <button type="button" class="btn btn-border turn_invalid" onclick="app.ckrqcy.search.init();">刷新</button>
+                        </div>
+                        <div class="right-buttons" style="float: right;">
+                            <button type="button" class="btn btn-normal btn_addNewClue" onclick="app.ckrqcy.search.SearchInfo(1, 10);">查询</button>
+                            <button type="button" class="btn btn-normal btn_addNewClue" onclick="app.ckrqcy.search.reset()">重置</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="list-ckrqcy">
+                    <div class="rycjlb" style="overflow: hidden;">
+                        <table class="table table-bordered my-table-striped my-table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="checks">
+                                        <label class="check">
+                                            <input type="checkbox" name="r2" value="1" id="Checkall" class="check-all">
+                                            <span>全选</span>
+                                        </label>
+                                    </th>
+                                    <th>可疑人群编号</th>
+                                    <th>身份证号</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table_all">
+
+                                <!-- <tr data-id="1111">
+                                    <td>
+                                        <label class="check">
+                                            <input type="checkbox" name="task" value="1">
+                                            <span> </span>
+                                        </label>
+                                    </td>
+                                    <td>a00000123</td>
+                                    <td>112312312412412</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" style="margin-left:3px;" onclick="app.ckrqcy.check.open(this);">查看</button>
+                                        <button class="btn btn-sm btn-info" style="margin-left:3px;" onclick="app.ckrqcy.update.open(this);">修改</button>
+                                        <button class="btn btn-sm btn-danger" style="margin-left:3px;" onclick="app.ckrqcy.deleteSingle(this);">删除</button>
+                                    </td>
+                                </tr> -->
+
+                            </tbody>
+                        </table>
+                        <ul id="personPagination" class="pagination pagination-sm"></ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer style="background:#4f8cf6">
+            <a class="btn" id="btn-ok-task-add">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+    </div>
+</div>
+
+<script>
+    app.ckrqcy.search.init();
+
+</script>

@@ -1,0 +1,79 @@
+<div class="page">
+    <div class="rygl">
+        <div class="gzqt_head">
+            <h2>涉事人员列表</h2>
+        </div>
+        <form class="form-search-bar" id="form-qtrygl-search">
+            <div class="control-item">
+                <label class="required">群体编号</label>
+                <div>
+                    <input id="qtrygl-qtbh" name="qtbh" type="text" class="input" placeholder="请输入身份证号">
+                </div>
+            </div>
+            <div class="control-item">
+                <label class="required">身份证号</label>
+                <div>
+                    <input id="qtrygl-sfzh" name="sfzh" type="text" class="input" placeholder="请输入身份证号">
+                </div>
+            </div>
+            <div class="control-item">
+                <label class="required">姓名</label>
+                <div>
+                    <input id="qtrygl-name" name="name" type="text" class="input" placeholder="请输入姓名">
+                </div>
+            </div>
+
+            <div class="control-item">
+                <label class="required">标签</label>
+                <div>
+                    <input id="qtrygl-label" name="label" type="text" class="input" placeholder="请输入姓名">
+                </div>
+            </div>
+            <div class="search-btn-div">
+                <div class="left-btn-side">
+                    <button type="button" class="btn btn-searchbar" onclick="app.gzqt.toqtryAddPage(app.gzqt.gzqtrySearch.qtbh)">添加</button>
+                    <button type="button" class="btn btn-searchbar" onclick="app.gzqt.gzqtrydel.del()">删除</button>
+                    <button type="button" class="btn btn-searchbar download-template">下载模版</button>
+                    <button type="button" class="btn btn-searchbar" onclick="app.gzqt.gzqtryimport.open(app.api.gzqt.gzqtrydrUrl)">导入</button>
+                    <button type="button" class="btn btn-searchbar" id="qtgzry-form-export">导出</button>
+                    <button type="button" class="btn btn-searchbar" onclick="app.gzqt.gzqtrySearch.init()">刷新</button>
+                    <button type="button" class="btn btn-searchbar" onclick="app.gzqt.gzqtrySearch.viewback()">返回</button>
+                </div>
+                <div class="right-btn-side">
+                    <button type="button" class="btn btn-submit" onclick="app.gzqt.gzqtrySearch.initForm()">查询</button>
+                    <button type="button" class="btn btn-submit" onclick="app.gzqt.gzqtrySearch.reset()">重置</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="list-qtrygl">
+            <div class="qtgzbd">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>群体编号</th>
+                            <th>成员类别</th>
+                            <th>身份证号</th>
+                            <th>姓名</th>
+                            <th>标签</th>
+                            <th>首次录入时间</th>
+                            <th>是否骨干人员</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table_all" id="qtrygl_table">
+                    </tbody>
+                </table>
+                <ul id="gzqtrypagination" class="pagination">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        app.gzqt.gzqtrySearch.init();
+    </script>
+
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+	<head>
+		<title>案件智能串并 - SCOPA</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="/static/scopa/theme/default/common.css" rel="stylesheet">
+		<link href="/static/scopa/theme/default/core.css" rel="stylesheet">
+		<link rel="stylesheet" href="./css/jquery.mCustomScrollbar.min.css" type="text/css" />
+		<link rel="stylesheet" href="./css/bootstrap.css" type="text/css" />
+		<link href="./css/cbevent.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.js"></script>
+		
+		<script src="/static/common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+		<script>staticUrl = "/static";</script>
+		<script src="/static/common/config.js?t=201609011800" type="text/javascript"></script>
+		<script>seajs.use(['core/common/showelement','router','./js/cbevent.js'], function(module){SCOPA_showModule = module;})</script>
+		<!--<link href="/static/scopa/css/special.css" rel="stylesheet">-->
+	</head>
+	<body>
+	
+		<div style="padding:0px 30px;">
+			<ol class="breadcrumb">
+				<li><span id="goApp" style="cursor:pointer;">应用</span></li>
+				<li><span id="goParent" style="cursor:pointer;">案件智能串并</span></li>
+				<li class="active">深度挖掘</li>
+			</ol>
+		</div>
+	
+		<div class="event-all">
+			<ul id="myTab" class="nav nav-tabs"></ul>
+			<div class="tab-content"></div>
+		</div>
+	
+	</body>
+</html>

@@ -1,0 +1,282 @@
+<div class="container bgmask">
+    <div id="window-qtwjgzpz-addWindow" class="window" style="width: 90%; height: 90%;">
+        <header style="background:#4f8cf6">
+            <h1 style="color:#fff">新增规则信息</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <div class="content" style="padding:20px;">
+            <!-- 主规则 start -->
+            <form id="form-rule-add-main" class="form">
+                <section class="h-box col2">
+                    <div>
+                        <div class="control-item">
+                            <label class="required">规则名称</label>
+                            <div>
+                                <input type="text" class="input" name="rName">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-item">
+                            <label class="required">规则状态</label>
+                            <div>
+                                <select class="select" name="rStatus" id="">
+                                        <!-- <option value="">请选择</option>
+                                        <option value="">选择1</option> -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>规则描述</label>
+                        <div>
+                            <input type="text" class="input" name="rDesc">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>户籍</label>
+                        <div>
+                            <select class="select" name="rHuji" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>民族</label>
+                        <div>
+                            <select class="select" name="rMinzu" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>身份证号</label>
+                        <div>
+                            <input type="text" class="input" name="rSfzh">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>姓名</label>
+                        <div>
+                            <input type="text" class="input" name="rXm">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>性别</label>
+                        <div>
+                            <select class="select" name="rXingbie" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>年龄区间</label>
+                        <div>
+                            <input type="number" class="input" name="rAgeStart"> 至 <input type="number" class="input" name="rAgeEnd">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>年龄</label>
+                        <div>
+                            <input type="number" class="input" name="rAge">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>辖区</label>
+                        <div>
+                            <select class="select" name="rXiaqu" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>是否本地</label>
+                        <div>
+                            <select class="select" name="rLocal" id="">
+                                <option value="1">外地</option>
+                                <option value="2">本地</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动开始时间段</label>
+                        <div>
+                            <input name="rHdkssjdStart" size="16" type="text" readonly class="form_datetime" style="width:142px;">                            至
+                            <input name="rHdkssjdEnd" size="16" type="text" readonly class="form_datetime" style="width:142px;">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动结束时间段</label>
+                        <div>
+                            <input name="rHdjssjdStart" size="16" type="text" readonly class="form_datetime" style="width:142px;">                            至
+                            <input name="rHdjssjdEnd" size="16" type="text" readonly class="form_datetime" style="width:142px;">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>人员类别</label>
+                        <div>
+                            <select class="select" name="rRylb" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动场所类别</label>
+                        <div>
+                            <select class="select" name="rHdcslx" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动场所名称</label>
+                        <div>
+                            <input type="text" class="input" name="rHdcsmc">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>出发地</label>
+                        <div>
+                            <select class="select" name="rCfd" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>目的地</label>
+                        <div>
+                            <select class="select" name="rMdd" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>群体大小下限</label>
+                        <div>
+                            <input type="number" class="input" name="rMinsize">
+                        </div>
+                    </div>
+                </section>
+            </form>
+            <!-- 主规则 end -->
+            <hr/>
+            <h4>任务规则字表：</h4>
+            <button class="btn add-sub-rule">新增</button>
+            <!-- 子规则 start -->
+            <form id="form-rule-add-sub" class="form">
+
+                <section class="h-box col4">
+                    <div class="control-item">
+                        <label>活动类型</label>
+                        <div>
+                            <select class="select" name="fType">
+                                <option value="02">飞机</option>
+                                <option value="01">火车</option>
+                                <option value="00">汽车</option>
+                                <option value="03">宾馆</option>
+                                <option value="04">网吧</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>活动规则</label>
+                        <div>
+                            <select class="select" name="fRule">
+                                <option value="01">同行</option>
+                                <!-- <option value="02">同屋同住</option>
+                                <option value="03">多次同住</option>
+                                <option value="04">同上网</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition plane">
+                        <label>飞机同行次数</label>
+                        <div>
+                            <input type="text" class="input" name="minhangCishu">
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition plane">
+                        <label>飞机值机间隔</label>
+                        <div>
+                            <input type="text" class="input" name="minhangZjjg">
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition railway" style="display: none;">
+                        <div>
+                            <label class="check">
+                                <input type="checkbox" name="tieluCfdsfxt" value="1">
+                                <span>铁路-出发地是否相同</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition railway" style="display: none;">
+                        <div>
+                            <label class="check">
+                                <input type="checkbox" name="tieluMddsfxt" value="1">
+                                <span>铁路-目的地是否相同</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition railway" style="display: none;">
+                        <div>
+                            <label class="check">
+                                <input type="checkbox" name="tieluTcc" value="1">
+                                <span>铁路-是否同车次</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition inn" style="display: none;">
+                        <label>旅店-多次同住次数</label>
+                        <div>
+                            <input type="text" class="input" name="lvdianDctzcs">
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition inn" style="display: none;">
+                        <label>旅店-入住时间间隔</label>
+                        <div>
+                            <input type="text" class="input" name="lvdianRuzhusjjg">
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition inn" style="display: none;">
+                        <label>旅店-离开时间间隔</label>
+                        <div>
+                            <input type="text" class="input" name="lvdianLikaisjjg">
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition internet" style="display: none;">
+                        <label>上网间隔</label>
+                        <div>
+                            <input type="text" class="input" name="lvdianRuzhusjjg">
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition internet" style="display: none;">
+                        <label>下网间隔</label>
+                        <div>
+                            <input type="text" class="input" name="lvdianLikaisjjg">
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition car" style="display: none;">
+                        <div>
+                            <label class="check">
+                                <input type="checkbox" name="qicheCfdsfxt" value="1">
+                                <span>汽车-出发地是否相同</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition car" style="display: none;">
+                        <div>
+                            <label class="check">
+                                <input type="checkbox" name="qicheMddsfxt" value="1">
+                                <span>汽车-目的地是否相同</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-item limit-condition car" style="display: none;">
+                        <div>
+                            <label class="check">
+                                <input type="checkbox" name="qicheTcc" value="1">
+                                <span>汽车-是否同车次</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="delete-sub-rule">X</div>
+                </section>
+
+            </form>
+            <!-- 子规则 end -->
+        </div>
+        <footer style="background:#4f8cf6">
+            <a class="btn" id="btn-ok-rule-add">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+    </div>
+</div>
+
+<script>
+    app.fxmxgl.qtwjgzpz.add.init();
+
+</script>

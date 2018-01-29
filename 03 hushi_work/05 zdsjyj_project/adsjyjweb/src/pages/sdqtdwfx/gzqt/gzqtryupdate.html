@@ -1,0 +1,86 @@
+<div class="container bgmask gzqttrupdate">
+    <div class="window" style="width: 50%; height: 50%;" id="window-gzqt-updateWindow">
+        <header style="background:#4f8cf6">
+            <h1 style="color:#fff">修改人员信息</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <div class="content" style="padding:20px;">
+            <form id="form-gzqtry-update" class="form">
+                <section class="h-box col2">
+                    <div style="display:none">
+                        <div class="control-item">
+                            <label class="required">唯一主键</label>
+                            <div>
+                                <input type="text" class="input" name="id">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-item">
+                            <label class="required">群体编号</label>
+                            <div>
+                                <input type="text" class="input" name="zdqtbh">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-item">
+                            <label>成员类别</label>
+                            <div>
+                                <input type="text" class="input" name="cylb">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-item">
+                            <label class="required">身份证号</label>
+                            <div>
+                                <input type="text" class="input" name="sfzh">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-item">
+                            <label class="required">姓名</label>
+                            <div>
+                                <input type="text" class="input" name="xm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>首次录入时间</label>
+                        <div>
+                            <input size="16" type="text" class="form_datetime" name="sccjsj">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>标签</label>
+                        <div>
+                            <input type="text" class="input" name="tag">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>是否骨干人员</label>
+                        <div>
+                            <input type="text" class="input" name="ggFlag">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- <footer style="background:#4f8cf6">
+                            <button class="btn" type="submit" id="btn-ok-person-excel">确定</button>
+                            <button class="btn btn-outline btn-window-close">取消</button>
+                        </footer> -->
+            </form>
+        </div>
+        <footer style="background:#4f8cf6">
+            <a class="btn" onclick="app.gzqt.gzqtryupdate.gzqtonclickform()" id="btn-ok-person-excel">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+    </div>
+</div>
+
+<script>
+    app.gzqt.gzqtryupdate.init();
+
+</script>

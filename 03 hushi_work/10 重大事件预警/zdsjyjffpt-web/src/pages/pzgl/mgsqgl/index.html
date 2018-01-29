@@ -1,0 +1,76 @@
+<div class="new-page">
+        
+    <div class="page-content mgsqgl">
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">筛选条件</div>
+            <div class="filter-conditions">
+                <form action="">
+                    <div class="input-item">
+                        <label>敏感时期名称：</label>
+                        <input name="sensitivePName" type="text" class="input" placeholder="请输入敏感时期名称" />
+                    </div>
+                    <div class="input-item">
+                        <label>敏感时期时段：</label>
+                        <div class="time-select">
+                            <input name="sensitivePStartTime" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input name="sensitivePEndTime" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="filter-button-box">
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                        <button type="button" class="btn btn-normal btn_add">新 增</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th class="td-width-2">敏感时期名称</th>
+                        <th>敏感时期时段</th>
+                        <th>敏感预警时段</th>
+                        <th class="td-width-1">创建人</th>
+                        <th class="td-width-2">创建时间</th>
+                        <th class="td-width-1">是否有效</th>
+                        <th class="td-width-1">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <!-- <tr>
+                        <td>党代会</td>
+                        <td>2017-10-18 00:00:00 - 2017-10-25 23:59:59</td>
+                        <td>2017-10-02 00:00:00 - 2017-10-25 23:59:59</td>
+                        <td>王队</td>
+                        <td>2017-10-31 12:02:24</td>
+                        <td>是</td>
+                        <td class="operate">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="修改"></span>
+                            <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="废除"></span>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+            <ul id="mgsqglPagination" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+
+    </div>
+
+
+    <script>
+        app.pzgl.mgsqgl.search.init();
+    </script>
+
+</div>
+        

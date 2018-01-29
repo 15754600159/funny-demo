@@ -1,0 +1,82 @@
+<div class="new-page">
+
+    <div class="page-content qbljx">
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">筛选条件</div>
+            <div class="filter-conditions">
+                <form action="">
+                    <div class="input-item">
+                        <label>模型类型：</label>
+                        <select name="qbsxlb" style="width: 120px;" class="form-control select" id="mxlx">
+                            <option value=""></option>
+                            <option value="">涉稳事件预警模型</option>
+                            <option value="">涉疆事件预警模型</option>
+                            <option value="">治安事件预警模型</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>模型名称：</label>
+                        <input name="bt" type="text" class="input" placeholder="请输入模型名称" id="mxmc" />
+                    </div>
+                    <div class="input-item">
+                        <label>是否群体：</label>
+                        <select name="cancelstatus" style="width: 120px;" class="form-control select" id="sfyx">
+                            <option value="">-请选择-</option>
+                            <option value="1">-是-</option>
+                            <option value="0">-否-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>预警产生时间：</label>
+                        <div class="time-select">
+                            <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly id="startDate" />
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly id="endDate" />
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="filter-button-box" style="margin-top:2px;">
+                        <button type="button" class="btn btn-normal btn_search" onclick="app.zdsjyjmxgl.mxwjjg.search()">查 询</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+        <!-- 操作按钮start -->
+        <!-- 操作按钮end -->
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th class="td-width-2">模型名称</th>
+                        <th class="td-width-2">模型类型</th>
+                        <th class="td-width-2">预警详情</th>
+                        <th>预警时间</th>
+                        <th class="td-width-2">活动时间</th>
+                        <th class="td-width-2">是否有群体</th>
+                        <th class="td-width-2">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+
+                </tbody>
+            </table>
+
+            <ul id="pagination" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+
+    </div>
+
+
+    <script>
+        app.zdsjyjmxgl.mxwjjg.init();
+    </script>
+
+</div>

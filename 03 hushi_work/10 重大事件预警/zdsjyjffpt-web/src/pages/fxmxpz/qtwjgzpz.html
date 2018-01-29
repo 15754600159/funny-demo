@@ -1,0 +1,71 @@
+<div class="page">
+	<div class="qtwjgzpz rygl">
+		<div class="gzqt_head">
+			<h2>预警模型列表</h2>
+		</div>
+		<form class="form-search-bar" id="form-department-search">
+			<div class="control-item">
+				<label class="required">模型名称</label>
+				<div>
+					<input id="qtwjgzpz_ruleNameCx" name="ruleNameCx" type="text" class="input" placeholder="请输入模型名称">
+				</div>
+			</div>
+
+			<div class="control-item">
+				<span style="float:left;    margin-left: 20px;">状态:</span>
+				<select class="form-control select" style="float:left;    margin-left: 20px;" id="qtwjgzpz_ruleStatusCx">
+					<option value="">-全部-</option>
+				</select>
+			</div>
+			<div class="search-btn-div">
+				<div class="left-btn-side">
+					<button type="button" class="btn btn-searchbar" onclick="app.fxmxgl.qtwjgzpz.add.open();">添加</button>
+					<button type="button" class="btn btn-searchbar" onclick="app.fxmxgl.qtwjgzpz.deleteMutiple();">删除</button>
+					<button type="button" class="btn btn-searchbar" onclick="app.fxmxgl.qtwjgzpz.search.SearchInfo(1, 10);">刷新</button>
+				</div>
+				<div class="right-btn-side">
+					<button type="button" class="btn btn-submit" onclick="app.fxmxgl.qtwjgzpz.search.all()">查询</button>
+				</div>
+			</div>
+		</form>
+
+		<div id="list-qtwjgzpz" class="result-table-box">
+			<div class="qtwjgzpzlb">
+				<table class="table table-striped table-bordered">
+					<thead>
+					<tr>
+						<th>
+							<label class="check check-all">
+								<input type="checkbox" name="r2" value="1">
+								<span>全选</span>
+							</label>
+						</th>
+						<th>模型名称</th>
+						<th>模型类型</th>
+						<th>模型描述</th>
+						<th>状态</th>
+						<!-- <th>创建日期</th>
+                        <th>创建人</th>
+                        <th>更新时间</th> -->
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody class="table_all">
+
+					</tbody>
+				</table>
+				<ul id="qtwjgzpzPagination" class="pagination" style="position: static">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		// 初始查询
+		app.fxmxgl.qtwjgzpz.search.init();
+		// sessionStorage获取、存储码表信息
+		app.fxmxgl.qtwjgzpz.get_saveMbInfo();
+	</script>
+
+</div>

@@ -1,0 +1,180 @@
+<div class="bread-nav">
+	<ol class="breadcrumb">
+		<li> <span class="goApp" style="cursor: pointer;">应用</span></li>
+		<li>多元布控</li>
+		<li>布控预警</li>
+	</ol>
+</div>
+<div class="control-box control-forewarn-box">
+	<div class="control-tabs">
+		<div class="tabs pull-left">
+			<ul>
+				<li class="forewarn-list-tab active" data-type="forewarnList">聚合</li>
+				<li class="forewarn-details-tab" data-type="forewarnDetails">详情</li>
+			</ul>
+		</div>
+		<div class="btns pull-right">
+			<span class="control-btn">发起布控</span>
+			<span class="control-batch-btn">批量布控</span>
+			<span class="control-list-btn" data-type="controlList">布控列表</span>
+		</div>
+	</div>
+	<div class="control-main">
+		<div class="forewarn-control" data-box="forewarnList">
+			<div class="filters">
+				<div class="pull-right">
+						<div class="control-model pull-left">
+					<select class="select">
+						<option value="default" selected>布控方式</option>
+						<option value="1">公有布控</option>
+						<option value="2">私有布控</option>
+					</select>
+					</div>
+					<div class="daterangebox pull-left">
+				        <input type="text" name="reservation" class="daterangebox-ipt active" value="" placeholder="按周期模糊搜索" readonly="">
+				        <a class="daterangebox-btn" href="javascript:;">日期</a>
+				    </div>
+				    <div class="searchbox pull-left">
+				    	<label><input name="keyword" class="searchbox-ipt" placeholder="输入关键字查询" type="text"></label>
+		        		<a class="searchbox-btn" href="javascript:;"></a>
+				    </div>
+			    </div>
+			</div>
+			<div class="data-list">
+				<div class="list-table">
+					<table class="grid forewarnList newtable" data-list-box="forewarnList">
+                        <thead>
+                            <tr>
+                                <th class="width5">编号</th>
+								<th class="width10">布控方式</th>
+                                <th class="width10">布控批次</th>
+								<th class="width10">预警级别</th>
+                                <th class="width10 order-data" data-order-filed="eventNum">预警次数</th>
+                                <th class="width10">预警通报人</th>
+                                <th class="width10">申请人</th>
+                                <th class="width15 order-data order-desc" data-order-filed="lastEventTime">最新预警时间</th>
+                                <th class="width20">最新预警事件</th>
+								<th class="hidden"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+				</div>
+			</div>
+		</div>
+		<div class="forewarn-control hidden" data-box="forewarnDetails">
+			<div class="filters">
+				<div class="pull-right">
+					<div class="control-model pull-left">
+					<select class="select">
+						<option value="default" selected>布控方式</option>
+						<option value="1">公有布控</option>
+						<option value="2">私有布控</option>
+					</select>
+					</div>
+					<div class="daterangebox pull-left">
+				        <label><input type="text" name="reservation" class="daterangebox-ipt" value="" placeholder="按周期模糊搜索" readonly=""></label>
+				        <a class="daterangebox-btn" href="javascript:;">日期</a>
+				    </div>
+					<div class="control-types pull-left">
+
+					</div>
+				    <div class="searchbox pull-left">
+				        <label><input name="keyword" class="searchbox-ipt" placeholder="输入关键字查询" type="text"></label>
+				        <a class="searchbox-btn" href="javascript:;"></a>
+				    </div>
+			    </div>
+			</div>
+			<div class="data-list">
+				<div class="list-table">
+					<table class="grid forewarnDetails newtable" data-list-box="forewarnDetails">
+                        <thead>
+                            <tr>
+                                <th class="width5">编号</th>
+								<th class="width10">布控方式</th>
+                                <th class="width10">布控号码</th>
+								<th class="width10">预警级别</th>
+                                <th class="width10">布控类型</th>
+                                <th class="width10">布控批次</th>
+                                <th class="width15 order-data order-desc" data-order-filed="eventTime">预警时间</th>
+                                <th class="width10">预警通报人</th>
+                                <th class="width15">预警事件</th>
+                                <th class="width5">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="control-box control-list-box hidden">
+	<div class="control-tabs">
+		<div class="pull-right">
+			<span class="control-btn">发起布控</span>
+			<span class="control-batch-btn">批量布控</span>
+			<span class="return-btn" data-box="controlList">返回</span>
+		</div>
+	</div>
+	<div class="control-list forewarn-control" data-box="controlList">
+		<div class="filters">
+			<div class="pull-right">
+				<div class="control-model pull-left">
+					<select class="select">
+						<option value="default" selected>布控方式</option>
+						<option value="1">公有布控</option>
+						<option value="2">私有布控</option>
+					</select>
+				</div>
+				<div class="daterangebox pull-left">
+			        <label><input type="text" name="reservation" class="daterangebox-ipt" value="" placeholder="按周期模糊搜索" readonly=""></label>
+			        <a class="daterangebox-btn" href="javascript:;">日期</a>
+			    </div>
+			    <div class="control-units pull-left">
+					
+				</div>
+				<div class="control-status pull-left">
+					<select class="select">
+						<option value="default" selected>状态</option>
+						<option value="0">未审核</option>
+						<option value="1">审核通过</option>
+						<option value="2">已拒绝</option>
+						<option value="3">已撤销</option>
+					</select>
+				</div>
+			    <div class="searchbox pull-left">
+			    	<label><input name="keyword" class="searchbox-ipt" placeholder="输入关键字查询" type="text"></label>
+	        		<a class="searchbox-btn" href="javascript:;"></a>
+			    </div>
+		    </div>
+		</div>
+		<div class="data-list">
+			<div class="list-table">
+				<table class="grid controlList newtable" data-list-box="controlList">
+                    <thead>
+                        <tr>
+                            <th class="width5">编号</th>
+							<th class="width10">布控方式</th>
+                            <th class="width5">布控批次</th>
+                            <th class="width10 order-data order-desc" data-order-filed="applyTime">申请时间</th>
+                            <th class="width10">管控单位</th>
+                            <th class="width10 order-data" data-order-filed="startTime">起始时间</th>
+                            <th class="width10 order-data" data-order-filed="endTime">结束时间</th>
+                            <th class="width5">申请人</th>
+                            <th class="width10">布控原因</th>
+                            <th class="width10">布控内容</th>
+                            <th class="width5">状态</th>
+                            <th class="width10">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+			</div>
+		</div>
+	</div>
+</div>

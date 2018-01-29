@@ -1,0 +1,93 @@
+#form-user-add {
+	.control-item {
+		.required {
+			width: 114px;
+			text-align: right;
+			padding-right: 10px;
+		}
+		label {
+			width: 114px;
+			text-align: right;
+			padding-right: 10px;
+		}
+		input, select {
+			width: 240px;
+			height: 32px;
+		}
+	}
+}
+
+.container {
+	.window {
+		> header {
+			background: #4f8cf6;
+
+			h1 {
+				color: #fff;
+			}
+		}
+		> .content {
+			padding: 20px;
+		}
+		> footer {
+			background: #4f8cf6;
+		}
+	}
+	.one-column-form {
+		.input-item {
+			display: block;
+			margin-bottom: 10px;
+
+			label {
+				min-width: 100px;
+				text-align: right;
+			}
+			textarea{
+				display: inline-block;
+				vertical-align: middle;
+				width: 60%;
+				height: 80px;
+			}
+		}
+		.tree-item{
+			.tree-dom{
+				left: 103px;
+			}
+			.glyphicon-remove{
+				left: 265px;
+				width: 15px;
+			}
+		}
+	}
+	.two-column-form{
+		.input-item{
+			input{
+				width: 240px;
+			}
+		}
+		.control-item{
+			margin-left: 12px;
+
+			> div{
+				margin-left: 0;
+
+				.check{
+					height: 42px;
+				}
+				.check > input[type="checkbox"]:checked + span:before{
+					top: 5px;
+				}
+				.check > input[type="checkbox"] + span:after{
+					top: 12px;
+				}
+			}
+		}
+		.select2-container--default .select2-selection--multiple{
+			border: solid 1px #4f8cf6;
+		}
+		.select2-container--default.select2-container--focus .select2-selection--multiple{
+			border: solid 1px #4f8cf6;
+		}
+	}
+
+}

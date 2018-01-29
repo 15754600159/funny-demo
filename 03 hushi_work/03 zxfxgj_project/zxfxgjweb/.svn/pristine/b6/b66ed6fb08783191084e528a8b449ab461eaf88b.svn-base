@@ -1,0 +1,8 @@
+app.api.fxmxgl = {
+    qtwjgzCxUrl: app.api.url + "/zx/group/qtwj/rule/", //群体挖掘规则查询
+    jhlx_jhztCxUrl: app.api.url + '/zx/sysDict/?types=TASK_TYPE,TASK_STATUS', //码表：计划类型、计划状态
+    qtwjrwxzUrl: app.api.url + '/zx/group/qtwj/task/', // 群体挖掘任务新增
+    qtwjrwscUrl: app.api.url + '/zx/group/qtwj/task/', // 群体挖掘任务删除
+    qtwjrwxqCxUrl: app.api.url + '/zx/group/qtwj/task/', // 根据id查询群体挖掘任务查询
+    qtwjrwXgUrl: app.api.url + '/zx/group/qtwj/task/', // 群体挖掘任务修改
+};

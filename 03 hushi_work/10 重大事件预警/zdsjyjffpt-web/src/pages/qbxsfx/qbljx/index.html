@@ -1,0 +1,114 @@
+<div class="new-page">
+
+    <div class="page-content qbljx">
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">筛选条件</div>
+            <div class="filter-conditions">
+                <form action="">
+                    <div class="input-item">
+                        <label>情报名称：</label>
+                        <input name="bt" type="text" class="input" placeholder="请输入情报名称" />
+                    </div>
+                    <div class="input-item">
+                        <label>情报内容：</label>
+                        <input name="xxzw" type="text" class="input" placeholder="请输入情报内容" />
+                    </div>
+                    <div class="input-item">
+                        <label>关键词：</label>
+                        <input name="gjc" type="text" class="input" placeholder="请输入情报内容" />
+                    </div>
+                    <div class="input-item sslb-tree-item tree-item">
+                        <label>涉事类别：</label>
+                        <input name="sslbmc" class="input node-name" type="text" placeholder="请选择涉事类别" readonly />
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <input name="sslb" class="input node-code" type="text" style="display: none;" readonly />
+                        <div class="ztree sslb-tree-dom tree-dom" style="display: none;"></div>
+                    </div>
+                    <div class="input-item">
+                        <label>报送时间：</label>
+                        <div class="time-select">
+                            <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="input-item">
+                        <label>是否有效：</label>
+                        <select name="cancelstatus" class="form-control select">
+                            <option value="">-全部-</option>
+                            <option value="0">-是-</option>
+                            <option value="1">-否-</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-button-box">
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+        <!-- 操作按钮start -->
+        <div class="operate-buttons-box">
+            <div class="left-buttons">
+                <button type="button" class="btn btn-border btn_delete">删除</button>
+            </div>
+        </div>
+        <!-- 操作按钮end -->
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th class="checks td-width-1">
+                            <label class="check">
+                                <input type="checkbox" class="Checkall">
+                                <span>全选</span>
+                            </label>
+                        </th>
+                        <th class="td-width-2">情报名称</th>
+                        <th>情报内容</th>
+                        <th class="td-width-1">情报来源</th>
+                        <th class="td-width-2">情报关联类型</th>
+                        <th class="td-width-2">情报产生时间</th>
+                        <th class="td-width-1">是否有效</th>
+                        <th class="td-width-1">情报分析</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <!-- <tr>
+                        <td class="checks">
+                            <label class="check">
+                                <input type="checkbox" class="checkbox" val="">
+                                <span></span>
+                            </label>
+                        </td>
+                        <td class="intelligence-name">善心汇涉访群体上访善心汇涉</td>
+                        <td>多个善心汇成员聚集讨论要进京上访多个善心汇成员聚集讨论要进京上访多个善心汇成员聚集讨论要进京上访</td>
+                        <td>省厅</td>
+                        <td>涉访</td>
+                        <td>2017-10-31 12:02:24</td>
+                        <td class="invalid">无效</td>
+                        <td class="operate">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="情报分析"></span>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+            <ul id="qbljxPagination" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+
+    </div>
+
+
+    <script>
+        app.qbxsfx.qbljx.search.init();
+    </script>
+
+</div>

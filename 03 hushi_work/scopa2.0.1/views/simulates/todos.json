@@ -1,0 +1,25 @@
+{
+  "statusCode": 200,
+  "list": [
+    {
+      "text": "alex",
+      "completed": true
+    },
+    {
+      "text": "tom",
+      "completed": false
+    },
+    {
+      "text": "jerry",
+      "completed": false
+    },
+    {
+      "text": "lucy",
+      "completed": true
+    },
+    {
+      "text": "lili",
+      "completed": false
+    }
+  ]
+}

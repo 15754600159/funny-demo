@@ -1,0 +1,12 @@
+.ydqtlb {
+
+}
+
+.ydqtlb .nav-tabs a{
+    text-decoration: none;
+    color: #3b63a9;
+}
+
+.ydqtlb .nav-tabs a:hover{
+    color: white;
+}

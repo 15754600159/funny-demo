@@ -1,0 +1,83 @@
+<div class="page">
+    <div class="gzqt_body">
+        <div class="gzqt_head">
+            <h2>关注群体统计</h2>
+        </div>
+        <div class="gzqt_cont">
+            <div class="gzqt_all">
+                <div class="search-btn-div">
+                    <div class="qtyjxx">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>姓名</th>
+                                    <th>身份证号</th>
+                                    <th>活跃发生时间</th>
+                                    <th>相纸</th>
+                                    <th>所属社会场所</th>
+                                    <th>活动相关信息</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>012232323asdsa</td>
+                                    <td>李海军</td>
+                                    <td>1528928727728192765</td>
+                                    <td>20170804</td>
+                                    <td>肖壮文大街</td>
+                                    <td>火星网吧</td>
+                                    <td>重点人员在20170804火星网吧2号机器上网两个小时</td>
+
+                                </tr>
+                                <tr>
+                                    <td>012232323asdsa</td>
+                                    <td>李海军</td>
+                                    <td>1528928727728192765</td>
+                                    <td>20170804</td>
+                                    <td>肖壮文大街</td>
+                                    <td>火星网吧</td>
+                                    <td>重点人员在20170804火星网吧2号机器上网两个小时</td>
+
+                                </tr>
+                                <tr>
+                                    <td>012232323asdsa</td>
+                                    <td>李海军</td>
+                                    <td>1528928727728192765</td>
+                                    <td>20170804</td>
+                                    <td>肖壮文大街</td>
+                                    <td>火星网吧</td>
+                                    <td>重点人员在20170804火星网吧2号机器上网两个小时</td>
+
+                                </tr>
+                                <tr>
+                                    <td>012232323asdsa</td>
+                                    <td>李海军</td>
+                                    <td>1528928727728192765</td>
+                                    <td>20170804</td>
+                                    <td>肖壮文大街</td>
+                                    <td>火星网吧</td>
+                                    <td>重点人员在20170804火星网吧2号机器上网两个小时</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul class="pagination fenye">
+                            <li><a href="#">&laquo;</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    app.gzqt.init();
+
+</script>

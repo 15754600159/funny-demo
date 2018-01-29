@@ -1,0 +1,95 @@
+<div class="container bgmask gzqtupdate">
+    <div class="window" style="width: 50%; height: 50%;" id="window-gzqt-updateWindow">
+        <header style="background:#4f8cf6">
+            <h1 style="color:#fff">修改群体信息</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <div class="content" style="padding:20px;">
+            <form id="form-gzqt-update" class="form">
+                <section class="h-box col2">
+                    <div style="display:none">
+                        <div class="control-item">
+                            <label class="required">群体编号</label>
+                            <div>
+                                <input type="text" class="input" name="zdqtbh">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-item">
+                            <label class="required">群体名称</label>
+                            <div>
+                                <input type="text" class="input" name="qtmc">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-item">
+                            <label class="required">单位名称</label>
+                            <div>
+                                <input type="text" class="input" name="cjdwdm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>群体类别</label>
+                        <div>
+                            <select class="select" name="qtlb" id="user-add-qtlb">
+                             </select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>成立时间</label>
+                        <div>
+                            <input size="16" type="text" class="form_datetime" name="clsj">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>群体规模</label>
+                        <div>
+                            <input type="text" class="input" name="qtgm">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>主要诉求</label>
+                        <div>
+                            <input type="text" class="input" name="zysq">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>产生原因</label>
+                        <div>
+                            <input type="text" class="input" name="csyy">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>开始成立时间</label>
+                        <div>
+                            <input size="16" type="text" class="form_datetime" name="beginClsj">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>结束成立时间</label>
+                        <div>
+                            <input size="16" type="text" class="form_datetime" name="endClsj">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- <footer style="background:#4f8cf6">
+                        <button class="btn" type="submit" id="btn-ok-person-excel">确定</button>
+                        <button class="btn btn-outline btn-window-close">取消</button>
+                    </footer> -->
+            </form>
+        </div>
+        <footer style="background:#4f8cf6">
+            <a class="btn" onclick="app.gzqt.update.gzqtonclickform()" id="btn-ok-person-excel">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+    </div>
+</div>
+
+<script>
+    app.gzqt.update.init();
+
+</script>

@@ -1,0 +1,566 @@
+a:hover {
+      text-decoration: none;
+}
+
+body{
+	background-color: #f6f7f9;
+}
+button{
+	outline: none;
+}
+.top {
+      /* height: 70px; */
+      /* background-color: #1A427D; */
+      position: fixed;
+      top: 0;
+      left: 4.14rem;
+      width: 100%;
+      z-index: 9999;
+      height: 1.0148rem;
+      min-height: 42px;
+}
+
+.top>a {
+      float: left;
+      margin: 17px 20px;
+}
+
+.top .title {
+      font-size: 20px;
+      color: #fff ! important;
+      padding-left: 30px;
+      /* padding-top: 18px; */
+      float: left;
+      /* line-height: 50px; */
+      line-height: 1.0148rem;
+}
+.top .title a{
+	color: #ffffff
+}
+.top .title a:hover{
+	color: #447bda;
+}
+.top .role {
+      font-size: 18px;
+      color: #6DA7E7 ! important;
+      padding-right: 30px;
+      float: right;
+}
+
+.top .role a {
+      line-height: 70px;
+}
+
+.top .role a:hover {
+      color: #fff;
+}
+
+.content {
+      /* margin-top: 70px; */
+      padding-top: 30px;
+}
+
+/*èƒŒæ™¯å®¡æŸ¥é¡µé¢-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.content .background-review {
+      margin: 15% auto;
+      width: 60%;
+}
+.tankuang,.tankuang1{
+	display: none;
+	position: absolute;
+	left: 35%;
+	top: 25%;
+	width: 500px;
+	height: 300px;
+	background: #fff;
+}
+.tankuang1{
+	height: 200px;
+}
+.all .tankuang .liulan button,.all .tankuang .sure button{
+	outline: none;
+}
+.hecha{
+	margin-top: 8%;
+	margin-left: 30%;
+}
+.hecha input{
+	height: 35px;
+}
+.liulan{
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.tankuang1_content{
+	margin-left: 25%;
+	margin-top: 5%;
+}
+.tankuang1_content span{
+	margin-right: 5%;
+	text-align: center;
+}
+.liulan .liulan_file{
+	width: 185px;
+	background: #fff;
+	height: 35px;
+	outline: none;
+}
+.hecha .panduan{
+	display: none;
+}
+.liulan .panfile{
+	display: none;
+}
+.info_p{
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.sure{
+	margin-left: 30%;
+	margin-top: 5%;
+}
+.esc1{
+	margin-left: -5%;
+}
+.ok1{
+	margin-left: 25%;
+}
+.sure .esc{
+	margin-right: 30%;
+}
+.content .background-review input {
+      width: 50%;
+      float: left;
+}
+
+.content .background-review button {
+      background-color: #0088ff;
+      color: #fff;
+      margin-left: 1%;
+}
+
+.content .background-review button:hover {
+      color: #fff;
+      background-color: #286090;
+      border-color: #204d74;
+}
+.content .progress .progress-bar{
+	width: 100%;
+}
+.content .table tbody tr:nth-child(1) .progress .progress-bar{
+	width: 0;
+}
+/*ä»»åŠ¡ç®¡ç†é¡µé¢-------------------------------------------------------------------------------------------------------------------------------------*/
+
+.content .task-management {
+      width: 50%;
+}
+#taskDetail,#taskDel{
+	/*cursor: pointer;*/
+}
+.taskDetail1,.taskDel1{
+	cursor: pointer;
+}
+#pagination{
+	width: 1500px;
+}
+#pagination .form-control{
+	width: 50px;
+}
+.pagination>li{
+	display: inline-block;
+}
+.content .task-management>input {
+      width: 50%;
+      float: left;
+}
+
+.content .task-management>button {
+      margin-left: 1%;
+}
+
+.content .task-management>button + button {
+      margin-left: 2%;
+}
+
+.progress {
+      margin-bottom: 0;
+}
+
+.content>table {
+      margin-top: 3%;
+}
+/*.all .del{
+	width: 200px;
+	height: 160px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: none;
+}*/
+.subtitle-box {
+      background: #ddeaff;
+      line-height: 40px;
+      padding-left: 20px;
+      margin-bottom: 20px;
+     
+}
+.subtitle-box span{
+      cursor:pointer;
+      color:#c0c0c0;
+
+}
+
+.subtitle-box span.active{
+      color: #343434;
+}
+
+
+
+
+
+/*ä»»åŠ¡è¯¦æƒ…é¡µé¢-------------------------------------------------------------------------------------------------------------------------------------*/
+#taskDetail button{
+      background-color: #e6e6e6;
+      outline: none;
+}
+
+#taskDetail button:hover{
+      background-color: grey;
+      color: white;
+}
+#ck_btn{
+	margin-left: 1%;
+}
+.content .task-detail {
+      width: 50%;
+}
+
+.content .task-detail>input {
+      width: 50%;
+      float: left;
+}
+
+.content .task-detail>button {
+      width: 100px;
+}
+
+.content .task-detail>button {
+      margin-left: 1%;
+}
+
+/*.content .task-detail>button + button {
+      margin-left: 8%;
+}*/
+.content .tags{
+	margin-top: 12px;
+}
+.content .tags span{
+	margin-left: 6px;
+}
+.content .check-filter-box {
+      width: 100%;
+      height: 60px;
+      margin-top: 2%;
+      border: 1px solid #dee3eb;
+      border-radius: 15px;
+}
+
+.content .check-filter-box>button {
+      padding: 2px 20px;
+      margin-top: 20px;
+}
+
+.content .check-filter-box>.checkbox-inline{
+      margin-top: 20px;
+}
+
+.content .check-filter-box .checkbox-inline:nth-child(1), .content .check-filter-box>button:last-child{
+      margin-left: 20px;
+}
+
+.content .task-detail-box{
+      margin-top: 2%;
+}
+
+.content .task-detail-box .task-detail-card{
+      position: relative;
+      margin-bottom: 2%;
+      height: 250px;
+      border: 1px solid #dee3eb;
+      background-color: #fff;
+      box-shadow: 5px 5px 5px #888888;
+}
+
+.content .task-detail-card .img-box{
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15%;
+      float: left;
+      display: block;
+}
+
+.content .task-detail-card .detail-box{
+      width: 50%;
+      float: left;
+}
+
+.content .task-detail-card .button-box{
+      display: flex;
+      align-items: center;
+      width: 35%;
+      float: left;
+      height: 100%;
+}
+
+.content .task-detail-card .img-box img{
+      height: 100px;
+      margin: 0 48px;
+}
+
+.detail-box .person-info{
+      height: 160px;
+      padding-top: 30px;
+      width: 60%;
+      float: left;
+}
+
+.detail-box .occupation{
+      height: 160px;
+      padding-top: 30px;
+      width: 40%;
+      float: left;
+}
+
+.detail-box .tags{
+      height: 60px;
+      width: 100%;
+      float: left;
+}
+
+.tags .labels .label{
+      display: inline-block;
+      margin-bottom: 10px;
+}
+
+.task-detail-box .person-info .person-info-row{
+      margin-bottom: 15px;
+}
+
+.content .person-info span{
+      margin-right: 40px;
+}
+
+.content .task-detail-card .button-box button{
+      margin-right: 40px; 
+}
+
+/*é¡µé¢åˆ†é¡µç»„ä»¶æ ·å¼è°ƒæ•´-------------------------------------------------------------------------------------------------------------------------------------*/
+#pagination>li:nth-child(10)>div.input-group{
+      width: 90px;
+      display: inline-block;
+}
+.all-content{
+      width: 98%;
+      padding-bottom: 120px;
+      background: #fff;
+      margin: 0px auto 0;
+}
+#bd_task_tbody td{
+      color: #4f8cf6;
+}
+.cz{
+          display: flex;
+          justify-content:space-evenly;
+}
+.content-title{
+      background: #4f8cf6;
+      line-height: 40px;
+      color: #fff;
+}
+.content-title p{
+      margin-left: 20px;
+}
+.resule-header{
+      padding: 10px;
+      background: #4f8cf6;
+}
+.resule-header p{
+      color:#fff;
+      margin:0;
+}
+.result-content{
+      border-radius: 0;
+}
+.result-body{
+      border:4px solid #4f8cf6;
+      border-top: none;
+}
+.list-content{
+      width: 98%;
+      border: 1px solid #d0d0d0;
+      margin: 0 auto;
+      display: flex;
+}
+.listall{
+      width: 18%;
+}
+.listall p{
+      border-bottom: 1px solid #d0d0d0;
+      margin:0;
+      line-height: 32px;
+      padding-left: 20px;
+      color: #606060;
+      cursor:pointer;
+}
+.listall p:hover{
+     background: #ededed
+}
+.listall p:last-child{
+      border:none;
+}
+.have{
+      color: #0e54cd !important;
+}
+.list-name{
+      border-right: 1px solid #d0d0d0;
+       width: 10%;
+}
+.people{
+      border-right: 1px solid #d0d0d0;
+}
+.car{
+      border-right: 1px solid #d0d0d0;
+}
+.guiji{
+      border-right: 1px solid #d0d0d0;
+}
+.ziyuan{
+      border-right: 1px solid #d0d0d0;
+}
+.bendi{
+      border-right: 1px solid #d0d0d0;
+}
+
+/*ÏÂÀ­Ê÷---start----------------------------------------------------------------------------------------------------------------------------------*/
+ul {
+	   list-style: none;
+	   margin: 0;
+	   padding: 0;
+	}
+.menuUl{
+   margin-top: 0px;
+   display: inline-block;
+   padding: 0 0.432rem;
+   font-family: SourceHanSansCN;
+  	font-size:9pt;
+   color: #343434;
+   margin-bottom: -3px;
+}
+.U1 {
+   background: #FFFFFF;
+   border-bottom:1px #9D9D9D solid;
+   display: block;
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 1px 1.7px 4px 1px rgba(210, 210, 210, 0.75);
+    border-bottom: 1px solid transparent;
+    width: 215px;
+    padding: 10px;
+    z-index: 999;
+    margin-top: -10px;
+}
+.U1 li{
+   padding: 10px 0px;
+}
+.L1 a:link, .L1 a:visited{
+   color: #476074;
+   background:  url("");
+   font-size:9pt;
+   display: block;
+   text-decoration: none;
+   height: 24px;
+}
+.L1 a:link span, .L1 a:visited span{
+  cursor:pointer;
+}
+.L1 a:hover{
+   color: #000000;
+   font-weight:bold;
+   background-position: 0 -24px;
+}
+/*  Ò»¼¶²Ëµ¥ active Ð§¹û  */
+
+.L1 a:link.active, .L1 a:hover.active, .L1 a:active.active, .L1 a:visited.active{
+   background-position: 0 -24px;
+}
+.L1 a:link.active span, .L1 a:hover.active span, .L1 a:active.active span, .L1 a:visited.active span{
+   color: #000000;
+   font-weight:bold;
+   background: url("") no-repeat left;
+}
+	
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?7ktl3t');
+  src: url('../fonts/icomoon.eot?7ktl3t#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?7ktl3t') format('truetype'), url('../fonts/icomoon.woff?7ktl3t') format('woff'), url('../../fonts/icomoon.svg?7ktl3t#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.check-label > input {
+    position: absolute;
+    left: -300px;
+}
+.check-label {
+    position: relative;
+    display: inline-block;
+    padding: 6px 6px 6px 22px;
+    margin: 0;
+    overflow: hidden;
+    min-width: 28px;
+    min-height: 28px;
+}
+.check-label > input[type="checkbox"]:checked + span:before {
+    content:"\e90a";
+    font-family: 'icomoon';
+    color: #1baff7;
+    font-size: 24px;
+    line-height: 18px;
+    position: absolute;
+    z-index: 1;
+    left: -1px;
+}
+.check-label > input[type="checkbox"]:checked + span:after {
+    border-color: #1baff7;
+    text-align: center;
+}
+.check-label > input[type="checkbox"] + span:after {
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    margin: 1px;
+}
+.check-label > span:after {
+    content: "";
+    background-color: transparent;
+    outline: none;
+    border-radius: 0;
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #177ab3;
+}
+/*ÏÂÀ­Ê÷-end-----------------------------------*/
+
+#ck_btn{
+	position:absolute;
+	right:30px;
+	bottom: 0px;
+	left:inherit;
+	margin-bottom: 12px
+}

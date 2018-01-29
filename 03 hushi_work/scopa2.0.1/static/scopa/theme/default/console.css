@@ -1,0 +1,363 @@
+@charset "utf-8";
+.navbar .nav li a{ width:107px; padding:0 5px 0 7px;}
+.navbar .nav .text{ font-size:14px;}
+button[disabled], html input[disabled]{    background-color: #f6f7f8;}
+.data_loading{    background: #000;  position: absolute;  left: 0; top: 0; bottom: 0; right: 0;  opacity: 0.5;  z-index: 999;  text-align: center;  line-height: 100px;  font-size: 16px;}
+.leftType .icon{font-size: 20px; position: relative;top: 2px}
+.button-bar {margin-top: 20px; position:absolute; right:20px; bottom:20px;}
+/*滚动条*/
+.select2-results::-webkit-scrollbar,.detail::-webkit-scrollbar,.listTypeContainer::-webkit-scrollbar,.paramform::-webkit-scrollbar {
+    width:3px;
+}
+.select2-results::-webkit-scrollbar-thumb,.detail::-webkit-scrollbar-thumb,.listTypeContainer::-webkit-scrollbar-thumb,.paramform::-webkit-scrollbar-thumb{
+    background:#bcbcbc;
+    border-radius:6px;
+}
+/*分页*/
+div.page-node input.page-bt{line-height: 20px;}
+div.page-node input.bt-dis{border: 1px solid #ccc!important;background: #f3f3f3;color: #bbb!important;}
+div.page-node input.page-bt{border: 1px solid #ccc!important;background: #f3f3f3;color: #343434;margin: 5px;line-height: 20px!important;}
+div.page-node .some-page,div.page-node .page-size{height: 20px!important;}
+div.page-node{text-align: right!important;}
+.checkError{border: 1px solid #ff0000!important;}
+.fieldTooltip{
+    position: absolute;
+    background: #ffebda;
+    border:1px solid #ffa454;
+    display:none;
+    padding:3px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow:0px 0px 2px #ECECEC;
+    z-index:100000;
+}
+
+body .a_check{    margin: 0 5px 0 0;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background: #e8e8e8;
+    border: 1px solid #a5a5a5;
+    border-radius: 2px;}
+body .page-role .checked{ background: url("images/console/checked.png") left center no-repeat;border: 0}
+/*首页*/
+.container{width: 1440px; margin: 50px auto;padding: 0}
+.panel{float: left;width: calc(33% - 18px); min-height: 280px;margin:20px 10px;padding:20px 20px 0px 20px;;box-shadow: 0px 2px 6px #cdcfd3;}
+.panel .chart{width:200px; height: 280px;position: relative;   top: -40px;left: -60px}
+.panel .content{height: 50px;color: #000;text-align: left}
+.content .d-info {color: #7e7e7e;margin-bottom: 30px}
+.content .d-info .info{color: #3a5a97;display:inline-block;font-size: 24px;font-weight: bold}
+.content .d-info .info-big{color: #3a5a97;font-size: 36px;font-weight: bold}
+.content .info-center{text-align: center}
+.content .description{ margin-left: 10px;}
+.searchbar{    margin-bottom: 20px;  overflow: hidden;}
+/*首页end*/
+
+/*数据模型*/
+li{cursor: pointer;color: #707070;  font-family: "微软雅黑";}
+.leftType{position: absolute; left: 0;top: 0; bottom: 0; background: #f3f5f6;width: 175px;border-right: 2px solid #ddd}
+.data .small{left: 175px; box-shadow: 0px 0px 5px #d7d9dd;padding: 10px 0; }
+.data .content {position: absolute;left: 370px; right: 35px;     bottom: 0; top: 0;padding-top: 15px}
+.data .listTypeContainer,.paramform{overflow: auto}
+
+/*.btn,.btn:hover,.btn:focus,.btn:active{background: #bbb;width: 85px; height: 30px;color: #fff;border: 0;box-shadow: 2px 2px 2px #d2d5d7;outline: 0;}*/
+a.btn{ color:#fff;}
+.button_hover,.button_hover:hover,.button_hover:active,.button_hover:focus,.button_hover:visited{background: #1798f2;color: #fff;}
+/*属性配置*/
+.data .row{margin-left: 0;margin-right: 0;    min-height: 35px;    padding: 5px 0 0 0;}
+.data .row a.btn{ color:#fff;}
+.data .select2-container-multi .select2-choices{background: none;border: 0;   padding: 0;  }
+.data .select2-container-multi.select2-container-active .select2-choices{border: 0;box-shadow: none}
+.data .select2-container-multi .select2-choices .select2-search-choice{padding-left: 0; background: none;border: 0;box-shadow: none;}
+.data .select2-container-multi .select2-choices .select2-search-choice div{text-indent: 20px;    margin-right: 10px;}
+.data .select2-search-choice-close{right: -10px; top: 0px;}
+.sp-config{display: inline-block; width: 120px;    text-align: right;    font-weight: bold;   padding-right: 10px;}
+.data .select input{min-width: 100px;}
+/*.select{width: 50%}*/
+.page-data .select2-container{ max-width:60%;}
+.select_iconProperty {display: inline-block}
+#showicon{
+    position: relative;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+.data button,.analysis button{margin-left: 20px}
+.configlist{ display:inline-block;}
+.imgselect{ width:200px;}
+.graphiconlist .iconitem,.graphiconlist .iconitem img,.data .row img{ width:60px;height:60px; margin:5px; position:relative;}
+.graphiconlist .iconitem:hover{ opacity:0.8;}
+.graphiconlist .iconitem .glyphicon{ background:green; border-radius: 50%; padding:3px; color:#fff; position:absolute; right:-6px; bottom:-6px; left:auto; top:auto;}
+/*左侧*/
+
+#accordion li,.data .small li{list-style: none;line-height: 35px;text-indent: 40px}
+#accordion ul,.data .small ul{padding: 0}
+#accordion li .graphicon,.data .small li .graphicon{ font-size:16px}
+#accordion .title, #accordion .detail{background: none; border: 0 ;border-bottom: 1px solid #ddd;color: #909090;padding: 10px 15px}
+#accordion .title:focus{outline: 0}
+#accordion .ui-state-active{color:#1798f2 }
+#accordion .detail{padding: 0;    background: none;}
+#accordion .detail .current,#listTypeContainer .current{background: #1798f2;color: #fff}
+#accordion .data-icon{background: url("images/console/data-icon.png") no-repeat}
+#accordion .up{height:20px;width:18px;background-position:0 0;position: absolute;    left: 140px;}
+#accordion .down{height:20px;width:18px;background-position:-18px 0;position: absolute;    left: 140px;}
+#accordion .add{height:20px;width:18px;background-position:-36px 0; border: 0;  position: absolute;  top: 13px;margin-left:50px}
+
+#accordion1 li{list-style: none;line-height: 35px;text-indent: 40px}
+#accordion1 ul{padding: 0}
+#accordion1 .title, #accordion1 .detail{background: none; border: 0 ;border-bottom: 1px solid #ddd;color: #909090;padding: 10px 15px;    margin: 10px 0;}
+#accordion1 .title {display: block;}
+#accordion1 .title:focus{outline: 0}
+#accordion1 .ui-state-active{color:#1798f2 }
+#accordion1 .detail{padding: 0;    background: none;}
+#accordion1 .detail .current{background: #1798f2;color: #fff}
+#accordion1 .data-icon{background: url("images/console/data-icon.png") no-repeat}
+#accordion1 .up{height:20px;width:18px;background-position:0 0;position: absolute;    left: 140px;}
+#accordion1 .down{height:20px;width:18px;background-position:-19px 0;position: absolute;    left: 140px;}
+#accordion1 .add{height:20px;width:19px;background-position:-36px 0; border: 0;  position: absolute;  top: 13px;margin-left:50px}
+
+/*表格*/
+.tableContainer {overflow: auto; }
+.table{box-shadow: 0px 2px 5px #d2d5d7;margin: 0 }
+.table td,.table th{border: 0!important;}
+.table th{background: #87abdf!important;}
+table td{text-align: center}
+.table .true{background: url("images/console/true.png") center no-repeat}
+
+/*下拉框*/
+.select{background: none;border: 0;border-bottom: 1px solid #ccc ; min-width:200px;}
+.select2-container .select2-choice, .select2-container .select2-choice .select2-arrow{border: 0!important;background: none!important;}
+.select2-container-active  .select2-choice,.select2-dropdown-open .select2-choice{box-shadow: none!important;border: 0}
+.select2-container .select2-choice:focus{outline: 0}
+.select2-container .select2-choice>.select2-chosen{text-align: left}
+
+/*分析模型*/
+.analysis-icon{background:url(images/console/analysis-icon.png)  no-repeat;}
+.analysis .content,.method .content ,.page .content{position: absolute;left: 200px;top: 20px; right: 30px;bottom: 0}
+.rule_content{background: #f4f6f7;box-shadow: 0px 3px 5px #c0c2c6;width: 100%;padding: 20px}
+.txt{width: 100%;border: 1px solid #eee;padding-left: 10px}
+.rule_content .row{margin:20px 0;}
+.label{text-align: right; color: #000;font-weight: bold;    padding: 8px 0;}
+
+.test{height:16px;width:11px;background-position:0px 0;  display: inline-block;   margin-right: 6px;}
+.save{height:16px;width:16px;background-position:-12px 0;  display: inline-block;   margin-right: 6px;    position: relative; top: 2px;}
+.addForm{margin: 10px}
+.addForm span{display: inline-block;width: 80px;text-align: right;margin-right: 10px;vertical-align: top;}
+.addForm input,.addForm textarea{border: 1px solid #ccc; width: 200px}
+/*用户群组*/
+.page-user .row{margin: 0}
+.bottom_show{background: #f6f7f8;border-bottom: 1px solid #d7d9dc;box-shadow: 0px 2px 5px #d7d9dc;margin-bottom: 20px;}
+.tab{height:50px;    padding:0px  20px;}
+.tab li{list-style: none;float: left;margin-right: 30px;height: 50px;line-height: 50px;font-size: 16px;font-weight: bold}
+.tab li.current{border-bottom: 2px solid #1798f2; color: #1798f2}
+.d_form{padding-bottom: 20px;    background: #fff;}
+.d_form .title{height: 40px;border: 1px solid #ddd;font-weight: bold;line-height: 40px;padding:0 20px}
+.d_form .row{margin: 10px 0;}
+.d_form .row .txt{height:30px;line-height: 30px;    background: #fafafa;}
+
+.btn-toolbar{margin: 0 0 15px 0}
+.btn-toolbar .btn{margin-top: 0;color: #fff;
+    background: #bbb;}
+.btn-toolbar .title{    font-size: 16px; font-weight: bold; margin-top: 10px;  display: inline-block;}
+.table .selected{background: #d0e0f9!important;}
+#roleInfo li{float: left; width: 50%}
+#tableUser td:last-child,#tableUser th:last-child{width: 80px}
+#tableUser td{overflow: hidden;text-overflow: ellipsis;}
+/*角色*/
+.icon-role{background: url("images/console/icon-role.png") no-repeat;width: 22px;height: 22px; display: inline-block;    position: relative;
+    top: 3px;}
+.current .icon-role{background: url("images/console/icon-role-hover.png")  no-repeat}
+.icon-perm{background: url("images/console/icon-perm.png") no-repeat;width: 22px;height: 22px; display: inline-block}
+.current .icon-perm{background: url("images/console/icon-perm-hover.png") no-repeat}
+.d_role,.d_permissions,.d_user,.d_group,.d_unit,.d_manager{padding: 0 20px; overflow: auto;}
+.d_title{background: #87aadf; color: #fff;padding: 8px 20px}
+.d_title .icon{    font-size: 20px;}
+.data_perm,.app_perm{background: #fff; margin-bottom: 20px }
+.perm_content{padding: 20px;    background: #fff;}
+.perm_content li{min-height: 30px}
+.role_control{    border: 1px solid #d4d4d4;
+    padding: 1px 10px;    margin: 10px 0;    background: #f7f7f8;
+    color: #acacac;    min-height: 30px;}
+.btnblue{ background:  #78a2f3;     color: #fff;
+    padding: 5px 20px;
+    border: 0;
+
+    box-shadow: 2px 2px 2px #d2d5d7;
+    outline: 0;
+    border-radius: 2px;}
+.btnSave{    background:  #87aadf;
+}
+.catbtn{    color: #87aadf;
+    font-size: 16px;
+    margin-left: 3px;}
+.subbtn{  color: #87aadf;
+    font-size: 14px;margin-left: 3px;}
+.table_level{width: 100%}
+.table_level td:first-child{width: 85px;    vertical-align: middle;    overflow: hidden;
+    text-overflow: ellipsis;}
+.table_level td{text-align: left;}
+#table_level td{white-space: normal;}
+.table_level thead{font-weight: bold}
+.sptag{min-width: 100px;display: inline-block}
+.table_level td.txt-center{text-align: center}
+#groupInfo .catbtn,#roleInfo .catbtn{position: relative; top:5px ;left: -5px}
+#per_app_list{max-height: 600px;padding-right:20px}
+.role_container{max-height: 600px}
+/*table*/
+.table select,.table input{height: 25px; width: 120px; background: #fff}
+.table thead tr{background: #87abdf; color: #FFF}
+.table tbody tr:nth-child(even){background: #f2f7fd; }
+.table tbody tr:nth-child(odd){background: #fff; }
+
+/*战法*/
+.method .toolbar{height: 40px;}
+.method .select{width: 122px; height: 25px ;border: 1px solid #d4d4d4;background: #fff;margin-right: 10px;padding: 0 5px;}
+.method input{border: 1px solid #d4d4d4;padding: 0 5px; height: 25px ;}
+.page-method .pic{    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;}
+.nodeInfo{position: absolute; background: #fff; padding: 10px;width: 200px; height: auto;box-shadow: 0px 2px 3px #cfd2d6}
+.page-method  .page .toolbar {
+    position: absolute;
+    z-index: 10;
+}
+.page-method .page .toolbar ul {
+    height: 40px;
+    margin: 20px 20px 0 0;
+    border: 1px solid #d5d5d5;
+    border-right: none;
+    background-color: #fff;
+    float: left;
+}
+.page-method .page .toolbar .actionbtn {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-right: 1px solid #d5d5d5;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    position: relative;
+}
+.page-method  .page .toolbar .icon {
+    font-size: 20px;
+    color: #aaa;
+    vertical-align: middle;
+    display: inline-block;
+}
+.page-method .page .toolbar .text {
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    color: #1798F2;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: -20px;
+    display: none;
+}
+/*算子弹出框*/
+.method_dialog .btn,.method_dialog .btn:focus{background: #aaa;color: #fff;border: 0; outline: 0;padding: 0;box-shadow: none}
+.method_dialog .control{ border: 1px solid #d4d4d4;  padding: 0 5px;height: 25px;min-width: 120px}
+.method_dialog{    margin: -20px;}
+.method_dialog .title{height: 35px;
+    padding: 8px 20px;
+    background: #ecf1f7;
+    box-shadow: 0px 3px 3px #ccc;
+    color: #1798f2;
+    font-weight: bold;}
+.method_dialog .toolbar{    height: 60px;
+    background: #f2f3f7;
+    padding:13px  20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;}
+.method_dialog .toolbar button{width: 80px ;height: 30px ; margin: 0 10px}
+.method_dialog .content{    padding: 20px;}
+.method_dialog .content .row{    margin:20px 0;}
+.method_dialog .content .row span{    display: inline-block;
+    text-align: right;
+    margin-right: 10px;    width:90px;}
+
+.method_dialog .content .row input ,.method_dialog .content .row select{    width: 50%;  }
+.method_dialog .content .list{    height: 100px;    margin-bottom: 10px;}
+.method_dialog .content .list li{    height: 40px;}
+.method_dialog .content .list select,.method_dialog .content .list input{ margin: 0 10px}
+.method_dialog .content .list li button{    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;  }
+.method_dialog .content .topbar{     margin-bottom:10px;
+    padding:5px 10px;}
+.method_dialog .multitxt{width: 98% ;    margin: 0 10px;    height: 90px;}
+.method_dialog .multitxt.mheight{height: 250px}
+.method_dialog table{width: 100%}
+.method_dialog table thead{    background: #ddd;}
+.method_dialog table tr{height: 30px}
+.method_dialog .show{display: block}
+.method_dialog .hide{display: none}
+.method_dialog .tab{height: auto}
+.method_dialog .tab button{    border: 0;    color: #1798f2;
+    background: #fff;
+    padding: 3px 5px;}
+.method_dialog .tab button[disabled]{    background: #bbb; color: #fff}
+
+ .searchbox {height: 30px;
+    line-height: 30px;
+    margin-left: 30px;
+    border: 1px solid #cfd2d4;
+    border-radius: 2px;
+    vertical-align: top;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #f3f6f8;    position: relative;}
+ .searchbox .searchbox-btn {
+    width: 30px;
+    height: 25px;
+    margin: 1px 5px 0 0;
+    background: url("./images/core/icon-search.png") center center no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;}
+  .searchbox .searchbox-ipt {
+    width: 190px;
+    height: 28px;
+    border: none;
+    text-indent: 20px;
+    background: none;
+    color: #5b616c;}
+ .daterangebox {height: 30px;
+    line-height: 30px;
+    margin: 0 0 0 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 0 5px 0 0;
+    vertical-align: top;
+    display: inline-block;}
+ .daterangebox .daterangebox-ipt {
+    width: 213px;
+    height: 30px;
+    padding: 0 20px;
+    border: none;
+    float: left;
+    background: url(./images/core/icon-calendar.png) right 2px no-repeat;
+}
+ .daterangebox .daterangebox-btn {
+    width: 25px;
+    height: 25px;
+    margin: 2px 0 0;
+    background: url(./images/core/icon-calendar.png) no-repeat;
+    text-indent: -999px;
+    overflow: hidden;
+    float: left;
+    display: none;
+}
+.icon-audit{background: url("images/common/audit.png") no-repeat}
+.table td{overflow: hidden;  text-overflow: ellipsis;}

@@ -1,0 +1,19 @@
+<!-- 顶部导航 -->
+@@include('common/@topbar.html')
+
+<!-- 左侧导航 -->
+@@include('common/@sidebar.html')
+
+<!-- 主工作区 -->
+<div id="page-content-wrapper" class="workspace" style=" overflow: auto;">
+	<button type="button" class="hamburger is-open animated fadeInLeft" data-toggle="offcanvas">
+		<span class="hamb-top"></span>
+		<span class="hamb-middle"></span>
+		<span class="hamb-bottom"></span>
+	</button>
+</div>
+
+<script>
+	app.main.init();
+
+</script>

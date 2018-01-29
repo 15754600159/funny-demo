@@ -1,0 +1,189 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    font-size:14px;
+    font-family:"SourceHanSansCN-Normal-Alphabetic","Microsoft YaHei","SimSun","Roboto-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+body{
+    background: #e2e5ec;
+	font-family:"SourceHanSansCN-Normal-Alphabetic","Microsoft YaHei","SimSun","Roboto-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+select{
+    border:1px solid #909cb2;
+}
+.top{
+    width: 100%;
+    height: 52px;
+    background: #006dbd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.top>a{
+    float: left;
+    margin: 17px 20px;
+}
+.top img{margin-top:-17px;}
+.top div{
+    float: left;
+    height: 52px;
+    line-height: 52px;
+}
+.top .title{
+    color: #fff;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.top .role{
+    font-size:18px;
+    font-family:"微软雅黑";
+    color: #afbcd5;
+    position: absolute;
+    right: 20px;
+}
+.top .role:hover{
+    cursor: pointer;
+    color: #fff;
+}
+
+
+.main-body{
+    margin: 20px;
+    margin-top: 70px;
+}
+.search {
+    width:640px;
+    height:32px;
+    position: absolute;
+    top:-20%;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+    text-align: center;
+    /*transform: translate(-50%,-50%);*/
+    z-index: 1;
+}
+label,.text-input,.upload,.daoru{
+    float: left;
+    height: 30px;
+    margin: 0px 8px;
+    border:1px solid #ccc;
+}
+.main-body label,.daoru{
+    font-weight: bold;
+    padding: 5px 20px;
+    color: #fff;
+    background: #579efa;
+    border-radius: 5px;
+}
+.text-input{
+    border: 2px solid #999;
+    min-width: 280px;
+}
+.main-body div .changefile{
+    opacity: 0;
+    position: absolute;
+    overflow: hidden;
+    left:0;
+    top:0;
+    width:96px;
+    cursor: pointer;
+}
+.upload{
+    display: inline-block;
+    padding: 0 20px;
+    height:30px;
+    line-height: 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    background: #579efa;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+}
+.upload:hover{
+    text-decoration: none;
+    color: #fff;
+
+}
+.text-div{
+    clear: both;
+    display: none;
+    width:80%;
+    position: absolute;
+    top:20%;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+    padding:40px 0;
+    /*transform: translate(-50%,-50%);*/
+}
+.text-div p{
+    height:40px;
+    color: #56688a;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 40px;
+    background: #eff2f9;
+    border-top: 2px solid #f7f9fc;
+    margin-bottom: 0px;
+    position:relative;
+}
+.text-div .text-area{
+    width:100%;
+    height:600px;
+    background: #fff;
+    border:1px solid #c8d0de;
+    overflow: auto;
+    padding:10px 20px;
+    line-height: 22px;
+}
+.mubanload:hover,
+.upload:hover,
+.daoru:hover{
+    cursor: pointer;
+}
+.daoru{
+    outline: none;
+    box-shadow: none;
+    border:1px solid #ccc;
+}
+.totuxi{
+	background:url(../img/totuxi.png) no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	position:absolute;
+	right:10px;
+	top:10px;
+}
+
+/*弹框*/
+#identifier{
+    top:35%;
+    left:40%;
+}
+#loading{
+    width:310px;
+    height: 80px;
+    background: #fff;
+    text-align: left;
+    border-radius: 10px;
+}
+#loading span{
+    margin-bottom: 0;
+    line-height: 80px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #2a83ff;
+}
+
+
+
+
+
+
+

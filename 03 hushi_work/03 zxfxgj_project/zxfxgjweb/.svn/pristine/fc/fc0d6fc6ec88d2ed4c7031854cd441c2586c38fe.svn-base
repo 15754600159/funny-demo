@@ -1,0 +1,164 @@
+app.api.gzqt = {
+    gzqtdrUrl: app.api.url + '/zx/group/file/', //关注群体导入
+    viewgrouptype: function(settings) {
+        app.api.ajax({
+            url: '/zx/sysDict/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    add: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/',
+            type: 'POST',
+            data: settings.data
+        }, settings);
+    },
+    view: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/' + settings.data.id + '/',
+            type: 'GET'
+        }, settings);
+    },
+    update: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/' + settings.data.zdqtbh + '/',
+            type: 'PUT',
+            data: settings.data
+        }, settings);
+    },
+    del: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/?ids=' + settings.data.ids,
+            type: 'DELETE'
+        }, settings);
+    },
+
+    exportFileUrl: app.api.url + '/zx/group/file/?',
+
+    exportpersonFileUrl: app.api.url + '/zx/group/person/file/?',
+
+
+    search: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    glzdrview: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/' + settings.data.qtbh + '/zdr',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    xcxqtview: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/' + settings.data.qtbh + '/xcxqt',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    qtyjview: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/gj/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    qtryglview: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/person/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    gzqtyjxx: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/gj/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    gzqtryview: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/person/' + settings.data.id + '/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    gzqtryadd: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/' + settings.data.zdqtbh + '/person/',
+            type: 'POST',
+            data: settings.data
+        }, settings);
+    },
+    gzqtryupdate: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/person/' + settings.data.id + '/',
+            type: 'PUT',
+            data: settings.data
+        }, settings);
+    },
+    gzqtrydel: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/person/?ids=' + settings.data.ids,
+            type: 'DELETE',
+            data: settings.data
+        }, settings);
+    },
+    qtrywgzglview: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/noperson/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    gzqtrywgzadd: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/' + settings.data.zdqtbh + '/noperson/',
+            type: 'POST',
+            data: settings.data
+        }, settings);
+    },
+    gzqtrywgzdel: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/noperson/?ids=' + settings.data.ids,
+            type: 'DELETE',
+            data: settings.data
+        }, settings);
+    },
+
+    gzqtrywgzview: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/noperson/' + settings.data.id + '/',
+            type: 'GET',
+            data: settings.data
+        }, settings);
+    },
+    gzqtrywgzupdate: function(settings) {
+        console.log(settings);
+        app.api.ajax({
+            url: '/zx/group/noperson/' + settings.data.id + '/',
+            type: 'PUT',
+            data: settings.data
+        }, settings);
+    }
+};

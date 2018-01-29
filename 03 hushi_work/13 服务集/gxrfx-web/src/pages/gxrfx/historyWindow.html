@@ -1,0 +1,49 @@
+<div class="container bgmask gxrfx-history">
+	<div class="window popIn" style="width: 70%; height: 70%;">
+
+		<!-- 弹框头部start -->
+		<header>
+			<h1>历史记录</h1>
+			<a class="close btn-window-close">&times;</a>
+		</header>
+		<!-- 弹框头部end -->
+
+		<!-- 弹框正文start -->
+		<div class="content">
+
+			<div class="table-box" style="margin: 20px;">
+				<table class="table table-bordered my-table-striped my-table-condensed">
+					<thead>
+						<tr>
+							<th class="td-width-2">名称</th>
+							<th>号码</th>
+							<th class="td-width-2">重点人细类</th>
+							<th class="td-width-2">关注类型</th>
+							<th class="td-width-2">关系</th>
+							<th class="td-width-2">操作</th>
+						</tr>
+					</thead>
+					<tbody class="table-body">
+
+					</tbody>
+				</table>
+
+				<ul id="historyPagination" class="pagination pagination-sm"></ul>
+			</div>
+
+		</div>
+		<!-- 弹框正文end -->
+
+		<!-- 弹框底部start -->
+		<footer>
+			<!--<a class="btn btn_submit">确定</a>-->
+			<a class="btn btn-outline btn-window-close">取消</a>
+		</footer>
+		<!-- 弹框底部end -->
+
+	</div>
+</div>
+
+<script>
+    app.gxrfx.history.init();
+</script>

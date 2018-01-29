@@ -1,0 +1,63 @@
+.imp-head {
+	width: 100%;
+	height: 56px;
+	background-image: url(../images/head-bg.png);
+	background-repeat: repeat-y;
+	position: relative;
+	.head-logo{
+		img{
+			height: 50px;
+			margin: 5px 20px;
+		}
+	}
+	.head-other {
+		position: absolute;
+		width: 200px;
+		height: 56px;
+		top: 0;
+		right: 0;
+		display: flex;
+		align-items: center;
+		.user-img {
+			border-radius: 60px;
+			overflow: hidden;
+			margin-left: 20px;
+			margin-right: 10px;
+		}
+		.user-inform {
+			margin-right: 20px;
+			p {
+				color: #fff;
+			}
+		}
+		.other-mes {
+			display: flex;
+			width: 153px;
+			align-items: center;
+			height: 56px;
+			justify-content: space-around;
+			margin-left: 32px;
+			.mes-news {
+				position: relative;
+				cursor: pointer;
+				.mes-new {
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					background: #4faaff;
+					border-radius: 30px;
+					text-align: center;
+					color: #fff;
+					top: -10px;
+					right: -14px;
+				}
+			}
+			.mes-horn {
+				cursor: pointer;
+			}
+			.quit {
+				cursor: pointer;
+			}
+		}
+	}
+}

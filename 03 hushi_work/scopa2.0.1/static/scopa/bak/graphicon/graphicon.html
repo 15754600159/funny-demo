@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+	<head>
+		<title>图析图标 - Scopa</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../../theme/default/images/common/favicon.ico" rel="shortcut icon">
+		<link href="../../../common/gallery/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../theme/default/common.css" rel="stylesheet">
+		<link href="../../theme/default/core.css" rel="stylesheet">
+		<link rel="stylesheet" href="graphicon/demo-files/demo.css">
+		<link href="graphicon/style.css" rel="stylesheet">
+		<script src="../../../common/stacktrace.js" type="text/javascript"></script>
+		<script src="../../../common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+		<script>
+			var _href = window.location.href,
+				_index = window.location.href.indexOf("/scopatrunk/");
+			staticUrl = (-1 == _index ? "" : _href.slice(0, _index + 11)) + "/static";
+		</script>
+		<script src="../../../common/config.js" type="text/javascript"></script>
+		<style class="sbody">
+			body{ background:none;}
+			.main{ padding:20px!important; height:auto;}
+			#makeIcon{ width:362px; height:362px; float:left; position:fixed; z-index:10; background:#fff; visibility: hidden;}
+			.makeicon{ position:fixed;right:10px;top:50px;opacity:0.5;}
+			.doc{ padding:20px; margin:0 auto;}
+			h1{ font-weight: bold;}
+			code{ margin:0 5px; padding:0 2px; border:1px solid rgba(0,0,0,0.1); display:inline-block;}
+			.graphnode-entity,.graphnode-relation,.graphnode-event,.graphnode-relation-line{ border:3px solid #edf0f3; display:inline-block; vertical-align:middle; cursor:pointer; text-align:center;}
+			.graphnode-entity{ width:66px; height:66px; line-height:60px; margin-right:10px; background:#4887bd; border-radius: 50%;}
+			.graphnode-entity:hover{ background:#5896cb;}
+			.graphnode-relation,.graphnode-event{ width:51px; height:51px; line-height:45px; background:#5b759d;}
+			.graphnode-relation:hover,.graphnode-event:hover{ background:#6580a9;}
+			.graphnode-entity.locked{ border:3px solid #aaaaaa;}
+			.graphnode-entity.new{ border:3px solid #44da55;}
+			.graphnode-entity.active,.graphnode-relation.active,.graphnode-event.active{ border:3px solid #fbba0a;}
+			.graphnode-relation-line{ width:70px; height:10px; margin:10px 10px 0; border:none; border-top:2px solid #9bb7f0;}
+			.graphnode-relation-line.new{ border-top-color:#44da55;}
+			.graphnode-relation-line.active{ border-top-color:#fbba0a;}
+			
+			.graphnode-entity .graphicon{ color:#fff; display:inline-block; vertical-align: middle; font-size:40px; border:none; background:none;}
+			.graphnode-event .graphicon{ color:#fff; display:inline-block; vertical-align: middle; font-size:30px; border:none; background:none;}
+			
+			
+			/*.icontable{ width:1140px;position:absolute;left:50%;margin:20px 0 20px -570px; background:#fff; z-index:1;}
+			.icontable th{ padding:20px;}
+			.icontable td{ vertical-align: middle!important;}
+			.graphicon{ display:inline-block; text-align:center; background:#4887bd; cursor: pointer; border:3px solid #fff;}
+			.graphicon.active{ border:3px solid #fbba0a;}
+			.graphicon:hover{ background:#5896cb;}
+			.graphicon span{ color:#fff; display:inline-block; vertical-align: middle;}
+			.type-entity{ width:66px; height:66px; line-height:60px; border-radius: 50%;}
+			.type-entity span{ font-size:40px;}
+			.person{ background:#5ca2af;}
+			.person:hover{ background:#66a8b5;}
+			.person_common_0,.person_eventful_0{ background:#d47fa9;}
+			.person_common_0:hover,.person_eventful_0:hover{ background:#d78bb2;}
+			.vehicle{ background:#9f88c8;}
+			.vehicle:hover{ background:#ab96cf;}
+			.type-relation,.type-event{ width:51px; height:51px; line-height:45px; background:#5b759d;}
+			.type-relation:hover,.type-event:hover{ background:#6580a9;}
+			.type-relation span,.type-event span{ font-size:30px;}*/
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<a class="getmapping" href="javascript:;" style="position:fixed;right:10px;top:10px;opacity:0.5;">
+				<button class="btn btn-sm btn-primary">查看Mapping表</button>
+			</a>
+			<a class="makeicon" href="javascript:;">
+				<button class="btn btn-sm btn-warning">生成PNG图标</button>
+			</a>
+			<div class="doc">
+				<h1>【图析 实体-关系-事件 ICON 规则说明】</h1>
+				<div>
+					<p>1、实体在图析中为圆形色块+图标表示，默认背景颜色为<code>#4887bd</code>，选中效果为3像素颜色为<code>#fbba0a</code>的边框，锁定效果为3像素颜色为<code>#aaaaaa</code>的边框；，新加实体效果为3像素颜色为<code>#44da55</code>的边框；</p>
+					<p><span class="graphnode-entity"><span class="graphicon graphicon-human"></span></span><span class="graphnode-entity locked"><span class="graphicon graphicon-human"></span></span><span class="graphnode-entity new"><span class="graphicon graphicon-human"></span></span></p>
+				</div>
+				<div>
+					<p>2、关系在图析中为宽度为2像素的线表示，默认颜色为<code>#9bb7f0</code>，选中颜色为<code>#fbba0a</code>的线，新加关系颜色为<code>#44da55</code>的线；</p>
+					<p><span class="graphnode-relation-line"></span><span class="graphnode-relation-line new"></span></p>
+				</div>
+				<div style="text-decoration: line-through;">
+					<p>3、事件在图析中为线+矩形色块+图标表示，默认背景颜色为<code>#5b759d</code>，选中效果为3像素颜色为<code>#fbba0a</code>的边框；</p>
+					<p><span class="graphnode-event"><span class="graphicon graphicon-accommodation"></span></span></p>
+				</div>
+			</div>
+			<hr style="border-top:1px solid #ccc;">
+			<div class="doc icolab"><h1>【图析中可选图表库如下】</h1></div>
+			<img src="readme.png" style="margin:10px auto;display:block;border:1px solid #ccc;">
+			<hr style="border-top:1px solid #ccc;">
+			<div class="doc"><h1>【以下为转换后的字体图标】<code style="display:inline-block">font-family: 'graphicon';</code></h1></div>
+		</div>
+		<div id="makeIcon"></div>
+		<script type="text/javascript">
+			seajs.use('../graphicon/graphicon');
+		</script>
+	</body>
+
+</html>

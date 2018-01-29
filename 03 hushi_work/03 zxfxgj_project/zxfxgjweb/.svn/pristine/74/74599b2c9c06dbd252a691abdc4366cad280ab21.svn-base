@@ -1,0 +1,57 @@
+.rwgl{
+    .result-table-box{
+        width: 98%;
+        margin: 0 auto;
+    }
+    .rwgllb{
+        position: relative;
+        padding-bottom: 50px;
+        margin-top: 20px;
+    }
+}
+
+#window-qtwjgzpz-addWindow h4,#window-qtwjgzpz-checkWindow h4,#window-qtwjgzpz-updateWindow h4{
+    color: #1D1D1D;
+    display: inline-block;
+}
+
+.col4{
+    display: flex;
+    justify-content: space-around;
+}
+
+.col4>* {
+    width: 19%;
+}
+
+.form .col4 .control-item > label {
+    width: 80px;
+    text-align: right;
+}
+
+.form .col4 .control-item > div {
+    margin-left: 80px;
+}
+
+.col4 .select {
+    width: 150px;
+}
+
+#form-rule-add-sub section.col4{
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    padding: 10px 0;
+    border: 1px solid #c5c5c5;
+    border-radius: 3px;
+}
+
+#form-rule-add-main .add-sub-rule{
+    vertical-align: baseline;
+}
+
+#form-rule-add-sub .delete-sub-rule{
+    width: 38px;
+    display: inline-block;
+    padding: 8px;
+    height: 38px;
+    cursor: pointer;
+}

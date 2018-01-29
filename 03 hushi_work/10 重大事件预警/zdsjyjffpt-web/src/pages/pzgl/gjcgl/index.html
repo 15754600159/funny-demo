@@ -1,0 +1,75 @@
+<div class="new-page">
+        
+    <div class="page-content gjcgl">
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">筛选条件</div>
+            <div class="filter-conditions">
+                <form action="">
+                    <div class="input-item sslb-tree-item tree-item">
+                        <label>涉事类别：</label>
+                        <input name="sslbmc" class="input node-name" type="text" placeholder="请选择涉事类别" readonly />
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <input name="sslb" class="input node-code" type="text" style="display: none;" readonly />
+                        <div id="ztree" class="ztree sslb-tree-dom tree-dom" style="display: none;"></div>
+                    </div>
+                    <div class="input-item">
+                        <label>创建时间：</label>
+                        <div class="time-select">
+                            <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="filter-button-box">
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                        <button type="button" class="btn btn-normal btn_add">新 增</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th class="td-width-2">涉事类别</th>
+                        <th>关键词</th>
+                        <th class="td-width-1">创建人</th>
+                        <th class="td-width-3">创建时间</th>
+                        <th class="td-width-2">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <!-- <tr>
+                        <td>“藏独”活动信息</td>
+                        <td>达赖，西藏流亡政府，藏青会，西藏青年大会，西藏九一三运动</td>
+                        <td>王队</td>
+                        <td>2017-10-02 00:00:00 - 2017-10-25 23:59:59</td>
+                        <td class="operate">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="修改"></span>
+                            <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="废除"></span>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+            <ul id="gjcglPagination" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+
+    </div>
+
+
+    <script>
+        app.pzgl.gjcgl.search.init();
+    </script>
+
+</div>
+        

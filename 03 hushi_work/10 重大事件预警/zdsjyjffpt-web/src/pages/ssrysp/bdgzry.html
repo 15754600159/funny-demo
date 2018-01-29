@@ -1,0 +1,124 @@
+<div class="new-page">
+
+    <div class="page-content wwgzrygl">
+
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">筛选条件</div>
+            <div class="filter-conditions">
+                <form action="" id="form-department-search">
+                    <div class="input-item">
+                        <label>被核录人：</label>
+                        <input id="bdgrzy-xm" type="text" class="input" placeholder="被核录人：" />
+                    </div>
+                    <div class="input-item">
+                        <label>身份证号：</label>
+                        <input id="bdgzry-sfzh" type="text" class="input" placeholder="请输入公民身份证号" />
+                    </div>
+                    <div class="input-item">
+                        <label>民族：</label>
+                        <select id="bdgzry-mz" style="width: 200px;" class="form-control select">
+                            <option value="">-全部-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>关注类型：</label>
+                        <select id="bdgzry-type" style="width: 200px;" class="form-control select">
+                            <option value="">-全部-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>人员类型：</label>
+                        <select id="bdgzry-rylx" style="width: 200px;" class="form-control select">
+                            <option value="">-请选择-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>导入人：</label>
+                        <input id="bdgrzy-dr" type="text" class="input" placeholder="导入人：" />
+                    </div>
+                    <div class="input-item">
+                        <label>导入时间：</label>
+                        <div class="time-select">
+                            <input id="drstart" class="form_datetime" type="text" placeholder="请选择导入时间起" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input id="drend" class="form_datetime" type="text" placeholder="请选择导入时间止" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="filter-button-box">
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                    </div> -->
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+
+        <!-- 操作按钮start --> 
+        <div class="operate-buttons-box">
+            <div class="left-buttons">
+                <button type="button" class="btn btn-normal" onclick="app.zxrygl.bdgzry.xiugai();">批量修改</button>
+                <button type="button" class="btn btn-normal" onclick="app.zxrygl.bdgzry.chexiao();">批量撤销</button>
+                <button type="button" class="btn btn-normal" onclick="app.zxrygl.bdgzry.huifu();">批量恢复</button>
+                <button type="button" class="btn btn-normal" onclick="app.zxrygl.bdgzry.xiazai();">模板下载</button>
+                <button type="button" class="btn btn-normal" onclick="app.zxrygl.bdgzry.daoru();">导入</button>
+                <button type="button" class="btn btn-normal" onclick="app.zxrygl.bdgzry.daochu();">导出</button>
+            </div>
+            <div class="right-buttons">
+                <button type="button" class="btn btn-normal" onclick="app.zxrygl.bdgzry.all();">查询</button>
+
+                <!-- <button type="button" class="btn btn-normal" onclick="app.zxrygl.search.reset();">重置</button> -->
+            </div>
+        </div>
+        <!-- 操作按钮end -->
+
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+
+                    <tr>
+                        <th class="checks td-width-1">
+                            <label class="check">
+                                <input id="Checkall" type="checkbox" class="Checkall">
+                                <span>全选</span>
+                            </label>
+                        </th>
+                        <th>关注类型</th>
+                        <th>人员类型</th>
+                        <th>身份证号</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>民族</th>
+                        <th>户籍地区</th>
+                        <th>户籍祥址</th>
+                        <th>列管单位</th>
+                        <th>事由</th>
+                        <th>处置要求</th>
+                        <th>比对截止日期</th>
+                        <th>导入人</th>
+                        <th>导入时间</th>
+                        <th>操作</th>
+
+                    </tr>
+                </thead>
+                <tbody class="table_all">
+
+                </tbody>
+            </table>
+
+            <ul id="pagination" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+
+    </div>
+
+
+    <script>
+        app.zxrygl.bdgzry.init();  
+    </script>
+
+</div>

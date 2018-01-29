@@ -1,0 +1,187 @@
+<div class="page">
+    <div class="rygl zxrygl">
+        <div class="gzqt_head">
+            <h2>涉事人员预警管理</h2>
+        </div>
+        <form class="form-search-bar" id="form-department-search">
+            <div class="control-item">
+                <label class="required" style="float:left;width:100px">人员类别:</label>
+                <div style="margin-left:20px;">
+                    <input id="rygl-name" name="name" type="text" class="input" placeholder="请输入人员类别">
+                </div>
+            </div>
+            <div class="control-item">
+                <label class="required" style="float:left;width:100px">身份证号:</label>
+                <div style="margin-left:20px;">
+                    <input id="rygl-name" name="name" type="text" class="input" placeholder="身份证号">
+                </div>
+            </div>
+            <div class="control-item">
+                <span style="float:left;width:100px;margin-bottom:5px">状态:</span>
+                <select class="form-control select" style="float:left;    margin-left: 20px;" id="ry-type">
+					<option value="">-已下发-</option>
+                    <option value="">-未下发-</option>
+				</select>
+            </div>
+            <div class="control-item">
+                <span style="float:left;width:100px;margin-bottom:5px">预警级别:</span>
+                <select class="form-control select" style="float:left;    margin-left: 20px;" id="ry-type">
+					<option value="">-红色-</option>
+                    <option value="">-橙色-</option>
+                    <option value="">-黄色-</option>
+                    <option value="">-蓝色-</option>
+				</select>
+            </div>
+            <div class="control-item">
+                <label class="required" style="float:left;width:100px">发生活动时间起:</label>
+                <div style="margin-left:20px;">
+                    <input size="16" type="text" readonly class="form_datetime" id="fsstart" style="width:160px;">
+                </div>
+            </div>
+            <div class="control-item">
+                <label class="required" style="float:left;width:100px">发生活动时间止:</label>
+                <div style="margin-left:20px;">
+                    <input size="16" type="text" readonly class="form_datetime" id="fsend" style="width:160px;">
+                </div>
+            </div>
+            <div class="search-btn-div">
+                <div class="left-btn-side zxry">
+                    <button type="button" class="btn btn-searchbar" onclick="app.zxrygl.add.open();">添加</button>
+                    <button type="button" class="btn btn-searchbar" onclick="app.zxrygl.add.del();">删除</button>
+                    <!-- <button type="button" class="btn btn-searchbar download-template">下载模版</button>
+					<button type="button" class="btn btn-searchbar" onclick="app.gzqt.import.open(app.api.zxrygl.zxryglUrl, 'zxrygl')">导入</button>
+					<button type="button" class="btn btn-searchbar" id="zxrygl-form-export">导出</button>
+					<button type="button" class="btn btn-searchbar" onclick="app.zxrygl.search.refresh()">刷新</button> -->
+                </div>
+                <div class="right-btn-side">
+                    <button type="button" class="btn btn-submit" onclick="app.zxrygl.search.all()">查询</button>
+                    <button type="button" class="btn btn-submit" onclick="app.zxrygl.search.reset()">重置</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="list-zxrygl">
+            <div class="rycjlb">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="checks">
+                                <label class="check">
+									<input type="checkbox" name="r2" value="1" id="Checkall">
+									<span>全选</span>
+								</label>
+                            </th>
+                            <th>签收/反馈状态</th>
+                            <th>指令发布时间</th>
+                            <th>发布单位</th>
+                            <th>预警级别</th>
+                            <th>姓名</th>
+                            <th>证件号码</th>
+                            <th>人员类别</th>
+                            <th>活动类别</th>
+                            <th>活动发生时间</th>
+                            <th>活动发生地</th>
+                            <th>发生场所</th>
+                            <th>办理单位</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table_all">
+                        <tr>
+                            <td></td>
+                            <td>未签收</td>
+                            <td>2017-10-31 09:21:31</td>
+                            <td>呼市和林县 </td>
+                            <td>橙色</td>
+                            <td>邢宝玲</td>
+                            <td>150204198906062116</td>
+                            <td>善心汇参与人员 </td>
+                            <td>互联网上网服务营业场所上网人员信息</td>
+                            <td> 2017-10-22 13:13:04</td>
+                            <td>内蒙古自治区呼和浩特市和林格尔县</td>
+                            <td>联众网吧</td>
+                            <td> 和林县城关派出所 </td>
+                            <td><a href="#" style="color:#000">反馈</a><a href="#" style="color:#000;margin-left:5px;">详情</a></td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>未签收</td>
+                            <td>2017-11-02 08:50:15 </td>
+                            <td>呼市和林县 </td>
+                            <td>橙色</td>
+                            <td>姜中耀</td>
+                            <td>152801198502200311</td>
+                            <td>滨海大宗涉案人员,滨海大宗邮币卡关注人员 </td>
+                            <td>旅馆旅客住宿登记信息</td>
+                            <td> 2017-10-31 12:15:00</td>
+                            <td>内蒙古自治区呼和浩特市和林格尔县</td>
+                            <td>和林格尔巨华宾馆</td>
+                            <td> 和林县城关派出所 </td>
+                            <td><a href="#" style="color:#000">反馈</a><a href="#" style="color:#000;margin-left:5px;">详情</a></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>未签收</td>
+                            <td>2017-11-02 08:49:46 </td>
+                            <td>呼市和林县 </td>
+                            <td>橙色</td>
+                            <td>任红伟</td>
+                            <td>150121198501172051</td>
+                            <td>善心汇参与人员 </td>
+                            <td>旅馆旅客住宿登记信息</td>
+                            <td> 2017-10-31 12:16:00</td>
+                            <td>内蒙古自治区呼和浩特市和林格尔县</td>
+                            <td>恒泰宾馆（和林县）</td>
+                            <td> 和林县城关派出所 </td>
+                            <td><a href="#" style="color:#000">反馈</a><a href="#" style="color:#000;margin-left:5px;">详情</a></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>未签收</td>
+                            <td>2017-10-31 09:21:31</td>
+                            <td>呼市和林县 </td>
+                            <td>橙色</td>
+                            <td>邢宝玲</td>
+                            <td>150204198906062116</td>
+                            <td>善心汇参与人员 </td>
+                            <td>互联网上网服务营业场所上网人员信息</td>
+                            <td> 2017-10-22 13:13:04</td>
+                            <td>内蒙古自治区呼和浩特市和林格尔县</td>
+                            <td>联众网吧</td>
+                            <td> 和林县城关派出所 </td>
+                            <td><a href="#" style="color:#000">反馈</a><a href="#" style="color:#000;margin-left:5px;">详情</a></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>未签收</td>
+                            <td>2017-10-31 09:21:31</td>
+                            <td>呼市和林县 </td>
+                            <td>橙色</td>
+                            <td>邢宝玲</td>
+                            <td>150204198906062116</td>
+                            <td>善心汇参与人员 </td>
+                            <td>互联网上网服务营业场所上网人员信息</td>
+                            <td> 2017-10-22 13:13:04</td>
+                            <td>内蒙古自治区呼和浩特市和林格尔县</td>
+                            <td>联众网吧</td>
+                            <td> 和林县城关派出所 </td>
+                            <td><a href="#" style="color:#000">反馈</a><a href="#" style="color:#000;margin-left:5px;">详情</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <ul id="pagination" class="pagination" style="    right: 0;
+				bottom: 0;
+				position: absolute;">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //app.zxrygl.search.init();
+    </script>
+
+</div>

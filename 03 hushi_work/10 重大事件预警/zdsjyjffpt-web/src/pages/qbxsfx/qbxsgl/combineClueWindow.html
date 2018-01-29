@@ -1,0 +1,233 @@
+<div class="container bgmask combine-clue">
+    <div class="window popIn" style="width: 95%; height: 95%;">
+
+        <!-- 弹框头部start -->
+        <header>
+            <h1>合并情报线索</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <!-- 弹框头部end -->
+
+        <!-- 弹框正文start -->
+        <div class="content">
+            
+            <div class="new-page">
+
+                <div class="page-content">
+                    <!-- 基本信息start -->
+                    <div class="content-block content-block-jbxx">
+                        <div class="color-block-title">基本信息</div>
+                        <div class="block-content">
+                            <form class="alignment-form" action="">
+                                <div class="input-item">
+                                    <label>线索标题：</label>
+                                    <input name="bt" type="text" class="input" placeholder="请输入线索标题" />
+                                </div>
+                                <div class="input-item">
+                                    <label>紧急程度：</label>
+                                    <select name="jjcd" class="form-control select">
+                                        <option value="1">一般</option>
+                                        <option value="4">重要</option>
+                                        <option value="8">紧急</option>
+                                    </select>
+                                </div>
+                                <div class="input-item">
+                                    <label>关键词：</label>
+                                    <input name="gjc" type="text" class="input" placeholder="请输入关键词" />
+                                </div>
+                                <div class="input-item">
+                                    <label>涉事主体：</label>
+                                    <select name="sszt" class="form-control select">
+                                        
+                                    </select>
+                                </div>
+                                <div class="input-item form-item-width2 smjfx">
+                                    <label>信息正文：</label>
+                                    <button type="button" class="btn btn-border">扫描件分析</button>
+                                    <textarea name="xxzw"></textarea>
+                                </div>
+                                <div class="input-item sslb-tree-item tree-item">
+                                    <label>涉事类别：</label>
+                                    <input name="sslbmc" class="input node-name" type="text" placeholder="请选择涉事类别" readonly />
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    <input name="sslb" class="input node-code" type="text" style="display: none;" readonly />
+                                    <div class="ztree sslb-tree-dom tree-dom" style="display: none;left: 127px;"></div>
+                                </div>
+                                <div class="input-item">
+                                    <label>涉及人数：</label>
+                                    <select name="sjrsgm" class="form-control select">
+                                        <!-- <option value="0">20人以下</option> -->
+                                    </select>
+                                </div>
+                                <!-- <div class="input-item">
+                                    <label>提取热词：</label>
+                                    <select name="cancelstatus" class="form-control select">
+                                        <option value="0">3</option>
+                                    </select>
+                                </div> -->
+                                <div class="input-item">
+                                    <label>线索来源：</label>
+                                    <select name="xsly" class="form-control select">
+                                        <!-- <option value="0">日常工作</option> -->
+                                    </select>
+                                </div>
+                                <div class="input-item">
+                                    <label>发生时间：</label>
+                                    <div class="time-select time-select-single">
+                                        <input name="asjfssj" class="form_datetime" type="text" placeholder="请选择发生时间" readonly/>
+                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="input-item">
+                                    <label>涉及损失：</label>
+                                    <select name="sjccssgm" class="form-control select">
+                                        <!-- <option value="0">日常工作</option> -->
+                                    </select>
+                                </div>
+                                <div class="input-item">
+                                    <label>发生状态：</label>
+                                    <select name="fszt" class="form-control select">
+                                        <option value="0">未发生</option>
+                                        <option value="2">正在发生</option>
+                                        <option value="1">已发生</option>
+                                    </select>
+                                </div>
+                                <div class="input-item">
+                                    <label>涉事诱因：</label>
+                                    <select name="ssyy" class="form-control select">
+                                        <!-- <option value="0">民族矛盾</option> -->
+                                    </select>
+                                </div>
+                                <div class="input-item">
+                                    <label>敏感时期：</label>
+                                    <select name="sjmgsd" class="form-control select">
+                                        <!-- <option value="0">3.14涉藏</option> -->
+                                    </select>
+                                </div>
+                                <div class="input-item">
+                                    <label>涉及重大安保活动：</label>
+                                    <select name="sjzdhd" class="form-control select">
+                                        <!-- <option value="0">两会</option> -->
+                                    </select>
+                                </div>
+                                <div class="input-item">
+                                    <label>表现形式：</label>
+                                    <select name="bxxs" class="form-control select">
+                                        <!-- <option value="0">上访</option> -->
+                                    </select>
+                                </div>
+                                <div class="input-item">
+                                    <label>涉案发生地省市：</label>
+                                    <input name="sasfsdsxq" type="text" class="input" placeholder="" />
+                                </div>
+                                <div class="input-item">
+                                    <label>涉案事地点类别：</label>
+                                    <select name="asjdlb" class="form-control select">
+                                        <!-- <option value="0">城镇</option> -->
+                                    </select>
+                                </div>
+                                <div class="input-item form-item-width2">
+                                    <label>发生地详址：</label>
+                                    <input name="fsdxz" type="text" class="input" placeholder="请输入发生地详址" />
+                                </div>
+                                <br/>
+                                <!-- <div class="input-item upload-file">
+                                    <label>上传附件：</label>
+                                    <button type="button" class="btn btn-border">上传文件</button>
+                                    <span class="tip">上传文件不能找过5M，仅允许导入”xls”或”xlsx”格式文件。</span>
+                                    <ol class="file-list">
+                                        <li>
+                                            重点人员名单.xls
+                                            <span>删除</span>
+                                        </li>
+                                        <li>
+                                            重点人员名单.xls
+                                            <span>删除</span>
+                                        </li>
+                                    </ol>
+                                </div> -->
+            
+                            </form>
+                        </div>
+                    </div>
+                    <!-- 基本信息end -->
+                    <!-- 关联涉事人员start -->
+                    <div class="content-block content-block-glssry">
+                        <div class="color-block-title">
+                            关联涉事人员
+                            <span class="glyphicon glyphicon-plus-sign btn_add" aria-hidden="true"></span>
+                        </div>
+                        <div class="block-content">
+                            <!-- <div class="single-message message-glssry">
+                                <div class="input-item">
+                                    <label>骨干成员：</label>
+                                    <input name="xm" type="text" class="input" placeholder="请输入姓名" />
+                                    <input name="sfzh" type="text" class="input" placeholder="请输入身份证号" />
+                                </div>
+                                <div class="input-item">
+                                    <label>性别：</label>
+                                    <select name="xb" class="form-control select"></select>
+                                </div>
+                                <div class="input-item">
+                                    <label>民族：</label>
+                                    <select name="mz" class="form-control select" data-name="nation"></select>
+                                </div>
+                                <div class="input-item personCategory-tree-item tree-item">
+                                    <label>人员类别：</label>
+                                    <input name="personCategoryCn" class="input node-name" style="width:200px;" type="text" placeholder="请选择人员类别" readonly />
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    <input name="rylb" class="input node-code" type="text" style="display: none;" readonly />
+                                    <div class="ztree personCategory-tree-dom tree-dom" style="display: none;"></div>
+                                </div>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </div> -->
+            
+                        </div>
+                    </div>
+                    <!-- 关联涉事人员end -->
+                    <!-- 涉事群体start -->
+                    <div class="content-block content-block-ssqt" style="margin-bottom: 70px;">
+                        <div class="color-block-title">
+                            涉事群体
+                            <span class="glyphicon glyphicon-plus-sign btn_add" aria-hidden="true"></span>
+                        </div>
+                        <div class="block-content">
+                            <!-- <button type="button" class="btn btn-normal btn_add" style="margin-top: 5px;">新增</button> -->
+                            <!-- <div class="single-message message-ssqt">
+                                <div class="input-item">
+                                    <label>群体名称：</label>
+                                    <input name="qtmc" type="text" class="input" placeholder="" readonly />
+                                </div>
+                                <div class="input-item">
+                                    <label>群体类别：</label>
+                                    <input name="qtlb" type="text" class="input" placeholder="" readonly />
+                                </div>
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </div> -->
+            
+                        </div>
+                    </div>
+                    <!-- 涉事群体end -->
+                </div>
+            
+            </div>
+
+        </div>
+        <!-- 弹框正文end -->
+
+        <!-- 弹框底部start -->
+        <footer>
+            <a class="btn btn_submit">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+        <!-- 弹框底部end -->
+
+    </div>
+</div>
+
+<script>
+    app.qbxsfx.qbxsgl.combineClue.init();
+</script>
+
+    
+    

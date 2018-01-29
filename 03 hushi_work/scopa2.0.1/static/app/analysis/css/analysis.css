@@ -1,0 +1,271 @@
+@CHARSET "UTF-8";
+
+html{height: 100%;}
+body{background-color: #E2E5EC !important;
+     font-family:"Microsoft Yahei","微软雅黑","宋体",Arial;height: 100%;}
+tr{height: 35px;text-align: center;}
+.analysis-box{
+    OVERFLOW: auto;
+ /**   overflow-y:hidden**/
+}
+
+
+/**地图样式 **/
+.analysis-box{
+    height: auto;
+    height: 100%;    
+}
+.analysis-box .box-row{ 
+    height: auto;
+    height: 100%; 
+}
+
+.analysis-box .box-row .row-colmap{
+    height: 100%; 
+}
+.analysis-box .box-row .row-colmap .map{
+    width: 80%;
+    background-color: #E2E5EC;
+    float: left;
+    min-height: 760px;
+    height: 100%;
+}
+
+
+/**控件样式  **/
+.analysis-box .box-row .row-coltable .font2{
+    margin-top: 15px;
+    color: #58688B;
+    font-size: 12px;
+    font-weight:bold;
+}
+.analysis-box .box-row .row-coltable{
+    min-height: 760px;
+    height: 100%;
+    width: 395px;
+    background-color: #F7FAFE;
+    float: left;
+    position: absolute;
+    right:0px;
+    top:35px;
+    
+}
+
+.analysis-box .box-row .row-coltable .control{
+    width: 380px;
+    margin-left: 15px;
+    height: 264px;
+    background-color: #F7FAFE;
+}
+
+.analysis-box .box-row .row-coltable .control .row1 .clounm1{
+   margin-right: 30px;
+    float:left;
+}
+.analysis-box .box-row .row-coltable .control .checkbox1{
+    display: block;
+    width: 15px;
+    height: 15px;
+    float:left;
+}
+.analysis-box .box-row .row-coltable .control .color1{
+    width: 13px;
+    height: 13px;
+    float:left;
+    border-radius:2px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.analysis-box .box-row .row-coltable .control .color2{
+    width: 13px;
+    height: 13px;
+    float:left;
+    border-radius:2px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.analysis-box .box-row .row-coltable .control .color3{
+    width: 13px;
+    height: 13px;
+    float:left;
+    border-radius:2px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.analysis-box .box-row .row-coltable .control .color4{
+    width: 13px;
+    height: 13px;
+    float:left;
+    border-radius:2px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.analysis-box .box-row .row-coltable .control .font{
+    color: #000000;
+	font-size:12px;
+}
+.analysis-box .box-row .row-coltable .control input{
+    border: 1px solid #58688B;
+}
+.analysis-box .box-row .row-coltable .control .selectTime{
+    width: 103px;
+    height: 22px;
+    border: 1px solid #58688B;
+    background-color: #F7FAFE;
+	font-size:12px;
+}
+.analysis-box .box-row .row-coltable .control .selectAddress{
+    width: 180px;
+    height: 22px;
+    border: 1px solid #58688B;
+    background-color: #F7FAFE;
+	font-size:12px;
+}
+.analysis-box .box-row .row-coltable .control .form_datetime{
+    background-color:#F7FAFE;
+    color:#DCDEE2;
+    border:1px solid #D8DDE7;
+}
+.analysis-box .box-row .row-coltable .control .timefont{
+    background-color:#F7FAFE;
+    color:#DCDEE2;
+}
+
+/**表格样式**/
+.analysis-box .box-row .row-coltable .table .font1{
+    color: #58688B;
+    font-size: 12px;
+    font-weight:bold;
+}
+.analysis-box .box-row .row-coltable .table{
+    width: 350px;
+    min-width:350px;
+    height: 415px;
+    background-color: #F7FAFE;
+    margin-top: 6px;
+    margin-left: 15px;
+	font-size:12px;
+}
+.analysis-box .box-row .row-coltable .table .grid .th{
+    border:1px;
+    border-right-style:solid;
+    border-right-color:white;
+    background-color:#EFF2F9;
+    line-height: 36px;
+    height: 36px;
+    border-bottom-style:solid;
+    border-bottom-color: #DEE3EB;
+    text-align: center;
+}
+.analysis-box .box-row .row-coltable .table .grid td{
+    border:1px;
+    border-right-style:solid;
+    border-right-color:white;
+    border-bottom-style:solid;
+    border-bottom-color: #DEE3EB;
+
+}
+.analysis-box .box-row .row-coltable .table .grid{ border:1px solid #c8d0dd;}
+.analysis-box .box-row .row-coltable .table .grid td:last-child{ border-right-color:#c8d0dd;}
+.analysis-box .box-row .row-coltable .table .grid tbody tr:nth-child(even) {
+    background:#F5F7FB;
+}
+.analysis-box .box-row .row-coltable .table .grid tbody tr:nth-child(odd) {
+    background:white;
+}
+.analysis-box .box-row .row-coltable .table .grid tbody tr:hover{
+    background:#DBE8FC;
+    box-shadow:2px 2px 1px 0px #EAF0F9;  
+    color:black;
+    font-weight: bold;
+}
+.analysis-box .box-row .row-coltable .control .time1{
+    position: relative;
+    width:30px;
+	font-size:12px;
+}
+.analysis-box .box-row .row-coltable .control  .img1{
+    position: absolute;
+    top:0px;
+    left:95px;
+    width:5px;
+}
+.analysis-box .box-row .row-coltable .control .time2{
+    position: relative;
+    width:30px;
+	font-size:12px;
+}
+.analysis-box .box-row .row-coltable .control  .img2{
+    position: absolute;
+    top:0px;
+    left:95px;
+    width:5px;
+}
+
+.xiangqing{border:solid 2px #89C7FF; width: 90px;height: 25px;float:right;text-align: center;padding-top: 1px;}
+.ptitle{background-color: #EFF2F9;margin: 0px;font-family:"Microsoft Yahei","微软雅黑","宋体",Arial;
+       width:360px; color: #58688B;font-size: 16px;height: 35px;margin-bottom:10px;padding-top: 8px;padding-left:20px;}
+#syaj{margin-left:20px;float:right;width:200px;font-size: 12px;background-color: #FBFBFC;}
+.BMAP_center{width: 350px;background-color: #FBFBFC;}
+
+#inforBorder{width:330px;height:110px;background-color: #FBFBFC;}
+hr{margin-bottom: 5px;padding-top: 0px;border-top: 0px;}
+.active1{
+	color:#006393;
+}
+#active2{
+	color:#291b72;
+}
+.mcontent p{height: 35px;background-color: #EFF2F9;padding-left: 13px;padding-top:7px; font-size: 16px;color: #58688B; 
+            width: 360px;}
+body .BMapLabel {
+    max-width: 120px;
+    height: 87px;
+    border: none!important;
+    background: white!important;
+    cursor: pointer;
+	text-align:center;
+}
+label {
+	background-color: white!important;
+    display: inline-block;
+    max-width: 200px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}			
+.BMapLabel , .BMap_Marker {   
+           filter:alpha(opacity=50);   
+           -moz-opacity:0;   
+           -khtml-opacity: 0;   
+           opacity: 0;
+}	
+
+:hov
+
+
+.cls
+
+
+		
+select {
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    padding-left:8px;    
+    background: url("../image/xiala.png") no-repeat scroll 95% center transparent;
+
+}
+
+
+select::-ms-expand { display: none; }
+
+
+:hov
+
+
+.cls
+	

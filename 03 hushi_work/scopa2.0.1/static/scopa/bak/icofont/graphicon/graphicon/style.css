@@ -1,0 +1,315 @@
+@font-face {
+    font-family: 'graphicon';
+    src:    url('fonts/graphicon.eot?fgazi');
+    src:    url('fonts/graphicon.eot?fgazi#iefix') format('embedded-opentype'),
+        url('fonts/graphicon.ttf?fgazi') format('truetype'),
+        url('fonts/graphicon.woff?fgazi') format('woff'),
+        url('fonts/graphicon.svg?fgazi#graphicon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="graphicon_"], [class*=" graphicon_"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'graphicon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.graphicon_bayonet:before {
+    content: "\e900";
+}
+.graphicon_qq_and_wechat_group_number:before {
+    content: "\e901";
+}
+.graphicon_qq_and_wechat_number:before {
+    content: "\e902";
+}
+.graphicon_cell_phone_imei:before {
+    content: "\e903";
+}
+.graphicon_cell_phone_mac:before {
+    content: "\e904";
+}
+.graphicon_browser_account:before {
+    content: "\e905";
+}
+.graphicon_public_security_intelligence:before {
+    content: "\e906";
+}
+.graphicon_email_account_suser:before {
+    content: "\e907";
+}
+.graphicon_email_accounts:before {
+    content: "\e908";
+}
+.graphicon_email_accounts_manger:before {
+    content: "\e909";
+}
+.graphicon_flights:before {
+    content: "\e90a";
+}
+.graphicon_micro_blog_account:before {
+    content: "\e90b";
+}
+.graphicon_taobao_account:before {
+    content: "\e90c";
+}
+.graphicon_unfocuscriminalrecord:before {
+    content: "\e90d";
+}
+.graphicon_focuscriminalrecord:before {
+    content: "\e90e";
+}
+.graphicon_product:before {
+    content: "\e90f";
+}
+.graphicon_video:before {
+    content: "\e910";
+}
+.graphicon_audio:before {
+    content: "\e911";
+}
+.graphicon_picture:before {
+    content: "\e912";
+}
+.graphicon_document:before {
+    content: "\e913";
+}
+.graphicon_file:before {
+    content: "\e914";
+}
+.graphicon_account:before {
+    content: "\e915";
+}
+.graphicon_architecture:before {
+    content: "\e916";
+}
+.graphicon_organization:before {
+    content: "\e917";
+}
+.graphicon_wifi:before {
+    content: "\e918";
+}
+.graphicon_IP:before {
+    content: "\e919";
+}
+.graphicon_wechat:before {
+    content: "\e91a";
+}
+.graphicon_QQ:before {
+    content: "\e91b";
+}
+.graphicon_bank_card:before {
+    content: "\e91c";
+}
+.graphicon_mac:before {
+    content: "\e91d";
+}
+.graphicon_train:before {
+    content: "\e91e";
+}
+.graphicon_aircraft:before {
+    content: "\e91f";
+}
+.graphicon_hotel:before {
+    content: "\e920";
+}
+.graphicon_case:before {
+    content: "\e921";
+}
+.graphicon_phone:before {
+    content: "\e92a";
+}
+.graphicon_mobel_phone:before {
+    content: "\e92b";
+}
+.graphicon_telephone:before {
+    content: "\e92c";
+}
+.graphicon_collective_household:before {
+    content: "\e92d";
+}
+.graphicon_small_car:before {
+    content: "\e92e";
+}
+.graphicon_registered_residence:before {
+    content: "\e92f";
+}
+.graphicon_families:before {
+    content: "\e930";
+}
+.graphicon_big_car:before {
+    content: "\e931";
+}
+.graphicon_car:before {
+    content: "\e932";
+}
+.graphicon_human:before {
+    content: "\e933";
+}
+.graphicon_human_alarm:before {
+    content: "\e922";
+}
+.graphicon_people_reported_the_cas:before {
+    content: "\e923";
+}
+.graphicon_car2:before {
+    content: "\e924";
+}
+.graphicon_cell_phone:before {
+    content: "\e925";
+}
+.graphicon_cell_phonenumber:before {
+    content: "\e926";
+}
+.graphicon_group_members:before {
+    content: "\e927";
+}
+.graphicon_guardian:before {
+    content: "\e928";
+}
+.graphicon_police_case:before {
+    content: "\e929";
+}
+.graphicon_telephone_directory:before {
+    content: "\e936";
+}
+.graphicon_victim_warning_instance:before {
+    content: "\e937";
+}
+.graphicon_victimsof_the_case:before {
+    content: "\e938";
+}
+.graphicon_browser_account2:before {
+    content: "\e939";
+}
+.graphicon_email:before {
+    content: "\e93a";
+}
+.graphicon_father_child:before {
+    content: "\e93b";
+}
+.graphicon_micro_blog_friends:before {
+    content: "\e93c";
+}
+.graphicon_micro_blog_staterelease:before {
+    content: "\e93d";
+}
+.graphicon_people_involved_in_the_case:before {
+    content: "\e93e";
+}
+.graphicon_qq_and_wechat_friends:before {
+    content: "\e93f";
+}
+.graphicon_qq_and_wechat_number2:before {
+    content: "\e940";
+}
+.graphicon_taobao:before {
+    content: "\e941";
+}
+.graphicon_mate:before {
+    content: "\e942";
+}
+.graphicon_mother_child:before {
+    content: "\e943";
+}
+.graphicon_paccancy:before {
+    content: "\e944";
+}
+.graphicon_the_part_of:before {
+    content: "\e945";
+}
+.graphicon_mixture:before {
+    content: "\e946";
+}
+.graphicon_suspiction:before {
+    content: "\e947";
+}
+.graphicon_communication:before {
+    content: "\e948";
+}
+.graphicon_relatives:before {
+    content: "\e949";
+}
+.graphicon_live_together:before {
+    content: "\e94a";
+}
+.graphicon_went_together:before {
+    content: "\e94b";
+}
+.graphicon_accommodation:before {
+    content: "\e94c";
+}
+.graphicon_booking:before {
+    content: "\e94d";
+}
+.graphicon_case2:before {
+    content: "\e94e";
+}
+.graphicon_checkpoint:before {
+    content: "\e94f";
+}
+.graphicon_communication2:before {
+    content: "\e950";
+}
+.graphicon_departures:before {
+    content: "\e951";
+}
+.graphicon_email2:before {
+    content: "\e952";
+}
+.graphicon_household_register:before {
+    content: "\e953";
+}
+.graphicon_internet_cafe:before {
+    content: "\e954";
+}
+.graphicon_micro_blog_privateletter:before {
+    content: "\e955";
+}
+.graphicon_micro_blog_staterelease2:before {
+    content: "\e956";
+}
+.graphicon_mobile_sms:before {
+    content: "\e957";
+}
+.graphicon_mobilephone_company_wifi:before {
+    content: "\e958";
+}
+.graphicon_no_wifi:before {
+    content: "\e95a";
+}
+.graphicon_paccancy2:before {
+    content: "\e95b";
+}
+.graphicon_qq_and_wechat_chat:before {
+    content: "\e95c";
+}
+.graphicon_qq_and_wechat_groupchat:before {
+    content: "\e95d";
+}
+.graphicon_qq_and_wechat_staterelease:before {
+    content: "\e95e";
+}
+.graphicon_taobao_search:before {
+    content: "\e95f";
+}
+.graphicon_taobao_view:before {
+    content: "\e960";
+}
+.graphicon_train2:before {
+    content: "\e961";
+}
+.graphicon_url_view:before {
+    content: "\e962";
+}
+

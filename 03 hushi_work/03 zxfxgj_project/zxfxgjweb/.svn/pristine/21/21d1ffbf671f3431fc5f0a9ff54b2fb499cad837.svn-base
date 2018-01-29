@@ -1,0 +1,11 @@
+.rwgl{
+    .result-table-box{
+        width: 98%;
+        margin: 0 auto;
+    }
+    .rwgllb{
+        position: relative;
+        padding-bottom: 50px;
+        margin-top: 20px;
+    }
+}

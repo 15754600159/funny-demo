@@ -1,0 +1,483 @@
+<!-- 侧边栏菜单 -->
+<!-- <ul class="sidebar-menu" id="sidebar-menu">
+	</ul> -->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrappers" role="navigation">
+	<ul class="nav sidebar-nav" id="sidebar-menu">
+		<!-- <li>
+			<a href="#" data-page="pages/sdryzxgl/index.html" class="sidebar-menu-item">本地关注涉毒人员管理</a>
+		</li> -->
+
+		<li>
+			<a href="#" data-page="" class="sidebar-menu-item">首页</a>
+		</li>
+
+		<li>
+			<a href="#">情报线索分析管理
+				<span class="caret"></span>
+			</a>
+			<ul id="" class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="pages/qbxsfxyj/qbxssj/qbxssj.html" class="sidebar-menu-item">情报信息采集</a>
+				</li>
+				<li>
+					<a href="#" class="sidebar-menu-item">报送管理</a>
+				</li>
+				<li>
+					<a href="#" class="sidebar-menu-item">情报核实</a>
+				</li>
+				<li>
+					<a href="#" class="sidebar-menu-item">情报线索共享</a>
+				</li>
+				<li>
+					<a href="#">转事件
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">人力情报转事件</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">重大案件转事件</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">110重大警情事件</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">公安涉访重大事件</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">情报线索分析
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">文本分析</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">要素提取</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">线索串并</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">文本相似度分析</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">文本关系挖掘</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">涉事人员管理
+				<span class="caret"></span>
+			</a>
+			<ul class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">涉事人员管理</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">涉事人员统计</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">人员异态信息监测</a>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">涉事群体管理
+				<span class="caret"></span>
+			</a>
+			<ul class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">涉事群体管理</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">涉事群体统计</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">群体异动事件监测</a>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">事件信息管理
+				<span class="caret"></span>
+			</a>
+			<ul class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">事件填报</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">事件查询</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">事件续报</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">增加领导关注</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">人工研判</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">相似事件查看</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">事件派发</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">风险评估</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">事件合并</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">事件删除</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">事件归档</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">归档事件查询</a>
+				</li>
+				<li>
+					<a href="#">重大事件档案
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">案事件档案</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉事人员档案</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉事群体档案</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">重大事件预警流程管理
+				<span class="caret"></span>
+			</a>
+			<ul class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">预警指令下发</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">预警指令签收</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">预警指令反馈</a>
+				</li>
+				<li>
+					<a href="#">重大事件预警推送设置
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">自动推送预警</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">手工推送预警</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">重大事件分析研判
+				<span class="caret"></span>
+			</a>
+			<ul class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#">重大事件数据模型
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">群体聚集度</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">群体活跃度</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">群体异常度</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">重大事件预警模型
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">极端个人事件预警模型</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">线索事件预警模型</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉疆重大事件预警模型</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉稳重大事件预警模型</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">治安重大事件预警模型</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">重大事件统计分析</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">事件态势趋势分析</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">重点人员异动分析模型</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">群体异动分析模型</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">重点群体风险点管理</a>
+				</li>
+				<li>
+					<a href="#">人工研判
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">轨迹比对分析</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">关联网络分析</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">特别管控
+				<span class="caret"></span>
+			</a>
+			<ul class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#">管控对象线索管理
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">情报线索搜集</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">关键词标引</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">情报线索查询</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">重大活动安保
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">重大活动安保预警</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">重大活动配置</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">活动关注对象配置</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">涉稳人员管控
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉访人员动态</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉军人员动态</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉疆人员动态</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉恐人员动态</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉外人员动态</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉藏人员动态</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">精神病人管控</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">涉恐人员管控</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">涉访人员管控</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">临时监测</a>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">风险点评估模型管理
+				<span class="caret"></span>
+			</a>
+			<ul class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#">风险库建立
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">风险点库</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">敏感节点库</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">地址库</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">重点场所库</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">关键词库</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">涉事人员库</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">风险点查询</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">风险点分析</a>
+				</li>
+				<li>
+					<a href="#" data-page="" class="sidebar-menu-item">风险点人工研判</a>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="#">重大事件处置预案和对策提取
+				<span class="caret"></span>
+			</a>
+			<ul class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#">决策提取
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">建立常规案例库</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">相似案例查询</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">人工专家库</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">决策分析</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">自动生成相应的预案</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">重大事件应急处置流程
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">重大事件查询列表</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">事件申请</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">事件审批</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">事件协作</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">发起合成研判</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">事件处理结果</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">重大事件分类处理预案
+						<span class="caret"></span>
+					</a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">恐怖袭击事件处置预案</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">重大群体事件处置预案</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">重大刑事案件处置预案</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">重大交通事故处置预案</a>
+						</li>
+						<li>
+							<a href="#" data-page="" class="sidebar-menu-item">危化品火灾事故处置预案</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+	</ul>
+</nav>
+
+<!-- 侧边栏菜单模板 -->
+<!-- <script type="text/html" id="tmpl-sidebar-menu">
+
+	<li>
+		<a class="sidebar-menu-item" id="sidebar-menu-{%=menu.code%}" data-code="{%=menu.code%}" data-path="{%=menu.path || ''%}"
+		 data-page="{%=menu.page || ''%}">
+			<i class="icon icon-{%=menu.code%}"></i>
+			<span class="title">{%=menu.name%}</span>
+		</a>
+	</li>
+
+</script> -->

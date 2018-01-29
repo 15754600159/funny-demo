@@ -1,0 +1,61 @@
+<div class="container bgmask mgsqgl-add">
+    <div class="window popIn" style="width: 50%; height: 50%;">
+
+        <!-- 弹框头部start -->
+        <header>
+            <h1>新增敏感时期</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <!-- 弹框头部end -->
+
+        <!-- 弹框正文start -->
+        <div class="content">
+            <form class="form one-column-form">
+                <div class="input-item">
+                    <label>敏感时期名称：</label>
+                    <input name="sensitivePName" type="text" class="input" placeholder="请输入敏感时期名称" />
+                </div>
+                <div class="input-item">
+                    <label>是否有效：</label>
+                    <select name="status" style="width: 120px;" class="form-control select">
+                        <option value="1">有效</option>
+                        <option value="0">无效</option>
+                    </select>
+                </div>
+                <div class="input-item">
+                    <label>敏感时期时段：</label>
+                    <div class="time-select">
+                        <input name="sensitivePStartTime" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        --
+                        <input name="sensitivePEndTime" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <label>敏感预警时段：</label>
+                    <div class="time-select">
+                        <input name="warningStartTime" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        --
+                        <input name="warningEndTime" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- 弹框正文end -->
+
+        <!-- 弹框底部start -->
+        <footer>
+            <a class="btn btn_submit">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+        <!-- 弹框底部end -->
+
+    </div>
+</div>
+
+<script>
+    app.pzgl.mgsqgl.add.init();
+</script>

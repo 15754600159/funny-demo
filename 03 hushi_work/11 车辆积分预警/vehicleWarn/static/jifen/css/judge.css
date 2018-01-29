@@ -1,0 +1,431 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background: #edf0f3;
+}
+table{
+    margin-bottom:0 !important;
+}
+.top {
+    height: 70px;
+    background-color: #1A427D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.top>a {
+    float: left;
+    margin: 17px 20px;
+}
+
+.top .title {
+    font-size: 20px;
+    color: #fff ! important;
+    padding-left: 30px;
+    padding-top: 18px;
+    float: left;
+}
+
+.top .role {
+    font-size: 18px;
+    color: #6DA7E7 ! important;
+    padding-right: 30px;
+    float: right;
+}
+
+.top .role span {
+    line-height: 70px;
+    color: #afbcd5;
+}
+
+.top .role span:hover {
+    color: #fff;
+}
+.nav-bar{
+    position: absolute;
+    width: 100%;
+    height: 34px;
+    padding-left: 1%;
+    line-height: 34px;
+    top: 70px;
+    left: 0;
+    background: #d5dbe8;
+}
+.nav-bar ul li{
+    display: inline-block;
+    margin-right: 4px;
+    color:#56688a;
+}
+.nav-bar ul li a{
+    color:#56688a;
+}
+.nav-bar ul li a:hover{
+    text-decoration: none;
+}
+.content{
+    padding: 42px 20px;
+    margin-top:63px;
+}
+.content .score-info{
+    height: 160px;
+    padding: 20px 30px;
+    background: #fff;
+}
+.content .score-info .score-left{
+
+}
+.score-info .score-left ul li{
+    vertical-align: top;
+    margin-right:20px;
+    margin-bottom:22px;
+}
+.score-info  h3{
+    margin:0;
+}
+.score-info .score-left ul li dl{
+    display: inline-block;
+    width:196px;
+    height: 24px;
+    line-height: 24px;
+    margin-bottom:0;
+}
+
+.score-info .score-left ul li dt,
+.score-info .score-left ul li dd{
+    display: inline-block;
+    font-weight: normal;
+}
+.score-info .score-left ul li dt{
+    color:#707070;
+    font-weight: bold;
+    margin-right: 4px;
+}
+.score-info .score-left ul li dd{
+    color:#498cff;
+}
+.score-info li.personal{
+    width:110px;
+    height: 110px;
+    margin-right:30px !important;
+    background-size:100%;
+
+}
+.score-info .personal img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border:1px solid #adadad;
+    margin-right:28px;
+
+}
+.content .score-info .score-right{
+    width:36%;
+    height: 160px;
+}
+.content .score-info .score-right .score-pie{
+    display: inline-block;
+    width:30%;
+    height:140px;
+    margin-top: -26px;
+}
+.content .score-info .score-right .title{
+    position: relative;
+    z-index: 2;
+    left:-40px;
+    top: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.base-tag,.behavior-tag,.relation-tag{
+    margin-top:20px;
+}
+.base-tag .common-title,
+.behavior-tag .common-title,
+.relation-tag .common-title{
+    height: 38px;
+    line-height:38px;
+    padding-left:20px;
+    background: #eff2f9;
+    color:#56688a;
+}
+.base-tag .common-title span,
+.behavior-tag .common-title span,
+.relation-tag .common-title span{
+    display: inline-block;
+    width:28px;
+    height:16px;
+    line-height: 16px;
+    padding-left:2px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    color:#fff;
+    background: url("../img/base-icon.png") no-repeat center;
+}
+.base-tag .base-content{
+    background: #fff;
+    text-align: justify;
+    padding: 44px 64px;
+}
+.justify_fix{
+    display: inline-block;
+    width:100%;
+    height: 0;
+    overflow: hidden;
+}
+.base-tag .base-content .base-left,
+.base-tag .base-content .base-mid,
+.base-tag .base-content .base-right{
+    position: relative;
+    display: inline-block;
+    width:100%;
+    vertical-align: top;
+    margin-right: 3.5%;
+    padding:20px;
+}
+.base-tag .base-content .ba .base-left-title{
+    position: absolute;
+    left: 0px;
+    top: -17px;
+    background: #fff;
+    padding: 0 10px;
+}
+.base-tag .base-content .ba .base-left-title span{
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 14px;
+    text-align: center;
+    vertical-align: middle;
+    color:#fff;
+    border-radius: 4px 0 0 4px;
+}
+.base-tag .base-content .ba .base-left-title span.first{
+    background: #498eff;
+    background:-webkit-linear-gradient(to right,#49b7ff,#498eff);
+    background:linear-gradient(to right,#49b7ff ,#498eff);
+    cursor: pointer;
+}
+.base-tag .base-content .ba .base-left-title span.first.third{
+    background: #a8beeb;
+}
+.base-tag .base-content .ba .base-left-title span.second{
+    background: #ffc930;
+    margin-right:34px;
+    border-radius: 0 4px 4px 0;
+}
+.time-line{
+    margin:25px auto 0;
+    padding-left:4px;
+
+}
+.behavior-title .first{
+    margin-right: 4px;
+}
+.time-line > div{
+
+    padding: 22px 47px 0;
+}
+.time-line ul{
+    position: relative;
+    border-left:2px solid #9eb7d5;
+    padding-left: 4px;
+}
+.time-line ul li{
+    position: relative;
+    background: #f1f6fe;
+    padding: 8px;
+    border:1px solid #78a2f3;
+    margin-bottom: 25px;
+}
+.time-line ul li p{
+    display: inline-block;
+}
+.time-line ul li span.date{
+    position: absolute;
+    top:-24px;
+    color:#9eb7d5;
+}
+.time-line ul li span.circle-icon{
+    position: absolute;
+    display: inline-block;
+    width:10px;
+    height:10px;
+    margin-left:-10px;
+    margin-top: -9px;
+    background: url("../img/hu-icon.png") no-repeat center;
+}
+.time-line ul li span.circle-icon img{
+    position: absolute;
+    left:-4px;
+    top:-4px;
+}
+.time-line img.double{
+    position: absolute;
+    margin-left: -23px;
+    margin-top: -23px;
+}
+.time-line b{
+    display: inline-block;
+    width:52px;
+    height:20px;
+    text-align: center;
+    border-radius:1px;
+    color:#fff;
+}
+.time-line b.confirm{
+    background: #78a2f3;
+}
+.time-line b.unconfirm{
+    background: #b4ccf8;
+}
+.behavior-tag .common-title span{
+    background-image:url("../img/behavior.png");
+}
+.relation-tag .common-title span{
+    background-image: url("../img/relation.png");
+}
+.behavior-title > span,
+.relation-title > span{
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 14px;
+    text-align: center;
+    color: #fff;
+    border-radius: 2px;
+}
+.behavior-title > span.first,
+.relation-title > span.first{
+    background: #498cff;
+}
+.behavior-title > span.second,.relation-title > span.second{
+    background: #ffc930;
+}
+.behavior-table,.relation-table{
+    position: relative;
+    padding: 24px 40px;
+    background: #fff;
+}
+.behavior-table .behavior-title,.relation-table .relation-title{
+    margin-bottom:14px;
+    margin-top: 20px;
+}
+.behavior-table table th,
+.behavior-table table td,
+.relation-table table th,
+.relation-table table td{
+    text-align: center;
+}
+.behavior-table table td.low-score,
+.relation-table table td.low-score{
+    color: #2ea4a7;
+}
+.behavior-table table td.mid-score,
+.relation-table table td.mid-score{
+    color: #fbc533;
+}
+.behavior-table table td.high-score,
+.relation-table table td.high-score{
+    color: #f60935;
+}
+.table-bordered>tbody>tr>th{
+    border-bottom: 1px solid transparent;
+}
+.table-container {
+    max-height: 212px;
+}
+.table-container .table tr td{
+    height: 37px;
+    vertical-align: middle;
+}
+.table-content tr td{
+    border:1px solid #ddd;
+    height: 37px;
+    vertical-align: middle;
+}
+.relation-table .relation-title .first{
+    margin-right:4px;
+}
+.item-container .item{
+    display: inline-block;
+    margin-right:40px;
+}
+.item-container .item .item-content{
+    color:#498cff;
+}
+.number-title{
+    margin:10px;
+    color:#56688a;
+}
+.item-container ol dl,
+.item-container ol dl dt,
+.item-container ol dl dd{
+    display: inline-block;
+}
+.item-container ol dl{
+    width: 100%;
+    margin-bottom:0;
+}
+.item-container ol dl dt{
+    color:#707070;
+    display: inline-block;
+    margin-right:4px;
+}
+.item-container ol dl dd{
+    color:#498cff;
+    display: inline-block;
+}
+.item-container ol li{
+    border:none;
+    margin-bottom:0px;
+    display: inline-block;
+    vertical-align: top;
+    width:20%;
+}
+.time-line2{
+    display: none;
+}
+.score-info .score-number ul li dl{
+    width:233px !important;
+    padding-top:40px;
+}
+.low-score a{
+    display: inline-block;
+    width: 19px;
+    height: 20px;
+    background: url("../img/icon4.png") no-repeat center;
+}
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+    background-color: #eee;
+    opacity: .5;
+}
+#loading > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 128px;
+    height: 128px;
+    margin-left: -64px;
+    margin-top: -64px;
+    display: inline-block;
+}
+.score-info .score-number ul li:nth-child(2) dl:nth-child(2){
+    margin-right:120px;
+}

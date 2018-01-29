@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>详细信息-有记录</title>
+		<link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/jl.css"/>
+		 <link rel="stylesheet" href="../../css/header.css">
+	</head>
+	<body>
+		<!-- 页面头部start -->
+	 <div class="nav-bar">
+	     <div class="logo-box">
+	         <img src="../../img/bjscxq/logo.png" alt="警徽">
+	     </div>
+	     <img class="logo-word" src="../../img/bjscxq/logo-word.png" alt="背景审查平台">
+		 <div class="top">
+			 <div class="title">
+		          <a href="../index.html?sessionId=1">首页</a>
+		     </div>
+		     <div class="title">
+		          <a href="../taskManagement.html?sessionId=1">任务列表</a>
+		     </div>
+	     </div>
+	     <div class="login-state">
+	         <div class="person-icon">
+	             <img src="../../img/bjscxq/person-icon.png" alt="You">
+	         </div>
+	         <div class="login-info">
+	             <span class="admin-word">admin</span>
+	             <span>人事、管理员、管理部门</span>
+	             <span class="triangle-icon"></span>
+	         </div>
+	     </div>
+	     <div class="email-box">
+	         <img class="email-icon" src="../../img/bjscxq/email-icon.png" alt="power">
+	         <div class="note blue">
+	             <span>6</span>
+	         </div>
+	     </div>
+	     <div class="volume-box">
+	         <img class="volume-icon" src="../../img/bjscxq/volume-icon.png" alt="power">
+	         <div class="note orange">
+	             <span>8</span>
+	         </div>
+	     </div>
+	     <img class="power-icon" src="../../img/bjscxq/power-icon.png" alt="power">
+	 </div>
+	 <!-- 页面头部end -->
+	 
+		<div class="all">
+			<!-- <div class="content"></div> -->
+			<div class="container-fluid content"></div>
+		</div>
+		
+		<script src="../../js/plugins/jquery-1.9.1.min.js"></script>
+		<script src="../../js/plugins/bootstrap.min.js"></script>
+		<script src="../../js/plugins/bootstrap-pagination.min.js"></script>
+		<script type="text/javascript" src="../../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../../js/common/common.js"></script>
+		<script src="../../js/web/yjlDetails.js"></script>
+	</body>
+</html>

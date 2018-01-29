@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="qkmp-page" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>背景审查结果关联</title>
+    <link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/bjscjggl.css">
+</head>
+
+<body>
+    <!-- 页面头部start -->
+    <div class="nav-bar">
+        <div class="logo-box">
+            <img src="../../img/bjscxq/logo.png" alt="警徽">
+        </div>
+        <img class="logo-word" src="../../img/bjscxq/logo-word.png" alt="背景审查平台">
+		<div class="top">
+			 <div class="title">
+		          <a href="../index.html?sessionId=1">首页</a>
+		     </div>
+		     <div class="title">
+		          <a href="../taskManagement.html?sessionId=1">任务列表</a>
+		     </div>
+	     </div>
+        <div class="login-state">
+            <div class="person-icon">
+                <img src="../../img/bjscxq/person-icon.png" alt="You">
+            </div>
+            <div class="login-info">
+                <span class="admin-word">admin</span>
+                <span>人事、管理员、管理部门</span>
+                <span class="triangle-icon"></span>
+            </div>
+        </div>
+        <div class="email-box">
+            <img class="email-icon" src="../../img/bjscxq/email-icon.png" alt="power">
+            <div class="note blue">
+                <span>6</span>
+            </div>
+        </div>
+        <div class="volume-box">
+            <img class="volume-icon" src="../../img/bjscxq/volume-icon.png" alt="power">
+            <div class="note orange">
+                <span>8</span>
+            </div>
+        </div>
+        <img class="power-icon" src="../../img/bjscxq/power-icon.png" alt="power">
+    </div>
+    <!-- 页面头部end -->
+
+    <!-- 页面内容部分start -->
+    <div class="content-card">
+        <div class="own-info-box">
+            <div class="blue-label"></div>
+            <div class="own-info-card">
+                <div class="own-basic-info-box">
+                    <div class="head-icon-box">
+                        <img src="../../img/bjscxq/head-icon.png" alt="head-icon">
+                    </div>
+                    <div class="own-basic-info">
+                        <h3>王明奇乐图</h3>
+                        <p>身份证号：<span>150108199208032322</span></p>
+                        <p>性别：<span>女</span></p>
+                        <p>民族：<span>汉</span></p>
+                        <p>户籍地：<span>内蒙古呼和浩特市 </span></p>
+                        <p>现住地：<span>内蒙古包头市XX区XX路</span></p>
+                        <p>职业：<span>退役军人，教师，出租车司机</span></p>
+                    </div>
+                    <div class="own-occupation"></div>
+                </div>
+                <div class="own-label-box"></div>
+            </div>
+        </div>
+        <div class="relatives-info-card"></div>
+    </div>
+    <!-- 页面内容部分end -->
+
+
+
+    <script type="text/javascript" src="../../js/plugins/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/bootstrap.min.js"></script>
+    <script src="../../js/web/bjscjggl.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!-- 图析左侧部分 start -->
+<div class="grahpside">
+	<!-- 图展示 start -->
+	<div class="graph">
+		<div class="toolbar">
+			<ul class="list-unstyled">
+				<li class="actionbtn undo"><span class="scopaicon scopaicon-houtui"></span><span class="text">后退</span></li>
+				<li class="actionbtn redo"><span class="scopaicon scopaicon-qianjin"></span><span class="text">前进</span></li>
+				<li class="actionbtn select-multi"><span class="scopaicon scopaicon-duoxuan"></span><span class="text">选择多个</span></li>
+				<li class="actionbtn graph-search"><span class="scopaicon scopaicon-sousuoda"></span><span class="text">搜索</span></li>
+				<li class="actionbtn graph-import"><input type="file" name="graphdata" class="ipt-graphdata"><span class="scopaicon scopaicon-import-data"></span><span class="text">导入数据</span></li>
+				<li class="actionbtn add-entity"><span class="scopaicon scopaicon-tianjiashiti"></span><span class="text">添加实体</span></li>
+				<li class="actionbtn add-relation"><span class="scopaicon scopaicon-tianjiaguanxi"></span><span class="text">添加关系</span></li>
+			</ul>
+			<ul class="list-unstyled">
+				<li class="actionbtn layout-auto"><span class="scopaicon scopaicon-zidongbuju"></span><span class="text">自动排布</span></li>
+				<li class="actionbtn layout-grid"><span class="scopaicon scopaicon-wanggebuju"></span><span class="text">网格排布</span></li>
+				<li class="actionbtn layout-grade"><span class="scopaicon scopaicon-cengcibuju"></span><span class="text">层次排布</span></li>
+				<li class="actionbtn layout-circle"><span class="scopaicon scopaicon-huanxingbuju"></span><span class="text">环形排布</span></li>
+				<li class="actionbtn elementscore"><span class="scopaicon scopaicon-kandianzhongyaodu"></span><!--<span class="text">点重要度</span>-->
+					<ul class="subaction">
+						<li class="actionbtn elementscore1" centrality="BetweennessCentrality"><span class="scopaicon scopaicon-zhongjiexing"></span><span class="text">中介性</span></li>
+						<li class="actionbtn elementscore2" centrality="ClosenessCentrality"><span class="scopaicon scopaicon-jinmixing"></span><span class="text">紧密性</span></li>
+						<li class="actionbtn elementscore3" centrality="ClusteringCoefficient"><span class="scopaicon scopaicon-jujixishu"></span><span class="text">聚集系数</span></li>
+						<li class="actionbtn elementscore4" centrality="DegreeCentrality"><span class="scopaicon scopaicon-duzhongxin"></span><span class="text">度中心性</span></li>
+					</ul>
+				</li>
+			</ul>
+
+			<ul class="list-unstyled">
+				<li class="actionbtn layout-theme"><span class="scopaicon scopaicon-shujuliudong"></span><span class="text">数据流动</span></li>
+				<li class="actionbtn analysis disabled"><span class="scopaicon scopaicon-fenximoshi"></span><span class="text">分析模式</span></li>
+				<li class="actionbtn show-photo"><span class="scopaicon scopaicon-switchphoto"></span><span class="text">显示照片</span></li>
+				<li class="actionbtn show-icon active"><span class="scopaicon scopaicon-switchnoted"></span><span class="text">隐藏便签</span></li>
+			</ul>
+
+			<ul class="list-unstyled">
+				<li class="actionbtn save-snapshot"><span class="scopaicon scopaicon-kuaizhao"></span><span class="text">保存快照</span></li>
+				<li class="actionbtn add-data"><span class="scopaicon scopaicon-export-data"></span><span class="text">导出数据</span></li>
+				<li class="actionbtn download-img"><span class="scopaicon scopaicon-export-img"></span><span class="text">导出成图片</span></li>
+				<li class="actionbtn download-file"><span class="scopaicon scopaicon-export-file"></span><span class="text">导出成文件</span></li>
+				<li class="actionbtn clearall"><span class="scopaicon scopaicon-qingkong"></span><span class="text">清空图析</span></li>
+			</ul>
+		</div>
+		<div id="graphChart" style="width:100%;"></div>
+		<div class="search-panel hidden"></div>
+	</div>
+	<!-- 图展示 end -->
+	<!-- 时间线展示 start -->
+	<div class="timeline">
+		<div class="scalebox">
+			<a class="scalebtn scalebtn-full" href="javascript:;" title="收起"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
+			<a class="scalebtn scalebtn-small" href="javascript:;" title="展开"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+			<div class="scaleimg"></div>
+		</div>
+		<div class="play-config-box hidden">
+			<span>播放时长：</span>
+			<select class="play-duration">
+				<option value="10">10S</option>
+				<option value="20">20S</option>
+				<option value="30">30S</option>
+				<option value="40">40S</option>
+				<option value="50">50S</option>
+				<option value="60">60S</option>
+				<option value="90">90S</option>
+				<option value="120">120S</option>
+			</select>
+			<i class="play-btn play"></i>
+		</div>
+		<div class="legendbox">
+			<ul class="legendtree ztree" id="graphLegendTree"></ul>
+		</div>
+		<div class="chartbox"></div>
+	</div>
+	<!-- 时间线展示 end -->
+</div>
+<!-- 图析左侧部分 end -->
+<!-- 图析右侧部分 start -->
+<div class="infoside"></div>
+<!-- 图析右侧侧部分 end -->

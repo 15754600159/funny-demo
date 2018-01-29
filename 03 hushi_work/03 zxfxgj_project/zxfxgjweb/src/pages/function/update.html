@@ -1,0 +1,72 @@
+<div class="page">
+	<ul class="breadcrumb">
+		<li>
+			<a>功能管理</a>
+		</li>
+		<li class="active">功能修改</li>
+	</ul>
+
+	
+	<form id="form-func-update" class="form">
+		<section>
+			<h4>基本信息</h4>
+			<div>
+				<div class="control-item">
+					<label class="required">名称</label>
+					<div>
+						<input type="text" class="input" name="name">
+						<input type="hidden" name="id">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label class="required">选择应用</label>
+					<div>
+						<select class="select"  name="appId" id="func-update-appId" onchange="app.func.update.changeApp()">
+						</select>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label class="required">代码</label>
+					<div>
+						<input type="text" class="input" name="code">
+						<input type="hidden" id="func-update-code">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label>父级代码</label>
+					<div>
+						<select class="select"  name="parentCode" id="func-update-parentCode">
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="control-item">
+					<label>描述</label>
+					<div>
+						<textarea class="textarea" rows="4" name="description"></textarea>
+					</div>
+				</div>
+		</section>
+		
+		<hr>
+		<section>
+			<div class="control-item">
+				<div>
+					<button type="submit" class="btn">保存</button>
+					<button type="button" class="btn btn-outline" onclick="javascript:app.func.toSearchPage();">取消</button>
+				</div>
+			</div>
+		</section>
+	</form>
+	
+	<script>
+	app.func.update.init();
+	</script>
+	
+</div>

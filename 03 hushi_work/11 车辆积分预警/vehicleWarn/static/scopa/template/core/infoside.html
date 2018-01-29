@@ -1,0 +1,78 @@
+<div class="scalebox">
+	<a class="scalebtn scalebtn-full" href="javascript:;" title="收起"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
+	<a class="scalebtn scalebtn-small" href="javascript:;" title="展开"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+	<div class="scaleimg"></div>
+</div>
+<ul class="nav">
+	<li class="nav-group" tab="info-group">统计</li>
+	<li class="nav-details" tab="info-details">详情</li>
+	<li class="nav-timereel" tab="info-timereel">时间卷轴</li>
+	<li class="nav-active"></li>
+</ul>
+<!-- 统计 start -->
+<div class="info-group">
+	<div class="infolist group-entity">
+		<div class="title"><span class="text"><b>实体类别</b></span><span class="scopaicon scopaicon-xiala"></span></div>
+		<div class="infolistcontent"><div class="grouplist"></div></div>
+	</div>
+	<div class="infolist group-relation">
+		<div class="title"><span class="text"><b>关系类别</b></span><span class="scopaicon scopaicon-xiala"></span></div>
+		<div class="infolistcontent"><div class="grouplist"></div></div>
+	</div>
+	<div class="infolist group-event">
+		<div class="title"><span class="text"><b>事件类别</b></span><span class="scopaicon scopaicon-xiala"></span></div>
+		<div class="infolistcontent"><div class="grouplist"></div></div>
+	</div>
+	<div class="infolist group-property">
+		<div class="title"><span class="text"><b>属性类别</b></span><span class="scopaicon scopaicon-xiala"></span></div>
+		<div class="propertygroup infolistcontent">
+			<div class="propertylist nopadding"></div>
+		</div>
+	</div>
+</div>
+<!-- 统计 end -->
+<!-- 详情 start -->
+<div class="info-details">
+	<div class="primaryinfo"></div>
+	<div class="propertylist">
+		<table>
+			<tbody></tbody>
+		</table>
+	</div>
+	<div class="selectedlist">
+		<div class="detailslist"></div>
+	</div>
+</div>
+<!-- 详情 end -->
+<!-- 时间卷轴 start -->
+<div class="info-timereel">
+	<div class="optionlist">
+		<div class="item">
+			<label>划分单位：</label><input type="text" value="24x7" readonly="readonly">
+		</div>
+		<div class="item">
+			<label>画卷涵盖：</label><input type="text" value="全部对象" readonly="readonly">
+		</div>
+		<div class="item">
+			<label>属性：</label><input type="text" value="主时间属性" readonly="readonly">
+		</div>
+		<div class="item selectstate">
+			<a class="a_check checked" parent="true" href="javascript:;">所有对象</a><a class="a_check uncheck" parent="false" href="javascript:;">选中的对象</a>
+		</div>
+	</div>
+	<div class="timereelbox">
+		<div class="timereel"></div>
+		<div class="mask"></div>
+		<div class="reel-close"></div>
+		<div class="reel-top"></div>
+	</div>
+	<div class="legend-weekday">
+		周一<br>周二<br>周三<br>周四<br>周五<br>周六<br>周日
+	</div>
+	<div class="legend-color"></div>
+	<div class="reelbg"></div>
+	<div class="reelselected">
+		<div class="reelitems"></div>
+	</div>
+</div>
+<!-- 时间卷轴 end -->

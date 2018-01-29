@@ -1,0 +1,8 @@
+{
+	"family": "static",
+	"description": "precious",
+	"spm": {
+		"idleading": "scopa/",
+		"output": ["**/*.js"]
+	}
+}

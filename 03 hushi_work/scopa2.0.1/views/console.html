@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+	<head>
+		<title>SCOPA-CONSOLE</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../static/scopa/theme/default/images/common/favicon.ico" rel="shortcut icon">
+		<link href="../static/common/gallery/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../static/scopa/theme/default/common.css" rel="stylesheet">
+		<link href="../static/scopa/theme/default/console.css" rel="stylesheet">
+		<script src="../static/common/stacktrace.js" type="text/javascript"></script>
+		<script src="../static/common/seajs/seajs/2.2.1/sea.js" id="seajsnode" type="text/javascript"></script>
+		<script>
+			var _href = window.location.href,
+				_index = window.location.href.indexOf("/views/");
+			staticUrl = (-1 == _index ? "" : _href.slice(0, _index)) + "/static";
+		</script>
+		<script src="../static/common/config.js?t=201607111400" type="text/javascript"></script>
+	</head>
+
+	<body class="sbody">
+		<nav class="navbar navbar-inverse navbar-fixed-top box-shadow">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand logo" href="javascript:;">SCOPA</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="nav-home"><a href="#!scopa/home"><span class="text">首页</span></a></li>
+						<li class="nav-data"><a href="#!scopa/data"><span class="text">数据模型</span></a></li>
+						<li class="nav-analysis"><a href="#!scopa/analysis"><span class="text">分析模型</span></a></li>
+						<!--<li class="nav-method"><a href="#!scopa/method"><span class="text">战法引擎</span></a></li>-->
+						<li class="nav-harts"><a href="#!scopa/harts"><span class="text">战法引擎</span></a></li>
+						<li class="nav-user"><a href="#!scopa/user"><span class="text">用户群组</span></a></li>
+						<li class="nav-role"><a href="#!scopa/role"><span class="text">权限控制</span></a></li>
+						<li class="nav-service"><a href="#!scopa/service"><span class="text">服务状态</span></a></li>
+                        <li class="nav-audit"><a href="#!scopa/audit"><span class="text">审计</span></a></li>
+						<li class="nav-actionlog"><a href="#!scopa/actionlog"><span class="text">行为统计</span></a></li>
+
+					</ul>
+					<div class="nav navbar-nav navbar-right">
+						<div class="userinfo ellipsis">...</div>
+						<div class="logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></div>
+					</div>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</nav>
+		<div class="container-fluid main" role="main" id="main">
+			<div class="subpage page-loading active"></div>
+			<!-- 首页 start -->
+			<div class="subpage page-home" template="console/home"></div>
+			<!-- 首页 end -->
+			<!-- 数据模型 start -->
+			<div class="subpage page-data" template="console/data"></div>
+			<!-- 数据模型end -->
+			<!-- 分析模型start -->
+			<div class="subpage page-analysis" template="console/analysis"></div>
+			<!-- 分析模型 end -->
+			<!-- 用户群组 start -->
+			<div class="subpage page-user" template="console/user"></div>
+			<!-- 用户群组 end -->
+			<!-- 服务状态 start -->
+			<div class="subpage page-role" template="console/role"></div>
+			<!-- 服务状态 end -->
+			<div class="subpage page-service" template="console/service"></div>
+			<!--战法-->
+			<!--<div class="subpage page-method" template="console/method"></div>-->
+			<div class="subpage page-audit" template="console/audit"></div>
+			<div class="subpage page-harts" template="console/harts"></div>
+			<div class="subpage page-actionlog" template="console/actionlog"></div>
+		</div>
+		<script type="text/javascript">
+			seajs.use('scopa/console/index');
+		</script>
+	</body>
+
+</html>

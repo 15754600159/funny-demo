@@ -1,0 +1,9 @@
+app.api.fxmxgl.rwgl = {
+    view: function(settings) {
+        app.api.ajax({
+            url: '/zx/group/qtwj/task/',
+            type: 'GET',
+            data: settings.data,
+        }, settings);
+    }
+};

@@ -1,0 +1,80 @@
+<div class="container bgmask">
+	<div class="window" style="width: 600px; height: 80%;" id="window-qtdwfx-viewWindow">
+		<header>
+			<h1>挖掘结果信息查看</h1>
+			<a class="close btn-window-close">×</a>
+		</header>
+		<div class="content">
+			<form class="form-view qtdwfx viewWindows" id="view-qtdwfx-info">
+				<section class="h-box col2">
+				</section>
+			</form>
+		</div>
+		<footer>
+			<a class="btn btn-outline btn-window-close">关闭</a>
+		</footer>
+	</div>
+</div>
+
+<!-- 群体挖掘列表 -->
+<script type="text/html" id="tmpl-view-qtdwfx-info">
+	<section class="h-box qtwj-view">
+		<div class="control-item" >
+			<label >姓名</label>
+			<div>
+				<div class="text-display">{%=o.xm%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>身份证号</label>
+			<div>
+				<div class="text-display">{%=o.sfzh%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>重点人员类别</label>
+			<div>
+				<div class="text-display">{%=o.rylb%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>活动场所类型</label>
+			<div>
+				<div class="text-display">{%=o.hdcslx%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>活动发生区别</label>
+			<div>
+				<div class="text-display">{%=o.hdfsqb%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>所属社会场所名称</label>
+			<div>
+				<div class="text-display">{%=o.hdcsmc%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>活动发生详细地址</label>
+			<div>
+				<div class="text-display">{%=o.hdfsxxdz%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>活动发生时间</label>
+			<div>
+				<div class="text-display">{%=o.hdsj%}&nbsp;</div>
+			</div>
+		</div>
+		<div class="control-item" >
+			<label>预警时间</label>
+			<div>
+				<div class="text-display">{%=o.yjsj%}&nbsp;</div>
+			</div>
+		</div>
+	</section>
+</script>
+<script>
+	app.qtdwfx.viewWindow.init();
+</script>

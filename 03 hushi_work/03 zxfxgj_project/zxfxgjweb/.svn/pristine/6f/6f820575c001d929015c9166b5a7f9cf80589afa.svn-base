@@ -1,0 +1,79 @@
+app.fxmxgl.rwgl.add = {
+    url: 'pages/fxmxgl/rwglAddWindow.html',
+    callback: null,
+    vehicles: null,
+    open: function() {
+        $m.page.openPage(app.fxmxgl.rwgl.add.url, 'fade', 'container-wrapper');
+    },
+    close: function() {
+        app.fxmxgl.rwgl.add.clear();
+        $m.page.closePage(app.fxmxgl.rwgl.add.url, 'fade', 'container-wrapper');
+    },
+    init: function() {
+        $('#window-zxrygl-addWindow').addClass('popIn');
+        // 弹框 'x' 点击关闭按钮事件监听
+        $('#window-zxrygl-addWindow .btn-window-close').off('click').on('click', function() {
+            $('#window-zxrygl-addWindow').addClass('popOut');
+            app.fxmxgl.rwgl.add.close();
+        });
+
+        app.fxmxgl.rwgl.add.initForm();
+
+        // 弹框 ‘确定’ 按钮点击提交表单事件监听
+        $('#btn-ok-task-add').off('click').on('click', function() {
+            var formData = new FormData($('#form-task-add')[0]);
+            // var formData = $m('#form-task-add').serializeObject();
+            // console.log(formData);
+            $.ajax({
+                url: app.api.fxmxgl.qtwjrwxzUrl,
+                type: "post",
+                data: formData,
+                processData: false, //要发送DOM树信息或者其他不希望转换的信息，请设置为false
+                contentType: false,
+                success: function(response) {
+                    // console.log("群体挖掘任务新增成功！");
+                    // console.log(response);
+                    if (response.success === 1) {
+                        app.alert('群体挖掘任务新增成功！');
+                        app.fxmxgl.rwgl.add.close(); // 关闭弹窗
+                        app.fxmxgl.rwgl.search.init(); // 初始查询
+                    } else {
+                        app.alert('群体挖掘任务新增失败！');
+                    }
+                },
+                error: function(e) {
+                    console.log('群体挖掘任务新增出错！')
+                }
+            });
+        })
+    },
+    clear: function() {
+        app.fxmxgl.rwgl.add.callback = null;
+        app.fxmxgl.rwgl.add.vehicles = null;
+    },
+    initForm: function() {
+        // 初始时间选择框
+        app.time.init();
+
+        // 初始化计划规则下拉框内容
+        $.get(app.api.fxmxgl.qtwjgzCxUrl, function(result) {
+            // console.log(result);
+            var data = result.msg,
+                selectHtml = '<option value="-1">请选择</option>';
+            for (let i = 0, j = data.length; i < j; i++) {
+                selectHtml += `<option value="${data[i].id}">${data[i].rName}</option>`;
+            };
+
+            $('.container #form-task-add select[name="ruleId"]').empty().append(selectHtml);
+        });
+
+        // 初始化计划类型、计划状态下拉框内容
+        $.get(app.api.fxmxgl.jhlx_jhztCxUrl, function(result) {
+            // console.log(result);
+            var data = result.msg;
+            app.select.init($('.container #form-task-add select[name="type"]'), data.TASK_TYPE);
+            app.select.init($('.container #form-task-add select[name="status"]'), data.TASK_STATUS);
+        });
+
+    }
+};

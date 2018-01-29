@@ -1,0 +1,232 @@
+<div class="page">
+	<ul class="breadcrumb">
+		<li>
+			<a>组织管理</a>
+		</li>
+		<li class="active">新增组织</li>
+	</ul>
+
+	<form id="form-example-add" class="form">
+
+		<section>
+			<h4>基本信息</h4>
+			<div>
+				<div class="control-item error">
+					<label class="required">文本框文本框</label>
+					<div>
+						<input type="text" class="input" name="f1">
+						<div class="text-tip">不超过20个字符</div>
+						<div class="text-tip">不可为空</div>
+					</div>
+				</div>
+				<div class="control-item">
+					<label class="required">选择</label>
+					<div>
+						<select class="select" name="f4">
+							<option value="">请选择</option>
+							<option value="">选择1</option>
+							<option value="">选择2</option>
+							<option value="">选择3</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>日期</label>
+					<div>
+						<input type="text" class="input" id="date" name="f5">
+					</div>
+				</div>
+				<div class="control-item">
+					<label>时间</label>
+					<div>
+						<input type="text" class="input" id="datetime" name="f9">
+					</div>
+				</div>
+				<div class="control-item">
+					<label>数字</label>
+					<div>
+						<div class="number" data-min="0">
+							<div class="number-minus">
+								<i class="icon icon-number-minus"></i>
+							</div>
+							<input class="number-input" type="text" pattern="[0-9]*" placeholder="0" id="f2" name="f2" value="0" />
+							<div class="number-plus">
+								<i class="icon icon-number-plus"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>多行文本框</label>
+					<div>
+						<textarea class="textarea" rows="4"></textarea>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>长文本框</label>
+					<div>
+						<input type="text" class="input" name="f6" style="width: 400px">
+						<div class="text-tip">不超过20个字符</div>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>标签</label>
+					<div>
+						<input type="text" class="input" id="tagEditor" name="tags" style="width: 400px">
+						<div class="text-tip">按下“回车键”来增加新标签</div>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>文字</label>
+					<div>
+						<div class="text-display">文字文字文字文字</div>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>文字</label>
+					<div>
+						<div class="text-display">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h4>选择</h4>
+			<div>
+				<div class="control-item">
+					<label>单选</label>
+					<div>
+						<label class="check">
+							<input type="radio" name="r1" value="1">
+							<span>选项1</span>
+						</label>
+						<label class="check">
+							<input type="radio" name="r1" value="2">
+							<span>选项2</span>
+						</label>
+						<label class="check">
+							<input type="radio" name="r1" value="3" disabled="disabled">
+							<span>选项3</span>
+						</label>
+						<label class="check">
+							<input type="radio" name="r1" value="4" checked="checked" disabled="disabled">
+							<span>选项4</span>
+						</label>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>多选</label>
+					<div>
+						<label class="check">
+							<input type="checkbox" name="r2" value="1" checked="checked">
+							<span>选项1</span>
+						</label>
+						<label class="check">
+							<input type="checkbox" name="r2" value="2">
+							<span>选项2</span>
+						</label>
+						<label class="check">
+							<input type="checkbox" name="r2" value="3" disabled="disabled">
+							<span>选项3</span>
+						</label>
+						<label class="check">
+							<input type="checkbox" name="r2" value="4" checked="checked" disabled="disabled">
+							<span>选项4</span>
+						</label>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>多选</label>
+					<div>
+						<label class="check block">
+										<input type="checkbox" name="r12" value="1" checked="checked">
+										<span>选项1选项1选项1选项1选项1选项1选项1选项1</span>
+									</label>
+						<label class="check block">
+										<input type="checkbox" name="r12" value="2">
+										<span>选项2选项2选项2选项2选项2选项2选项2选项2</span>
+									</label>
+						<label class="check block">
+										<input type="checkbox" name="r12" value="3" disabled="disabled">
+										<span>选项3选项3选项3选项3选项3选项3选项3选项3</span>
+									</label>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>单选</label>
+					<div>
+						<label class="check-box">
+							<input type="radio" name="r3" value="1" checked="checked">
+							<span>选项1</span>
+						</label>
+						<label class="check-box">
+							<input type="radio" name="r3" value="2">
+							<span>选项2</span>
+						</label>
+						<label class="check-box">
+							<input type="radio" name="r3" value="3" disabled="disabled">
+							<span>选项3</span>
+						</label>
+						<label class="check-box">
+							<input type="radio" name="r3" value="4" checked="checked" disabled="disabled">
+							<span>选项4</span>
+						</label>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>多选</label>
+					<div>
+						<label class="check-box">
+										<input type="checkbox" name="r4" value="1" checked="checked">
+										<span>选项1</span>
+									</label>
+						<label class="check-box">
+										<input type="checkbox" name="r4" value="2">
+										<span>选项2</span>
+									</label>
+						<label class="check-box">
+										<input type="checkbox" name="r4" value="3" disabled="disabled">
+										<span>选项3</span>
+									</label>
+						<label class="check-box">
+										<input type="checkbox" name="r4" value="4" checked="checked" disabled="disabled">
+										<span>选项4</span>
+									</label>
+					</div>
+				</div>
+				<div class="control-item">
+					<label>多选</label>
+					<div>
+						<div class="check-group">
+							<label class="check-box">
+										<input type="checkbox" name="r4" value="1" checked="checked">
+										<span>选项1</span>
+									</label>
+							<label class="check-box">
+										<input type="checkbox" name="r4" value="2">
+										<span>选项2</span>
+									</label>
+							<label class="check-box">
+										<input type="checkbox" name="r4" value="3" disabled="disabled">
+										<span>选项3</span>
+									</label>
+							<label class="check-box">
+										<input type="checkbox" name="r4" value="4" checked="checked" disabled="disabled">
+										<span>选项4</span>
+									</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<hr>
+		<section>
+			<div class="control-item">
+				<div>
+					<button type="submit" class="btn">保存</button>
+					<button type="button" class="btn btn-outline">取消</button>
+				</div>
+			</div>
+		</section>
+	</form>
+</div>

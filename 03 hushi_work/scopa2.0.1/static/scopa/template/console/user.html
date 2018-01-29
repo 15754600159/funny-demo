@@ -1,0 +1,219 @@
+<div class="tab  bottom_show">
+    <ul id="userTab">
+        <li class="current" key="d_user"><span class="icon icon-user"></span> 用户</li>
+        <li key="d_group"><span class="icon icon-usergroups"></span> 群组</li>
+        <li key="d_unit"><span class="icon icon-field"></span> 域</li>
+        <li key="d_manager"><span class="icon icon-mannagers"></span> 管理员</li>
+    </ul>
+</div>
+<div class="d_user show">
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="btn-toolbar ">
+
+               <!-- <button class="btn pull-right" id="btnDelUser"><span class="icon icon-delete3"></span> 删除</button>-->
+                <button class="btn pull-left" id="btnAddUser"><span class="icon icon-add"></span> 创建用户</button>
+            </div>
+            <table class="grid table" id="tableUser">
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>姓名</th>
+                    <th>警号</th>
+                    <th>邮箱</th>
+                    <th>单位</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-6">
+            <div class="btn-toolbar ">  <button id="btnSave" class=" btnblue pull-right"><span class=" analysis-icon save "></span>保存</button></div>
+            <div class="d_form bottom_show" isCheck="true">
+                <div class="d_title">详细信息</div>
+                <div class=" row">
+                    <div class="col-xs-1 label">姓名</div>
+                    <div class="col-xs-11"><input class="txt" id="uname" ></div>
+                </div>
+                <div class=" row">
+                    <div class="col-xs-1 label">警号</div>
+                    <div class="col-xs-11"><input class="txt" id="uinternal"></div>
+                </div>
+                <div class=" row">
+                    <div class="col-xs-1 label">电话</div>
+                    <div class="col-xs-11"><input class="txt" id="cell" checkType="mobilePhone"></div>
+                </div>
+                <div class=" row">
+                    <div class="col-xs-1 label">邮编</div>
+                    <div class="col-xs-11"><input class="txt" id="email"></div>
+                </div>
+                <div class=" row">
+                    <div class="col-xs-1 label">单位</div>
+                    <div class="col-xs-11"><select name="a_unit" id="uunit" class="select"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="d_form bottom_show" >
+                <div class="d_title">群组信息<span class="icon icon-add pull-right btn-addGroup" ></span></div>
+                <div id="groupInfo"></div>
+            </div>
+            <div class="d_form bottom_show" >
+                <div class="d_title">角色信息 <span class="icon icon-add pull-right btn-addRole" ></span></div>
+                <div id="roleInfo">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="d_group hidden">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="btn-toolbar ">
+                <span class="title">群组列表</span>
+                <button class="btn pull-right" id="btnDelGroup"><span class="icon icon-delete3"></span> 删除</button>
+                <button class="btn pull-right" id="btnAddGroup"><span class="icon icon-add"></span> 添加</button>
+            </div>
+            <table class="grid table" id="tableGroup">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>描述</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-6">
+            <div class="btn-toolbar"><span class="title">用户列表</span>
+                <button class="btn pull-right" id="delUserFromGroup"><span class="icon icon-delete3"></span> 删除</button>
+                <button class="btn pull-right" id="btnAddUserToGroup"><span class="icon icon-add"></span> 添加</button>
+            </div>
+            <table class="grid table" id="userBygroup">
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>姓名</th>
+                    <th>警号</th>
+                    <th>单位</th>
+                    <th>邮箱</th>
+                    <th>电话</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="d_unit hidden">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="btn-toolbar ">
+                <span class="title">域列表</span>
+                <button class="btn pull-right" id="btnDelUnit"><span class="icon icon-delete3"></span> 删除</button>
+                <button class="btn pull-right" id="btnAddUnit"><span class="icon icon-add"></span> 添加</button>
+            </div>
+            <table class="grid table" id="tableUnit">
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>描述</th>
+                    <th>邮箱</th>
+                    <th>电话</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-6">
+            <div class="btn-toolbar"><span class="title">用户列表</span>
+               <!-- <button class="btn pull-right" id="delUserForUnit"><span class="user-icon remove"></span> 删除</button>
+                <button class="btn pull-right" id="btnAddUserToUnit"><span class="user-icon add"></span>添加</button>-->
+            </div>
+            <table class="grid table" id="userByunit">
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>姓名</th>
+                    <th>警号</th>
+                    <th>单位</th>
+                    <th>邮箱</th>
+                    <th>电话</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="d_manager hidden">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="btn-toolbar ">
+                <span class="title">管理员列表</span>
+                <button class="btn pull-right" id="btnDelAdmin"><span class="icon icon-delete3"></span> 删除</button>
+                <button class="btn pull-right" id="btnAddAdmin"><span class="icon icon-add"></span> 添加</button>
+            </div>
+            <table class="grid table" id="tableAdmin">
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>单位</th>
+                    <th>邮箱</th>
+                    <th>电话</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-6">
+            <div class="d_form bottom_show">
+                <div class="title">详细信息</div>
+                <div class=" row">
+                    <div class="col-xs-1 label">用户名</div>
+                    <div class="col-xs-11"><input class="txt" id="a_name"></div>
+                </div>
+            <!--    <div class=" row">
+                    <div class="col-xs-1 label">密码</div>
+                    <div class="col-xs-11"><input class="txt" id="a_password"></div>
+                </div>-->
+                <div class=" row">
+                    <div class="col-xs-1 label">电话</div>
+                    <div class="col-xs-11"><input class="txt" id="a_cell"></div>
+                </div>
+                <div class=" row">
+                    <div class="col-xs-1 label">邮编</div>
+                    <div class="col-xs-11"><input class="txt" id="a_email"></div>
+                </div>
+                <div class=" row">
+                    <div class="col-xs-1 label">单位</div>
+                    <div class="col-xs-11"><select name="a_unit" id="a_unit" class="select"></select>
+                        </div>
+                </div>
+            </div>
+           <!-- <div class="d_form bottom_show">
+                <div class="title">用户所属组信息</div>
+                <div class="row ">
+                    <div class="col-xs-1 label">组</div>
+                    <div class="col-xs-11"><input class="txt" id="manager_group"></div>
+                </div>
+
+            </div>-->
+        </div>
+    </div>
+<!--    <div>
+        <button id="btnSaveAdmin" class="btn button_hover pull-right"><span class=" analysis-icon save "></span>保存</button>
+    </div>-->
+
+</div>

@@ -1,0 +1,158 @@
+<div class="new-page">
+
+    <div class="page-content ztjc">
+
+        <!-- 进京人员分析start -->
+        <div class="nowrap-block">
+            <div class="jjryfx-content-block clue-statistics-box">
+                <div class="color-block-title">
+                    进京人员分析
+                    <!-- <div class="filter-box-in-title">
+                        <div class="input-item">
+                            <label>报送时间：</label>
+                            <div class="time-select">
+                                <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                --
+                                <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            </div>
+                            <button type="button" class="btn btn-normal btn_search">查 询</button>
+                            <div class="quick-selector">
+                                <span>日</span>
+                                <span class="active">周</span>
+                                <span>月</span>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="block-content"></div>
+            </div>
+            <div class="jrjjrs-content-block clue-relation-box">
+                <div class="color-block-title">
+                    今日进京人数 <span class="jjrs-num">-</span>
+                </div>
+                <div class="block-content">
+
+                    <div class="left-pie-chart"></div>
+                    <div class="right-table">
+                        <table class="table my-table-striped my-table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>区县</th>
+                                    <th>进京人数</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <!-- <tr>
+                                    <td class="color-1">赛罕区</td>
+                                    <td>5</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 进京人员分析end -->
+
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">进京人员预警</div>
+            <div class="filter-conditions">
+                <form action="">
+                    <div class="input-item">
+                        <label>姓名：</label>
+                        <input name="name" type="text" class="input" placeholder="请输入姓名" />
+                    </div>
+                    <div class="input-item">
+                        <label>身份证号：</label>
+                        <input name="sfzh" type="text" class="input" placeholder="请输入身份证号" />
+                    </div>
+                    <div class="input-item">
+                        <label>班次号：</label>
+                        <input name="travelNumber" type="text" class="input" placeholder="请输入班次号" />
+                    </div>
+                    <div class="input-item">
+                        <label>活动类型：</label>
+                        <select name="actType" class="form-control select">
+                            <option value="火车">火车</option>
+                            <option value="飞机">飞机</option>
+                            <option value="汽车">汽车</option>
+                        </select>
+                    </div>
+                    <div class="input-item personCategory-tree-item tree-item">
+                        <label>人员类别：</label>
+                        <input name="personCategoryCn" class="input node-name" type="text" placeholder="请选择人员类别" readonly />
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <input name="personCategory" class="input node-code" type="text" style="display: none;" readonly />
+                        <div class="ztree personCategory-tree-dom tree-dom" style="display: none;"></div>
+                    </div>
+                    <div class="input-item">
+                        <label>活动时间：</label>
+                        <div class="time-select">
+                            <input name="actStartTime" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input name="actEndTime" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="filter-button-box">
+                    	<button type="button" class="btn btn-normal btn_download">下 载</button>
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th class="td-width-1">姓名</th>
+						<th class="td-width-2">身份证号</th>
+                        <th class="td-width-2">人员类型</th>
+                        <th class="td-width-2">管辖地区</th>
+                        <th class="td-width-1">活动类型</th>
+                        <th class="td-width-2">活动时间</th>
+                        <th class="td-width-2">预警时间</th>
+                        <th class="td-width-1">班次</th>
+                        <th class="td-width-1">出发地</th>
+                        <th class="td-width-1">目的地</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <!-- <tr>
+                        <td>陈明</td>
+                        <td>330129466206283312</td>
+                        <td>金融投资</td>
+                        <td>金融投资</td>
+                        <td>南京玄武</td>
+                        <td>火车</td>
+                        <td>2017-10-31 12:02:24</td>
+                        <td>2017-10-31 12:02:24</td>
+                        <td>k1929</td>
+                        <td>南京</td>
+                        <td>北京</td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+            <ul id="ztjcPagination" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+
+    </div>
+
+
+    <script>
+        app.ztjc.search.init();
+    </script>
+
+</div>

@@ -1,0 +1,133 @@
+<div class="page">
+	<ul class="breadcrumb">
+		<li>
+			<a>系统应用</a>
+		</li>
+		<li class="active">应用修改</li>
+	</ul>
+
+	
+	<form id="form-application-update" class="form longLable">
+		<section>
+			<h4>基本信息</h4>
+			<div>
+				<div class="control-item">
+					<label class="required">应用ID</label>
+					<div>
+						<input type="text" class="input" name="appId" id="application-update-appId">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label class="required">应用密码</label>
+					<div>
+						<input type="text" class="input" name="appSecret" id="application-update-appSecret">
+						<a class="btn-link" onclick="javascript:app.application.autogeneration('update');">自动生成应用ID和密码</a>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label class="required">应用名称</label>
+					<div>
+						<input type="text" class="input" name="name">
+						<input type="hidden" name="id">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label class="required">应用图标地址</label>
+					<div>
+						<input type="text" class="input" name="iconUrl">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label class="required">应用地址</label>
+					<div>
+						<input type="text" class="input" name="appUrl">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label class="">内置应用</label>
+					<div>
+						<label class="check">
+								<input type="radio" name="isBuildIn" value="true"><span>是 &nbsp;&nbsp;</span>
+						</label>
+						<label class="check">
+								<input type="radio" name="isBuildIn" value="false" checked="checked"><span>否</span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label class="">权限授权</label>
+					<div>
+						<label class="check">
+								<input type="radio" name="enableAuthorization" value="true"><span>开启</span>
+						</label>
+						<label class="check">
+								<input type="radio" name="enableAuthorization" value="false" checked="checked"><span>关闭</span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label class="">单点登录</label>
+					<div>
+						<label class="check">
+								<input type="radio" name="enableSso" value="true"><span>接入</span>
+						</label>
+						<label class="check">
+								<input type="radio" name="enableSso" value="false" checked="checked"><span>关闭</span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label>单点登录注销地址</label>
+					<div>
+						<input type="text" class="input" name="ssoLogoutUrl">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="control-item">
+					<label>单点登录后跳转地址</label>
+					<div>
+						<input type="text" class="input" name="redirectUrl">
+					</div>
+				</div>
+			</div>
+			<div class="control-item">
+					<label>应用描述</label>
+					<div>
+						<textarea class="textarea" rows="4" name="description"></textarea>
+					</div>
+				</div>
+		</section>
+		
+		<hr>
+		<section>
+			<div class="control-item">
+				<div>
+					<button type="submit" class="btn">保存</button>
+					<button type="button" class="btn btn-outline" onclick="javascript:app.application.toSearchPage();">取消</button>
+				</div>
+			</div>
+		</section>
+	</form>
+	
+	<script>
+	app.application.update.init();
+	</script>
+	
+</div>

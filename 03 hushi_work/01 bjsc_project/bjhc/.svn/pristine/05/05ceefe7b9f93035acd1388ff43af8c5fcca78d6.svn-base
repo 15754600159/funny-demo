@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+	<head>
+		<title>背景审查</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/backgroundReview.css" />
+	</head>
+
+	<body>
+		<div class="all">
+			<div class="top">
+				<a href="#"><img src="../img/nav-logo.png"></a>
+				<div class="title">背景审查</div>
+				<div class="role">
+					<a href="#">admin</a>
+				</div>
+			</div>
+			<div class="container-fluid content">
+				<form class="background-review" onsubmit="return false">
+					<input type="text" class="form-control" placeholder='请输入人员身份证号'>
+					<button type="button" class="btn btn-default" id="beijing">背景核查</button>
+					<button type="button" class="btn btn-default" id="shangchuan">批量上传</button>
+					<button type="button" class="btn btn-default" id="moban">模板下载</button>
+				</form>
+			</div>
+			<div class="tankuang">
+					<p class="close">X</p>
+					<div class="hecha">
+						<label><input type="text" class="hecha_input" placeholder="输入核查任务名" /><span class="panduan">请输入用户名</span></label>
+					</div>
+					<div class="liulan">
+						<form method="post" enctype="multipart/form-data" id="liulan-form">
+							<input type="file" name="file" class="liulan_file" /><span class="panfile">请选择文件</span>
+						</form> 
+					</div>
+					<p class="info_p">是否上传？</p>
+					<div class="sure"><button class="btn btn-inverse esc">取消</button><button class="btn btn-success ok">确定</button></div>
+			</div>
+			<div class="tankuang1">
+					<div class="tankuang1_content">
+						成功文件数：<span class="tankuang1_success"></span>失败文件数：<span class="tankuang1_fail"></span>
+					</div>
+					<p class="info_p">是否上传？</p>
+					<div class="sure"><button class="btn btn-inverse esc1">取消</button><button class="btn btn-success ok1">确定</button></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+		<script src="../js/plugins/jquery.form.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/fetch.js"></script>
+		<script type="text/javascript" src="../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../js/web/back.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>账单分析</title>
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+	<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.form.js"></script>
+	<script src="../js/util.js"></script>
+	<script src="../js/main.js"></script>
+</head>
+
+<body>
+	<div class="all">
+		<div class="top">
+			<a href="#"><img src="../img/nav-logo.png"></a>
+			<div class="title">账单分析</div>
+			<div class="role">admin</div>
+		</div>
+		<div class="main-body">
+			<div class="search">
+				<label class="mubanload">账单模板下载</label>
+				<input type="text" class="text-input">
+				<form id="file" method="post" enctype="multipart/form-data">
+					<a href="javascript:;" class="upload">
+						<input name="file" class="changefile" type="file">选择文件
+					</a>
+					<input class="daoru" value="导入" type="button">
+				</form>
+			</div>
+			<div class="text-div">
+				<p id="rizhi">&nbsp&nbsp&nbsp&nbsp日志：<a class="totuxi" title="到图析"></a></p>
+				<div class="text-area"></div>
+			</div>
+		</div>
+		<div id="identifier" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="identifier" aria-hidden="true">
+			<div id="loading">
+				<span>&nbsp&nbsp&nbsp&nbsp正在导入中，请耐心等候</span>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
+

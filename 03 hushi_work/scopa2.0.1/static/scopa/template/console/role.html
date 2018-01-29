@@ -1,0 +1,108 @@
+<div class="page-role">
+
+
+<div class="tab  bottom_show">
+    <ul id="tab">
+        <li class="current" key="d_role"><span class="icon-role"></span> 角色</li>
+        <li key="d_permissions"><span class="icon-perm"></span> 权限</li>
+
+    </ul>
+</div>
+<div>
+<div class="d_role">
+    <div class="btn-toolbar ">
+        <button class="btn " id="btnAddRole"><span class="icon icon-add"></span> 创建角色</button>
+        <button class="btnSave btnblue  pull-right"><span class=" analysis-icon save "></span> 保存</button>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <table class="grid table">
+                <thead>
+                <tr>
+                    <th>角色名称</th>
+                    <th>创建时间</th>
+                    <th>创建者</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="role_container">
+                <table class="grid table" id="tableRole">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="col-xs-6">
+            <div class="data_perm bottom_show">
+                <div class="d_title">数据权限</div>
+                <div class="perm_content">
+                  <select class="data_select role_control" style="width: 50%">
+                        <option value="请选择">请选择</option>
+                    </select>
+                    <div style="margin-top: 10px"> <b>等级释义</b> </div>
+
+                        <ul class="role_control levellist" id="list_perm">
+
+                        </ul>
+
+                </div>
+            </div>
+            <div class="app_perm bottom_show" >
+                <div class="d_title">应用权限  </div>
+                <div class="perm_content app_container">
+                  <ul id="app_list" class="app_list"></ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="d_permissions hide">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class=" bottom_show" style="background: #fff">
+                <div class="d_title">数据权限<span class="icon icon-add pull-right"
+                                               id="addData"></span></div>
+                <div class="table_container data_list">
+                    <table id="table_specific" class="grid table_level" style="    margin-bottom: 30px;"></table>
+                    <table id="table_basic" class="grid table_level"></table>
+                </div>
+            </div>
+            <div class=" bottom_show" >
+                <div class="d_title">值释义</div>
+
+                <table class="grid table_level">
+                    <thead>
+                    <tr>
+                        <td class="txt-center">等级</td>
+                        <td>可见角色</td>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="table_container">
+                    <table id="table_level" class="grid table_level">
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class=" bottom_show">
+                <div class="d_title">应用权限<span class="icon icon-add pull-right" id="addApp" ></span> </div>
+                <div class="perm_content app_list_container">
+                    <ul id="per_app_list"></ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>

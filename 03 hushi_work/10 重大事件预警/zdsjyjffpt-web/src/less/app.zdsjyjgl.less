@@ -1,0 +1,116 @@
+/*--通用样式 start-------------------------------------------------------------------------------------------------------------------*/
+
+@gradient-color1: #249ecd;
+@gradient-color2: #31baab;
+@status-color-red: #ff0000;
+@status-color-orange: #ff6c00;
+@status-color-yellow: #ffb400;
+@status-color-blue: #0066ff;
+@status-color-normal: #343434;
+
+
+
+
+/*--通用样式 end-------------------------------------------------------------------------------------------------------------------*/
+
+/*--页面样式 start-------------------------------------------------------------------------------------------------------------------*/
+
+.red-word {
+	color: @status-color-red;
+}
+
+.orange-word {
+	color: @status-color-orange;
+}
+
+.yellow-word {
+	color: @status-color-yellow;
+}
+
+.blue-word {
+	color: @status-color-blue;
+}
+
+.new-page {
+	.zdsjyjgl {
+
+		> .top-part {
+			.color-block-title {
+				span {
+					color: @gradient-color2;
+				}
+			}
+			.block-content {
+				.left-part {
+					width: 55%;
+					display: inline-flex;
+					justify-content: space-around;
+					align-items: center;
+					vertical-align: top;
+					height: 7.5vw;
+
+					> .ring {
+						display: inline-flex;
+						align-items: center;
+						width: 6vw;
+						height: 6vw;
+						border: 2px solid #22b89f;
+						border-radius: 3vw;
+						cursor: pointer;
+
+						p {
+							margin: 0;
+							color: #343434;
+							text-align: center;
+							width: 100%;
+
+							span {
+								display: inline-block;
+								color: #23abb6;
+								margin-top: 5px;
+							}
+						}
+					}
+					> .active {
+						background: linear-gradient(to top, #249ecd, #31baab);
+
+						p {
+							color: #fff;
+
+							span {
+								color: #fff;
+							}
+						}
+					}
+				}
+				.right-part {
+					width: 45%;
+					display: inline-flex;
+					justify-content: space-around;
+					align-items: center;
+					height: 7.5vw;
+					vertical-align: top;
+					margin-left: -4px;
+
+					.prompt-word {
+						p {
+							color: @status-color-normal;
+						}
+						.red-word {
+							color: @status-color-red;
+						}
+					}
+				}
+			}
+		}
+		> .sub-page {
+			display: none;
+		}
+		> .active {
+			display: block;
+		}
+	}
+}
+
+
+/*--页面样式 end-------------------------------------------------------------------------------------------------------------------*/

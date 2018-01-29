@@ -1,0 +1,68 @@
+.btn-input-box {
+  @include size(235px, 24px);
+  border: 1px solid $main-color2;
+  display: inline-block;
+  cursor: pointer;
+  background-color: $white;
+    & > input{
+      @include size(calc(100% - 34px));
+      border: none;
+      text-indent: 10px;
+      background: none;
+      color: $gray-color2;
+      float: left;
+      font-weight: normal;
+      margin-bottom: 0;
+      & + .scopaicon{
+        @include size(14px, 100%);
+        margin-right: 10px;
+        //text-indent: -999px;
+        overflow: hidden;
+        float: right;
+        font-size: 14px;
+        line-height: 22px;
+        color: $main-color2;
+      }
+    }
+}
+.btn-select-box{
+  @include size(235px, 24px);
+  display: inline-block;
+  cursor: pointer;
+  background-color: $white;
+  border: 1px solid $main-color2;
+  a.select2-choice{
+    @include size(100%,100%);
+    border: none;
+    border-radius: 0;
+    line-height: 1.72;
+    background: none;
+    box-shadow: none;
+    outline: 0;
+    &:focus{
+      box-shadow: none;
+      background: none;
+      outline: 0;
+    }
+    .select2-chosen{
+      height: 100%;
+    }
+    .select2-arrow{
+      right: 10px;
+      border: 0;
+      background: none;
+      b{
+        background: url("images/common/icon-dropdown.png") center no-repeat !important;
+      }
+    }
+  }
+}
+.btn-select-box.select2-dropdown-open{
+  .select2-choice{
+    .select2-arrow{
+      b{
+        background: url("images/common/icon-dropup.png")center no-repeat!important;
+      }
+    }
+  }
+}

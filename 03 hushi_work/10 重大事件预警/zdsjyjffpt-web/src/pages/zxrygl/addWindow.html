@@ -1,0 +1,182 @@
+<div class="container bgmask">
+	<div class="window" style="width: 50%; height: 50%;" id="window-zxrygl-addWindow">
+		<header style="background:#4f8cf6">
+			<h1 style="color:#fff">涉事人员信息</h1>
+			<a class="close btn-window-close">&times;</a>
+		</header>
+		<div class="content" style="padding:20px;">
+			<form id="form-user-add" class="form">
+				<section class="h-box col2">
+					<div>
+						<div class="control-item">
+							<label class="required">姓名:</label>
+							<div>
+								<input type="text" class="xm" name="name">
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="control-item">
+							<label class="required">身份证号:</label>
+							<div>
+								<input type="text" class="sfzh" name="sfzh">
+							</div>
+						</div>
+					</div>
+					<div class="control-item">
+						<label>性别:</label>
+						<div>
+							<select class="xb" name="sex">
+								<option value="">--</option>
+								<option value="1">-男-</option>
+								<option value="0">-女-</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-item">
+						<label>民族:</label>
+						<div>
+							<select class="select" name="nationCode" id="user-mz">
+								<option value="">--</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-item">
+						<label>出生日期:</label>
+						<input size="16" type="text" readonly class="form_datetime" id="birday" style="width:240;">
+					</div>
+					<div class="control-item">
+						<label>人员类别:</label>
+						<div>
+							<select class="select" name="politicsStatus" id="user-rylb">
+								<option value="">-请选择-</option>
+								<option value="01">-涉恐人员-</option>
+								<option value="02">-涉稳人员-</option>
+								<option value="03">-政治类-</option>
+								<option value="04">-暴力恐怖类-</option>
+								<option value="05">-群体性事件类-</option>
+								<option value="06">-极端个人-</option>
+								<option value="07">-其他-</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-item">
+						<label>骨干标识:</label>
+						<div>
+							<select class="select" name="politicsStatus" id="gugan">
+								<option value="">-请选择-</option>
+								<option value="01">组织者</option>
+								<option value="02">一般成员</option>
+								<option value="03">骨干</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-item">
+						<label>风险等级:</label>
+						<div>
+							<select class="select" name="politicsStatus" id="fenxian">
+								<option value="">-请选择-</option>
+								<option value="01">重度风险</option>
+								<option value="02">中度风险</option>
+								<option value="03">轻度风险</option>
+								<option value="04">无风险</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-item">
+						<label>是否前科:</label>
+						<div>
+							<select class="select" name="politicsStatus" id="qianke">
+								<option value="">-请选择-</option>
+								<option value="01">是</option>
+								<option value="02">否</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-item">
+						<label>进京非访布控表识:</label>
+						<div>
+							<select class="select" name="politicsStatus" id="jjffbkb">
+								<option value="">-请选择-</option>
+								<option value="01">是</option>
+								<option value="02">否</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-item">
+						<label>有效性:</label>
+						<div>
+							<select class="select" name="politicsStatus" id="youxiaoxin">
+								<option value="">-请选择-</option>
+								<option value="01">是</option>
+								<option value="02">否</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-item">
+						<label>简要案情:</label>
+						<div>
+							<input type="text" class="jianyao" name="jianyao">
+						</div>
+					</div>
+					<div class="control-item">
+						<label>录入时间:</label>
+						<input size="16" type="text" readonly class="form_datetime" id="lrsj" style="width:240;">
+					</div>
+					<div class="control-item">
+						<label>户籍地区划:</label>
+						<div>
+							<input id="citySel" code="" onclick="app.zxrygl.add.showMenu('citySel'); return false;" type="text" class="form-control2"
+							 placeholder='户籍地区划' />
+							<input id="ucodeName" type="hidden">
+						</div>
+					</div>
+					<div class="control-item">
+						<label>现住地区划:</label>
+						<div>
+							<input id="jzdSel" code="" onclick="app.zxrygl.add.showMenu('jzdSel'); return false;" type="text" class="form-control2" placeholder='居住地区划'
+							/>
+							<input id="jzdName" type="hidden">
+						</div>
+					</div>
+					<div class="control-item">
+						<label>户籍地祥址:</label>
+						<div>
+							<input type="text" class="hjdxz" name="hjdxz">
+						</div>
+					</div>
+					<div class="control-item">
+						<label>现住地祥址:</label>
+						<div>
+							<input type="text" class="xzdxz" name="xzdxz">
+						</div>
+					</div>
+					<div class="control-item">
+						<label>采集人姓名:</label>
+						<div>
+							<div>
+								<input type="text" class="cjrxm" >
+							</div>
+						</div>
+					</div>
+			</form>
+		</div>
+		<footer style="background:#4f8cf6">
+			<a class="btn" id="btn-ok-person-excel">确定</a>
+			<a class="btn btn-outline btn-window-close">取消</a>
+		</footer>
+	</div>
+</div>
+<div id="cjdwcodeContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+	<ul id="cjdwUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+</div>
+<div id="citySelContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+	<ul id="citySelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+</div>
+<div id="jzdSelContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+	<ul id="jzdSelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+</div>
+<script>
+	app.zxrygl.add.init();
+
+</script>

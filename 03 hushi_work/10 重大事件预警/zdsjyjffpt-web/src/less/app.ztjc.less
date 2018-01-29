@@ -1,0 +1,181 @@
+/*--通用样式 start-------------------------------------------------------------------------------------------------------------------*/
+
+@chart-color1: #249dd0; // 表格颜色
+@chart-color2: #ff7200;
+
+@chart-color3: #b3dffd;
+@chart-color4: #9bc9e8;
+@chart-color5: #f39e59;
+@chart-color6: #50e6d3;
+@chart-color7: #f265fb;
+@chart-color8: #ff0000;
+@chart-color9: #fff67e;
+@chart-color10: #749f83;
+@chart-color11: #c4ccd3;
+@chart-color12: #d48265;
+@chart-color13: #abdc00;
+@chart-color14: #bda29a;
+
+
+
+/*--通用样式 end-------------------------------------------------------------------------------------------------------------------*/
+
+/*--页面样式 start-------------------------------------------------------------------------------------------------------------------*/
+.color-1::before{
+    color: @chart-color3 !important;
+}
+.color-2::before{
+    color: @chart-color4 !important;
+}
+.color-3::before{
+    color: @chart-color5 !important;
+}
+.color-4::before{
+    color: @chart-color6 !important;
+}
+.color-5::before{
+    color: @chart-color7 !important;
+}
+.color-6::before{
+    color: @chart-color8 !important;
+}
+.color-7::before{
+    color: @chart-color9 !important;
+}
+.color-8::before{
+    color: @chart-color10 !important;
+}
+.color-9::before{
+    color: @chart-color11 !important;
+}
+.color-10::before{
+    color: @chart-color12 !important;
+}
+.color-11::before{
+    color: @chart-color13 !important;
+}
+.color-12::before{
+    color: @chart-color14 !important;
+}
+
+.new-page {
+	.ztjc {
+		.jjryfx-content-block {
+			width: 65%;
+			margin-top: .5%;
+
+			.color-block-title {
+				.filter-box-in-title {
+					height: 33px;
+					float: right;
+					margin-right: 10px;
+
+					.input-item {
+						margin: 0;
+
+						input {
+							background: #fff;
+							height: 25px;
+							width: 130px;
+						}
+					}
+					button {
+						padding: 3px 14px;
+						margin-left: 5px;
+						margin-right: 40px;
+					}
+					.quick-selector {
+						display: inline-block;
+
+						span {
+							display: inline-block;
+							width: 30px;
+							height: 24px;
+							vertical-align: middle;
+							line-height: 22px;
+							text-align: center;
+							background: #fff;
+							border: 2px solid #77aaff;
+							cursor: pointer;
+							color: #77aaff;
+						}
+						span.active {
+							background: #77aaff;
+							color: #fff;
+						}
+						span + span {
+							margin-left: -6px;
+						}
+					}
+				}
+			}
+			.block-content {
+				border: solid 1px #dfdfdf;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				height: 11vw;
+			}
+		}
+		.jrjjrs-content-block {
+			width: 33%;
+			margin-top: .5%;
+
+            .block-content{
+                border: solid 1px #dfdfdf;
+                height: 11vw;
+                display: flex;
+                justify-content: space-around;
+
+                .left-pie-chart{
+                    display: inline-block;
+                    height: 100%;
+                    width: 49%;
+                }
+                .right-table{
+                    display: inline-block;
+                    height: 100%;
+                    width: 49%;
+                    padding: 10px;
+
+                    .table{
+                        border: 1px solid #ddd;
+                        margin-bottom: 0px;
+
+                        th, td{
+                            height: 24px;
+                        }
+                        thead{
+                            display: table;
+                            width: 100%;
+                            table-layout: fixed;
+                        }
+                        tbody{
+                            display: block;
+                            height: 125px;
+                            overflow-y: scroll;
+
+                            tr{
+                                display: table;
+                                width: 100%;
+                                table-layout: fixed;
+
+                                td:first-child::before{
+                                    content: "●";
+                                    font-size: 24px;
+                                    color: red;
+                                    margin-right: 5px;
+                                    display: inline-block;
+                                    vertical-align: sub;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*--页面样式 end-------------------------------------------------------------------------------------------------------------------*/

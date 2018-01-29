@@ -1,0 +1,46 @@
+<!-- 侧边栏菜单 -->
+<!-- <ul class="sidebar-menu" id="sidebar-menu">
+	</ul> -->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrappers" role="navigation">
+	<ul class="nav sidebar-nav" id="sidebar-menu">
+		<li>
+			<a href="#" data-page="pages/zxrygl/index.html" class="sidebar-menu-item"><i class="fa fa-fw fa-home"></i> 专项人员管理</a>
+		</li>
+		<li>
+			<a href="#"><i class="fa fa-fw fa-plus"></i> 群体研判 <span class="caret"></span></a>
+			<ul id="sidebar-sub-menu" class="sencend-menu" role="menu" style="display:none">
+				<li><a href="#" data-page="pages/gzqt/gzqtgl.html" class="sidebar-menu-item">关注群体管理</a></li>
+				<li><a href="#" data-page="pages/gzqt/gzqttj.html" class="sidebar-menu-item">关注群体统计</a></li>
+				<li><a href="#">群体管控</a></li>
+				<li><a href="#" data-page="pages/gzqt/qtyjxx.html" class="sidebar-menu-item">群体预警信息</a></li>
+				<li><a href="#">群体挖掘</a></li>
+				<li><a href="#">群体多维分析</a></li>
+				<li><a href="#">群体异动<span class="caret"></span></a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li><a href="#">异动群体列表</a></li>
+						<li><a href="#">异动人员列表</a></li>
+					</ul>
+				</li>
+				<li><a href="#">分析模型管理<span class="caret"></span></a>
+					<ul class="thired-menu" role="menu" style="display:none">
+						<li><a href="#">任务管理</a></li>
+						<li><a href="#">群体挖掘规则配置</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<!-- 侧边栏菜单模板 -->
+<!-- <script type="text/html" id="tmpl-sidebar-menu">
+
+	<li>
+		<a class="sidebar-menu-item" id="sidebar-menu-{%=menu.code%}" data-code="{%=menu.code%}" data-path="{%=menu.path || ''%}"
+		 data-page="{%=menu.page || ''%}">
+			<i class="icon icon-{%=menu.code%}"></i>
+			<span class="title">{%=menu.name%}</span>
+		</a>
+	</li>
+
+</script> -->

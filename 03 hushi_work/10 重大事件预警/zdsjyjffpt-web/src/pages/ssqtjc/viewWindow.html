@@ -1,0 +1,61 @@
+<div class="container bgmask">
+    <div class="window" style="width: 100%; height: 100%;" id="window-wfgzqtgl-addWindow">
+        <header style="background:#4f8cf6">
+            <h1 style="color:#fff" id="wfgzqt">涉事群体成员</h1>
+            <a class="close btn-window-close" style="text-decoration:none">&times;</a>
+        </header>
+        <div class="content" style="padding:20px;">
+            <div class="rygl zxrygl">
+                <form class="form-search-bar" id="form-department-search">
+                    <div class="operate-buttons-box">
+                        <div class="left-buttons">
+                            <button type="button" class="btn btn-border combine_clue" onclick="app.wfgzqtgl.add.viewWindowcy();">新增</button>
+                            <button type="button" class="btn btn-border turn_invalid" onclick="app.wfgzqtgl.add.delcy();">删除</button>
+                        </div>
+                        <div class="right-buttons">
+                            <!-- <button type="button" class="btn btn-normal btn_addNewClue">新增线索</button> -->
+                        </div>
+                    </div>
+                </form>
+                <div id="list-zxrygl">
+                    <div class="rycjlb">
+                        <table class="table table-bordered my-table-striped my-table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="checks">
+                                        <label class="check">
+                                            <input type="checkbox" name="r2" value="1" id="Checkalls">
+                                            <span>全选</span>
+                                        </label>
+                                    </th>
+                                    <th>群体编号</th>
+                                    <th>成员类别</th>
+                                    <th>身份证号</th>
+                                    <th>姓名</th>
+                                    <th>首次录入时间</th>
+                                    <th style="width:199px;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table_alls">
+
+                            </tbody>
+                        </table>
+                        <ul id="paginations" class="pagination pagination-sm"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div id="cjdwcodeContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+	<ul id="cjdwUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+</div>
+<div id="citySelContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+	<ul id="citySelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+</div>
+<div id="jzdSelContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+	<ul id="jzdSelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+</div>-->
+<script>
+    app.wfgzqtgl.add.viewinit();
+</script>

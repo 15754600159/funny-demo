@@ -1,0 +1,10 @@
+.harts .content {
+    left: 195px;
+    box-shadow: 0px 0px 5px #d7d9dd;
+    padding: 10px 0;
+}
+.harts .nav li{ width:160px;}
+.harts .nav li.active{ background-color:#87abdf !important;}
+.harts #accordion li {
+    text-indent: 10px;
+}

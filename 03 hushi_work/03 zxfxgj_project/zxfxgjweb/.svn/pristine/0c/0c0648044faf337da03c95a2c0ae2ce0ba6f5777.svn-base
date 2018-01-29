@@ -1,0 +1,20 @@
+/* eslint-disable no-redeclare */
+var app = {};
+
+app.init = function() {
+	$('#layuicss-layer').remove()
+	// 检查用户是否已经登录
+	//app.login.checkLogin(function(isLogined) {
+	//	if (isLogined) {
+	app.main.open();
+	//	}
+	//});
+};
+app.data = function(data) {
+	if (!data || data == '') {
+		return '暂无数据';
+	} else {
+		return data;
+	}
+};
+

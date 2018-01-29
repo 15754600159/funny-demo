@@ -1,0 +1,55 @@
+<div class="page">
+	<div class="tab-div">
+		<ul class="tabs">
+			<li class="active"><a>用户权限</a></li>
+			<li onclick="javascript:app.appApiFunction.toPage();"><a>系统权限</a></li>
+		</ul>
+	</div>
+	
+	<div class="h-box col2 role-set">
+		<div style="width:15%;" class="left-side">
+			<div class="link-div">
+				<a class="btn-link" onclick="javascript:app.userRole.toPage();">用户-角色</a>	
+			</div>
+			<div class="link-div active">
+				<a class="btn-link active">角色-功能</a>
+			</div>
+		</div>
+		<div class="h-box col2" style="width:85%;">
+			<div style="width:50%;" class="select-div">
+				<ul class="breadcrumb">
+					<li>
+						<a>角色列表</a>
+					</li>
+				</ul>
+				<div id="role-function-roleList"  class="select-list select-content">
+				
+				</div>
+			</div>
+			<div class="check-div" style="width:50%;">
+				<ul class="breadcrumb">
+					<li>
+						<a>功能列表</a>
+					</li>
+				</ul>
+				<form id="form-roleFunction-save">
+				<input name="roleCode" id="roleFunction-save-roleCode" type="hidden">
+				<div id="">
+					<div class="tree" id="role-function-functionList-tree">
+				    	<ul id="role-function-functionList">
+				    	</ul>
+					</div>
+					<div class="list-empty" id="role-function-functionList-empty">没有找到记录</div>
+				</div>
+				<footer>
+					<button class="btn" type="submit" id="role-function-functionList-button">保存</button>
+				</footer>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+	app.roleFunction.search.init();
+	</script>
+	
+</div>

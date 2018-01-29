@@ -1,0 +1,79 @@
+app.gzqt = {
+	init: function() {
+		app.time.init();
+	},
+	/**
+	 * 	
+	 * 跳转到新增页面
+	 */
+	toAddPage: function() {
+		$m.page.openPage({
+			url: 'pages/gzqt/gzqtaddWindow.html',
+			container: 'container-wrapper',
+			effect: 'fade'
+		});
+	},
+	/**
+	 * 跳转到查询页面
+	 */
+	toSearchPage: function() {
+		$m.page.loadPage({
+			url: 'pages/gzqt/gzqtgl.html',
+			container: 'container-wrapper',
+			effect: 'fade'
+		});
+	},
+
+
+	/**
+	* 跳转到编辑页面
+	*/
+	toUpdatePage: function(id) {
+
+		// console.log($(that).data('cont'));
+		// var obj = JSON.parse($(that).data('cont'));
+		// console.log(obj);
+		app.gzqt.update.id = id;
+		//app.gzqt.update.obj = obj;
+		console.log(id);
+		$m.page.openPage({
+			url: 'pages/gzqt/gzqtupdate.html',
+			container: 'container-wrapper',
+			effect: 'fade'
+		});
+
+	},
+
+	/**
+	* 跳转到查看页面
+	*/
+	toViewPage: function(id) {
+
+		// console.log($(that).data('cont'));
+		// var obj = JSON.parse($(that).data('cont'));
+		// console.log(obj);
+		app.gzqt.view.id = id;
+		//app.gzqt.update.obj = obj;
+		console.log(id);
+		$m.page.openPage({
+			url: 'pages/gzqt/gzqtview.html',
+			container: 'container-wrapper',
+			effect: 'fade'
+		});
+
+	},
+
+	del: function(id) {
+		app.api.department.del({
+			data: {
+				id: id
+			},
+			success: function(result) {
+				$m.message('删除成功');
+				app.department.search.listPager.refresh();
+			},
+			error: app.api.error
+		});
+	}
+
+};

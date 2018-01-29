@@ -1,0 +1,560 @@
+'use strict';
+
+$(function () {
+    /**-----mian----------------------------------------------------------------------------------------------------------------------------- */
+    // 页面初始化
+    initPage();
+
+    /**
+     * @desc: 页面初始化
+     * @param: none
+     * @return: undefined 
+     */
+    function initPage() {
+        resizeFunc();
+
+        // 页面窗口大小变化 重新计算布局
+        $(window).resize(resizeFunc);
+
+        // 加载页面左部分标签（表名）
+        initLeftPartTableNames();
+
+        // 点击事件监听
+        bindClickFunc();
+
+        // 页面日期选择器初始化
+        calendar($('.date1'), 'right');
+
+        // 页面拖拽功能
+        dragFunc();
+
+        // 页面左部分和右下部分内容搜索功能
+        tableNameSearchFunc();
+    }
+
+    /**-----逻辑方法----------------------------------------------------------------------------------------------------------------------- */
+
+    /**
+     * @desc: 改变页面html的font-size大小 和 搜索结果result-table-box 元素的top值
+     * @param: none
+     * @return: undefined 
+     */
+    function resizeFunc() {
+        //重新设置html的font-size
+        var width = document.body.clientWidth;
+        var fontSize = (width - 1680) * 0.0298 + 50;
+        $('html').css('font-size', fontSize);
+
+        //重新设置搜索结果框的top值（包括背景审查、情况摸排）
+        var height = $("body").height() + 18;
+        $('.result-table-box, .qkmp').css('top', height);
+
+    }
+
+    /**
+     * @desc: 初始加载页面左部分标签（表名）
+     * @param: none
+     * @return: undefined 
+     */
+    function initLeftPartTableNames(){
+        var json = {
+            "tables" : [
+                {
+                    "name": "转移登记信息", 
+                    "category": "人员类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "现房签约", 
+                    "category": "人员类", 
+                    "fields": ["姓 名", "证件号码", "学 历", "性 别", "出生日期", "暂住地址"]
+                },
+                {
+                    "name": "期房签约", 
+                    "category": "人员类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "低保人员信息", 
+                    "category": "轨迹类", 
+                    "fields": ["出生日期", "证件号码", "姓 名", "性 别", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "重点人口信息", 
+                    "category": "轨迹类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "违法犯罪人员", 
+                    "category": "资源类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "SIS犯罪嫌疑人", 
+                    "category": "轨迹类", 
+                    "fields": ["出生日期", "姓 名", "证件号码", "性 别", "学 历", "暂住地址"]
+                },
+                {
+                    "name": "全国重点人员", 
+                    "category": "资源类", 
+                    "fields": ["姓 名", "性 别", "出生日期", "证件号码", "学 历", "暂住地址"]
+                },
+            ]
+        };
+        var htmlCode = '';
+        var tables = json.tables;
+        for(var i in tables){
+            htmlCode += `<div class="item" data-name="${tables[i]['name']}" data-category="${tables[i]['category']}" data-fields="${tables[i]['fields']}"><span>${tables[i]['name']}</span><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></div>`
+        }
+        $('.left-part .items-box .sub-select-box').html(htmlCode);
+    }
+
+    /**
+     * @desc: 页面点击事件绑定
+     * @param: none
+     * @return: undefined 
+     */
+    function bindClickFunc() {
+        // 情况摸排页面 左边部分标签页切换
+        $('.qkmp .left-part .button-box .button').on('click', function (e) {
+            var target = $(e.currentTarget),
+            tableNames = $('.left-part .items-box .sub-select-box .item'),
+            category = $.trim(target.text()),
+            searchWord = $.trim($('input#leftSearchTableName').val())
+            
+            target.siblings().removeClass('active');
+            target.addClass('active');
+            // 控制左部分表名显隐
+            leftTableNamefilterFunc(category, searchWord);
+
+        })
+
+        // 页面左部分 智能搜索 选择全部点击功能
+        $('.qkmp .left-part .items-box .select-all').on('click', function(){
+            var flag = true; //true为全选状态 false为有选项没被选择
+            var labels = $('.qkmp .left-part .items-box .sub-select-box .item').filter(function(){ //只筛选显示的元素
+                var isDisplay = $(this).css('display') !== 'none';
+                return isDisplay;
+            });
+
+            labels.each(function(){
+                if(!($(this).hasClass("active"))){
+                    flag = false;
+                    return false;//跳出循环
+                }
+            })
+            if(flag){ //全选状态
+                // 触发全部标签的点击来替代 模拟
+                labels.each(function(){
+                    $(this).trigger("click");
+                })
+            }else{ //有选项没有选择状态
+                // 触发全部标签的点击来替代
+                labels.each(function(){
+                    if(!($(this).hasClass("active"))){
+                        $(this).trigger("click");
+                    }
+                })
+            }
+        })
+
+        // 页面左部分 智能搜索 下属标签点击功能
+        $(document).on('click', '.qkmp .left-part .items-box .sub-select-box .item', function(){
+            var flag = false, //true为选择状态 false为非选择状态
+                htmlCode = '',
+                tableName = $(this).data('name'),
+                category = $(this).data('category'),
+                fields = $(this).data('fields').split(',');
+
+            if($(this).hasClass("active")){
+                flag = true;
+            }
+            if(flag){
+                $(this).removeClass("active");
+                // 删除目标区表信息
+                $('.right-bottom-part .mbq-info-box .mbq-info-card').each(function(){
+                    var that = $(this);
+                    if(compareStr(that.data('name'), tableName)){
+                        that.remove();
+                        return false;//跳出循环
+                    }
+                })
+            }else{
+                $(this).addClass("active");
+                // 增加目标区表信息
+                htmlCode = `<div class="mbq-info-card" data-name="${tableName}" data-category="${category}">
+                                <div class="main-title">
+                                    ${tableName}
+                                    <span>（来自治安综合防范平台数据）</span>
+                                </div>
+                                <div class="control-buttons">
+                                    <div class="button sjtj-button">
+                                        <img src="../../img/bjscxq/sjtj-icon.png" alt="check">
+                                        <span>数据统计</span>
+                                    </div>
+                                    <div class="button llsj-button">
+                                        <img src="../../img/bjscxq/llsj-icon.png" alt="check">
+                                        <span>浏览数据</span>
+                                    </div>
+                                    <img class="button" src="../../img/bjscxq/wrong-icon.png" alt="delete">
+                                </div>
+                                <div class="filter-conditions-box">
+                                    <div class="orange-label-box">
+                                        <span class="orange-label">关联字段</span>
+                                        <span class="field">使用省份证号</span>
+                                    </div>
+                                    <div class="green-label-box">
+                                        <span class="green-label">约束条件</span>
+                                        <span class="field">活动发生时间</span>：
+                                        <!-- 日期选择 -->
+                                        <div class="input-group dateranger">
+                                            <input type="text" class="daterangebox date2" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fields-box">`
+                for( var i in fields){
+                    htmlCode += `<span class="field">${fields[i]}</span>`
+                }
+                htmlCode += `</div></div>`;
+                $('.right-bottom-part .sub-info-box .mbq-info-box').append(htmlCode);
+                //初始化新加的日期选择控件
+                calendar($('.right-bottom-part .sub-info-box .mbq-info-box').last('.mbq-info-card').find('.date2'), 'left');
+                //初始化标签的拖拽功能
+                dragElemInit($('.right-bottom-part .sub-info-box .mbq-info-box .mbq-info-card').last());
+            }
+        })
+
+        // 页面左部分 智能搜索 下部标签点击功能
+        $(document).on('click', '.qkmp .left-part .filter-condition-box .row .col-md-9 .item', function(){
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+
+        // 页面右下部分 标签页点击功能
+        $(document).on('click', '.qkmp .right-bottom-part .filter-conditions-box .item', function(){
+            $(this).addClass('active').siblings('.active').removeClass('active'); //先换类，再获取选择状态
+
+            var searchWord = $.trim($('#rightBottomSearchTableName').val()),
+                category = $.trim($('.right-bottom-part .filter-conditions-box .item.active span').text());
+            // 页面右下部分根据表格类别和搜索词来控制 表格card显隐状态
+            rightBottomTableNamefilterFunc(category, searchWord);
+        })
+
+        // 页面表 右上 对比源 信息卡右上角删除按钮（X）点击删除功能
+        $(document).on('click', '.right-top-part .dby-info-card .control-buttons img.button', function(){
+            $(this).parents('.dby-info-card').remove(); 
+        })
+        // 页面表 右下 目标区 信息卡右上角删除按钮（X）点击删除功能
+        $(document).on('click', '.right-bottom-part .mbq-info-box .mbq-info-card .control-buttons img.button', function(){
+            var cardElem = $(this).parents('.mbq-info-card'),
+                tableName = cardElem.data('name');
+            // 移除卡片元素（表元素）
+            cardElem.remove(); 
+            // 移除页面左部分 对应表名的active状态
+            $('.left-part .items-box .sub-select-box .item').each(function(){
+                var that = $(this);
+                if(compareStr(that.data('name'), tableName)){
+                    that.removeClass('active');
+                }
+            })
+        })
+
+        // 页面表 右下 目标区 右上全部清空按钮功能
+        $('.right-bottom-part .filter-conditions-box .qbqk-button').on('click', function(){
+            $('.qkmp .left-part .items-box .sub-select-box .item').removeClass('active');
+            $('.right-bottom-part .mbq-info-box').empty();
+        })
+
+        // 表信息卡右上角数据统计按钮点击功能
+        $(document).on('click', '.sjtj-button', function(){
+            $('#sjtjModel').modal('show');
+        })
+        
+        // 表信息卡右上角浏览数据按钮点击功能
+        $(document).on('click', '.llsj-button', function(){
+            $('#llsjModel').modal('show');
+        })
+
+    }
+
+    /**
+     * @desc 初始化日期选择控件
+     * @param {*日期控件jquery对象} dateElem Object
+     * @param {*日期控件弹出的方向} openDirection String
+     * @return undefined
+     */
+    function calendar(dateElem, openDirection){
+    
+        //日期控件中文
+        var locale = {
+            "format": 'YYYY-MM-DD',
+            "separator": " -222 ",
+            "applyLabel": "确定",
+            "cancelLabel": "取消",
+            "fromLabel": "起始时间",
+            "toLabel": "结束时间",
+            "customRangeLabel": "自定义",
+            "weekLabel": "W",
+            "daysOfWeek": ["日", "一", "二", "三", "四", "五", "六"],
+            "monthNames": ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+            "firstDay": 1
+        };
+        // 日期，默认时间设成当日到前30天
+        var startDate = moment(moment().subtract(30, 'days').calendar()).format("YYYY-MM-DD");
+        var endDate = moment().format("YYYY-MM-DD");
+        dateElem.val(startDate + ' - ' + endDate);
+        dateElem.daterangepicker({
+            applyClass:'btn-success',
+            clearClass:'btn-warning',
+            cancelClass:'btn-info',
+            'locale': locale,
+            format:"YYYY-MM-DD",
+            startDate:startDate,
+            endDate:endDate,
+            opens : openDirection, 
+        }, function(start, end) {
+            startDate=start.format('YYYY-MM-DD');
+            endDate=end.format('YYYY-MM-DD');
+        });
+        // 用户不能直接输入日期
+        dateElem.attr("readonly","readonly");
+        
+    }
+
+    /**
+     * @desc 页面标签拖拽功能实现
+     * @param none
+     * @return undefined
+     */
+    function dragFunc(){
+        // 左部分标签的拖拽功能
+        $('.left-part .items-box .sub-select-box .item').draggable({
+            helper: 'clone', //克隆，保留原位置的元素
+            revert: 'invalid', //没有拖入放置容器，飘回来
+            zIndex: 100, //设置拖动的Z-index，避免被position:absolute;的元素覆盖
+        });
+
+        $('.right-top-part').droppable({
+            accept: '.left-part .items-box .sub-select-box .item',//限制可拖入元素的类
+            drop: function(event, ui){ // ui.draggable可获取被拖动的元素；  event.target可获取元素放置的容器
+                var dbyBoxElem = $(event.target),
+                    htmlCode = '',
+                    tableName = $(ui.draggable).data('name'),
+                    category = $(ui.draggable).data('category'),
+                    fields = $(ui.draggable).data('fields').split(',');
+
+                htmlCode = `<div class="dby-info-card" data-name="${tableName}" data-category="${category}">
+                                <div class="main-title"><span>${category}</span>
+                                    ${tableName}
+                                    <span>（来自治安综合防范平台数据）</span>
+                                </div>
+                                <div class="control-buttons">
+                                    <div class="button sjtj-button">
+                                        <img src="../../img/bjscxq/sjtj-icon.png" alt="check">
+                                        <span>数据统计</span>
+                                    </div>
+                                    <div class="button llsj-button">
+                                        <img src="../../img/bjscxq/llsj-icon.png" alt="check">
+                                        <span>浏览数据</span>
+                                    </div>
+                                    <img class="button" src="../../img/bjscxq/wrong-icon.png" alt="delete">
+                                </div>
+                                <div class="filter-conditions-box">
+                                    <div class="orange-label-box">
+                                        <span class="orange-label">关联字段</span>
+                                        <span class="field">使用省份证号</span>
+                                    </div>
+                                    <div class="green-label-box">
+                                        <span class="green-label">约束条件</span>
+                                        <span class="field">活动发生时间</span>：
+                                        <!-- 日期选择 -->
+                                        <div class="input-group dateranger">
+                                            <input type="text" class="daterangebox date2" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fields-box">`
+                for( var i in fields){
+                    htmlCode += `<span class="field">${fields[i]}</span>`
+                }
+                htmlCode += `</div></div>`;
+                //增加元素前先移除之前的
+                var mainInfoBox = dbyBoxElem.find('.main-info-box');
+                mainInfoBox.empty();
+                mainInfoBox.append(htmlCode);
+                //初始化新加的日期选择控件
+                calendar($('.right-top-part .dby-info-card .filter-conditions-box .date2'), 'left');
+                // 右上部分对比源 下面标签的拖拽功能
+                dragElemInit($('.right-top-part .main-info-box .dby-info-card'));
+
+            }
+        });
+
+    }
+
+    /**
+     * @desc 页面左部分和右下部分内容搜索功能
+     * @param none
+     * @return undefined
+     */
+    function tableNameSearchFunc(){
+        // 页面左部分标签搜索功能
+        $('input#leftSearchTableName').on('input propertychange', function() {
+            var searchWord = $.trim($(this).val()),
+                category = $.trim($('.left-part .button-box .button.active span').text());
+            if($(this).data('value-length') === searchWord.length){
+                return ;
+            }
+            // console.log('要搜索了！')
+            // 根据表格类别和搜索词来控制 表格名称的显隐状态
+            leftTableNamefilterFunc(category, searchWord);
+
+            // 实时更新搜索词的长度，以便后面比较
+            $(this).data('value-length', searchWord.length);
+        });
+
+        // 页面右下部分标签搜索功能
+        $('input#rightBottomSearchTableName').on('input propertychange', function() {
+            var searchWord = $.trim($(this).val()),
+                category = $.trim($('.right-bottom-part .filter-conditions-box .item.active span').text());
+            if($(this).data('value-length') === searchWord.length){
+                return ;
+            }
+            // console.log('要搜索了！')
+            // 页面右下部分根据表格类别和搜索词来控制 表格card显隐状态
+            rightBottomTableNamefilterFunc(category, searchWord);
+
+            // 实时更新搜索词的长度，以便后面比较
+            $(this).data('value-length', searchWord.length);
+        });
+    }
+
+
+
+
+
+
+
+
+    /**-------工具方法----------------------------------------------------------------------------------------------------------------------------------*/ 
+
+    /**
+     * @desc 初始化信息卡内标签可拖拽（表信息内字段可拖拽）
+     * @param {*信息卡jquery对象} dragCardElem Object
+     * @return undefined
+     */
+    function dragElemInit(dragCardElem){
+        dragCardElem.find('.fields-box .field').draggable({
+            helper: 'clone', //克隆，保留原位置的元素
+            revert: 'invalid', //没有拖入放置容器，飘回来
+            zIndex: 100, //设置拖动的Z-index，避免被position:absolute;的元素覆盖
+        });
+
+        dragCardElem.find('.filter-conditions-box > div').droppable({
+            accept: dragCardElem.find('.fields-box .field'),//限制可拖入元素 选择器或jquery对象
+            drop: function(event, ui){ // ui.draggable可获取被拖动的元素；  event.target可获取元素放置的容器
+                var fieldElem = $(event.target).find('.field'),
+                    fieldText = $(ui.draggable).text();
+
+                fieldElem.text(fieldText);
+            }
+        });
+    }
+
+    /**
+     * @desc 页面左部分根据表格类别和搜索词来控制 表格名称的显隐状态
+     * @param {*表格类型} category String
+     * @param {*搜索词} searchWord String
+     * @return undefined
+     */
+    function leftTableNamefilterFunc(category, searchWord){
+        var tableNames = $('.left-part .items-box .sub-select-box .item');
+        
+        tableNames.each(function(){
+            var that = $(this);
+            if(compareStr('智能搜索', category)){
+                if(searchWord.length === 0){ //若搜索内容为空，则恢复分类下所有标签
+                    that.css('display', 'inline-block');
+                }else{//若搜索内容不为空
+                    if(that.data('name').indexOf(searchWord) > -1){ //搜索词符合
+                        that.css('display', 'inline-block');
+                    }else{ //搜索词不符合
+                        that.css('display', 'none');
+                    }
+                }
+                return ;
+            }
+
+            if(compareStr(that.data('category'), category)){ //类型符合
+                if(searchWord.length === 0){ //若搜索内容为空，则恢复分类下所有标签
+                    that.css('display', 'inline-block');
+                }else{//若搜索内容不为空
+                    if(that.data('name').indexOf(searchWord) > -1){ //搜索词符合
+                        that.css('display', 'inline-block');
+                    }else{ //搜索词不符合
+                        that.css('display', 'none');
+                    }
+                }
+            }else{ //类型不符合
+                that.css('display', 'none');
+            }
+
+        })
+    }
+
+    /**
+     * @desc 页面右下部分根据表格类别和搜索词来控制 表格card显隐状态
+     * @param {*表格类型} category String
+     * @param {*搜索词} searchWord String
+     * @return undefined
+     */
+    function rightBottomTableNamefilterFunc(category, searchWord){
+        var tableCards = $('.right-bottom-part .mbq-info-box .mbq-info-card');
+        
+        tableCards.each(function(){
+            var that = $(this);
+            if(compareStr('全部', category)){
+                if(searchWord.length === 0){ //若搜索内容为空，则恢复分类下所有标签
+                    that.css('display', 'block');
+                }else{//若搜索内容不为空
+                    if(that.data('name').indexOf(searchWord) > -1){ //搜索词符合
+                        that.css('display', 'block');
+                    }else{ //搜索词不符合
+                        that.css('display', 'none');
+                    }
+                }
+                return ;
+            }
+
+            if(compareStr(that.data('category'), category)){ //类型符合
+                if(searchWord.length === 0){ //搜索内容为空
+                    that.css('display', 'block');
+                }else{//若搜索内容不为空
+                    if(that.data('name').indexOf(searchWord) > -1){ //搜索词符合
+                        that.css('display', 'block');
+                    }else{ //搜索词不符合
+                        that.css('display', 'none');
+                    }
+                }
+            }else{ //类型不符合
+                that.css('display', 'none');
+            }
+
+        })
+    }
+
+    /**
+     * @desc 比较两个字符串是否相等 相等返回true
+     * @param {*字符串1} str1 String
+     * @param {*字符串2} str2 String
+     * @return Boolean
+     */
+    function compareStr(str1, str2){
+        return $.trim(str1) === $.trim(str2);
+    }
+
+
+
+
+
+})

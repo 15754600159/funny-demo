@@ -1,0 +1,58 @@
+.nav-menu {}
+
+.nav-menu-item {
+	display: block;
+	width: 100%;
+	color: #444;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 30px;
+	margin-top: 20px;
+	.icon {
+		font-size: 28px;
+		top: -2px;
+	}
+
+	.title {
+		font-size: 16px;
+		max-width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.nav-menu-sub {}
+
+.nav-menu-sub-item {
+	display: block;
+	width: 100%;
+	cursor: pointer;
+	color: #666;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 30px;
+
+	&.active {
+		background: #fefefe;
+		color: @color-main;
+	}
+
+	&:hover {
+		background: #fefefe;
+		color: @color-main;
+	}
+
+	.icon {
+		font-size: 18px;
+		top: -1px;
+	}
+
+	.title {
+		font-size: 12px;
+		max-width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

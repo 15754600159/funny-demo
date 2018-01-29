@@ -1,0 +1,129 @@
+<!-- 侧边栏菜单 -->
+<!-- <ul class="sidebar-menu" id="sidebar-menu">
+	</ul> -->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrappers" role="navigation">
+	<ul class="nav sidebar-nav" id="sidebar-menu">
+		<li class="nav-index active">
+			<a href="#" data-page="pages/shouye.html" class="sidebar-menu-item">首页</a>
+		</li>
+		<!-- 情报线索分析 -->
+		<li class="nav-qbxsfx">
+			<a href="#">情报线索分析</a>
+			<ul id="sidebar-sub-menu" class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="pages/qbxsfx/qbxsgl/index.html" class="sidebar-menu-item">情报线索管理</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/qbxsfx/qbljx/index.html" class="sidebar-menu-item">情报垃圾箱</a>
+				</li>
+			</ul>
+		</li>
+
+		<!-- 维稳关注人员监测 -->
+		<li class="nav-wwgzryjc">
+			<a href="#">维稳关注人员监测</a>
+			<ul id="sidebar-sub-menu" class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="pages/sdryzxgl/index.html" class="sidebar-menu-item">维稳关注人员管理</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/ssrysp/index.html" class="sidebar-menu-item">维稳关注人员审批</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/ssrysp/bdgzry.html" class="sidebar-menu-item">本地关注人员</a>
+				</li>
+			</ul>
+		</li>
+
+		<!-- 维稳关注群体监测 -->
+		<li class="nav-wwgzqtjc">
+			<a href="#">维稳关注群体监测</a>
+			<ul id="sidebar-sub-menu" class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="pages/ssqtjc/index.html" class="sidebar-menu-item">维稳关注群体管理</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/ssqtsp/index.html" class="sidebar-menu-item">维稳关注群体审批</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/qtfxyp/index.html" class="sidebar-menu-item">群体分析研判</a>
+				</li>
+				<li>
+					<a href="http://10.101.139.22:6999/jifen_web/view/" target="_Blank">群体积分预警管理</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/sdqtdwfx/qtgxyp/qtgxyp.html" class="sidebar-menu-item">群体关系研判</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/kyrqdrypfx/drypfx.html" class="sidebar-menu-item">可疑人群分析</a>
+				</li>
+			</ul>
+		</li>
+
+		<!-- 重大事件预警模型管理 -->
+		<li class="nav-zdsjyjmxgl">
+			<a href="#">重大事件预警模型管理</a>
+			<ul id="sidebar-sub-menu" class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="pages/zdsjyjmxgl/mxpz.html" class="sidebar-menu-item">重大事件预警模型配置</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/zdsjyjmxgl/mxwjjg.html" class="sidebar-menu-item">事件预警模型挖掘结果</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/sdqtdwfx/qtxhdfx/qtwj/index.html" class="sidebar-menu-item">群体挖掘结果</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/zdsjyjmxgl/xsycyjjcpz/index.html" class="sidebar-menu-item">线索异常预警监测配置</a>
+				</li>
+			</ul>
+		</li>
+
+		<!-- 重大事件预警管理 -->
+		<li class="nav-zdsjyjgl">
+			<a href="#"  class="sidebar-menu-item">重大事件预警管理</a>
+			<ul id="sidebar-sub-menu" class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="pages/zdsjyjgl/index.html" class="sidebar-menu-item">重大事件预警管理</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/zdsjyjgl/yjzxcx.html" class="sidebar-menu-item">预警在线查询</a>
+				</li>
+			</ul>
+		</li>
+
+		<!-- 专题监测 -->
+		<li class="nav-ztjc">
+			<a href="#" data-page="pages/ztjc/index.html" class="sidebar-menu-item">专题监测</a>
+		</li>
+
+		<!-- 配置管理 -->
+		<li class="nav-pzgl">
+			<a href="#">配置管理</a>
+			<ul id="sidebar-sub-menu" class="sencend-menu" role="menu" style="display:none">
+				<li>
+					<a href="#" data-page="pages/pzgl/mgsqgl/index.html" class="sidebar-menu-item">敏感时期管理</a>
+				</li>
+				<li>
+					<a href="#" data-page="pages/pzgl/gjcgl/index.html" class="sidebar-menu-item">关键词管理</a>
+				</li>
+			</ul>
+		</li>
+
+
+
+	</ul>
+</nav>
+
+<!-- 侧边栏菜单模板 -->
+<!-- <script type="text/html" id="tmpl-sidebar-menu">
+
+	<li>
+		<a class="sidebar-menu-item" id="sidebar-menu-{%=menu.code%}" data-code="{%=menu.code%}" data-path="{%=menu.path || ''%}"
+		 data-page="{%=menu.page || ''%}">
+			<i class="icon icon-{%=menu.code%}"></i>
+			<span class="title">{%=menu.name%}</span>
+		</a>
+	</li>
+
+</script> -->

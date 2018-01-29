@@ -1,0 +1,330 @@
+<!DOCTYPE html> 
+<html lang="zh-cn">
+<head> 
+<meta charset="UTF-8">
+<title>人员实时预警</title>
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" /> 
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="../css/ryhc.css" />
+	<link rel="stylesheet" type="text/css" href="../css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="../css/EzServerClient.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/zTreeStyle.css" />
+	<link rel="stylesheet" type="text/css" href="../css/popup.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap-datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/jquery.mCustomScrollbar.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/jquery-confirm.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/EzServerClient.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/popup.css" />
+
+	
+	<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../js/common/jquery-confirm.min.js"></script>
+	<script src="../js/plugins/jquery.form.js"></script>
+	<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/fetch.js"></script>
+	<script type="text/javascript" src="../js/plugins/moment.js"></script>
+	<script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+	<script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.ztree.core.js"></script>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script type="text/javascript" src="../js/web/ryssbdjl.js"></script>
+	<script type="text/javascript" src="../js/plugins/EzMapAPI.js"></script>
+	<script type="text/javascript" src="../js/plugins/EzServerClient.min.js"></script>
+	<script type="text/javascript" src="../js/common/xzqh.js"></script>
+	<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+</head>
+<body>
+	<SCRIPT type="text/javascript">
+		var inputId;
+		var setting = {
+			view: {
+				dblClickExpand: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				beforeClick: beforeClick,
+				onClick: onClick
+			}
+		};
+		var str = JSON.stringify(checkAddressTree);
+		var checkAddress = JSON.parse( str );
+		var zNodes=[];
+		for(var i=0;i<checkAddress.length;i++){
+				var n = {id:checkAddress[i].code, pId:checkAddress[i].pid, name:checkAddress[i].name};
+				zNodes.push(n)
+		}
+		var dwdmNodes=[];
+		$.ajax({
+		    url: host+'/dwdm/info/findall',
+		    type: 'GET',
+		    dataType: 'json',
+		    success: function(data){
+		    	console.info(data)
+		    	for(var i=0;i<data.length;i++){
+		    			var n = {id:data[i].code, pId:data[i].pid, name:data[i].name};
+		    			dwdmNodes.push(n)
+		    	}
+		    	$.fn.zTree.init($("#citySelUl"), setting, dwdmNodes);
+		    }
+		});
+		
+		function sss(){
+			$("#hjdqh").removeAttr("code");
+		}
+
+		function beforeClick(treeId, treeNode) {
+			/*var check = (treeNode && !treeNode.isParent);
+			if (!check) alert("只能选择具体地址");
+			return check;*/
+		}
+		
+		function onClick(e, treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj(treeId),
+			nodes = zTree.getSelectedNodes(),
+			v = "";
+			code = "";
+			nodes.sort(function compare(a,b){return a.id-b.id;});
+			if(treeId == 'citySelUl'){
+				for (var i=0, l=nodes.length; i<l; i++) {
+					v += nodes[i].name + ",";
+					code += nodes[i].id +"-"+ nodes[i].name + ",";
+				}
+			}else{
+				for (var i=0, l=nodes.length; i<l; i++) {
+					v += nodes[i].name + ",";
+					code += nodes[i].code + ",";
+				}
+			}
+			console.log(code); 
+			console.log(inputId);
+			var cityObj = $("#"+inputId);
+			console.log(cityObj);
+			if (v.length > 0 ) v = v.substring(0, v.length-1);
+			cityObj.val(v);
+			if(treeId == 'citySelUl'){
+				$("#ucodeName").val(v);
+			}
+			if (code.length > 0 ) code = code.substring(0, code.length-1);
+			cityObj.attr("code", code);
+		}
+
+		function showMenu(id) {
+			inputId = id;
+			var cityObj = $("#"+inputId);
+			var cityOffset = $("#"+inputId).offset();
+			$("#"+inputId+"Content").css({left:cityOffset.left + "px", top:cityOffset.top + cityObj.outerHeight() + 2 + "px"}).slideDown("fast");
+
+			$("body").bind("mousedown", onBodyDown);
+		}
+		function hideMenu() {
+			$("#"+inputId+"Content").fadeOut("fast");
+			$("body").unbind("mousedown", onBodyDown);
+		}
+		function onBodyDown(event) {
+			if (!(event.target.id == "menuBtn" || event.target.id == "menuContent" || $(event.target).parents("#"+inputId+"Content").length>0)) {
+				hideMenu();
+			}
+		}
+		
+		$(document).ready(function(){
+			$.fn.zTree.init($("#hjdqhUl"), setting, xzqhNodes);
+			$.fn.zTree.init($("#checkAddressUl"), setting, zNodes);
+		});
+		//-->
+	</SCRIPT>
+	<div class="all">
+		<div class="top">
+              <a href="#"><img src="../img/nav-logo.png"></a>
+              <div class="role">
+                    <a href="#">admin</a>
+              </div>
+        </div>
+        <div class="serach-box content">
+        	<div class="title">
+        		<span>人员实时预警</span>
+        	</div>
+			<table class="serach-tab">
+				<tbody>
+					<tr>
+					<td>被核录人：</td>
+					<td><input type="text" class="form-control2" placeholder='被核录人' id="xm"></td>
+					<td>身份证号：</td>
+					<td><input type="text" class="form-control2" placeholder='身份证号' id="sfzh"></td>
+					<td>户籍地：</td>
+					<td><input type="text" onclick="showMenu('hjdqh'); return false;"  onchange="sss()" class="form-control2" placeholder='选择户籍地区划' id="hjdqh"></td>
+					<td>核查地点：</td>
+					<td>
+						<input id="checkAddress" code="" onclick="showMenu('checkAddress'); return false;" type="text" placeholder='选择核查地点' class="form-control2" />	
+					</td>
+					
+					<td><button id="search-ry" class="btn btn-default">查询</button></td>
+					</tr>
+					<tr>
+						<td>核录单位：</td>
+						<td style="position: relative;">
+	          			<input id="citySel" code="" onclick="showMenu('citySel'); return false;" type="text" placeholder='选择核录单位' class="form-control2" />
+	          				<input id="ucodeName" type="hidden"> 
+						</td>
+						<td>核录时间起：</td>
+						<td><input type="text" class="form-control2 form_datetime" placeholder='开始时间' id="startTime"></td>
+						<td>核录时间止：</td>
+						<td><input type="text" class="form-control2 form_datetime" placeholder='结束时间' id="endTime"></td>
+						<td>设备类型：</td>
+						<td>
+							<select class="form-control2" id="qqly">
+								<option value="">-全部-</option>
+							</select>
+						</td>
+						
+					</tr>
+					<tr>
+
+						<td>前端预警：</td>
+						<td>
+							<select class="form-control2" id="yj">
+								<option value="00">-全部-</option>
+								<option value="01">-预警-</option>
+							</select>
+						</td>
+						<td>预警类型：</td>
+						<td>
+							<select class="form-control2" id="yjlx">
+								<option value="">-全部-</option>
+							
+								
+
+							</select>
+						</td>
+						<td>人员标签：</td>
+						<td>
+							<select class="form-control2" id="rybq" onchange="change(this.options[this.options.selectedIndex].value)">
+								<option value="">-全部-</option>
+							</select>
+						</td>
+						<td>人员类型：</td>
+						<td>
+							<select class="form-control2" id="rylx" onchange="xichange(this.options[this.options.selectedIndex].value)">
+								<option value="">-全部-</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+					<td>警员姓名：</td>
+					<td><input type="text" class="form-control2" placeholder='警员姓名' id="jyxm"></td>
+					<td>警员警号：</td>
+					<td><input type="text" class="form-control2" placeholder='警员号' id="jyh"></td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="tools-box">
+			<div class="tools-box">
+				<button id="export-ry" class="btn  btn-default">导出</button>			 
+				<button  id="daomap" class="btn  btn-default">到地图</button>
+			</div>
+		</div>
+		<div class="tableall">
+			<div class="details-box">
+				<!-- <table class="tab-details"> -->
+				<table class="table table-bordered table-striped table-hover" style="table-layout: fixed;">
+					<thead>
+						<tr>
+							<th style="width:4%">预警</th>
+							<th style="width:7%">被核录人</th>
+							<th style="width:170px">身份证号</th>
+							<th style="width:4%">性别</th>
+							<th style="width:4%">民族</th>
+							<th style="width:6%">户籍地</th>
+							<th style="width:155px">核录时间</th>
+							<th style="width:6%">核查地点</th>
+							<th style="width:6%">核查单位</th>
+							<th style="width:7%">设备类型</th>
+							<th style="width:5%">推送结果</th>
+							<!-- <th style="width:">是否正常人</th> -->							
+							<th style="width:8%">推送目标</th>
+							<th style="width:6%">警员姓名</th>
+							<th style="width:6%">警员警号</th>
+							<th style="width:110px">警员手机号</th>
+							<th style="width:14%">人员标签</th>
+							<th style="width:7%">人员类型</th>
+							<th style="width:120px">操作</th>		
+						</tr>
+					</thead>
+					<tbody id="tableBody">
+						
+					</tbody>
+				</table>
+			</div>  
+			<!-- 分页 -->
+			<div style="text-align: right">
+				<ul id="pagination" class="pagination">
+				</ul>
+			</div>
+		</div>
+		<div class="map" style="width: 100%;height: 600px;background: #fff;">
+				<div id="map" style="width:100%;height:100%;"></div>
+		</div>
+		<script type="text/javascript">
+			 map = new EzMap('map');
+		</script>
+
+		<div id="checkAddressContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+			<ul id="checkAddressUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+		</div>
+		<div id="citySelContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+			<ul id="citySelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+		</div>
+		<div id="hjdqhContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+		<ul id="hjdqhUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+		</div>
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+		    <div class="modal-dialog">
+		        <div class="modal-content content-color">
+		            <div class="modal-header header-color">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel"></h4>
+		            </div>
+		            <div class="modal-body">
+						<!-- <table class="table table-bordered table-striped table-hover">
+							<thead id="tableHead">
+								
+							</thead>
+							<tbody id="tableBody">
+								
+							</tbody>
+						</table> -->
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+		
+	</div>
+	<div class="modal fade" id="myModal_see" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+	    <div class="modal-dialog">
+	        <div class="modal-content content-color">
+	            <div class="modal-header header-color">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel_see"></h4>
+	            </div>
+	            <div class="modal-body_see">
+	            	<table class="table table-bordered table-striped table-hover">
+						<tbody id="tableBody_modal_see">
+							
+						</tbody>
+					</table>
+	            </div>
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+</body>
+</html>

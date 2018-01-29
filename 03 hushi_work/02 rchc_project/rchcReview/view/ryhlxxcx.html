@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>人员核查记录</title>
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="../css/ryhc.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/zTreeStyle.css" />
+	<link rel="stylesheet" type="text/css" href="../css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="../css/EzServerClient.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/jquery-confirm.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/bootstrap-datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="../css/plugins/jquery.mCustomScrollbar.css" />
+	<link rel="stylesheet" type="text/css" href="../css/popup.css" />
+	<script type="text/javascript" src="../js/plugins/jquery-1.9.1.min.js"></script>
+		<script src="../js/plugins/jquery.form.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/fetch.js"></script>
+		<script type="text/javascript" src="../js/plugins/moment.js"></script>
+		<script type="text/javascript" src="../js/plugins/daterangepicker.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap-pagination.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/jquery.ztree.core.js"></script>
+		<script type="text/javascript" src="../js/common/xzqh.js"></script>
+		<script type="text/javascript" src="../js/common/jquery-confirm.min.js"></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript" src="../js/web/ryhlxxcx.js"></script>
+		<script type="text/javascript" src="../js/web/zjhcjl.js"></script>
+		<script type="text/javascript" src="../js/plugins/EzMapAPI.js"></script>
+		<script type="text/javascript" src="../js/plugins/EzServerClient.min.js"></script>
+		<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="../js/common/bootstrap-datetimepicker.zh-CN.js"></script> 
+		<script type="text/javascript" src="../js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+</head>
+<body>
+	<SCRIPT type="text/javascript">
+		var inputId;
+		var setting = {
+			view: {
+				dblClickExpand: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				beforeClick: beforeClick,
+				onClick: onClick
+			}
+		};
+		/*var str = JSON.stringify(dwdmTree);
+		var dwdmTre = JSON.parse( str );
+		var zNodes=[];
+		for(var i=0;i<dwdmTre.length;i++){
+				var n = {id:dwdmTre[i].code, pId:dwdmTre[i].pid, name:dwdmTre[i].name};
+				zNodes.push(n)
+		}*/
+		var dwdmNodes=[];
+		$.ajax({
+		    url: host+'/dwdm/info/findall',
+		    type: 'GET',
+		    dataType: 'json',
+		    success: function(data){
+		    	// console.info(data)
+		    	for(var i=0;i<data.length;i++){
+		    			var n = {id:data[i].code, pId:data[i].pid, name:data[i].name};
+		    			dwdmNodes.push(n)
+		    	}
+		    	$.fn.zTree.init($("#citySelUl"), setting, dwdmNodes);
+		    	$.fn.zTree.init($("#citySel-lteUl"), setting, dwdmNodes);
+		    	$.fn.zTree.init($("#citySel-zjUl"), setting, dwdmNodes);
+		    	$.fn.zTree.init($("#forgidUl"), setting, dwdmNodes);
+		    }
+		});
+
+
+		function beforeClick(treeId, treeNode) {
+			/*var check = (treeNode && !treeNode.isParent);
+			if (!check) alert("只能选择具体地址");
+			return check;*/
+		}
+		
+		function onClick(e, treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj(treeId),
+			nodes = zTree.getSelectedNodes(),
+			v = "";
+			code = "";
+			nodes.sort(function compare(a,b){return a.id-b.id;});
+			if(treeId == 'citySelUl'){
+				for (var i=0, l=nodes.length; i<l; i++) {
+					v += nodes[i].name + ",";
+					code += nodes[i].id +"-"+ nodes[i].name + ",";
+				} 
+			}else if(treeId == 'citySel-lteUl'){
+				for (var i=0, l=nodes.length; i<l; i++) {
+					v += nodes[i].name + ",";
+					code += nodes[i].id +"-"+ nodes[i].name + ",";
+				} 
+			}else if(treeId == 'forgidUl'){
+				for (var i=0, l=nodes.length; i<l; i++) {
+					v += nodes[i].name + ",";
+					code += nodes[i].id +"-"+ nodes[i].name + ",";
+				} 
+			}else{
+				for (var i=0, l=nodes.length; i<l; i++) {
+					v += nodes[i].name + ",";
+					code += nodes[i].code + ",";
+				}
+			}
+			var cityObj = $("#"+inputId);
+			if (v.length > 0 ) v = v.substring(0, v.length-1);
+			cityObj.val(v);
+			if(treeId == 'citySelUl'){
+				$("#ucodeName").val(v);
+			}else if(treeId == 'citySel-lteUl'){
+				$("#ucodeName-lte").val(v);
+			}else if(treeId == 'citySel-zjUl'){
+				$("#ucodeName-zj").val(v);
+			}else if(treeId == 'forgidUl'){
+				$("#fucodeName").val(v);
+			}
+			if (code.length > 0 ) code = code.substring(0, code.length-1);
+			cityObj.attr("code", code);		
+		}
+		function aaa(){
+			
+			$("#fregion").removeAttr("code");
+		}
+		function showMenu(id) {
+			inputId = id;
+			var cityObj = $("#"+inputId);
+			var cityOffset = $("#"+inputId).offset();
+			$("#"+inputId+"Content").css({left:cityOffset.left + "px", top:cityOffset.top + cityObj.outerHeight() + 2 + "px"}).slideDown("fast");
+
+			$("body").bind("mousedown", onBodyDown);
+		}
+		function sss(){
+			$("#hjdqh").removeAttr("code");
+		}
+		function ssss(){
+			$("#hjdqh-lte").removeAttr("code");
+		}
+		function hideMenu() {
+			$("#"+inputId+"Content").fadeOut("fast");
+			$("body").unbind("mousedown", onBodyDown);
+		}
+		function onBodyDown(event) {
+			if (!(event.target.id == "menuBtn" || event.target.id == "menuContent" || $(event.target).parents("#"+inputId+"Content").length>0)) {
+				hideMenu();
+			}
+		}
+		
+		$(document).ready(function(){
+			//$.fn.zTree.init($("#citySelUl"), setting, zNodes);
+			// 行政区划 			
+			$.fn.zTree.init($("#hjdqhUl"), setting, xzqhNodes);
+			$.fn.zTree.init($("#hjdqhUl2"), setting, xzqhNodes);
+			$.fn.zTree.init($("#sb"), setting, xzqhNodes);
+			$.fn.zTree.init($("#hjdqh-lteUl"), setting, xzqhNodes);
+		});
+		//-->
+	</SCRIPT>
+	<div class="all">
+		<div class="top">
+          	<a href="#"><img src="../img/nav-logo.png"></a>
+          	<div class="role">
+                <a href="#">admin</a>
+          	</div>
+        </div>
+        <div class="title">
+    		<span>人员核查记录</span>
+    	</div>
+        <ul id="myTab" class="nav nav-tabs">
+			<li class="active"><a href="#jwt" data-toggle="tab">警务通</a></li>
+			<li><a href="#zj" data-toggle="tab">闸机</a></li>
+			<li><a href="#xfj" data-toggle="tab">信访局</a></li>
+			<li><a href="#lte" data-toggle="tab">LTE</a></li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade in active" id="jwt">
+		        <div class="serach-box content">
+		        	<form action="#">
+						<table class="serach-tab">
+							<tbody>
+								<tr>
+									<td>被核录人：</td>
+									<td><input type="text" class="form-control2" placeholder='被核录人' id="bhlr_xm"></td>
+									<td>身份证号：</td>
+									<td><input type="text" class="form-control2" placeholder='身份证号' id="bhlr_sfzh"></td>
+									<td>民族：</td>
+									<td>
+										<select class="form-control2" id="bhlr_mz">
+												<option value="">-全部-</option>
+											</select>
+									</td>
+									<td>户籍地：</td>
+	
+									<td><input type="text" onclick="showMenu('hjdqh'); return false;" onchange="sss()" class="form-control2" placeholder='选择户籍地区划'
+										id="hjdqh"></td>
+									<td><button id="search-ry" class="btn btn-primary">查询</button></td>
+									<td>
+										<input type="reset" class="btn btn-primary reset1" value="重置" />
+									</td>
+								</tr>
+								<tr>
+									<td>核录时间起：</td>
+									<td><input type="text" class="form-control2 form_datetime" placeholder='核录时间起' id="hlsj_start"></td>
+									<td>核录时间止：</td>
+									<td><input type="text" class="form-control2 form_datetime" placeholder='核录时间止' id="hlsj_end"></td>
+									<td>核录地点：</td>
+									<td>
+										<select class="form-control2" id="hldd">
+												<option value="">-全部-</option>
+											</select>
+									</td>
+									<td>核录单位：</td>
+									<td style="position: relative;">
+										<input id="citySel" code="" onclick="showMenu('citySel'); return false;" type="text" placeholder='选择核录单位' class="form-control2"
+										/>
+										<input id="ucodeName" type="hidden">
+									</td>
+								</tr>
+								<tr>
+									<td>设备类型：</td>
+									<td>
+										<select class="form-control2" id="hcly">
+												<!-- <option value="">-全部-</option> -->
+												<option value="jwt">警务通</option>
+												<!-- <option value="jj">交警人证核验机</option>
+												<option value="zj">闸机</option>
+												<option value="lte">LTE</option>
+												<option value="xfj">信访局</option>  -->
+											</select>
+									</td>
+									<td>前端预警：</td>
+									<td>
+										<select class="form-control2" id="yj">
+												<option value="0">-全部-</option>
+												<option value="1">-预警-</option>
+											</select>
+									</td>
+									<td>预警类型：</td>
+									<td>
+										<select class="form-control2" id="yjlx">
+												<option value="">-全部-</option>
+												<option value="稳">-涉稳人员-</option>
+												<option value="恐">-涉恐人员-</option>
+												<option value="毒">-涉毒人员-</option>
+												<option value="访">-涉访人员-</option>
+												<option value="逃">-在逃人员-</option>
+												<option value="江">-涉疆人员-</option>
+											</select>
+									</td>
+								</tr>
+								<tr>
+									<td>人员标签：</td>
+									<td><select class="form-control2" id="rybq" onchange="change(this.options[this.options.selectedIndex].value)">
+											</select></td>
+									<td>人员类型：</td>
+									<td>
+										<select class="form-control2" id="rylx" onchange="xichange(this.options[this.options.selectedIndex].value)">
+												<option value="">-全部-</option>
+											</select>
+									</td>
+									<td>警员姓名：</td>
+									<td><input type="text" class="form-control2" placeholder='核录人' id="hlr"></td>
+									<td>警员警号：</td>
+									<td><input type="text" class="form-control2 " placeholder='警员号' id="jyh"></td>
+								</tr>
+								<tr>
+	
+	
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+				<div class="tools-box">
+					<button id="export-ry" class="btn  btn-default">导出</button>			 
+					<button  id="daomap" class="btn  btn-default">到地图</button>
+				</div>
+				<div class="tableall">
+					<div class="details-box">
+						<!-- <table class="tab-details"> -->
+						<table class="table table-bordered table-striped table-hover" style="table-layout: fixed;">
+							<thead>
+								<tr>
+									<th style="width:45px">预警</th>
+									<th class="aa" style="width:6%">被核录人</th>
+									<th class="aa" style="width:150px">身份证号</th>
+									<th class="aa" style="width:3%">性别</th>
+									<!-- <th class="aa" style="width:5%">出生日期</th> -->
+									<th class="aa" style="width:3%">民族</th>
+									<th class="aa" style="width:6%">户籍地</th>
+									<th class="aa" style="width:130px">核录时间</th>
+									<th class="aa" style="width:5%">核录地点</th>
+									<th class="aa" style="width:6%">核录单位</th>
+									<th class="aa" style="width:5%">核录原因</th>
+									<th class="aa" style="width:5%">核查来源</th>
+									<th class="aa" style="width:4%">警员姓名</th>
+									<th class="aa" style="width:4%">警员警号</th>
+									<th class="aa" style="width:110px">警员手机号</th>
+									<th class="aa" style="width:9%;">人员标签</th>
+									<th class="aa" style="width:9%;">人员类型</th>
+									<!-- <th class="aa" style="width:50px">地图</th> -->
+									<th class="aa" style="width:125px">操作</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody">
+							</tbody>
+						</table>
+					</div>
+					<!-- 分页 -->
+					<div style="text-align: right">
+						<ul id="pagination" class="pagination">
+						</ul>
+					</div>
+				
+				</div>
+				<div class="map" style="width: 100%;height: 600px;background: #fff;">
+						<div id="map" style="width:100%;height:100%;"></div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="lte">
+		        <div class="serach-box content">
+		        	<form action="#">
+						<table class="serach-tab">
+							<tbody>
+								<tr>
+									<td>被核录人：</td>
+									<td><input type="text" class="form-control2" placeholder='被核录人' id="bhlr_xm-lte"></td>
+									<td>身份证号：</td>
+									<td><input type="text" class="form-control2" placeholder='身份证号' id="bhlr_sfzh-lte"></td>
+									<td>民族：</td>
+									<td>
+										<select class="form-control2" id="lte_mz">
+												<option value="">-全部-</option>
+											</select>
+									</td>
+									<td>户籍地：</td>
+	
+									<td><input type="text" onclick="showMenu('hjdqh-lte'); return false;" onchange="ssss()" class="form-control2" placeholder='选择户籍地区划'
+										id="hjdqh-lte"></td>
+									<td><button id="search-lte" class="btn btn-primary">查询</button></td>
+									<td>
+										<input type="reset" class="btn btn-primary reset2" value="重置" />
+									</td>
+								</tr>
+								<tr>
+									<td>核录时间起：</td>
+									<td><input type="text" class="form-control2 form_datetime" placeholder='核录时间起' id="hlsj_start-lte"></td>
+									<td>核录时间止：</td>
+									<td><input type="text" class="form-control2 form_datetime" placeholder='核录时间止' id="hlsj_end-lte"></td>
+									<td>核录地点：</td>
+									<td>
+										<select class="form-control2" id="hldd-lte">
+												<option value="">-全部-</option>
+											</select>
+									</td>
+									<td>核录单位：</td>
+									<td style="position: relative;">
+										<input id="citySel-lte" code="" onclick="showMenu('citySel-lte'); return false;" type="text" placeholder='选择核录单位' class="form-control2"
+										/>
+										<input id="ucodeName-lte" type="hidden">
+									</td>
+								</tr>
+								<tr>
+									<td>设备类型：</td>
+									<td>
+										<select class="form-control2" id="hcly-lte">
+												<!-- <option value="">-全部-</option>
+												<option value="jwt">警务通</option>
+												<option value="jj">交警人证核验机</option>
+												<option value="zj">闸机</option> -->
+												<option value="lte">LTE</option>
+												<!-- <option value="xfj">信访局</option>  -->
+											</select>
+									</td>
+									<td>前端预警：</td>
+									<td>
+										<select class="form-control2" id="yj-lte">
+												<option value="0">-全部-</option>
+												<option value="1">-预警-</option>
+											</select>
+									</td>
+									<td>预警类型：</td>
+									<td>
+										<select class="form-control2" id="yjlx-lte">
+												<option value="">-全部-</option>
+												<option value="稳">-涉稳人员-</option>
+												<option value="恐">-涉恐人员-</option>
+												<option value="毒">-涉毒人员-</option>
+												<option value="访">-涉访人员-</option>
+												<option value="逃">-在逃人员-</option>
+												<option value="江">-涉疆人员-</option>
+											</select>
+									</td>
+								</tr>
+								<tr>
+									<td>人员标签：</td>
+									<td><select class="form-control2" id="rybq-lte" onchange="changelte(this.options[this.options.selectedIndex].value)">
+											</select></td>
+									<td>人员类型：</td>
+									<td>
+										<select class="form-control2" id="rylx-lte" onchange="xichangelte(this.options[this.options.selectedIndex].value)">
+												<option value="">-全部-</option>
+											</select>
+									</td>
+									<td>警员姓名：</td>
+									<td><input type="text" class="form-control2" placeholder='核录人' id="hlr-lte"></td>
+									<td>警员警号：</td>
+									<td><input type="text" class="form-control2 " placeholder='警员号' id="jyh-lte"></td>
+								</tr>
+								<tr>
+	
+	
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+				<div class="tools-box">
+					<button id="export-ry-lte" class="btn  btn-default">导出</button>			 
+					<button  id="daomap-lte" class="btn  btn-default">到地图</button>
+				</div>
+				<div class="tableall">
+					<div class="details-box">
+						<!-- <table class="tab-details"> -->
+						<table class="table table-bordered table-striped table-hover" style="table-layout: fixed;">
+							<thead>
+								<tr>
+									<th style="width:40px">预警</th>
+									<th class="aa" style="width:6%">被核录人</th>
+									<th class="aa" style="width:150px">身份证号</th>
+									<th class="aa" style="width:3%">性别</th>
+									<!-- <th class="aa" style="width:5%">出生日期</th> -->
+									<th class="aa" style="width:3%">民族</th>
+									<th class="aa" style="width:6%">户籍地</th>
+									<th class="aa" style="width:130px">核录时间</th>
+									<th class="aa" style="width:5%">核录地点</th>
+									<th class="aa" style="width:6%">核录单位</th>
+									<th class="aa" style="width:5%">核录原因</th>
+									<th class="aa" style="width:5%">核查来源</th>
+									<th class="aa" style="width:4%">警员姓名</th>
+									<th class="aa" style="width:4%">警员警号</th>
+									<th class="aa" style="width:110px">警员手机号</th>
+									<th class="aa" style="width:9%;">人员标签</th>
+									<th class="aa" style="width:9%;">人员类型</th>
+									<!-- <th class="aa" style="width:50px">地图</th> -->
+									<th class="aa" style="width:121px">操作</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody-lte">
+							</tbody>
+						</table>
+					</div>
+					<!-- 分页 -->
+					<div style="text-align: right">
+						<ul id="pagination-lte" class="pagination">
+						</ul>
+					</div>
+				
+				</div>
+				<div class="map" style="width: 100%;height: 600px;background: #fff;">
+						<div id="map" style="width:100%;height:100%;"></div>
+				</div>	
+			</div>
+			<div class="tab-pane fade" id="zj">
+				<div class="serach-box content">
+					<form action="#">
+						<table class="serach-tab">
+							<tbody>
+								<tr>
+									<td>姓名：</td>
+									<td><input type="text" class="form-control2" placeholder='姓名' id="fname"></td>
+									<td>民族：</td>
+									<td>
+										<select class="form-control2" id="fnation">
+												<option value="">-全部-</option>
+											</select>
+									</td>
+
+									<td>证件类型：</td>
+									<td>
+										<select class="form-control2" id="fcardtype">
+												<option value="">-全部-</option>
+												<option value="11">-身份证-</option>
+											</select>
+									</td>
+									<td>证件号码：</td>
+									<td><input type="text" class="form-control2" placeholder='证件号码' id="fcardnum"></td>
+									<td><button id="search-ry-zj" class="btn btn-primary">查询</button></td>
+									<td>
+										<input type="reset" class="btn btn-primary reset3" value="重置" />
+									</td>
+								</tr>
+								<tr>
+									<td>采集类型：</td>
+									<td>
+										<select class="form-control2" id="fcollecttype">
+												<option value="">-全部-</option>
+												<option value="0">机读</option>
+												<option value="1">手工</option>
+											</select>
+									</td>
+									<td class="hide">核录单位：</td>
+									<td class="hide" style="position: relative;">
+										<input id="citySel-zj" code="" onclick="showMenu('citySel-zj'); return false;" type="text" class="form-control2" placeholder='选择核录单位'
+										/>
+										<input id="ucodeName-zj" type="hidden">
+									</td>
+									<td>数据来源：</td>
+									<td>
+										<select class="form-control2" id="sjly">
+												<option value="">-全部-</option>
+												<option value="1">汽车站</option>
+												<option value="3">火车站</option>
+												<option value="4">飞机场</option>
+											</select>
+									</td>
+									<td>登记起始时间：</td>
+									<td><input type="text" class="form-control2 form_datetime" placeholder='登记起始时间' id="beginTime"></td>
+									<td style="text-align: right;">登记截止时间：</td>
+									<td><input type="text" class="form-control2 form_datetime" placeholder='登记截止时间' id="endTime"></td>
+								</tr>
+								<tr>
+									<td>住址：</td>
+									<td><input type="text" class="form-control2" placeholder='住址' id="faddress"></td>
+
+									<td>登记人：</td>
+									<td><input type="text" class="form-control2" placeholder='登记人' id="fregperson"></td>
+									<td>组织机构：</td>
+									<td style="position: relative;">
+										<input id="forgid" code="" onclick="showMenu('forgid'); return false;" type="text" placeholder='选择组织机构' class="form-control2"
+										/>
+										<input id="fucodeName" type="hidden">
+									</td>
+									<td>户籍地区：</td>
+									<td><input type="text" onclick="showMenu('fregion'); return false;" onchange="aaa()" class="form-control2" placeholder='选择户籍地区划'
+										id="fregion"></td>
+								</tr>
+								<tr>
+
+									<td>人员类型：</td>
+									<td>
+										<select class="form-control2" id="rylx-zj">
+												<option value="">-全部-</option>
+											</select>
+									</td>
+									<td>进出站标识：</td>
+									<td>
+										<select class="form-control2" id="jczbs">
+												<option value="">-全部-</option>
+												<option value="0">进站</option>
+												<option value="1">出站</option>
+											</select>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+				<div class="tools-box"> 
+					<button id="export-zj" class="btn  btn-default" style="position: absolute;right: 28px;">导出</button>			 	
+				</div>
+				<div class="tableall">
+					<div class="details-box">
+					<!-- <table class="tab-details"> -->
+					<table class="table table-bordered table-striped table-hover" style="table-layout: fixed;">
+						<thead>
+							<tr>
+								<th style="width:4%">姓名</th>
+								<th style="width:170px">证件号码</th>
+								
+								<th style="width:6%">民族</th>
+								<th style="width:6%">证件类型</th>
+								<th style="width:6%">采集类型</th>
+								<th style="width:7%">数据来源</th>
+								<th style="width:170px">登记时间</th>
+								<th style="width:166px">住址</th>
+								<th style="width:5%">登记人</th>
+								<th style="width:6.5%">组织机构</th>
+								<th style="width:7%">户籍地区</th>
+								<th style="width:6%">人员类型</th>
+								<th style="width:6%">进出站标识</th>
+								<th style="width:120px">操作</th>
+							</tr>
+						</thead>
+						<tbody id="tableBody-zj">
+						</tbody>
+					</table>
+					</div>
+					<!-- 分页 -->
+					<div style="text-align: right">
+						<ul id="pagination-zj" class="pagination">
+						</ul>
+					</div>
+				</div> 
+			</div>
+			<div class="tab-pane fade" id="xfj">
+		        <div class="serach-box content">
+					<form action="#">
+						<table class="serach-tab" style="table-layout: fixed;">
+							<tbody>
+								<tr>
+									<td>姓名：</td>
+									<td><input type="text" class="form-control2" placeholder='姓名' id="xf_name"></td>
+									<td>身份证号：</td>
+									<td><input type="text" class="form-control2" placeholder='身份证号' id="xf_sfzh"></td>
+									<td>民族：</td>
+									<td>
+										<select class="form-control2" id="xf_mz">
+												<option value="">-全部-</option>
+											</select>
+									</td>
+									<td><button id="search-xf" class="btn btn-primary">查询</button></td>
+									<td>
+										<input type="reset" class="btn btn-primary reset4" value="重置" />
+									</td>
+								</tr>
+								<tr>
+									<td>前端预警：</td>
+									<td>
+										<select class="form-control2" id="xf_yj">
+												<option value="0">-全部-</option>
+												<option value="1">-预警-</option>
+											</select>
+									</td>
+									<td>预警类型：</td>
+									<td>
+										<select class="form-control2" id="xf_yjlx">
+												<option value="">-全部-</option>
+												<option value="1">-涉恐人员-</option>
+												<option value="2">-涉稳人员-</option>
+												<option value="3">-在逃人员-</option>
+												<option value="4">-涉毒人员-</option>
+												<option value="5">-刑事犯罪前科人员-</option>
+												<option value="6">-肇事肇祸精神病人员-</option>
+												<option value="7">-重点上访人员-</option>
+												<option value="8">-重点人员-</option>
+												<option value="9">-布控人员-</option>
+											</select>
+									</td>
+									<td>户籍地：</td>
+	
+									<td><input type="text" onclick="showMenu('xf_hjdqh'); return false;" onchange="sss('xf_hjdqh')" class="form-control2"
+										placeholder='选择户籍地区划' id="xf_hjdqh"></td>
+	
+								</tr>
+								<tr>
+									<td>导入时间起：</td>
+									<td><input type="text" class="form-control2 form_datetime" placeholder='核录时间起' id="xf_start"></td>
+									<td>导入时间止：</td>
+									<td><input type="text" class="form-control2 form_datetime" placeholder='核录时间止' id="xf_end"></td>
+									<td>信访单位：</td>
+									<td>
+										<select class="form-control2" id="xf_jcz">
+												<option value="">-全部-</option>
+												<option value="内蒙古自治区信访局">-内蒙古自治区信访局-</option>
+												<option value="呼和浩特市信访局">-呼和浩特市信访局-</option>
+											</select>
+									</td>
+	
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+				<div class="tools-box" style="position: relative;">
+					<button id="export-xf" class="btn  btn-default" style="position: absolute;right: 28px;">导出</button>			 
+				</div>		
+				<div class="tableall">
+					<div class="details-box">
+						<!-- <table class="tab-details"> -->
+						<table class="table table-bordered table-striped table-hover" style="table-layout: fixed;">
+							<thead>
+								<tr>
+									<th class="aa" style="width:40px">预警</th>
+									<th class="aa" style="width:4%">姓名</th>
+									<th class="aa" style="width:140px">身份证</th>
+									<th class="aa" style="width:3%">性别</th>
+									<th class="aa" style="width:9%">出生日期</th>
+									<th class="aa" style="width:3%">民族</th>
+									<th class="aa" style="width:5%">户籍</th>
+									<th class="aa" style="width:9%">导入时间</th>
+									<th class="aa" style="width:4%">预警类型</th>
+									<th class="aa" style="width:110px">是否为布控人员</th>
+									<th class="aa" style="width:6%">比对状态</th>
+									<th class="aa" style="width:6%">信访单位</th>
+									<th class="aa" style="width:100px">操作</th>
+								</tr>
+							</thead>
+							<tbody id="tableBody_xf">
+							</tbody>
+						</table>
+					</div>
+					<!-- 分页 -->
+					<div style="text-align: right">
+						<ul id="xf_pagination" class="pagination">
+						</ul>
+					</div>
+					
+				</div>
+
+				<div id="xf_hjdqhContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+				<ul id = "sb" class="ztree" style="margin-top:0; width:300px;"></ul>
+			</div>
+		</div> 
+	</div>
+	
+
+
+	<div id="citySelContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+	<ul id="citySelUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+	</div>
+	<div id="forgidContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+	<ul id="forgidUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+	</div>
+	
+	<div id="citySel-lteContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+	<ul id="citySel-lteUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+	</div>
+	<div id="citySel-zjContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+	<ul id="citySel-zjUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+	</div>
+	
+	<div id="hjdqhContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+	<ul id="hjdqhUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+	</div>
+	<div id="hjdqh-lteContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+	<ul id="hjdqh-lteUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+	</div>
+	<div id="fregionContent" class="menuContent" style="display:none; position: absolute;background: #fff;height: 120px;">
+		<ul id="hjdqhUl2" class="ztree" style="margin-top:0; width:300px;"></ul>
+	</div>
+	
+	<script type="text/javascript">
+		 map = new EzMap('map');
+	</script>
+
+	<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+		    <div class="modal-dialog">
+		        <div class="modal-content content-color">
+		            <div class="modal-header header-color">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel"></h4>
+		            </div>
+		            <div class="modal-body">
+						<!-- <table class="table table-bordered table-striped table-hover">
+							<thead id="tableHead">
+								
+							</thead>
+							<tbody id="tableBody">
+								
+							</tbody>
+						</table> -->
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+	<!-- 查看模态框（Modal） -->
+	<div class="modal fade" id="myModal_see" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+	    <div class="modal-dialog">
+	        <div class="modal-content content-color">
+	            <div class="modal-header header-color">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel_see"></h4>
+	            </div>
+	            <div class="modal-body_see">
+	            	<table class="table table-bordered table-striped table-hover">
+						<tbody id="tableBody_modal_see">
+							
+						</tbody>
+					</table>
+	            </div>
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="margin-top: 10%">
+	    <div class="modal-dialog">
+	        <div class="modal-content content-color">
+	            <div class="modal-header header-color">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel"></h4>
+	            </div>
+	            <div class="modal-body">
+					<!-- <table class="table table-bordered table-striped table-hover">
+						<thead id="tableHead">
+							
+						</thead>
+						<tbody id="tableBody">
+							
+						</tbody>
+					</table> -->
+	            </div>
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+</body>
+</html>

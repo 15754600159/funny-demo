@@ -1,0 +1,116 @@
+<div class="new-page">
+	
+	<div class="page-content wwgzrygl">
+
+		<!-- 筛选条件框start -->
+		<div class="content-block filter-box">
+			<div class="color-block-title">筛选条件</div>
+			<div class="filter-conditions">
+				<form action="" id="form-department-search">
+					<div class="input-item">
+						<label>挖掘时间：</label>
+						<div class="time-select">
+							<input name="beginWjsj"  class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+							<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+							--
+							<input name="endWjsj" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+							<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						</div>
+					</div>
+					<div class="input-item">
+						<label>任务记录编号：</label>
+						<input name="rwId" type="text" class="input" placeholder="请输入任务记录编号" />
+					</div>
+					<div class="input-item">
+						<label>群体名称：</label>
+						<input name="qtName" type="text" class="input" placeholder="请输入群体名称" />
+					</div>
+
+					<!-- <div class="filter-button-box">
+						<button type="button" class="btn btn-normal btn_search">查 询</button>
+					</div> -->
+
+				</form>
+			</div>
+		</div>
+		<!-- 筛选条件框end -->
+
+		<!-- 操作按钮start -->
+		<div class="operate-buttons-box">
+			<div class="left-buttons">
+				<button type="button" id="form-qtwj-export" class="btn btn-border">导出</button>
+				<button type="button" id="form-qtwj-refresh" class="btn btn-border">刷新</button>
+			</div>
+			<div class="right-buttons">
+				<button type="button" id="form-qtwj-submit" class="btn btn-normal">查询</button>
+				<button type="button" id="form-qtwj-reset" class="btn btn-normal">重置</button>
+			</div>
+		</div>
+		<!-- 操作按钮end -->
+
+		<!-- 数据表格start -->
+		<div class="table-box">
+			<table class="table table-bordered my-table-striped my-table-condensed">
+				<thead>
+					<tr>
+						<th>
+							<label class="check check-nolabel">
+								<input type="checkbox" id="list-qtwj-search-checkAll"><span></span>
+							</label>
+						</th>
+						<th style="width: 10%;">任务记录编号</th>
+						<th style="width: 10%;">群体名称</th>
+						<th style="width: 10%;">群体规模</th>
+						<th style="width: 10%;">群体成因</th>
+						<th style="width: 10%;">群体类型</th>
+						<th style="width: 14%;">数据来源</th>
+						<th style="width: 9%;">挖掘时间</th>
+						<th style="width: 10%;">描述</th>
+						<th style="width: 13%;">操作</th>
+					</tr>
+				</thead>
+				<tbody id="list-qtwj-search" class="table_all">
+					
+				</tbody>
+			</table>
+
+			<ul id="qtwj-search-pagebtn" class="pagination pagination-sm"></ul>
+		</div>
+		<!-- 数据表格end -->
+
+	</div>
+
+</div>
+
+<!-- 群体挖掘列表 -->
+<script type="text/html" id="tmpl-list-qtwj-search">
+	<!--% for (var i in o) { %-->
+	<tr>
+		<td style="text-align: center">
+			<label class="check check-nolabel">
+					<input type="checkbox" value="{%=o[i].id%}" name="id"><span></span>
+				</label>
+		</td>
+		<td>{%=o[i].rwId%}</td>
+		<td>{%=o[i].qtName%}</td>
+		<td>{%=o[i].qtgm%}</td>
+		<td>{%=o[i].qtcy%}</td>
+		<td>{%=o[i].qtlx%}</td>
+		<td>{%=o[i].source%}</td>
+		<td>{%=o[i].wjsj%}</td>
+		<td>{%=o[i].description%}</td>
+		<td class="operate">
+			<span class="glyphicon glyphicon-user" onclick="app.qtwj.search.openPerson('{%=o[i].id%}');" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="人员"></span>
+			<span class="glyphicon glyphicon-list-alt" onclick="app.qtwj.search.openView('{%=o[i].id%}');" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="查看"></span>
+		</td>
+	</tr>
+	<!--% } %-->
+</script>
+
+<script>
+	app.qtwj.search.init();
+
+</script>
+
+
+

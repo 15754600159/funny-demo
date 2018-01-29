@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="panel entity_count">
+            <div class="content pull-left">
+                <div class="d-info"><span class="info icon icon-entity2"></span><span class="info description">实体</span></div>
+                <div class="d-info"><span class="info typeNum"></span><div> 个 种类</div></div>
+                <div class="d-info"><span class="info num"></span><div>万 个数</div></div>
+            </div>
+            <div class="chart pull-right"></div>
+        </div>
+        <div class="panel relation_count">
+            <div class="content pull-left">
+                <div class="d-info"><span class="info icon icon-relationship"></span><span class="info description">关系</span></div>
+                <div class="d-info"><span class="info typeNum"></span> <div> 个 种类</div></div>
+                <div class="d-info"><span class="info num"></span><div>万 个数</div></div>
+            </div>
+            <div class="chart pull-right"></div>
+        </div>
+        <div class="panel event_count">
+            <div class="content pull-left">
+                <div class="d-info"><span class="info icon icon-event2"></span><span class="info description">事件</span></div>
+                <div class="d-info"><span class="info typeNum"></span><div> 个 种类</div></div>
+                <div class="d-info"><span class="info num"></span><div>万 个数</div></div>
+            </div>
+            <div class="chart pull-right"></div>
+        </div>
+    </div>
+    <div class="row">
+       <!-- <div class="searchbar">
+
+            <div class="searchbox pull-right">
+                <label><input name="keyword" class="searchbox-ipt" placeholder="输入关键字查询" type="text"></label>
+                <a class="searchbox-btn" href="javascript:;"></a>
+            </div>
+            <div class="daterangebox pull-right">
+                <input type="text" name="reservation" class="daterangebox-ipt active" value="" placeholder="按周期模糊搜索"
+                       readonly="">
+                <a class="daterangebox-btn" href="javascript:;"></a>
+            </div>
+        </div>-->
+        <table   class="grid table" width="100%">
+            <thead>
+            <tr>
+                <th>源表中文名</th>
+                <th>源表英文名</th>
+                <th>增量类型</th>
+                <th>数据更新状态</th>
+                <th>更新周期</th>
+                <th>最后导入时间</th>
+                <th>本批导入记录</th>
+                <th>累计导入记录数</th>
+
+            </tr>
+            </thead>
+        </table>
+        <div class="tableContainer">
+            <table id="dataqualityTable" class="grid table" width="100%">
+                <tbody></tbody>
+            </table>
+    </div>
+
+</div>
+

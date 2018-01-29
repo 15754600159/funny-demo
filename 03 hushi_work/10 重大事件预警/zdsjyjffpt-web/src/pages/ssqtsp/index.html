@@ -1,0 +1,90 @@
+<div class="new-page">
+    
+    <div class="page-content wwgzrygl">
+
+        <!-- 筛选条件框start -->
+        <div class="content-block filter-box">
+            <div class="color-block-title">筛选条件</div>
+            <div class="filter-conditions">
+                <form action="" id="form-department-search">
+                    <div class="input-item">
+                        <label>群体类别：</label>
+                        <input id="sp-qtlb" type="text" class="input" placeholder="请选择群体类别" code="" onclick="app.wfgzqtgl.sp.showMenu('sp-qtlb'); return false;" readonly/>
+                    </div>
+                    <div class="input-item">
+                        <label>采集人姓名：</label>
+                        <input id="xm" type="text" class="input" placeholder="请输入采集人姓名" />
+                    </div>
+                    <div class="input-item">
+                        <label>审批状态：</label>
+                        <select id="spzt" style="width: 200px;" class="form-control select">
+                                <option value="">-请选择-</option>
+                            <option value="01">-未审批-</option>
+                            <option value="02">-审批通过-</option>
+                        </select>
+                    </div>
+                    <div class="input-item">
+                        <label>申请时间：</label>
+                        <div class="time-select">
+                            <input id="sqsjq" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            --
+                            <input id="sqsjz" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="filter-button-box">
+                        <button type="button" class="btn btn-normal btn_search">查 询</button>
+                    </div> -->
+
+                </form>
+            </div>
+        </div>
+        <!-- 筛选条件框end -->
+
+        <!-- 操作按钮start -->
+        <div class="operate-buttons-box">
+            <div class="left-buttons">
+                <!-- <button type="button" class="btn btn-border" onclick="app.zxrygl.add.open();">添加</button>
+                <button type="button" class="btn btn-border" onclick="app.zxrygl.add.del();">删除</button> -->
+            </div>
+            <div class="right-buttons">
+                <button type="button" class="btn btn-normal" onclick="app.wfgzqtgl.sp.all();">查询</button>
+                <!-- <button type="button" class="btn btn-normal" onclick="app.zxrygl.search.reset();">重置</button> -->
+            </div>
+        </div>
+        <!-- 操作按钮end -->
+
+        <!-- 数据表格start -->
+        <div class="table-box">
+            <table class="table table-bordered my-table-striped my-table-condensed">
+                <thead>
+                    <tr>
+                        <th>成立时间</th>
+                        <th>采集人姓名</th>
+                        <th>群体名称</th>
+                        <th>审批状态</th>
+                        <th>群体规模</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody class="table_all">
+                    
+                </tbody>
+            </table>
+
+            <ul id="paginationsps" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 数据表格end -->
+
+    </div>
+    <div id="sp-qtlbContent" class="menuContent" style="display:none; position: absolute;background: #fff;width:241px;height: 120px;overflow:auto">
+            <ul id="sp-qtlbUl" class="ztree" style="margin-top:0; width:300px;"></ul>
+        </div>
+
+    <script>
+        app.wfgzqtgl.sp.init(); 
+    </script>
+
+</div>

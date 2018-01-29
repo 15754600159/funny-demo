@@ -1,0 +1,63 @@
+<div class="container bgmask qbxsgl-addSsqt">
+    <div class="window popIn" style="width: 50%; height: 80%;">
+
+        <!-- 弹框头部start -->
+        <header>
+            <h1>添加涉事群体</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <!-- 弹框头部end -->
+
+        <!-- 弹框正文start -->
+        <div class="content">
+
+            <!-- 数据表格start -->
+            <div class="table-box">
+                <table class="table table-bordered my-table-striped my-table-condensed">
+                    <thead>
+                        <tr>
+                            <th class="checks td-width-1">
+                                <label class="check">
+                                    <input type="checkbox" class="Checkall">
+                                    <span>全选</span>
+                                </label>
+                            </th>
+                            <th class="td-width-2">群体名称</th>
+                            <th class="td-width-2">群体类别</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <!-- <tr>
+                            <td class="checks">
+                                <label class="check">
+                                    <input type="checkbox" class="checkbox" val="">
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td>省厅</td>
+                            <td>涉访</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+    
+                <ul id="ssqtPagination" class="pagination pagination-sm"></ul>
+            </div>
+            <!-- 数据表格end -->
+
+        </div>
+        <!-- 弹框正文end -->
+
+        <!-- 弹框底部start -->
+        <footer>
+            <a class="btn btn_submit">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+        <!-- 弹框底部end -->
+
+    </div>
+</div>
+
+<script>
+    app.qbxsfx.qbxsgl.addSsqt.init();
+</script>
+    

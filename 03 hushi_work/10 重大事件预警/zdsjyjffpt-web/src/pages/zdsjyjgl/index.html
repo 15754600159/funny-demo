@@ -1,0 +1,370 @@
+<div class="new-page">
+    <div class="page-content zdsjyjgl">
+        <!-- 头部图标框start -->
+        <div class="content-block top-part">
+            <div class="color-block-title">近期未处理事件预警统计：合计
+                <span>500</span> 条
+            </div>
+            <div class="block-content">
+                <div class="left-part">
+                    <div class="ring swsjyj active" data-subpage="module">
+                        <p>涉稳事件预警
+                            <br/>
+                            <span>-</span>
+                        </p>
+                    </div>
+                    <div class="ring sjsjyj" data-subpage="module">
+                        <p>涉疆事件预警
+                            <br/>
+                            <span>-</span>
+                        </p>
+                    </div>
+                    <!--<div class="ring zasjyj" data-subpage="module">-->
+                        <!--<p>治安事件预警-->
+                            <!--<br/>-->
+                            <!--<span>-</span>-->
+                        <!--</p>-->
+                    <!--</div>-->
+                    <div class="ring wwqtyj" data-subpage="group">
+                        <p>维稳群体预警
+                            <br/>
+                            <span>-</span>
+                        </p>
+                    </div>
+                    <div class="ring wwryyj" data-subpage="person">
+                        <p>维稳人员预警
+                            <br/>
+                            <span>-</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="prompt-word">
+                        <p>
+                            签收规定时间：
+                            <span class="red-word">红色预警：30分钟</span>
+                            <span class="orange-word">橙色预警：60分钟</span>
+                            <span class="yellow-word">黄色预警：12小时</span>
+                            <span class="blue-word">蓝色预警：24小时</span>
+                        </p>
+                        <p>
+                            反馈规定时间：
+                            <span class="red-word">红色预警：24小时</span>
+                            <span class="orange-word">橙色预警：48小时</span>
+                            <span class="yellow-word">黄色预警：72小时</span>
+                            <span class="blue-word">蓝色预警：1周</span>
+                        </p>
+                        <p class="red-word">请及时反馈签收！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 头部图标框end -->
+
+        <!-- 模型分页start -->
+        <div class="sub-page module active">
+            <!-- 筛选条件框start -->
+            <div class="content-block filter-box">
+                <div class="color-block-title">筛选条件</div>
+                <div class="filter-conditions">
+                    <form action="">
+                        <div class="input-item">
+                            <label>预警编号：</label>
+                            <input name="warnId" type="text" class="input" placeholder="请输入情报名称" />
+                        </div>
+                        <div class="input-item">
+                            <label>模型名称：</label>
+                            <input name="modelName" type="text" class="input" placeholder="请输入情报名称" />
+                        </div>
+                        <div class="input-item">
+                            <label>预警时间：</label>
+                            <div class="time-select">
+                                <input name="warningStartTime" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                --
+                                <input name="warningEndTime" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="input-item">
+                            <label>是否反馈：</label>
+                            <select name="processStatus" class="form-control select">
+                                <option value="">全部</option>
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+                        <div class="input-item">
+                            <label>是否有群体：</label>
+                            <select name="isGroup" class="form-control select">
+                                <option value="">全部</option>
+                                <option value="1">是</option>
+                                <option value="0">否</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-button-box">
+                        	<button type="button" class="btn btn-normal btn_download">下 载</button>
+                            <button type="button" class="btn btn-normal btn_search">查 询</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- 筛选条件框end -->
+            <!-- 数据表格start -->
+            <div class="table-box">
+                <table class="table table-bordered my-table-striped my-table-condensed">
+                    <thead>
+                        <tr>
+                            <th class="td-width-2">模型名称</th>
+                            <th class="td-width-2">预警编号</th>
+                            <th class="td-width-2">模型类型</th>
+                            <th>预警详情</th>
+                            <th class="td-width-2">预警时间</th>
+                            <th class="td-width-2">活动时间</th>
+                            <th class="td-width-1">是否有群体</th>
+                            <th class="td-width-1">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <!-- <tr>
+                            <td class="blue-word">维族人员敏感时期活动预警</td>
+                            <td>966656666966966</td>
+                            <td>涉稳事件预警模型 </td>
+                            <td>2017年11月15日，涉稳人员张三、李四、王五等人，同行进京</td>
+                            <td>2016-08-05 18:22:22</td>
+                            <td>2016-08-09 18:22:22</td>
+                            <td class="blue-word">挖掘群体详情</td>
+                            <td class="operate">
+                                <span class="glyphicon glyphicon-list-alt" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="详情"></span>
+                                <span class="glyphicon glyphicon-share-alt" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="反馈"></span>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+                <ul id="modelPagination" class="pagination pagination-sm"></ul>
+            </div>
+            <!-- 数据表格end -->
+        </div>
+        <!-- 模型分页end -->
+
+        <!-- 群体分页start -->
+        <div class="sub-page group">
+            <!-- 筛选条件框start -->
+            <div class="content-block filter-box">
+                <div class="color-block-title">筛选条件</div>
+                <div class="filter-conditions">
+                    <form action="">
+                        <div class="input-item">
+                            <label>群体类别：</label>
+                            <input name="groupType" type="text" class="input" placeholder="请输入群体类别" />
+                        </div>
+                        <div class="input-item">
+                            <label>群体名称：</label>
+                            <input name="groupName" type="text" class="input" placeholder="请输入群体名称" />
+                        </div>
+                        <div class="input-item">
+                            <label>活动类型：</label>
+                            <select name="actType" class="form-control select">
+                                <option value="">请选择</option>
+                                <option value="火车">火车</option>
+                                <option value="飞机">飞机</option>
+                                <option value="汽车">汽车</option>
+                                <option value="宾馆">宾馆</option>
+                                <option value="网吧">网吧</option>
+                            </select>
+                        </div>
+                        <div class="input-item">
+                            <label>预警时间：</label>
+                            <div class="time-select">
+                                <input name="warningStartTime" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                --
+                                <input name="warningEndTime" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="input-item">
+                            <label>办理单位：</label>
+                            <input name="transactUnit" type="text" class="input" placeholder="请输入办理单位" />
+                        </div>
+                        <div class="input-item">
+                            <label>流程状态：</label>
+                            <select name="processStatus" class="form-control select">
+                                <option value="">请选择</option>
+                                <option value="1">未反馈</option>
+                                <option value="2">已反馈/未签收</option>
+                                <option value="3">已签收</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-button-box">
+                        	<button type="button" class="btn btn-normal btn_download">下 载</button>
+                            <button type="button" class="btn btn-normal btn_search">查 询</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- 筛选条件框end -->
+            <!-- 数据表格start -->
+            <div class="table-box">
+                <table class="table table-bordered my-table-striped my-table-condensed">
+                    <thead>
+                        <tr>
+                            <th class="td-width-1">状态</th>
+                            <th class="td-width-2">群体名称</th>
+                            <th class="td-width-1">群体类型</th>
+							<th>预警详情</th>
+							<th class="td-width-2">预警时间</th>
+                            <th class="td-width-2">活动时间</th>
+                            <th class="td-width-2">活动发生地区划</th>
+                            <th class="td-width-1">活动类型</th>
+							<th class="td-width-1">办理单位</th>
+                            <th class="td-width-2">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <!-- <tr>
+                            <td>已签收</td>
+                            <td>2017-10-31 12:02:24</td>
+                            <td>张三</td>
+                            <td>非正常上访人员</td>
+                            <td>呼和浩特市赛罕区哪路分公司</td>
+                            <td>呼市玉泉分局</td>
+                            <td>2017-10-31 12:02:24</td>
+                            <td>111</td>
+                            <td class="operate">
+                                <span class="glyphicon glyphicon-list-alt" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="详情"></span>
+                                <span class="glyphicon glyphicon-share-alt" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="反馈"></span>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+                <ul id="groupPagination" class="pagination pagination-sm"></ul>
+            </div>
+            <!-- 数据表格end -->
+        </div>
+        <!-- 群体分页end -->
+
+        <!-- 人员分页start -->
+        <div class="sub-page person">
+            <!-- 筛选条件框start -->
+            <div class="content-block filter-box">
+                <div class="color-block-title">筛选条件</div>
+                <div class="filter-conditions">
+                    <form action="">
+                        <div class="input-item">
+                            <label>姓名：</label>
+                            <input name="name" type="text" class="input" placeholder="请输入姓名" />
+                        </div>
+                        <div class="input-item">
+                            <label>身份证号：</label>
+                            <input name="sfzh" type="text" class="input" placeholder="请输入身份证号" />
+                        </div>
+                        <div class="input-item personCategory-tree-item tree-item">
+                            <label>人员类别：</label>
+                            <input name="personCategoryCn" class="input node-name" type="text" placeholder="请选择人员类别" readonly />
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            <input name="personCategory" class="input node-code" type="text" style="display: none;" readonly />
+                            <div class="ztree personCategory-tree-dom tree-dom" style="display: none;"></div>
+                        </div>
+                        <div class="input-item">
+                            <label>活动类型：</label>
+                            <select name="actType" class="form-control select">
+                                <option value="">请选择</option>
+                                <option value="火车">火车</option>
+                                <option value="飞机">飞机</option>
+                                <option value="汽车">汽车</option>
+                                <option value="宾馆">宾馆</option>
+                                <option value="网吧">网吧</option>
+                            </select>
+                        </div>
+                        <div class="input-item">
+                            <label>预警时间：</label>
+                            <div class="time-select">
+                                <input name="warningStartTime" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                --
+                                <input name="warningEndTime" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="input-item">
+                            <label>办理单位：</label>
+                            <input name="transactUnit" type="text" class="input" placeholder="请输入办理单位" />
+                        </div>
+                        <div class="input-item">
+                            <label>流程状态：</label>
+                            <select name="processStatus" class="form-control select">
+                                <option value="">请选择</option>
+                                <option value="1">未反馈</option>
+                                <option value="2">已反馈/未签收</option>
+                                <option value="3">已签收</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-button-box">
+                        	<button type="button" class="btn btn-normal btn_download">下 载</button>
+                            <button type="button" class="btn btn-normal btn_search">查 询</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- 筛选条件框end -->
+
+            <!-- 数据表格start -->
+            <div class="table-box">
+                <table class="table table-bordered my-table-striped my-table-condensed">
+                    <thead>
+                        <tr>
+                            <th class="td-width-1">状态</th>
+                            <th class="td-width-1">姓名</th>
+                            <th class="td-width-2">证件号码</th>
+                            <th class="td-width-1">人员类别</th>
+							<th>预警详情</th>
+							<th class="td-width-2">预警时间</th>
+                            <th class="td-width-2">活动时间</th>
+                            <th>活动发生地区划</th>
+                            <th class="td-width-1">活动类型</th>
+							<th class="td-width-1">办理单位
+                            <th class="td-width-2">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <!-- <tr>
+                            <td>已签收</td>
+                            <td>2017-10-31 12:02:24</td>
+                            <td>张三</td>
+                            <td>150105196811260525</td>
+                            <td>非正常上访人员</td>
+                            <td>呼和浩特市赛罕区哪路分公司</td>
+                            <td>呼市玉泉分局</td>
+                            <td>2017-10-31 12:02:24</td>
+                            <td>111</td>
+                            <td class="operate">
+                                <span class="glyphicon glyphicon-list-alt" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="详情"></span>
+                                <span class="glyphicon glyphicon-share-alt" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="反馈"></span>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+                <ul id="personPagination" class="pagination pagination-sm"></ul>
+            </div>
+            <!-- 数据表格end -->
+        </div>
+        <!-- 人员分页end -->
+
+    </div>
+
+
+    <script>
+        app.zdsjyjgl.init();
+    </script>
+
+</div>

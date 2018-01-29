@@ -1,0 +1,5 @@
+app.zxrygl = {
+	openAddPage: function() {
+
+	}
+};

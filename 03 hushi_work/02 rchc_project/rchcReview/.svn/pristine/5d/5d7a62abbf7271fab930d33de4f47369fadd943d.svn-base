@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>详细信息-无记录</title>
+		<link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/jl.css"/>
+	</head>
+	<body>
+		<div class="all">
+			<div class="top">
+				 <a href="#"><img src="../../img/nav-logo.png"></a>
+                 <div class="title">
+                  	<a href="http://10.102.6.141:8183/systemManage/login/main.html">背景审查</a>
+                 </div>
+                 <div class="title">
+                  	<a href="http://10.101.139.21:8778/taskManagement.html">任务列表</a>
+                 </div>
+                  <div class="role">
+                        <a href="#">admin</a>
+                  </div>
+			</div>
+			<div class="content">
+				<div class="con_jichu clearFloat">
+					<h3>基础信息</h3>
+					<div class="con_pic">
+						<dl>
+							<dt><img src="../../img/icon.jpg"/></dt>
+							<dd>
+								<p>姓名：<span>赵一</span>性别：<span>男</span>民族：<span>汉</span></p>
+								<p>出生日期：<span class="riqi">1988-10-02</span>身份证号：<span class="shenfen">12345454322345</span></p>
+								<p>籍贯：<span>河北省保定市曲阳县</span></p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!--<div class="con_shejiao clearFloat">
+					<h3>社交信息</h3>
+					<div class="dianhua">
+						<div>
+							<p class="dianhua_first">电话号码</p>
+							<p>
+								<span>15275698775</span>
+								<span>435643131</span>
+								<span>4351313</span>
+							</p>
+						</div>
+						<div class="dianhua_div">
+							<p class="dianhua_first">工作单位</p>
+							<p>
+								<span>124564313</span>
+								<span>435643131</span> 
+								<span>4351313</span>
+							</p>
+						</div>
+						<div class="dianhua_div">
+							<p class="dianhua_first">居住地址</p>
+							<p>
+								<span>124564313</span>
+								<span>435643131</span> 
+								<span>4351313</span>
+							</p>
+						</div>
+					</div>
+				</div>-->
+				<div class="con_shehui clearFloat">
+					<h3>社会标签</h3>
+					<div class="dachu">
+						无相关记录
+					</div>
+				</div>
+				<div class="con_zhixi clearFloat">
+					<h3>直系亲属信息</h3>
+					<div class="qinshu">
+						无相关记录
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

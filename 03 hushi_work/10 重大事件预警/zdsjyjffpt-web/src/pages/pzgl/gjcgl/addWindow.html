@@ -1,0 +1,41 @@
+<div class="container bgmask gjcgl-add">
+    <div class="window popIn" style="width: 50%; height: 50%;">
+
+        <!-- 弹框头部start -->
+        <header>
+            <h1>新增关键词</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <!-- 弹框头部end -->
+
+        <!-- 弹框正文start -->
+        <div class="content">
+            <form class="form one-column-form">
+                <div class="input-item sslb-tree-item tree-item">
+                    <label>涉事类别：</label>
+                    <input name="sslbmc" class="input node-name" type="text" placeholder="请选择涉事类别" readonly />
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    <input name="sslb" class="input node-code" type="text" style="display: none;" readonly />
+                    <div id="ztree1" class="ztree sslb-tree-dom tree-dom" style="display: none;"></div>
+                </div>
+                <div class="input-item">
+                    <label>线索关键词：</label>
+                    <textarea name="gjc" placeholder="用逗号分隔"></textarea>
+                </div>
+            </form>
+        </div>
+        <!-- 弹框正文end -->
+
+        <!-- 弹框底部start -->
+        <footer>
+            <a class="btn btn_submit">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+        <!-- 弹框底部end -->
+
+    </div>
+</div>
+
+<script>
+    app.pzgl.gjcgl.add.init();
+</script>

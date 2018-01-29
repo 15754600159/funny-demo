@@ -1,0 +1,125 @@
+<div class="method" >
+    <div class="leftType">
+        <div id="accordion" class="accordion leftMenu">
+        <span class="title  "><span class="icon icon-rule"></span> 规则
+            <button id="btnAddRule" class="data-icon add"></button>
+        </span>
+            <div class="detail">
+                <ul id="listContainer_rule" class="listContainer">
+                </ul>
+            </div>
+            <span class="title "><span class="icon  icon-method"></span> 战法  <button
+                    id="addBatch" class="data-icon add"></button></span>
+            <div class="detail">
+                <ul id="listContainer_batch" class="listContainer">
+
+                </ul>
+            </div>
+            <span class="title  "><span class=" icon icon-task"></span> 任务 <button
+                    id="btnAddTask" class="data-icon add"></button></span>
+            <div class="detail">
+                <ul id="listContainer_task" class="listContainer">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content ">
+        <div class="toolbar">
+            <button class="btn button_hover pull-left" id="btnAdd"><span class="icon icon-add"></span> 新建</button>
+            <input type="text" class="pull-right" placeholder="请输入关键字搜索"/>
+            <select name="select_status" id="select_status" class="pull-right select">
+                <option></option>
+            </select></div>
+        <table class="table grid" id="table_method">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>战法名称</th>
+                <th style="width: 400px">战法描述</th>
+                <th style="width: 300px">战法输出</th>
+                <th>提交者</th>
+                <th>提交时间</th>
+                <th>运行规则</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>1</td><td>铁路同行</td><td> 2次以上出现，乘车日期相同，同站上下车且乘坐不同车次；</td><td>/home/workspace/hdfs/unicon_com/12054/</td><td>admin</td><td>2015.10.13</td><td> 每天运行</td><td class="edit"><span class="icon icon-edit"></span> </td></tr>
+            <tr><td>2</td><td>旅馆同住</td><td>入住时间在10分钟内且达到2次以及2次以上；</td><td>/home/workspace/hdfs/unicon_com/12054/</td><td> admin</td><td>2015.11.21</td><td> 每周运行</td><td class="edit"><span class="icon icon-edit"></span> </td></tr>
+            <tr><td>3</td><td>网吧同上网</td><td> 同网吧下线时间在10分钟内且上线时间在5分钟内1次</td><td>/home/workspace/hdfs/unicon_com/12054/</td><td>admin</td><td> 2015.12.5</td><td> 每天运行</td><td class="edit"><span class="icon icon-edit"></span> </td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div class="page" style="display: none">
+    <div class="leftType" >
+        <div id="accordion1" class="accordion leftMenu">
+        <span class="title  "><span class="icon icon-rule"></span> 实体数据源 </span>
+
+            <div class="detail">
+                <ul id="listContainer_entity" class="listContainer">
+
+                    <li class="item current" type="entity-operator"><span class="icon icon-person"></span> 人</li>
+                    <li class="item" type="entity-operator"><span class="icon icon-vehicle"></span> 车</li>
+                    <li class="item" type="entity-operator"><span class="icon icon-household"></span> 户口</li>
+                </ul>
+            </div>
+            <span class="title "><span class="icon  icon-method"></span> 事件数据源 </span>
+
+            <div class="detail">
+                <ul id="listContainer_event" class="listContainer">
+                    <li class="item" type="event-operator"><span class="icon icon-hotel_event"></span> 住宿</li>
+                    <li class="item" type="event-operator"><span class="icon icon-railway_event"></span> 出行</li>
+                    <li class="item" type="event-operator"><span class="icon icon-flight_event"></span> 飞机</li>
+                    <li class="item" type="event-operator"><span class="icon icon-internetcafe_event"></span> 网吧</li>
+                </ul>
+            </div>
+            <span class="title  "><span class=" icon icon-task"></span> 关联类算子 </span>
+
+            <div class="detail">
+                <ul id="listContainer_relation" class="listContainer">
+                    <li type="relation-operator">unary_relate</li>
+                    <li type="relation-operator">join_relation</li>
+                </ul>
+            </div>
+            <span class="title  "><span class=" icon icon-task"></span> 过滤类算子 </span>
+
+            <div class="detail">
+                <ul id="listContainer_filter" class="listContainer">
+                    <li type="filter-operator">select</li>
+                    <li type="filter-operator">select_by_join</li>
+                  <!--  <li type="filter-operator">select_by_union</li>-->
+                    <li type="filter-operator">event_by_entity</li>
+                    <li type="filter-operator">event_by_agg_entity</li>
+                  <!--  <li type="filter-operator">entity_by_relation</li>
+                    <li type="filter-operator">entity_by_degree_relation</li>-->
+                </ul>
+            </div>
+<!--            <span class="title  "><span class=" icon icon-task"></span> 汇总字段 </span>
+
+            <div class="detail">
+                <ul id="listContainer_total" class="listContainer">
+                    <li type="sum">sum</li>
+                </ul>
+            </div>-->
+        </div>
+    </div>
+    <div class="content ">
+        <div ><button class="btn button_hover" id="btnBack">返回</button><button class="btn button_hover" id="btnSave" style="    margin-left: 20px;">保存</button></div>
+      <!--  <div class="toolbar">
+            <ul class="box-shadow">
+                <li class="actionbtn undo"><span class="icon icon-back"></span><span class="text">后退</span></li>
+                <li class="actionbtn redo"><span class="icon icon-forward"></span><span class="text">前进</span></li>
+            </ul>
+            <ul class="box-shadow">
+                <li class="actionbtn select-multi"><span class="icon icon-chosemore"></span><span class="text">选择多个</span></li>
+                <li class="actionbtn clearall"><span class="icon icon-delete2"></span><span class="text">清空图析</span></li>
+            </ul>
+        </div>-->
+        <div class="pic" id="pic" ></div>
+
+    </div>
+</div>
+<div class="nodeInfo" style="display: none"></div>

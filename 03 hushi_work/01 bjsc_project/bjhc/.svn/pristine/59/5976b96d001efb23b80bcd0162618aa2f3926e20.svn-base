@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+<head>
+	<title>任务详情</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" href="../../css/header.css">
+	<link rel="stylesheet" href="../../css/bjscxq.css">
+	<link rel="stylesheet" type="text/css" href="../../css/backgroundReview.css" />
+</head>
+
+<body>
+	<!-- 页面头部start -->
+	 <div class="nav-bar">
+	     <div class="logo-box">
+	         <img src="../../img/bjscxq/logo.png" alt="警徽">
+	     </div>
+	     <img class="logo-word" src="../../img/bjscxq/logo-word.png" alt="背景审查平台">
+		 <div class="top">
+			 <div class="title">
+		          <a href="../index.html?sessionId=1">首页</a>
+		     </div>
+		     <div class="title">
+		          <a href="../taskManagement.html?sessionId=1">任务列表</a>
+		     </div>
+	     </div>
+	     <div class="login-state">
+	         <div class="person-icon">
+	             <img src="../../img/bjscxq/person-icon.png" alt="You">
+	         </div>
+	         <div class="login-info">
+	             <span class="admin-word">admin</span>
+	             <span>人事、管理员、管理部门</span>
+	             <span class="triangle-icon"></span>
+	         </div>
+	     </div>
+	     <div class="email-box">
+	         <img class="email-icon" src="../../img/bjscxq/email-icon.png" alt="power">
+	         <div class="note blue">
+	             <span>6</span>
+	         </div>
+	     </div>
+	     <div class="volume-box">
+	         <img class="volume-icon" src="../../img/bjscxq/volume-icon.png" alt="power">
+	         <div class="note orange">
+	             <span>8</span>
+	         </div>
+	     </div>
+	     <img class="power-icon" src="../../img/bjscxq/power-icon.png" alt="power">
+	 </div>
+	 <!-- 页面头部end -->
+	
+	 <!-- 搜索栏start -->
+     <div class="search-bar">
+        <div class="content-box">
+            <input type="text" id="task_text" class="form-control input" placeholder="">
+            <!-- 背景审查按钮start -->
+            <div class="bjsc-buttons" style="">
+                <div class="button check" id="task_btn">
+                    <img src="../../img/bjscxq/check.png" alt="check">
+                    <span>查&nbsp;&nbsp;询</span>
+                </div>
+                <div class="button download" id="task_daochu">
+                    <img src="../../img/bjscxq/download.png" alt="check">
+                    <span>导&nbsp;&nbsp;出</span>
+                </div>
+            </div>
+            <!-- 背景审查按钮end -->
+        </div>
+    </div>
+   
+    <!-- 搜索栏end -->
+
+    <!-- 条件筛选框start -->
+   <div class="condition-filter-box" id="tag-list">
+   		<div class="button" id="ck_btn">
+	         <img src="../../img/bjscxq/hook-icon.png" alt="check">
+	         <span>筛 选</span>
+	     </div>
+	</div>
+	
+    <!-- 条件筛选框end -->
+	<!-- 搜索结果start -->
+    <div class="result-table-box">
+        <!-- 结果列表start -->
+        <div class="results-list">
+           
+        </div>
+        <!-- 结果列表end -->
+        
+        <!-- 分页 -->
+		<div class="pagination-box" style="text-align: right;margin:0;">
+			<nav style="width: 100%;">
+				<ul id="pagination" class="pagination" style="margin:0;">
+				</ul>
+			</nav>
+		</div>
+        <!-- 分页器end -->
+    </div>
+    <!-- 搜索结果end -->
+	
+	<script type="text/javascript" src="../../js/plugins/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/fetch.js"></script>
+	<script type="text/javascript" src="../../js/plugins/moment.js"></script>
+	<script type="text/javascript" src="../../js/plugins/bootstrap-pagination.min.js"></script>
+	<script type="text/javascript" src="../../js/common/common.js"></script>
+	<script type="text/javascript" src="../../js/web/taskListDetail.js"></script>
+</body>
+
+</html>

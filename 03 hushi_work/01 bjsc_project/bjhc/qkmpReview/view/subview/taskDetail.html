@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+<head>
+	<title>任务详情</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../../css/plugins/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../..//css/backgroundReview.css" />
+</head>
+
+<body>
+	<div class="all">
+		<div class="top">
+			<a href="#"><img src="../../img/nav-logo.png"></a>
+			<div class="title">
+				<a href="http://10.101.139.21:8777/backgroundReciew.html?sessionId=1">背景审查</a>
+			</div>
+			<div class="title">
+				<a href="http://10.101.139.21:8777/taskManagement.html?sessionId=1">任务列表</a>
+			</div>
+			<div class="role">
+				<a href="#">admin</a>
+			</div>
+		</div>
+		<div class="container-fluid content" id="taskDetail">
+			<form class="task-detail">
+				<input type="text" class="form-control" placeholder='请输入要查询的人员身份证号' id="task_text">
+				<button type="button" class="btn btn-default" id="task_btn">查询</button>
+				<button type="button" class="btn btn-default" id="task_daochu">导出</button>
+			</form>
+			<div class="check-filter-box">
+				<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox1" value="0"> 打处记录
+			          </label>
+				<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox2" value="1"> 本地重点人
+			          </label>
+				<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox3" value="2"> 部下发重点人
+			          </label>
+				<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox4" value="3"> 经侦黑名单
+			          </label>
+				<label class="checkbox-inline">
+			            <input type="checkbox" id="inlineCheckbox5" value="4"> 矫正对象
+			          </label>
+				<label class="checkbox-inline">
+			            	<input type="checkbox" id="inlineCheckbox6" value="5"> 教派人员
+			          </label>
+				<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox7" value="6"> 集团人员
+			          </label>
+				<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox8" value="7"> 亲属有记录
+			          </label>
+				<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox9" value="8"> 审查无背景
+			          </label>
+				<label class="checkbox-inline">
+			              <input type="checkbox" id="inlineCheckbox10" value="9"> 审查无资料
+			          </label>
+				<label class="checkbox-inline">
+                                      <input type="checkbox" id="inlineCheckbox11" value="10"> 全选
+                                  </label>
+				<button type="button" class="btn btn-default" id="ck_btn">筛选</button>
+				<button type="button" class="btn btn-default" id="qx_btn">取消</button>
+			</div>
+			<!--主体内容-->
+			<!-- <div class="task-detail-box"></div> -->
+			<div class="task-detail-box">
+				<div class="task-detail-card">
+					<div class="img-box"><img src="../../img/icon.jpg"></div>
+					<div class="detail-box">
+						<div class="person-info">
+							<div class="person-info-row row">
+								<div class="col-md-4">姓名：<span class="person-name">张川虎</span></div>
+								<div class="col-md-8">身份证号：<span class="person-sfzh">150403197702132071</span></div>
+							</div>
+							<div class="person-info-row row">
+								<div class="col-md-4">性别：<span class="person-sex">男</span></div>
+								<div class="col-md-8">户籍地：<span class="person-domicile">内蒙古呼和浩特市</span></div>
+							</div>
+							<div class="person-info-row row">
+								<div class="col-md-4">民族：<span class="person-nation">汉</span></div>
+								<div class="col-md-8">现住地：<span class="person-residence">内蒙古包头市XX区XX路</span></div>
+							</div>
+							<div class="person-info-row row">
+								<div class="col-md-12">职业：<span class="person-occupation">退役军人，教师，出租车司机</span></div>
+							</div>
+						</div>
+						<div class="occupation">
+							职业：<span class="person-occupation2">退役军人，教师，出租车司机</span>
+						</div>
+						<div class="tags row">
+							<div class="col-md-2">标签：</div>
+							<div class="col-md-10 labels">
+								<span class="label label-danger">部下发涉稳人员</span>
+								<span class="label label-danger">部下发上访人员</span>
+								<span class="label label-warning">打处记录</span>
+								<span class="label label-warning">经侦黑名单</span>
+								<span class="label label-warning">工作对象</span>
+								<span class="label label-info">进京上访</span>
+								<span class="label label-info">跨市活动</span>
+								<span class="label label-info">频繁更换酒店</span>
+							</div>
+						</div>
+					</div>
+					<div class="button-box"><button type="button" class="btn btn-default details-info" onclick="TzDetail(&#39;150403197702132071&#39;)">详细信息</button>
+						<button type="button" class="btn btn-default" onclick="toSCOPA(&#39;150403197702132071&#39;)">跳到图析</button>
+						<button type="button" class="btn btn-default" style="display:none">人工研判</button>
+					</div>
+				</div>
+				<div class="task-detail-card">
+					<div class="img-box"><img src="../../img/icon.jpg"></div>
+					<div class="detail-box">
+						<div class="person-info">
+							<div class="person-info-row row">
+								<div class="col-md-4">姓名：<span class="person-name">张川虎</span></div>
+								<div class="col-md-8">身份证号：<span class="person-sfzh">150403197702132071</span></div>
+							</div>
+							<div class="person-info-row row">
+								<div class="col-md-4">性别：<span class="person-sex">男</span></div>
+								<div class="col-md-8">户籍地：<span class="person-domicile">内蒙古呼和浩特市</span></div>
+							</div>
+							<div class="person-info-row row">
+								<div class="col-md-4">民族：<span class="person-nation">汉</span></div>
+								<div class="col-md-8">现住地：<span class="person-residence">内蒙古包头市XX区XX路</span></div>
+							</div>
+							<div class="person-info-row row">
+								<div class="col-md-12">职业：<span class="person-occupation">退役军人，教师，出租车司机</span></div>
+							</div>
+						</div>
+						<div class="occupation">
+							职业：<span class="person-occupation2">退役军人，教师，出租车司机</span>
+						</div>
+						<div class="tags row">
+							<div class="col-md-2">标签：</div>
+							<div class="col-md-10 labels">
+								<span class="label label-danger">部下发涉稳人员</span>
+								<span class="label label-danger">部下发上访人员</span>
+								<span class="label label-warning">打处记录</span>
+								<span class="label label-warning">经侦黑名单</span>
+								<span class="label label-warning">工作对象</span>
+								<span class="label label-info">进京上访</span>
+								<span class="label label-info">跨市活动</span>
+								<span class="label label-info">频繁更换酒店</span>
+							</div>
+						</div>
+					</div>
+					<div class="button-box"><button type="button" class="btn btn-default details-info" onclick="TzDetail(&#39;150403197702132071&#39;)">详细信息</button>
+						<button type="button" class="btn btn-default" onclick="toSCOPA(&#39;150403197702132071&#39;)">跳到图析</button>
+						<button type="button" class="btn btn-default" style="display:none">人工研判</button>
+					</div>
+				</div>
+
+			</div>
+			<!-- 分页 -->
+			<div style="text-align: right">
+				<nav style="width: 100%;">
+					<ul id="pagination" class="pagination">
+						<ul id="pagination" class="pagination">
+							<li class="disabled"><span>本页5条记录/共5条记录</span></li>
+							<li>
+								<div class="input-group dropup" style="float: left;"><button class="btn btn-default dropdown-toggle pagesize-fix-center" type="button" data-toggle="dropdown" aria-expanded="true">每页显示<span class="pagesize">20</span>条记录<span class="caret"></span></button>
+									<ul class="dropdown-menu" role="menu">
+										<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">5</a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">10</a></li>
+										<li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="javascript:;">20</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="disabled"><a href="javascript:;">首页</a></li>
+							<li class="disabled"><a href="javascript:;">上一组</a></li>
+							<li class="disabled"><a href="javascript:;">上一页</a></li>
+							<li class="active"><a href="javascript:;">1</a></li>
+							<li class="disabled"><a href="javascript:;">下一页</a></li>
+							<li class="disabled"><a href="javascript:;">下一组</a></li>
+							<li class="disabled"><a href="javascript:;">尾页</a></li>
+							<li>
+								<div class="input-group page-input"><input type="text" class="form-control" placeholder="GO"></div>
+							</li>
+							<li class="disabled"><span>第1页/共1页</span></li>
+						</ul>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../js/plugins/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../js/plugins/fetch.js"></script>
+	<script type="text/javascript" src="../../js/plugins/moment.js"></script>
+	<script type="text/javascript" src="../../js/plugins/bootstrap-pagination.min.js"></script>
+	<script type="text/javascript" src="../../js/common/common.js"></script>
+	<script type="text/javascript" src="../../js/web/taskDetails.js"></script>
+</body>
+
+</html>

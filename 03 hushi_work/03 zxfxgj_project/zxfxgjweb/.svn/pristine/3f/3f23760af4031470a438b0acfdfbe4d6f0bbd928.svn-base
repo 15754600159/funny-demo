@@ -1,0 +1,44 @@
+app.api.zxrygl = {
+	zxryglUrl: app.api.url + '/zxfx/management/importation/', // 关注群体导入
+	zxryglExcelTemplateUrl: 'http://localhost:4000/template/zxrygl.xlsx',
+	view: function(settings) {
+		app.api.ajax({
+			url: '/zxfx/management/view',
+			type: 'GET',
+			data: settings.data,
+		}, settings);
+	},
+	updata: function(settings) {
+		app.api.ajax({
+			url: '/zxfx/management/addition',
+			type: 'POST',
+			data: settings.data,
+		}, settings);
+	},
+	putdata: function(settings) {
+		app.api.ajax({
+			url: '/zxfx/management/modification',
+			type: 'put',
+			data: settings.data,
+		}, settings);
+	},
+	delete: function(settings) {
+		app.api.ajax({
+			url: '/zxfx/management/destroy?ids=' + settings.data.ids,
+			type: 'DELETE',
+		}, settings);
+	},
+	types: function(settings) {
+		app.api.ajax({
+			url: '/zx/sysDict/?types=' + settings.data.types,
+			type: 'get',
+		}, settings);
+	},
+	ids: function(settings) {
+		app.api.ajax({
+			url: '/zxfx/management/viewById/' + settings.data.types,
+			type: 'get',
+		}, settings);
+	},
+	exportFileUrl: app.api.url + '/zxfx/management/exportion/?'
+};

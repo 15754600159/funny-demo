@@ -1,0 +1,11 @@
+app.api.sdztkcx = {
+	view: function(settings) {
+		app.api.ajax({
+			url: '/zx/ztk/person/',
+			type: 'GET',
+			data: settings.data,
+		}, settings);
+	}
+	// ,
+	// exportFileUrl: app.api.url + '/zxfx/management/exportion/?'
+};

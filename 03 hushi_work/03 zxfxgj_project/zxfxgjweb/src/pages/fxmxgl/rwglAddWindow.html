@@ -1,0 +1,82 @@
+<div class="container bgmask">
+    <div class="window" style="width: 50%; height: 50%;" id="window-rwgl-addWindow">
+        <header style="background:#4f8cf6">
+            <h1 style="color:#fff">新增任务</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <div class="content" style="padding:20px;">
+            <form id="form-task-add" class="form">
+                <section class="h-box col2">
+                    <div>
+                        <div class="control-item">
+                            <label class="required">计划名称</label>
+                            <div>
+                                <input type="text" class="input" name="name">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="control-item">
+                            <label class="required">计划规则</label>
+                            <div>
+                                <select class="select" name="ruleId" id="">
+                                    <!-- <option value="">请选择</option>
+                                    <option value="">选择1</option> -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>计划类型</label>
+                        <div>
+                            <select class="select" name="type" id=""></select>
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>计划状态</label>
+                        <select class="select" name="status" id=""></select>
+                    </div>
+                    <div class="control-item">
+                        <label>计划描述</label>
+                        <div>
+                            <input type="text" class="description" name="description">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>计划开始时间</label>
+                        <div>
+                            <input name="startTime" size="16" type="text" readonly class="form_datetime" style="width:142px;">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>计划结束时间</label>
+                        <div>
+                            <input name="endTime" size="16" type="text" readonly class="form_datetime" style="width:142px;">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>上次执行时间</label>
+                        <div>
+                            <input name="prevTime" size="16" type="text" readonly class="form_datetime" style="width:142px;">
+                        </div>
+                    </div>
+                    <div class="control-item">
+                        <label>执行间隔(分钟)</label>
+                        <div>
+                            <input type="number" class="input" name="interval">
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+        <footer style="background:#4f8cf6">
+            <a class="btn" id="btn-ok-task-add">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+    </div>
+</div>
+
+<script>
+    app.fxmxgl.rwgl.add.init();
+
+</script>
