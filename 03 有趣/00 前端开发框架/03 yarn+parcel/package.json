@@ -1,0 +1,8 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "react yarn parcel",
+  "main": "index.js",
+  "author": "guoshi o",
+  "license": "MIT"
+}

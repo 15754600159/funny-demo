@@ -20,7 +20,7 @@ module.exports = {
             {
                 test: /\.(jsx|js)?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
+                loader: 'babel-loader?cacheDirectory', // 缓存，不对没修改过的文件重新编译
                 query: {
                     presets: ['es2015', 'react', 'stage-1'],
                     plugins: ['transform-decorators-legacy', 'transform-decorators']

@@ -4,17 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); // 生成自动加上J
 const CleanWebpackPlugin = require("clean-webpack-plugin"); // 去除build文件中的残余文件
 
 module.exports = {
-    devtool: 'eval-source-map', //一种对应编译文件和源文件的方法，使得编译后的代码可读性更高，也更容易调试
-    entry: __dirname + '/src/js/root.js',
+    entry: {
+        app: __dirname + '/src/js/root.js',
+        vendor: ['react', 'react-dom', 'react-router-dom', 'react-responsive', 'antd'],
+    },
     output: {
         path: __dirname + "/build",
-        filename: 'bundle.js'
-    },
-    devServer: {
-        contentBase: "./build",//本地服务器所加载的页面所在的目录
-        historyApiFallback: true,//不跳转
-        inline: true,//实时刷新
-        hot: true //热加载插件
+        filename: '[name].js'
     },
     module: {
         loaders: [
@@ -37,20 +33,15 @@ module.exports = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: [{
-                        loader: "css-loader",
-                        options: {
-                            sourceMap: true,
-                        }
-                    }, 'postcss-loader']
+                    use: ["css-loader", 'postcss-loader']
                 })
             },
             { // css module： less处理
                 test: /\.less$/,
                 loaders: [
-                    'style-loader?sourceMap',
+                    'style-loader',
                     'css-loader?modules&localIdentName=[name]-[local]-[hash:base64:5]',
-                    'less-loader?sourceMap'
+                    'less-loader'
                 ]
             },
             { // 图片处理
@@ -77,11 +68,14 @@ module.exports = {
         new HtmlWebpackPlugin({ // 生成自动加上JS、CSS依赖的html代码
             template: __dirname + "/src/index.tmpl.html",
         }),
-        new webpack.HotModuleReplacementPlugin(),//热加载插件
         new CleanWebpackPlugin('build/*', { // 去除build文件中的残余文件
             root: __dirname,
             verbose: true,
             dry: false
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "vendor" // 指定公共 bundle 的名字。
+        }),
+        new webpack.optimize.ModuleConcatenationPlugin(), // webpack3新特性 提高编译后JS文件运行效率
     ]
 };

@@ -5,12 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open",
-    "build": "webpack --config ./webpack.build.config.js --progress --colors"
+    "build": "webpack --config ./webpack.build.config.js --progress --colors",
+    "analyse": "webpack --config ./webpack.build.config.js --profile --json > stats.json"
   },
-  "keywords": [
-    "CSS",
-    "CSS Modules"
-  ],
+  "keywords": [],
   "author": "Ruan Yifeng",
   "license": "ISC",
   "dependencies": {

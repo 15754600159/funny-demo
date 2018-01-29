@@ -1,5 +1,8 @@
 # 忽略掉所有文件名是 test.txt 的文件.
 # test.txt
 
-# 忽略node_modules文件夹
+# 忽略node_modules build dist release文件夹
 node_modules
+build
+dist
+release
