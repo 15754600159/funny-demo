@@ -2,11 +2,27 @@
 # test.txt
 
 # 忽略node_modules build dist release UI_design文件夹
+
+# 项目依赖
 node_modules
+
+# 项目构建文件夹
 build
 dist
 release
+
+# 设计图
 UI_design
+
+# 接口文件
 API
-API-word
 *.jar
+
+# 接口文档
+API-word
+
+# 原型设计
+Axure
+
+# 需求文件
+demand
