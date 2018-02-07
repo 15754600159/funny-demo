@@ -1,13 +1,7 @@
 // 合并所有reducer
 import { combineReducers } from 'redux';
 
-export default combineReducers({counter});
+import { user } from './redux/user.redux';
 
-function counter(state = 0, action) {
-    switch(action.type) {
-        case 'ADD_GUN':
-            return state + 1;
-        default:
-            return 10;
-    }
-}
+export default combineReducers({user});
+
