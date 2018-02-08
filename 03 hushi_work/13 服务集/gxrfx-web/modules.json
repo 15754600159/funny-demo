@@ -58,7 +58,11 @@
 			"src/js/app/app.main.js",
 			"src/js/app/app.commonFunc.js",
 			"src/js/app/gxrfx/app.gxrfx.js",
-			"src/js/app/gxrfx/app.gxrfx.*.js"
+			"src/js/app/gxrfx/app.gxrfx.search.js",
+			"src/js/app/gxrfx/app.gxrfx.detail.js",
+			"src/js/app/gxrfx/app.gxrfx.history.js",
+			"src/js/app/gxrfx/app.gxrfx.advancedSearch.js",
+			"src/js/app/gxrfx/app.gxrfx.detail.*.js"
 		],
 		"lessFiles": [
 			"src/less/app.less"

@@ -1,0 +1,66 @@
+<div class="container bgmask gxrfx-advancedSearch">
+    <div class="window popIn" style="width: 50%; height: 50%;">
+
+        <!-- 弹框头部start -->
+        <header>
+            <h1>高级查询</h1>
+            <a class="close btn-window-close">&times;</a>
+        </header>
+        <!-- 弹框头部end -->
+
+        <!-- 弹框正文start -->
+        <div class="content">
+
+            <div class="input-item">
+                <label>身份证号：</label>
+                <input name="sfzh" class="input" type="text" placeholder="请输入身份证号" />
+            </div>
+            <br>
+            <div class="input-item">
+                <label>人员类别：</label>
+                <select name="rylbmc" class="form-control select">
+                </select>
+            </div>
+            <br>
+            <div class="input-item">
+                <label>关系时间段：</label>
+                <div class="time-select">
+                    <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    --
+                    <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+            <br>
+            <div class="input-item">
+                <label>年龄段：</label>
+                <div class="time-select">
+                    <input name="ageStart" class="input" type="text" /> -
+                    <input name="ageEnd" class="input" type="text" />
+                </div>
+            </div>
+            <br>
+            <div class="input-item" style="margin-left: 27px;">
+                <label class="check">
+                    <input type="checkbox" name="tjg">
+                    <span>同籍贯</span>
+                </label>
+            </div>
+
+        </div>
+        <!-- 弹框正文end -->
+
+        <!-- 弹框底部start -->
+        <footer>
+            <a class="btn btn_submit">确定</a>
+            <a class="btn btn-outline btn-window-close">取消</a>
+        </footer>
+        <!-- 弹框底部end -->
+
+    </div>
+</div>
+
+<script>
+    app.gxrfx.advancedSearch.init();
+</script>
