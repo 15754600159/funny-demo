@@ -1,3 +1,7 @@
+/**
+ * 1. 官网示例：http://www.jq22.com/yanshi467
+ */
+
 $(function () {
 
     console.log('test page');
