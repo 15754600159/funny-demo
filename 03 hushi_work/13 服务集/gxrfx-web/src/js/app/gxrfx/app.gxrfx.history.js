@@ -33,12 +33,12 @@ app.gxrfx.history = {
 				title: '还原'
 			}, function(index) {
 				const gxsfzh = $(_this).parents('tr').data('gxsfzh'),
-					 key = 'delete_dybkxx',
-					 param = {
-						 key,
-						 gxsfzh,
-						 yxx: '0',
-					 };
+					key = 'delete_dybkxx',
+					param = {
+						key,
+						gxsfzh,
+						yxx: '0',
+					};
 				app.api.gxrfx.deleteDybc({
 					data: param,
 					success: function(result) {
@@ -67,10 +67,9 @@ app.gxrfx.history = {
 		param.yxx = 2; //已删除类型
 		param.pageNo = pageNo;
 		param.limit = pageSize;
-		console.log(param);
 
 		const result = await app.api.gxrfx.viewGxrfxList({ data: param });
-//	 	console.log(result);
+		//	 	console.log(result);
 		if (result.status === 0) {
 			app.alert('查询数据失败！');
 			return;

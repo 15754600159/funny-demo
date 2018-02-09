@@ -265,6 +265,78 @@
     color: #fff;
 }
 
+.table-box {
+    width: 99%;
+    margin: 0 .5%;
+    overflow: hidden;
+    .table {
+        tr {
+            th {
+                padding: 0px 8px;
+                vertical-align: middle;
+                font-weight: 700;
+            }
+            td {
+                // padding: 0px 8px;
+                vertical-align: middle;
+                color: @table-font-color1;
+            }
+            .check {
+                height: 26px;
+                line-height: 26px;
+                >span::after {
+                    width: 16px;
+                    height: 16px;
+                }
+                >span::before {
+                    left: -3px;
+                    top: 2px;
+                    font-size: 22px;
+                }
+            }
+            .intelligence-name {
+                color: @table-font-color2;
+            }
+            .blue-word {
+                color: @table-font-color2;
+            }
+            .invalid {
+                color: @table-font-color3;
+            }
+            .operate {
+                font-size: 16px;
+                white-space: nowrap;
+                .glyphicon {
+                    cursor: pointer;
+                    margin: 0 5px;
+                }
+                .glyphicon:hover {
+                    color: #56688a;
+                }
+                .btn-wx {
+                    cursor: not-allowed;
+                }
+                .btn-wx,
+                .btn-wx:hover {
+                    color: #939393;
+                }
+            }
+        }
+    }
+    .pagination {
+        position: relative;
+        margin: 0px 0 20px 0;
+        float: right;
+        padding-top: 5px;
+        .page-input {
+            input {
+                height: 29.6px;
+                width: 60px;
+            }
+        }
+    }
+}
+
 // 个人信息条
 .single-message {
     border: solid 1px #dfdfdf;
@@ -392,77 +464,6 @@
             }
             .right-buttons {
                 float: right;
-            }
-        }
-        .table-box {
-            width: 99%;
-            margin: 0 .5%;
-            overflow: hidden;
-        }
-        .table {
-            tr {
-                th {
-                    padding: 0px 8px;
-                    vertical-align: middle;
-                    font-weight: 700;
-                }
-                td {
-                    padding: 0px 8px;
-                    vertical-align: middle;
-                    color: @table-font-color1;
-                }
-                .check {
-                    height: 26px;
-                    line-height: 26px;
-                    >span::after {
-                        width: 16px;
-                        height: 16px;
-                    }
-                    >span::before {
-                        left: -3px;
-                        top: 2px;
-                        font-size: 22px;
-                    }
-                }
-                .intelligence-name {
-                    color: @table-font-color2;
-                }
-                .blue-word {
-                    color: @table-font-color2;
-                }
-                .invalid {
-                    color: @table-font-color3;
-                }
-                .operate {
-                    font-size: 16px;
-                    white-space: nowrap;
-                    .glyphicon {
-                        cursor: pointer;
-                        margin: 0 5px;
-                    }
-                    .glyphicon:hover {
-                        color: #56688a;
-                    }
-                    .btn-wx {
-                        cursor: not-allowed;
-                    }
-                    .btn-wx,
-                    .btn-wx:hover {
-                        color: #939393;
-                    }
-                }
-            }
-        }
-        .pagination {
-            position: relative;
-            margin: 0px 0 20px 0;
-            float: right;
-            padding-top: 5px;
-            .page-input {
-                input {
-                    height: 29.6px;
-                    width: 60px;
-                }
             }
         }
     }

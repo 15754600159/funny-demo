@@ -26,6 +26,26 @@
         border: 2px solid #7fc7ff;
         color: #7fc7ff;
     }
+    table {
+        .operate {
+            font-size: 16px;
+            white-space: nowrap;
+            .glyphicon {
+                cursor: pointer;
+                margin: 0 5px;
+            }
+            .glyphicon:hover {
+                color: #56688a;
+            }
+            .btn-wx {
+                cursor: not-allowed;
+            }
+            .btn-wx,
+            .btn-wx:hover {
+                color: #939393;
+            }
+        }
+    }
     .top-part {
         // 结构样式
         height: 27.5vh;
@@ -192,7 +212,7 @@
     }
 }
 
-// detai详情页面 --------------------------------------------------------------------------------------------------------------------
+// detai 详情页面 --------------------------------------------------------------------------------------------------------------------
 .gxrfx-detail {
     .gx-list {
         .control-item {
@@ -201,9 +221,20 @@
     }
 }
 
-// advancedSearch高级检索页
+// advancedSearch 高级检索页
 .gxrfx-advancedSearch {
     .content {
         padding: 15px 0 0 15px;
+    }
+}
+
+// gxDetail 关系详情页面
+.gxrfx-gxDetail {
+    .content {
+        padding: 15px;
+        .operate-buttons-box {
+            margin-bottom: 10px;
+            padding-left: 6px;
+        }
     }
 }
