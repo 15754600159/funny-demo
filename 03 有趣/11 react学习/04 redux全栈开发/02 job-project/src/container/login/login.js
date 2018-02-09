@@ -7,6 +7,7 @@ import {
     Button,
 } from 'antd-mobile';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import Logo from '../../component/logo/logo';
 import { login } from '../../redux/user.redux';
@@ -41,6 +42,7 @@ class Login extends React.Component {
     render() {
         return (
             <div>
+                {this.props.redirectTo ? <Redirect to={this.props.redirectTo}></Redirect> : null}
                 <Logo></Logo>
                 <h2>登录页</h2>
                 <WingBlank>

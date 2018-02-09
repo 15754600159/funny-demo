@@ -2,7 +2,6 @@ import React from 'react';
 import { List, 
     InputItem,
     WingBlank,
-    WhiteSpace,
     Button, 
     Radio,
 } from 'antd-mobile';
@@ -60,11 +59,11 @@ class Register extends React.Component {
                             type="password"
                         >确认密码</InputItem>
                         <RadioItem 
-                            checked={this.state.type=='genius'}
+                            checked={this.state.type==='genius'}
                             onChange={v => this.handleChange('type','genius')}
                         >牛人</RadioItem>
                         <RadioItem 
-                            checked={this.state.type=='boss'}
+                            checked={this.state.type==='boss'}
                             onChange={v => this.handleChange('type', 'boss')}
                         >BOSS</RadioItem>
                     </List>
