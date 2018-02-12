@@ -4,6 +4,7 @@ import { getRedirectPath } from '../util';
 const LOAD_DATA = 'LOAD_DATA',
     AUTH_SUCCESS = 'AUTH_SUCCESS',
     ERROR_MSG = 'ERROR_MSG',
+    LOGOUT = 'LOGOUT',
     initState = {
         redirectTo: '',
         msg: '',
@@ -16,11 +17,13 @@ const LOAD_DATA = 'LOAD_DATA',
 export function user(state = initState, action) {
     switch (action.type) {
         case LOAD_DATA: // 页面初始 判断登录状态
-            return {...state, ...action.payload}
+            return {...state, ...action.payload};
         case AUTH_SUCCESS: // 认证成功
-            return {...state, msg: '', redirectTo: getRedirectPath(action.payload), ...action.payload}
+            return {...state, msg: '', redirectTo: getRedirectPath(action.payload), ...action.payload};
         case ERROR_MSG: // 信息报错
-            return {...state, msg: action.msg, isAuth: false}
+            return {...state, msg: action.msg, isAuth: false};
+        case LOGOUT: // 注销
+            return {...initState, redirectTo: '/login'};
         default:
             return state;
     }
@@ -93,4 +96,8 @@ export function update(data) {
                 }
             })
     }
+}
+
+export function logoutSubmit() {
+    return {type: LOGOUT};
 }

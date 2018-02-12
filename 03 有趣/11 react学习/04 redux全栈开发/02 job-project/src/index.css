@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-.am-navbar{
+.fixd-headerfixd-header, .am-navbar{
     position: fixed;
     top: 0;
     width: 100%;
@@ -17,4 +17,24 @@
 
 .page-content{
     padding: 45px 5px;
+}
+
+.am-tab-bar{
+    z-index: -1;
+}
+
+#chat-page .chat-me .am-list-extra{
+    flex-basis: auto;
+}
+
+#chat-page .chat-me .am-list-content{
+    text-align: right;
+    padding-right: 15px;
+}
+
+.stick-footer{
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

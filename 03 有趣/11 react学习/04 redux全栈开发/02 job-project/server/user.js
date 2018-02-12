@@ -2,7 +2,8 @@ const express = require('express'),
     utils = require('utility'); // 密码加密
 
 const model = require('./model'),
-    User = model.getModel('user');
+    User = model.getModel('user'),
+    Chat = model.getModel('chat');
 
 const Router = express.Router(),
     _filter = {'pwd': 0, '__v': 0};
@@ -23,8 +24,9 @@ Router.get('/info', (req, res) => {
 
 // 获取用户列表
 Router.get('/list', (req, res) => {
-    User.find({}, (err, doc) => {
-        return res.json(doc);
+    const { type } = req.query;
+    User.find({type}, (err, doc) => {
+        return res.json({code: 0, data: doc});
     })
 })
 
@@ -73,6 +75,17 @@ Router.post('/update', (req, res) => {
             type: doc.type,
         }, body);
         return res.json({code: 0, data});
+    })
+})
+
+// 获取聊天信息列表
+Router.get('/getmsglist', (req, res) => {
+    const user = req.cookies.user;
+    // {'$or': [{from: user, to: user}]}
+    Chat.find({}, (err, doc) => {
+        if (!err) {
+            return res.json({code: 0, msgs: doc});
+        }
     })
 })
 
