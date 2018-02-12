@@ -1,0 +1,445 @@
+<div class="page-container qmdfx">
+
+    <!-- 页面上半部分 搜索框 start -->
+    <div class="top-part">
+
+        <!-- 搜索组件 start -->
+        <div class="search-component-container">
+            <div class="search-input">
+                <input type="text" class="search-input-skin search-input-structure" placeholder="请输入要查询的人员姓名或身份证号" />
+                <span class="glyphicon glyphicon-book btn_search_detail" aria-hidden="true"></span>
+            </div>
+            <button class="blue-button-skin blue-button-structure">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+            <input type="button" class="white-button-skin white-button-structure btn_gzsz" value="规则设置" />
+        </div>
+        <!-- 搜索组件 end -->
+
+        <!-- 关系列表 start -->
+        <div class="relation-component-container">
+            <div class="filter-category">
+                关系类型：
+                <label class="check">
+                    <input type="checkbox" name="select-all">
+                    <span style="padding: 0 5px;">全选</span>
+                </label>
+            </div>
+            <div class="relations-box">
+                <div class="label">
+                    &nbsp;强关系&nbsp;
+                    <span class="relation-total">(125)</span> :
+                </div>
+                <div class="relations">
+                    <span>父子关系</span>
+                    <span class="active">夫妻关系</span>
+                    <span class="active">同户关系</span>
+                    <span>同屋同住</span>
+                    <span>人车关系</span>
+                    <span class="active">人手机号关系</span>
+                    <span>人房屋关系</span>
+                    <span>人租房关系</span>
+                    <span>人户口关系</span>
+                    <span>人护照关系</span>
+                    <span>人QQ号关系</span>
+                    <span>同学关系</span>
+                    <span>人车关系</span>
+                    <span class="active">人手机号关系</span>
+                    <span>人房屋关系</span>
+                    <span>人租房关系</span>
+                    <span>人户口关系</span>
+                    <span>人护照关系</span>
+                    <span>人QQ号关系</span>
+                    <span>同学关系</span>
+                </div>
+            </div>
+            <div class="relations-box">
+                <div class="label">
+                    &nbsp;弱关系&nbsp;
+                    <span class="relation-total">(488)</span> :
+                </div>
+                <div class="relations">
+                    <span>人车关系</span>
+                    <span class="active">人手机号关系</span>
+                    <span>人房屋关系</span>
+                    <span>人租房关系</span>
+                    <span>人户口关系</span>
+                    <span>人护照关系</span>
+                    <span>人QQ号关系</span>
+                    <span>同学关系</span>
+                </div>
+            </div>
+            <div class="relations-box">
+                <div class="label">
+                    &nbsp;在线关系&nbsp;
+                    <span class="relation-total">(1)</span> :
+                </div>
+                <div class="relations">
+                    <span>同屋同住</span>
+                </div>
+            </div>
+        </div>
+        <!-- 关系列表 end -->
+        <hr/>
+        <!-- 筛选条件 start -->
+        <div class="filter-component-container">
+            <div class="filter-category">基础信息：</div>
+            <div class="input-item">
+                <label>人员类别：</label>
+                <select name="rylbmc" class="form-control select">
+                </select>
+            </div>
+            <div class="input-item">
+                <label>关系时间段：</label>
+                <div class="time-select">
+                    <input name="startDate" class="form_datetime" type="text" placeholder="请选择开始时间" readonly/>
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    --
+                    <input name="endDate" class="form_datetime" type="text" placeholder="请选择结束时间" readonly/>
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="input-item" style="margin-left: -100px;">
+                <label>年龄段：</label>
+                <input name="ageStart" class="input" type="text" style="width: 60px;" /> -
+                <input name="ageEnd" class="input" type="text" style="width: 60px;" />
+            </div>
+            <div class="input-item" style="margin-left: 27px;">
+                <label class="check">
+                    <input type="checkbox" name="tjg">
+                    <span>同籍贯</span>
+                </label>
+            </div>
+            <div class="operator-box">
+                <button class="blue-button-skin blue-button-structure btn_search_detail_ok">确定</button>
+            </div>
+        </div>
+        <!-- 筛选条件 end -->
+
+    </div>
+    <!-- 页面上半部分 搜索框 end -->
+
+    <!-- 上下两部分分割线 start -->
+    <div class="pickup-item">
+        <img class="pickup-image" src="../../images/packup.png" alt="pack up image">
+    </div>
+    <!-- 上下两部分分割线 end -->
+
+    <!-- 页面下半部分 表格 start -->
+    <div class="bottom-part">
+
+        <!-- 下部分 表格 start -->
+        <div class="table-box scroll-table">
+
+            <!-- 表头 start -->
+            <div class="table-fixed-title">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="10">
+                                <div class="result-sum">
+                                    共
+                                    <span>15456</span>条分析结果
+                                </div>
+                                <div class="operation-box">
+                                    <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="width: 23%;">人员基本信息</th>
+                            <th>综合分数</th>
+                            <th>同住址</th>
+                            <th>邻居</th>
+                            <th>婚姻</th>
+                            <th>同机构</th>
+                            <th>民航同换票</th>
+                            <th>铁路同乘车</th>
+                            <th>同乘车</th>
+                            <th>同车</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <!-- 表头 end -->
+
+            <!-- 表body start -->
+            <div class="table-fixed-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="10">
+                                <div class="result-sum">
+                                    共
+                                    <span>15456</span>条分析结果
+                                </div>
+                                <div class="operation-box">
+                                    <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="width: 23%;">人员基本信息</th>
+                            <th>综合分数</th>
+                            <th>同住址</th>
+                            <th>邻居</th>
+                            <th>婚姻</th>
+                            <th>同机构</th>
+                            <th>民航同换票</th>
+                            <th>铁路同乘车</th>
+                            <th>同乘车</th>
+                            <th>同车</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr>
+                            <td>
+                                <img class="avatar" src="../../images/avatar-default.jpg" alt="">
+                                <div class="person-info-box">
+                                    <div class="person-info">
+                                        姓名:&nbsp;
+                                        <span class="value name">雄大</span>
+                                    </div>
+                                    <div class="person-info">
+                                        年龄:&nbsp;
+                                        <span class="value age">25</span>
+                                        性别:&nbsp;
+                                        <span class="value sex">男</span>
+                                        民族:&nbsp;
+                                        <span class="value nation">汉族</span>
+                                    </div>
+                                    <div class="person-info">
+                                        省份证:&nbsp;
+                                        <span class="value ID">110110199001014628</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="avatar" src="../../images/avatar-default.jpg" alt="">
+                                <div class="person-info-box">
+                                    <div class="person-info">
+                                        姓名:&nbsp;
+                                        <span class="value name">雄大</span>
+                                    </div>
+                                    <div class="person-info">
+                                        年龄:&nbsp;
+                                        <span class="value age">25</span>
+                                        性别:&nbsp;
+                                        <span class="value sex">男</span>
+                                        民族:&nbsp;
+                                        <span class="value nation">汉族</span>
+                                    </div>
+                                    <div class="person-info">
+                                        省份证:&nbsp;
+                                        <span class="value ID">110110199001014628</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="avatar" src="../../images/avatar-default.jpg" alt="">
+                                <div class="person-info-box">
+                                    <div class="person-info">
+                                        姓名:&nbsp;
+                                        <span class="value name">雄大</span>
+                                    </div>
+                                    <div class="person-info">
+                                        年龄:&nbsp;
+                                        <span class="value age">25</span>
+                                        性别:&nbsp;
+                                        <span class="value sex">男</span>
+                                        民族:&nbsp;
+                                        <span class="value nation">汉族</span>
+                                    </div>
+                                    <div class="person-info">
+                                        省份证:&nbsp;
+                                        <span class="value ID">110110199001014628</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="avatar" src="../../images/avatar-default.jpg" alt="">
+                                <div class="person-info-box">
+                                    <div class="person-info">
+                                        姓名:&nbsp;
+                                        <span class="value name">雄大</span>
+                                    </div>
+                                    <div class="person-info">
+                                        年龄:&nbsp;
+                                        <span class="value age">25</span>
+                                        性别:&nbsp;
+                                        <span class="value sex">男</span>
+                                        民族:&nbsp;
+                                        <span class="value nation">汉族</span>
+                                    </div>
+                                    <div class="person-info">
+                                        省份证:&nbsp;
+                                        <span class="value ID">110110199001014628</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="avatar" src="../../images/avatar-default.jpg" alt="">
+                                <div class="person-info-box">
+                                    <div class="person-info">
+                                        姓名:&nbsp;
+                                        <span class="value name">雄大</span>
+                                    </div>
+                                    <div class="person-info">
+                                        年龄:&nbsp;
+                                        <span class="value age">25</span>
+                                        性别:&nbsp;
+                                        <span class="value sex">男</span>
+                                        民族:&nbsp;
+                                        <span class="value nation">汉族</span>
+                                    </div>
+                                    <div class="person-info">
+                                        省份证:&nbsp;
+                                        <span class="value ID">110110199001014628</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="avatar" src="../../images/avatar-default.jpg" alt="">
+                                <div class="person-info-box">
+                                    <div class="person-info">
+                                        姓名:&nbsp;
+                                        <span class="value name">雄大</span>
+                                    </div>
+                                    <div class="person-info">
+                                        年龄:&nbsp;
+                                        <span class="value age">25</span>
+                                        性别:&nbsp;
+                                        <span class="value sex">男</span>
+                                        民族:&nbsp;
+                                        <span class="value nation">汉族</span>
+                                    </div>
+                                    <div class="person-info">
+                                        省份证:&nbsp;
+                                        <span class="value ID">110110199001014628</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>否</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                            <td>458</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 表body end -->
+
+            <ul id="qmdfxPagination" class="pagination pagination-sm"></ul>
+        </div>
+        <!-- 下部分 表格 end -->
+
+    </div>
+    <!-- 页面下半部分 表格 start -->
+
+    <!-- 规则设置模态框 start -->
+    <div class="gzsz-model model-component-container">
+        <div class="model-header">
+            <span>规则设置</span>
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </div>
+        <div class="model-body">
+            <div class="gz-items-box">
+                <div class="gz-item">
+                    <span class="label">同住址: </span>
+                    <input type="text">
+                    <span class="unit">分/次</span>
+                </div>
+                <div class="gz-item">
+                    <span class="label">邻居: </span>
+                    <input type="text">
+                    <span class="unit">分/次</span>
+                </div>
+                <div class="gz-item">
+                    <span class="label">婚姻: </span>
+                    <input type="text">
+                    <span class="unit">分/次</span>
+                </div>
+                <div class="gz-item">
+                    <span class="label">民航同换票: </span>
+                    <input type="text">
+                    <span class="unit">分/次</span>
+                </div>
+                <div class="gz-item">
+                    <span class="label">婚姻: </span>
+                    <input type="text">
+                    <span class="unit">分/次</span>
+                </div>
+            </div>
+            <button class="blue-button-skin blue-button-structure btn_search_detail_ok">确定</button>
+        </div>
+    </div>
+    <!-- 规则设置模态框 end -->
+
+
+</div>
+
+<script>
+    app.qmdfx.search.init();
+</script>
