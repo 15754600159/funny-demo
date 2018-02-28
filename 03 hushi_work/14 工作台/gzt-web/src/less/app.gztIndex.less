@@ -1,0 +1,141 @@
+// 公共容器
+.page-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: SourceHanSansCN;
+    .glyphicon {
+        cursor: pointer;
+    }
+}
+
+// 主页index
+.gzt-index {
+    background: url(../images/background.png);
+    background-size: cover;
+    color: #ffffff;
+    .mian-content-box {
+        width: 88vw;
+        height: 72.87vh;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 8.15vh;
+        .window-box {
+            display: inline-block;
+        }
+        .left-window-box,
+        .right-window-box {
+            width: 33.59%;
+            height: 100%;
+            background: url(../images/middle-window-box.png);
+            background-size: 100% 100%;
+        }
+        .window-title {
+            height: 10.1%;
+            position: relative;
+            .window-title-text {
+                font-size: 13px;
+                position: absolute;
+                top: 60%;
+                transform: translateY(-50%);
+                margin-left: 35px;
+            }
+            .glyphicon-remove {
+                position: absolute;
+                right: 25px;
+                top: 60%;
+            }
+        }
+        .left-window-box {
+            .window-content {
+                .content-nav {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 2px;
+                    .content-nav-item {
+                        display: inline-block;
+                        height: 35px;
+                        line-height: 29px;
+                        width: 22%;
+                        text-align: center;
+                        background-color: #094585;
+                        border: 1px solid #00315e;
+                        color: #178ac7;
+                        cursor: pointer;
+                    }
+                    .content-nav-item.active {
+                        background-image: linear-gradient(to top, #1869b4, #4178db);
+                        box-shadow: 0px 1px 0 0 rgba(1, 45, 71, 0.3), inset 0px 1px 0 0 rgba(255, 255, 255, 0.15);
+                        color: #ffffff;
+                    }
+                    .add-nav {
+                        font-size: 25px;
+                    }
+                }
+                .content-tab {
+                    .content-sub-item {
+                        display: none;
+                    }
+                    .content-sub-item.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .center-window-box {
+            width: 27.85%;
+            height: 100%;
+            background: url(../images/small-window-box.png);
+            background-size: 100% 100%;
+            .window-title-text {
+                color: #2eb2ff;
+            }
+        }
+    }
+    .footer-box {
+        width: 61.25vw;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 90px;
+        .icons-box {
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            .icon-item {
+                position: relative;
+                margin: 0 10px;
+                cursor: pointer;
+                .footer-icon {
+                    width: 65px;
+                }
+                .footer-icon-label {
+                    position: absolute;
+                    right: -7px;
+                    top: -6px;
+                    .footer-icon-label-img {
+                        width: 25px;
+                    }
+                    .footer-icon-label-text {
+                        position: absolute;
+                        color: rgba(255, 255, 255, 0.8);
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+        .footer-table {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
