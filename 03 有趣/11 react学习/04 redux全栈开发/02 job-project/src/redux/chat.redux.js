@@ -18,13 +18,15 @@ export function chat(state = initState, action) {
         case MSG_LIST:
             return {
                 ...state,
-                chatmsg: action.payload,
-                unread: action.payload.filter(v => !v.read).length,
+                chatmsg: action.payload.msgs,
+                users: action.payload.users,
+                unread: action.payload.msgs.filter(v => !v.read && v.to === action.payload.userid).length,
             };
         case MSG_RECV:
             return {
                 ...state,
-                chatmsg: [...state.chatmsg, action.payload],
+                chatmsg: [...state.chatmsg, action.payload.msg],
+                unread: action.payload.msg.to === action.payload.userid ? state.unread + 1 : state.unread,
             };
         // case MSG_READ:
         default:
@@ -33,21 +35,22 @@ export function chat(state = initState, action) {
 }
 
 // action creator
-function msgList(msgs) {
-    return {type: MSG_LIST, payload: msgs};
+function msgList(msgs, users, userid) {
+    return {type: MSG_LIST, payload: {msgs, users, userid}};
 }
 
-function msgRecv(msg) {
-    return {type: MSG_RECV, payload: msg};
+function msgRecv(msg, userid) {
+    return {type: MSG_RECV, payload: {msg, userid}};
 }
 
 // business function
 export function getMsgList() {
-    return dispatch => {
+    return (dispatch, getState) => {
         axios.get('/user/getmsglist')
             .then(res => {
-                if (res.state === 200 && res.data.code === 0) {
-                    dispatch(msgList(res.data.msgs));
+                if (res.status === 200 && res.data.code === 0) {
+                    const userid = getState().user._id;
+                    dispatch(msgList(res.data.msgs, res.data.users, userid));
                 }
             });
     }
@@ -60,9 +63,10 @@ export function sendMsg({from, to, msg}) {
 }
 
 export function recvMsg() {
-    return dispatch => {
-        socket.on('recievemsg', (data) => {
-            dispatch(msgRecv(data));
+    return (dispatch, getState) => {
+        socket.off('recievemsg').on('recievemsg', (data) => { // 避免重复监听
+            const userid = getState().user._id;
+            dispatch(msgRecv(data, userid));
         })
     };
 }

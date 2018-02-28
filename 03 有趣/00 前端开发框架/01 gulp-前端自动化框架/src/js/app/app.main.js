@@ -9,8 +9,6 @@ app.main = {
 
 	init: function() {
 		app.menu.initSidebarMenu();
-
 	},
-
 
 };

@@ -10,7 +10,7 @@
 }
 
 .fixd-headerfixd-header, .am-navbar{
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     width: 100%;
 }
@@ -30,6 +30,14 @@
 #chat-page .chat-me .am-list-content{
     text-align: right;
     padding-right: 15px;
+}
+
+#chat-page .am-grid-icon{
+    display: none;
+}
+
+#chat-page .am-grid-text{
+    margin-top: 0px;
 }
 
 .stick-footer{

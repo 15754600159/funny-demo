@@ -12,3 +12,7 @@ export function getRedirectPath({type, avatar}) {
     }
     return url;
 }
+
+export function getChartId(userId, targetId) {
+    return [userId, targetId].sort().join('_');
+}
