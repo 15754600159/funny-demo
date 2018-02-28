@@ -1,3 +1,7 @@
+.boder-bottom {
+    border-bottom: 1px solid rgba(18, 182, 252, .2);
+}
+
 // 公共容器
 .page-container {
     width: 100%;
@@ -9,9 +13,33 @@
     }
 }
 
+// middle window 表格宽度设置
+.gzt-index {
+    .attention-list {
+        .list-title,
+        .list-body .list-body-tr {
+            span:nth-child(1) {
+                width: 10%;
+            }
+            span:nth-child(2) {
+                width: 40%;
+            }
+            span:nth-child(3) {
+                width: 20%;
+            }
+            span:nth-child(4) {
+                width: 15%;
+            }
+            span:nth-child(5) {
+                width: 15%;
+            }
+        }
+    }
+}
+
 // 主页index
 .gzt-index {
-    background: url(../images/background.png);
+    background: url(../images/gztIndex/background.png);
     background-size: cover;
     color: #ffffff;
     .mian-content-box {
@@ -30,7 +58,7 @@
         .right-window-box {
             width: 33.59%;
             height: 100%;
-            background: url(../images/middle-window-box.png);
+            background: url(../images/gztIndex/middle-window-box.png);
             background-size: 100% 100%;
         }
         .window-title {
@@ -48,6 +76,9 @@
                 right: 25px;
                 top: 60%;
             }
+        }
+        .window-content {
+            height: 89%;
         }
         .left-window-box {
             .window-content {
@@ -76,11 +107,40 @@
                     }
                 }
                 .content-tab {
+                    height: 90%;
+                    overflow: auto;
+                    margin: 0px 3%;
+                    padding: 0 2%;
                     .content-sub-item {
                         display: none;
+                        justify-content: flex-start;
+                        flex-wrap: wrap;
+                        .sub-func-module {
+                            display: inline-block;
+                            background-color: rgba(8, 28, 59, .2);
+                            width: 27%;
+                            height: 0;
+                            padding-bottom: 27%;
+                            text-align: center;
+                            margin: 5% 3% 0 3%;
+                            cursor: pointer;
+                            .module-icon {
+                                width: 50%;
+                                margin-top: 15%;
+                            }
+                            .module-name {
+                                margin-top: 3%;
+                            }
+                        }
+                        .add-module {
+                            .module-icon {
+                                width: 80%;
+                                margin-top: 10%;
+                            }
+                        }
                     }
                     .content-sub-item.active {
-                        display: block;
+                        display: flex;
                     }
                 }
             }
@@ -88,10 +148,107 @@
         .center-window-box {
             width: 27.85%;
             height: 100%;
-            background: url(../images/small-window-box.png);
+            background: url(../images/gztIndex/small-window-box.png);
             background-size: 100% 100%;
             .window-title-text {
                 color: #2eb2ff;
+            }
+            .window-content {
+                .button-box {
+                    height: 40%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .middle-window-button {
+                        background-image: linear-gradient(to left, #397ed6, #1454a3);
+                        box-shadow: 0px 1px 0 0 rgba(1, 45, 71, 0.3), inset 0px 1px 0 0 rgba(255, 255, 255, 0.15);
+                        color: #45d0ff;
+                        border: none;
+                        letter-spacing: 10.8px;
+                        padding: 0 0px 0 9px;
+                        margin: 0 10px;
+                    }
+                    .middle-window-button.active {
+                        background-image: linear-gradient(to left, #47c0fc, #0e80cc);
+                        box-shadow: 0.5px 4px 4.8px 1.2px rgba(22, 109, 181, 0.92), inset 0px 1px 0 0 rgba(255, 255, 255, 0.15);
+                        color: #d4efff;
+                    }
+                }
+                .list-box {
+                    height: 58%;
+                    margin: 0 4%;
+                    background: rgba(3, 42, 97, .4);
+                    border: 1px solid rgba(225, 225, 225, .3);
+                    .my-attention {
+                        width: 27%;
+                        transform: translate(-50%, -50%);
+                        margin-left: 50%;
+                    }
+                    .attention-list {
+                        height: 81%;
+                        margin-top: -12%;
+                        .list-title {
+                            color: #3c9bc9;
+                            font-size: 0;
+                            .boder-bottom;
+                            span {
+                                display: inline-block;
+                                height: 30px;
+                                line-height: 30px;
+                                font-size: 12px;
+                                text-align: center;
+                            }
+                        }
+                        .list-body {
+                            height: calc(~"100% - 30px");
+                            overflow: auto;
+                            .list-body-tr {
+                                font-size: 0;
+                                .boder-bottom;
+                                span {
+                                    display: inline-block;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    font-size: 12px;
+                                    text-align: center;
+                                    color: rgba(255, 255, 255, 0.8);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right-window-box {
+            .window-content {
+                padding: 2% 7%;
+                font-size: 0;
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                overflow: auto;
+                .common-tool-module {
+                    display: inline-block;
+                    width: 30%;
+                    height: 35px;
+                    line-height: 35px;
+                    font-size: 12px;
+                    text-align: center;
+                    background-color: #0f386b;
+                    color: #33b8ff;
+                    border: 1px solid rgba(25, 148, 224, 0.3);
+                    margin: 3% 1.5%;
+                    cursor: pointer;
+                }
+                .common-tool-module.active {
+                    background-color: #1994e0;
+                    color: #fefefe;
+                }
+                .add-module {
+                    font-size: 25px;
+                    line-height: 30px;
+                }
             }
         }
     }
