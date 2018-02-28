@@ -1,0 +1,29 @@
+{
+	"port": 5000,
+	"copySrcFiles": [
+		"favicon.ico",
+		"images/**"
+	],
+	"httpProxy": [
+		{
+			"path": [
+				"/api/"
+			],
+			"server": "http://localhost:8000"
+		},
+		{
+			"path": [
+				"/file/"
+			],
+			"server": "http://localhost:8000"
+		}
+	],
+	"wsProxy": [
+		{
+			"path": [
+				"/ws/"
+			],
+			"server": "http://localhost:8000"
+		}
+	]
+}

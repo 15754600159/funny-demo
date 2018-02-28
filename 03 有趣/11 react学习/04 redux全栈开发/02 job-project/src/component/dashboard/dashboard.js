@@ -6,14 +6,11 @@ import {
 import { Route, Switch } from 'react-router-dom';
 
 import NavLinkBar from '../navlink/navlink';
-import Boss from '../../component/boss/boss';
-import Genius from '../../component/genius/genius';
-import User from '../../component/user/user';
+import Boss from '../boss/boss';
+import Genius from '../genius/genius';
+import User from '../user/user';
+import Msg from '../msg/msg';
 import { getMsgList, recvMsg } from '../../redux/chat.redux';
-
-function Msg() {
-    return <h2>Msg页</h2>
-}
 
 @connect(
     state => state,

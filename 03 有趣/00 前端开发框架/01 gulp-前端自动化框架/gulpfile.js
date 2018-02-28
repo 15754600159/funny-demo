@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
 var less = require('gulp-less');
+var sass = require('gulp-sass');
 var fileInclude = require('gulp-file-include');
 var htmlmin = require('gulp-htmlmin');
 var zip = require('gulp-zip');
@@ -41,12 +42,16 @@ var paths = {
 	}
 };
 
+
 /*
- * ================================= 代理配置 =================================
+ * ================================= 配置 =================================
  */
-var proxyConfig = require('./.proxy.default.json');
-if (fs.existsSync('./.proxy.json')) {
-	proxyConfig = require('./.proxy.json');
+var settings = require('./settings.default.json');
+if (fs.existsSync('./settings.json')) {
+	var customSettings = require('./settings.json');
+	for ( var name in customSettings) {
+		settings[name] = customSettings[name];
+	}
 }
 
 
@@ -188,6 +193,33 @@ gulp.task('less', function(cb) {
 });
 
 /**
+ * sass文件处理
+ */
+gulp.task('sass', function(cb) {
+	var cbs = 0;
+	var callback = function() {
+		cbs++;
+		if (cbs === modulesSize) {
+			cb();
+		}
+	};
+
+	var process = function(item, modules) {
+		if (modules[item].sassFiles && modules[item].sassFiles.length) {
+			gulp.src(modules[item].sassFiles).pipe(sass()).pipe(rename(function(path) {
+				path.basename = item + '.sass.' + path.basename;
+			})).pipe(gulp.dest(paths.dist.css)).on('end', callback);
+		} else {
+			callback();
+		}
+	};
+
+	for (var item in modules) {
+		process(item, modules);
+	}
+});
+
+/**
  * 合并css文件
  */
 gulp.task('css:concat', function(cb) {
@@ -206,6 +238,7 @@ gulp.task('css:concat', function(cb) {
 			cssFiles = cssFiles.concat(modules[item].cssFiles);
 		}
 		cssFiles.push(paths.dist.css + item + '.less.*.css');
+		cssFiles.push(paths.dist.css + item + '.sass.*.css');
 		gulp.src(cssFiles).pipe(concat(item + '.css')).pipe(gulp.dest(paths.dist.css)).on('end', callback);
 	};
 
@@ -247,10 +280,10 @@ gulp.task('css:min', function(cb) {
 });
 
 gulp.task('css-dev', function(cb) {
-	runSequence(['less'], 'css:concat', cb);
+	runSequence(['less', 'sass'], 'css:concat', cb);
 });
 gulp.task('css', function(cb) {
-	runSequence(['less'], 'css:concat', 'css:min', cb);
+	runSequence(['less', 'sass'], 'css:concat', 'css:min', cb);
 });
 
 
@@ -300,17 +333,16 @@ gulp.task('others', function(cb) {
 		}
 	};
 
-	gulp.src([paths.source.root + 'favicon.ico', paths.source.root + 'images/**', paths.source.root + 'template/**'], {
-		base: paths.source.root
-	}).pipe(gulp.dest(paths.dist.root)).on('end', callback);
+	if(settings.copySrcFiles) {
+		var copyPaths = [];
+		settings.copySrcFiles.forEach(function(item){
+			copyPaths.push(paths.source.root + item);
+		});
 
-	gulp.src([paths.source.root + 'icomoon/fonts/**'], {
-		base: paths.source.root + 'icomoon'
-	}).pipe(gulp.dest(paths.dist.root)).on('end', callback);
-
-	gulp.src([paths.source.root + 'fonts/**'], {
-		base: paths.source.root
-	}).pipe(gulp.dest(paths.dist.root)).on('end', callback);
+		gulp.src(copyPaths, {
+			base: paths.source.root
+		}).pipe(gulp.dest(paths.dist.root)).on('end', cb);
+	}
 });
 
 
@@ -349,24 +381,40 @@ gulp.task('connect', function() {
 	connect.server({
 		root: paths.dist.root,
 		livereload: {
-			port: 4001
+			port: settings.port + 1
 		},
-		port: 4000,
+		port: settings.port,
 		middleware: function() {
-			var httpProxy = proxy(['/api/', '/igs/', '/image/'], {
-				target: proxyConfig.server,
-				changeOrigin: true,
-				logLevel: 'debug'
-			});
+			var result = [];
 
-			var wsProxy = proxy('/message/', {
-				target: proxyConfig.server,
-				changeOrigin: true,
-				ws: true,
-				logLevel: 'debug'
-			});
+			// http代理
+			var httpProxy = settings.httpProxy;
+			if(httpProxy) {
+				httpProxy.forEach(function(item){
+					var proxyItem = proxy(item.path, {
+						target: item.server,
+						changeOrigin: true,
+						logLevel: 'debug'
+					});
+					result.push(proxyItem);
+				});
+			}
 
-			return [httpProxy, wsProxy];
+			// websocket代理
+			var wsProxy = settings.wsProxy;
+			if(wsProxy) {
+				wsProxy.forEach(function(item){
+					var proxyItem = proxy(item.path, {
+						target: item.server,
+						changeOrigin: true,
+						ws: true,
+						logLevel: 'debug'
+					});
+					result.push(proxyItem);
+				});
+			}
+
+			return result;
 		}
 	});
 });
@@ -376,7 +424,7 @@ gulp.task('reload', function() {
 
 gulp.task('open', function() {
 	return gulp.src(paths.dist.root).pipe(open({
-		uri: 'http://localhost:4000'
+		uri: 'http://localhost:' + settings.port
 	}));
 });
 
@@ -400,7 +448,7 @@ gulp.task('format', function() {
  * ================================= release =================================
  */
 gulp.task('release:copy', function(cb) {
-	gulp.src(['favicon.ico', 'fonts/**', 'images/**', 'pages/**', 'index.html', 'css/*.min*.css', 'js/*.min*.js','template/**'], {
+	gulp.src(['favicon.ico', 'fonts/**', 'images/**', 'pages/**', 'index.html', 'css/*.min*.css', 'js/*.min*.js'], {
 		cwd: paths.dist.root,
 		base: paths.dist.root
 	}).pipe(gulp.dest(paths.release.root + 'web/')).on('end', cb);

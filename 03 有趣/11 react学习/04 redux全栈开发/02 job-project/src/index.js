@@ -4,6 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'; // redux管理异步
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import 'babel-polyfill'; // 垫片库 用于支持ES6的API
 
 import './index.css';
 

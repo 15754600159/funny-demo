@@ -1,4 +1,7 @@
 app.main = {
+	/**
+	 * 打开主页面
+	 */
 	open: function() {
 		$m.page.loadPage({
 			url: 'pages/main.html',
@@ -6,9 +9,7 @@ app.main = {
 			container: 'container-wrapper'
 		});
 	},
-
 	init: function() {
-		app.menu.initSidebarMenu();
-	},
 
+	}
 };

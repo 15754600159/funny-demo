@@ -1,9 +1,21 @@
 /* global app:false*/
 app.api = {
 
-	url: 'http://localhost:9999',
-	// url: 'http://192.168.2.105:9999', //岁
-	// url: 'http://192.168.1.103:9999', //祥
+	url: '/api',
+
+	xhrMap: {}, // 保存xhr对象
+
+	abort: function() {
+		var id;
+		var xhr;
+		for (id in app.api.xhrMap) {
+			xhr = app.api.xhrMap[id];
+			if (xhr) {
+				xhr.abort();
+			}
+		}
+		app.loading.hide();
+	},
 
 	ajax: function(options, callback) {
 		var settings = {
@@ -30,10 +42,25 @@ app.api = {
 					return false;
 				}
 			},
+			beforeSend: function(XHR) {
+				var id = Date.now() + Math.random();
+				XHR.id = id;
+				app.api.xhrMap[id] = XHR;
+				if (callback.beforeSend) {
+					callback.beforeSend(XHR);
+				}
+			},
 			complete: function(XHR) {
+				var id = XHR.id;
+				delete app.api.xhrMap[id];
+
 				if (!XHR) {
 					// abort
 					app.loading.hide();
+				}
+
+				if (callback.complete) {
+					callback.complete(XHR);
 				}
 			}
 		};
@@ -45,7 +72,7 @@ app.api = {
 			settings.complete = callback.complete;
 		}
 
-		var $d = window.$ || $m;
+		var $d = $m;
 
 		if (options.data) {
 			if (options.type.toUpperCase() === 'GET') {
