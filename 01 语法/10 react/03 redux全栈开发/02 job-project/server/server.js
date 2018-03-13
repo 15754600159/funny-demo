@@ -1,6 +1,7 @@
 const express = require('express'),
     bodyParser = require('body-parser'),
-    cookieParser = require('cookie-parser');
+    cookieParser = require('cookie-parser'),
+    path = require('path');
 
 const userRouter  = require('./user'),
     model = require('./model'),
@@ -26,6 +27,14 @@ io.on('connection', function(socket) {
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use('/user', userRouter);
+
+// react路径处理
+app.use((req, res, next) => {
+    if (req.url.startWith('/user/') || req.url.startWith('/static/')) {
+        return next();
+    }
+    return res.sendFile(path.resolve('build/index.html'));
+});
 
 server.listen(9093, () => {
     console.log('Node app start at port 9093');
