@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>layDate</title>
+</head>
+<body>
+    <input type="text" class="demo-input" placeholder="请选择日期" id="test1">
+
+    <script src="./laydate.js"></script> <!-- 在JS里面还会引入一个css文件 可在JS里面改路径 -->
+    <script>
+        /**
+         * 1.入门: http://www.layui.com/laydate/
+         * 2.API: http://www.layui.com/doc/modules/laydate.html
+         */
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+    </script>
+</body>
+</html>

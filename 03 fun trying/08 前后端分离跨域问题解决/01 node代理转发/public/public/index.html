@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cross Origin</title>
+</head>
+<body>
+    <button class="btn">点我发请求</button>
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementsByClassName('btn')[0];
+            btn.addEventListener('click', clickHandle, false);
+
+            function clickHandle(){
+                $.ajax({
+                    url:"api/hello",
+                    success: function(data){
+                        console.log(data);
+                    }
+                })
+            }
+        }
+    </script>
+</body>
+</html>
