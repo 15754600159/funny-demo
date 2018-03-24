@@ -1,7 +1,7 @@
 # 代码规范：
 ## (1)ES6风格：
 
-    见ES6笔记
+[见ES6笔记](https://github.com/15754600159/my-practice/blob/master/04%20note/ES6.md)
 
 ## (2)编程规范：
 
