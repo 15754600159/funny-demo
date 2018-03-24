@@ -31,11 +31,11 @@
 12. [Service Worker,Web Worker,WebSocket](https://www.2cto.com/kf/201711/700150.html)
 
 ## note
-1. [css note](https://note.youdao.com/)
-2. [JavaScript note](https://note.youdao.com/)
-3. [code standard](https://note.youdao.com/)
-4. [ES6](https://note.youdao.com/)
-5. [开发小技巧](https://note.youdao.com/)
+1. [css note](https://github.com/15754600159/my-practice/blob/master/04%20note/css%20note.md)
+2. [JavaScript note](https://github.com/15754600159/my-practice/blob/master/04%20note/JavaScript%20note.md)
+3. [code standard](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard.md)
+4. [ES6](https://github.com/15754600159/my-practice/blob/master/04%20note/ES6.md)
+5. [开发小技巧](https://github.com/15754600159/my-practice/blob/master/04%20note/%E5%BC%80%E5%8F%91%E5%B0%8F%E6%8A%80%E5%B7%A7.md)
 
 
 
