@@ -58,3 +58,26 @@
 *   生成发布包
 
     `npm run release`
+
+## 文件目录结构 ##
+
+├─.vscode ==vscode 配置文件==
+├─dist ==调试环境打包目录==
+├─server ==前端自测调试接口==
+│  ├─data ==json数据==
+│  └─file ==请求文吉安==
+└─src ==源码==
+    ├─css ==CSS公共库==
+    ├─images ==图片资源==
+    ├─js ==JS文件==
+    │  ├─app ==js逻辑代码==
+    │  │  └─api ==统一接口管理文件==
+    │  └─libs ==js公共库==
+    ├─less ==less文件 具体规范参照[最佳实践NEC](http://nec.netease.com/)==
+    │  ├─app ==此项目自定义样式文件==
+    │  │  ├─components ==项目公共组件样式==
+    │  │  └─pages ==具体页面样式==
+    │  └─common ==项目共享样式文件==
+    ├─pages ==html文件==
+    │  └─common ==复用html代码==
+    └─scss ==sass文件==
