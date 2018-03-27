@@ -75,6 +75,7 @@ window.addEventListener('message',function(e){
     window.parent.postMessage(color,'*');
 },false);   
 ``` 
+13. 解决路径跳转中文乱码的问题： encodeURI(url) decodeURI(url)
 ## jQuery
 1. jQuery的attr()对应的是html文本；prop()对应的是DOM对象;
 2. jQuery中each类似于javascript的for循环  
