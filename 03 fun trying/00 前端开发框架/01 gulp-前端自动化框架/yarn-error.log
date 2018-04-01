@@ -1,0 +1,78 @@
+Arguments: 
+  D:\dev\environment\nodeJS\node.exe D:\dev\environment\yarn\bin\yarn.js dev
+
+PATH: 
+  C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\dev\environment\nodeJS\;"D:\dev\environment\java\bin;D:\dev\environment\java\jre\bin;";D:\dev\software\git\Git\cmd;D:\dev\software\SVN\bin;D:\dev\environment\yarn\bin\;D:\dev\environment\python\Scripts\;D:\dev\environment\python\;C:\Users\sheng\AppData\Local\Microsoft\WindowsApps;C:\Users\sheng\AppData\Roaming\npm;C:\Users\sheng\AppData\Local\GitHubDesktop\bin;D:\dev\software\VSCode\Microsoft VS Code\bin;C:\Users\sheng\AppData\Local\Turbo\Cmd\;C:\Users\sheng\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  8.9.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+  	"name": "security-web",
+  	"version": "1.0.0",
+  	"description": "security-web",
+  	"author": "",
+  	"repository": {
+  		"type": "git",
+  		"url": ""
+  	},
+  	"scripts": {
+  		"dev": "gulp",
+  		"release": "gulp release",
+  		"lint": "eslint \"src/js/app/**/*.js\"",
+  		"format": "gulp format",
+  		"server": "node server/server.js"
+  	},
+  	"devDependencies": {
+  		"eslint": "",
+  		"http-proxy-middleware": "",
+  		"babel-core": "",
+  		"babel-preset-env": "",
+  		"gulp-cli": "",
+  		"gulp": "",
+  		"gulp-rename": "",
+  		"gulp-concat": "",
+  		"gulp-uglify": "",
+  		"gulp-clean-css": "",
+  		"gulp-less": "",
+  		"gulp-sass": "",
+  		"gulp-file-include": "",
+  		"gulp-htmlmin": "",
+  		"gulp-zip": "",
+  		"gulp-connect": "",
+  		"gulp-open": "",
+  		"gulp-jsbeautifier": "",
+  		"gulp-babel": "",
+  		"del": "",
+  		"run-sequence": ""
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c gulp
+  Directory: D:\dev\workspace\my-practice\03 fun trying\00 前端开发框架\01 gulp-前端自动化框架
+  Output:
+  
+      at ProcessTermError.MessageError (D:\dev\environment\yarn\lib\cli.js:186:110)
+      at new ProcessTermError (D:\dev\environment\yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (D:\dev\environment\yarn\lib\cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

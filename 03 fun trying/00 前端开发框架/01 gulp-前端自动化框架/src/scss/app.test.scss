@@ -1,0 +1,27 @@
+$title-hight: 30px;
+@mixin large-text($num: 4px) {
+    border-radius: 5px;
+}
+
+.box {
+    width: 300px;
+    height: 400px;
+    &-title {
+        height: $title-hight;
+        line-height: $title-hight;
+        @include large-text;
+    }
+    &:hover {
+        color: red;
+    }
+}
+
+p {
+    top: 0;
+    padding: 0;
+    $color: tomato;
+    @include mixin($color);
+    @include media("desktop") {
+        color: black;
+    }
+}

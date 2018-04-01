@@ -14,5 +14,8 @@
 	// 禁用默认的 JavaScript 验证。使用ESLint。
 	"javascript.validate.enable": false,
 	// 以新行结束。
-	"html.format.endWithNewline": true
+	"html.format.endWithNewline": true,
+	// csscomb 配置
+	"csscomb.formatOnSave": false,
+ 	"csscomb.preset": ".csscomb.json",
 }
