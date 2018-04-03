@@ -73,7 +73,7 @@ function move({x = 0, y = 0}){
 move({x: 3, y: 8}); //[3, 8]
 move({x: 3}); //[3, 0]
 move({}); //[0, 0]
-move(); //[0, 0]
+move(); //error
 ```
 5. 应用
 ```
