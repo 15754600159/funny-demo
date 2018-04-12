@@ -39,23 +39,4 @@ window.onload = () => {
     });
 
 
-
-
-
-    // test: 日常业务，点击发送请求
-    const queryButton = document.querySelector('.query');
-    // const queryStream = Rx.Observable.fromEvent(queryButton, 'click')
-    //     .pluck('target', 'data-id')
-    //     .switchMap
-    console.log(Rx.Observable.ajax)
-    Rx.Observable.ajax({
-        url: '/data',
-        method: 'GET',
-    }).subscribe(result => {
-        console.log(result);
-    });
-
-
-
-
 };
