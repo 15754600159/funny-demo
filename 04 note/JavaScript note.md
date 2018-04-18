@@ -1,12 +1,12 @@
 ## 原生JavaScript
 1. 选择器时态问题 
-```
-var elem = document.getElementsByClassName('div');//能选中未来的元素
-var elem = document.querySelectorAll('.div');//不能选中未来的元素
-var elem = $('.div');//不能选中未来的元素
-// 绑定未来元素
-$(document).on('click', '.class', function(){})
-```
+    ```
+    var elem = document.getElementsByClassName('div');//能选中未来的元素
+    var elem = document.querySelectorAll('.div');//不能选中未来的元素
+    var elem = $('.div');//不能选中未来的元素
+    // 绑定未来元素
+    $(document).on('click', '.class', function(){})
+    ```
 2. null和undefined
     - 最初版本：null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的 原始值，转为数值时为NaN。
     - 现在：null表示"没有对象"，即该处不应该有值。undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。
@@ -65,17 +65,48 @@ $(document).on('click', '.class', function(){})
         ```
 11. 作用域链是在函数定义的时候确定的，作用域中变量的值（执行上下文）是在执行过程中产生的确定的。
 12. postMessage解决不同iframe之间的参数传递
-```
-// a页面 （!!!注意：window.frames[0]是目标iframe，是信息接收方，而不是信息发送方）
-window.frames[0].postMessage('getcolor','http://lslib.com');
-// b页面
-window.addEventListener('message',function(e){
-    if(e.source!=window.parent) return;
-    var color=container.style.backgroundColor;
-    window.parent.postMessage(color,'*');
-},false);   
-``` 
+    ```
+    // a页面 （!!!注意：window.frames[0]是目标iframe，是信息接收方，而不是信息发送方）
+    window.frames[0].postMessage('getcolor','http://lslib.com');
+    // b页面
+    window.addEventListener('message',function(e){
+        if(e.source!=window.parent) return;
+        var color=container.style.backgroundColor;
+        window.parent.postMessage(color,'*');
+    },false);   
+    ``` 
 13. 解决路径跳转中文乱码的问题： encodeURI(url) decodeURI(url)
+14. console正确打开方式：
+    ```
+    console.log("log");
+    console.log("%d年%d月%d日", 2015, 09, 22);
+    
+    console.debug("debug");
+    console.info("info");
+    console.warn("warn");
+    console.error("error");
+    
+    // 输出表格
+    const people = {
+        "person1": {"fname": "san", "lname": "zhang"}, 
+        "person2": {"fname": "si", "lname": "li"}, 
+        "person3": {"fname": "wu", "lname": "wang"}
+    };
+    console.table(peopl);
+    
+    // 测试性能
+    console.time("for-test");
+    // some codde...
+    console.timeEnd("for-test");
+    
+    // 记录代码被执行次数
+    function func() {
+        console.count("label");
+    }
+    for(let i = 0; i < 3; i++) {
+        func();
+    }
+    ```
 ## jQuery
 1. jQuery的attr()对应的是html文本；prop()对应的是DOM对象;
 2. jQuery中each类似于javascript的for循环  
