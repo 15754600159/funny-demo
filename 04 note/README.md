@@ -37,9 +37,10 @@
 ## code standard:
 
 1. [html规范](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/html.md)
-2. [css规范](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/css.md)
-3. [css最佳实践](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/css%20best%20practice.md)
-4. [javascript规范](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/javascript.md)
+2. [html语义化](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/html%20semantics.md)
+3. [css规范](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/css.md)
+4. [css最佳实践](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/css%20best%20practice.md)
+5. [javascript规范](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/javascript.md)
 
 
 
