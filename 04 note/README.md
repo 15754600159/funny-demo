@@ -31,15 +31,15 @@
 ## note:
 1. [css note](https://github.com/15754600159/my-practice/blob/master/04%20note/css%20note.md)
 2. [JavaScript note](https://github.com/15754600159/my-practice/blob/master/04%20note/JavaScript%20note.md)
-3. [code standard](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard.md)
-4. [ES6](https://github.com/15754600159/my-practice/blob/master/04%20note/ES6.md)
-5. [开发小技巧](https://github.com/15754600159/my-practice/blob/master/04%20note/%E5%BC%80%E5%8F%91%E5%B0%8F%E6%8A%80%E5%B7%A7.md)
+3. [ES6 note](https://github.com/15754600159/my-practice/blob/master/04%20note/ES6%20note.md)
+4. [开发小技巧](https://github.com/15754600159/my-practice/blob/master/04%20note/%E5%BC%80%E5%8F%91%E5%B0%8F%E6%8A%80%E5%B7%A7.md)
 
 ## code standard:
 
-1. [html规范](https://github.com/15754600159/my-practice/blob/master/01%20%E8%AF%AD%E6%B3%95/11%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/html.md)
-2. [css规范](https://github.com/15754600159/my-practice/blob/master/01%20%E8%AF%AD%E6%B3%95/11%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/css.md)
-3. [javascript规范](https://github.com/15754600159/my-practice/blob/master/01%20%E8%AF%AD%E6%B3%95/11%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/javascript.md)
+1. [html规范](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/html.md)
+2. [css规范](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/css.md)
+3. [css最佳实践](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/css%20best%20practice.md)
+4. [javascript规范](https://github.com/15754600159/my-practice/blob/master/04%20note/code%20standard/javascript.md)
 
 
 
