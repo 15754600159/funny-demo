@@ -1,5 +1,6 @@
 /**
  * @desc 思路：action -> state -> dom操作view
+ * 用immutable优化数据diff
  */
 
 window.onload = () => {
@@ -45,14 +46,12 @@ window.onload = () => {
     // 订阅状态的变化，更新DOM
     let prevState = immutableState;
     state.subscribe(state => {
-        if (state.get('count') !== prevState.get('count')) { // 值比对
-            document.querySelector('h1').innerHTML = state.get('count');
-        };
-        if (state.get('inputValue') !== prevState.get('inputValue')) { // 值比对
-            document.querySelector('h2').innerHTML = state.get('inputValue');
-        };
-        if (!Immutable.is(state.get('queryData'), prevState.get('queryData'))) { // 对象比对
-            document.querySelector('h3').innerHTML = state.get('queryData');
+        for (let [key, value] of state) {
+            if (Immutable.is(state.get(key), prevState.get(key))) continue;
+            const elmeList = document.querySelectorAll(`[data-bind="${key}"]`);
+            for (let elem of elmeList) {
+                elem.innerHTML = state.get(key);
+            };
         };
         prevState = prevState.merge(state);
     });

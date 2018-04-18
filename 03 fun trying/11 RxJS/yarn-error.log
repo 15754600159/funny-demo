@@ -26,6 +26,7 @@ npm manifest:
     "author": "guoshio",
     "license": "ISC",
     "dependencies": {
+      "axios": "^0.18.0",
       "fs.promised": "^3.0.0",
       "immutable": "^3.8.2",
       "koa": "^2.3.0",

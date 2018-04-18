@@ -1,6 +1,4 @@
 // css
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
 
 // 引入mine的JS、CSS
 import '../css/main.css';//使用require导入css文件

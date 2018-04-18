@@ -77,11 +77,6 @@ module.exports = {
                     },
                 ]
             },
-            // bootstrap相关文件处理
-            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader", options: {name: 'fonts/[name].[ext]'}},
-            { test: /\.(woff|woff2)$/, loader: "url-loader?prefix=font/&limit=5000", options: {name: 'fonts/[name].[ext]'} },
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream", options: {name: 'fonts/[name].[ext]'} },
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml", options: {name: 'fonts/[name].[ext]'} },
         ]
     },
     plugins: [
@@ -92,10 +87,6 @@ module.exports = {
             template: __dirname + "/app/index.tmpl.html",
         }),
         new webpack.HotModuleReplacementPlugin(),//热加载插件
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        }),
     ]
 
 
