@@ -1,0 +1,14 @@
+*~
+Thumbs.db
+.DS_Store
+._*
+
+.project
+
+package-lock.json
+npm-debug.log
+node_modules
+
+dist
+release
+.proxy.json

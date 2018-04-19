@@ -1,0 +1,31 @@
+{
+	"libs": {
+		"version": "1.0.0",
+		"jsFiles": [
+			"src/js/libs/mouse.min-0.0.19.js",
+			"src/js/libs/polyfill.min.js",
+			"src/js/libs/Rx.min.js",
+			"src/js/libs/immutable.min.js"
+		],
+		"cssFiles": [
+			"src/css/mouse.min-0.0.19.css"
+		]
+	},
+	"app": {
+		"version": "1.0.0",
+		"jsFiles": [
+			"src/js/app/app.js",
+			"src/js/app/common/app.*.js",
+			"src/js/app/api/app.api.js",
+			"src/js/app/api/app.api.*.js",
+			"src/js/app/app.main.js",
+			"src/js/app/login/app.login.js"
+		],
+		"lessFiles": [
+			"src/less/app.less"
+		],
+		"sassFiles": [
+			"src/scss/app.scss"
+		]
+	}
+}

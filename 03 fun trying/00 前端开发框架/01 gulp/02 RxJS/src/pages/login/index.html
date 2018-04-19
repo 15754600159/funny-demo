@@ -1,0 +1,29 @@
+<div class="page-container login">
+
+    <h1 data-bind="count">I am test page.</h1>
+    <h2 data-bind="inputValue">I am test page.</h2>
+    <h3 data-bind="queryData">I am test page.</h3>
+    <input class="input" type="text">
+    <button class="increase">按钮+</button>
+    <button class="decrease">按钮-</button>
+    <br>
+    <button class="query" data-id="1">请求</button>
+    <br>
+    <hr>
+    <h3 data-bind="array">
+        <ul>
+            <li>aa</li>
+            <li>bb</li>
+            <li>cc</li>
+        </ul>
+    </h3>
+    <button class="array">array</button>
+    <h3 data-bind="chart"></h3>
+    <button class="object">oject</button>
+
+</div>
+
+
+<script>
+    app.login.init();
+</script>
