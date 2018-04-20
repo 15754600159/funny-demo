@@ -44,15 +44,18 @@ app.RxFn = {
         if (!pageObject.state || !pageObject.observables) {
             console.warn(`<${pageObject.pageContainer}> 页面对象没有定义属性 state 或者 observables!`);
             return;
-        }
+        };
 
         let { state: prevState, observables } = pageObject;
         // 事件合并
         const stream = Rx.Observable.merge(...observables)
             .scan((state, changeFn) => changeFn(state), prevState);
 
+        // 避免重复监听
+        if (pageObject.subscription) return;
+
         // 订阅状态的变化，更新DOM
-        stream.subscribe(state => {
+        pageObject.subscription = stream.subscribe(state => {
             prevState = this.diffFn(state, prevState, pageObject);
         });
 

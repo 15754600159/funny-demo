@@ -1,7 +1,7 @@
 app.login = {
     pageContainer: '.login',
     url: 'pages/login/index.html',
-    /** 必带属性 */
+    /** 必带属性: 页面数据 */
     state: Immutable.fromJS({
         count: 0,
         inputValue: null,
@@ -12,7 +12,7 @@ app.login = {
         },
         array: [],
     }),
-    /** 必带属性 */
+    /** 必带属性: 观察对象 */
     observables: [],
 
     // 初始化页面
