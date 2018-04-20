@@ -27,12 +27,29 @@
         display: inline-block; 
         vertical-align: middle;
         ```
-    3.  
+    3.  absolute定位：
         ```
-        //子元素
+        // 方法1：子元素
         position: relative; /*脱离文档流*/
         top: 50%; /*偏移*/
         transform: translateY(-50%);
+        //方法2：
+        .c1 { // 父
+            height: 100px;
+            width: 100px;
+            background: #f3c8c8;
+            position: relative;
+        }
+        .c2 { //子
+            height: 50px;
+            width: 50px;
+            background-color: yellow; 
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            display: inline-block;
+            margin: auto;
+        }
         ```
     4. [flex教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)   
     
@@ -50,10 +67,27 @@
     2. 定宽块状元素：设置左右margin值为auto  
     3. transform
         ```
-        //子元素
+        // 方法1：子元素
         position: relative; /*脱离文档流*/
         left: 50%; /*偏移*/
         transform: translateX(-50%);
+        // 方法2：
+        .c1 { // 父
+            height: 100px;
+            width: 100px;
+            background: #f3c8c8;
+            position: relative;
+        }
+        .c2 { // 子
+            height: 50px;
+            width: 50px;
+            background-color: yellow; 
+            position: absolute;
+            left: 0;
+            right: 0;
+            display: inline-block;
+            margin: auto;
+        }
         ```  
     4. flex布局
 
