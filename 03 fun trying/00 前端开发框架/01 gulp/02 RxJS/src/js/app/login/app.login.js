@@ -31,7 +31,17 @@ app.login = {
 
     // 初始化页面观察者
     initObservables() {
-        // # 1. 事件注册
+        // # 1. 逻辑事件------------------------------------------------------------------------------
+        // XX点击事件
+        const button = document.querySelector('.increase');
+        Rx.Observable.fromEvent(button, 'click')
+            .subscribe(() => {
+                console.log('rxjs click');
+            });
+
+
+        // # 2. 状态事件------------------------------------------------------------------------------
+        // ## 1. 事件注册
         // 增加按钮点击事件
         const increaseButton = document.querySelector('.increase'),
             increase = Rx.Observable.fromEvent(increaseButton, 'click')
@@ -70,7 +80,7 @@ app.login = {
                     return value.set('a', 'aaa');
                 }));
 
-        // # 2. 加入事件队列
+        // ## 2. 加入事件队列
         this.observables.push(increase, decrease, input, query, array, object);
 
     },

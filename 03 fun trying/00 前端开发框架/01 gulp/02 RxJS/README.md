@@ -42,6 +42,14 @@
 
     1. `Ctrl + shift + s` -> 代码属性排序(格式有些问题)
     2. `右键 格式化代码` -> 代码格式调整
+    
+*   格式化代码
+
+    `npm run format`
+
+*   JavaScript代码检查
+
+    `npm run lint`
 
 
 ## 运行 ##
@@ -53,14 +61,6 @@
 *   启动后台服务(模拟后台提供数据)
 
     `npm run server`
-
-*   格式化代码
-
-    `npm run format`
-
-*   JavaScript代码检查
-
-    `npm run lint`
 
 *   生成发布包
 

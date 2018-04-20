@@ -13,14 +13,12 @@ app.RxFn = {
 
             switch (this.getVariableType(nativeState[key])) {
                 case 'Basic':
-                    // console.log('Basic');
                     elmeList = document.querySelectorAll(`[data-bind="${key}"]`);
                     for (let elem of elmeList) {
                         elem.innerHTML = nativeState[key];
                     };
                     break;
                 case 'Object':
-                    // console.log('Object');
                     if (!pageObject[`${key}Render`]) {
                         console.warn(`<${pageObject.pageContainer}> 页面对象没有为数据${key}定义${key}Render方法!`);
                         return;
@@ -41,6 +39,10 @@ app.RxFn = {
 
     // 绑定 action -> state -> view
     mapAtoMtoV(pageObject) {
+        if (pageObject) {
+            console.warn('页面对象没有传入!');
+            return;
+        };
         if (!pageObject.state || !pageObject.observables) {
             console.warn(`<${pageObject.pageContainer}> 页面对象没有定义属性 state 或者 observables!`);
             return;
