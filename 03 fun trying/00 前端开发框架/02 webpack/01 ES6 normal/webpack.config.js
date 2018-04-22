@@ -24,15 +24,17 @@ module.exports = {
         rules: [
             { // JS处理
                 test: /(\.jsx|\.js)$/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            "env",
-                            "react"
-                        ]
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            presets: [
+                                "env",
+                                "react"
+                            ]
+                        }
                     }
-                },
+                ],
                 exclude: /node_modules/
             },
             { // CSS处理
