@@ -1,25 +1,10 @@
-1. link元素的title属性值生成一个候选样式列表，可以提供用户选择不同的网站主题。
-    ```
-    <link rel="stylesheet" type="text/css" href="sheet1.css" title="Default" />
-    <link rel="stylesheet" type="text/css" href="sheet2.css" title="Black" />
-    <link rel="stylesheet" type="text/css" href="sheet3.css" title="Big Text" />
-    ```
-2. 属性选择器：
-    ```
-    h1[class] {color: red;}
-    *[title] {color: red;}
-    h1[class][href] {color: red;}
-    h1[title^="bar"] {color: red;} //开头
-    h1[title$="bar"] {color: red;} //结尾
-    h1[title*="bar"] {color: red;} //包含
-    ```
-3. 用rem，JS动态改变html的font-size可以屏幕自适应
-5. CSS3的属性pointer-events能控制JS事件的触发：
+1. 用rem，JS动态改变html的font-size可以屏幕自适应
+2. CSS3的属性pointer-events能控制JS事件的触发：
     ```
     pointer-events：none //禁止所有事件
     pointer-events：all  //启用所有事件监听
     ```
-20. 元素垂直居中： 
+3. 元素垂直居中： 
 
     1. 父元素高度确定的单行文本设置  height = line-height  
     2. inline-block
@@ -61,7 +46,7 @@
         ```  
     5. 父容器设置为display:table ，然后将子元素也就是要垂直居中显示的元素设置为 display:table-cell （不推荐使用）
 
-6. 元素水平居中：  
+4. 元素水平居中：  
 
     1. 行内元素：设置  text-align:center  
     2. 定宽块状元素：设置左右margin值为auto  
@@ -91,11 +76,11 @@
         ```  
     4. flex布局
 
-7. 清除浮动：
+5. 清除浮动：
     1. 父元素：overflow：auto;
     2. 父元素内部最后加<br style="clear:both">
-8. 元素设置为display:inline-block;之后会往下移：那是因为display:inline-block成了内联，inline box有一个叫做baseline的东西，想要更改很简单只要vertical-align: top;和vertical-align: bottom;
-9. div剩余高度自动填充：  
+6. 元素设置为display:inline-block;之后会往下移：那是因为display:inline-block成了内联，inline box有一个叫做baseline的东西，想要更改很简单只要vertical-align: top;和vertical-align: bottom;
+7. div剩余高度自动填充：  
     1. position:absolute 
         ```
         #nav {
@@ -117,7 +102,7 @@
         ```
         height: calc(100% - 3.4986rem);
         ```
-10. CSS超出宽度的文本用'...'
+8. CSS超出宽度的文本用'...'
 
     ```
     <!---- 正常 >
@@ -141,7 +126,7 @@
     
     }
     ```
-11. CSS 设置table下tbody滚动条
+9. CSS 设置table下tbody滚动条
     ```
     table tbody {
     
