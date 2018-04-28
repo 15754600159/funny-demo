@@ -43,14 +43,14 @@ app.RxFn = {
             console.warn('页面对象没有传入!');
             return;
         };
-        if (!pageObject.state || !pageObject.observables) {
-            console.warn(`<${pageObject.pageContainer}> 页面对象没有定义属性 state 或者 observables!`);
+        if (!pageObject.state || !pageObject.observers) {
+            console.warn(`<${pageObject.pageContainer}> 页面对象没有定义属性 state 或者 observers!`);
             return;
         };
 
-        let { state: prevState, observables } = pageObject;
+        let { state: prevState, observers } = pageObject;
         // 事件合并
-        const stream = Rx.Observable.merge(...observables)
+        const stream = Rx.Observable.merge(...observers)
             .scan((state, changeFn) => changeFn(state), prevState);
 
         // 避免重复监听

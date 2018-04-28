@@ -13,16 +13,16 @@ app.login = {
         array: [],
     }),
     /** 必带属性: 观察对象 */
-    observables: [],
+    observers: [],
 
     // 初始化页面
     init() {
         // 重置页面ajax计数器
         app.api.resetCount();
         // 初始化页面观察者
-        this.initObservables();
+        this.initObservers();
 
-        // action -> model -> view (this需要有state和observables属性)
+        // action -> model -> view (this需要有state和observers属性)
         app.RxFn.mapAtoMtoV(this);
     },
 
@@ -30,7 +30,7 @@ app.login = {
     reset() { },
 
     // 初始化页面观察者
-    initObservables() {
+    initObservers() {
         // # 1. 逻辑事件------------------------------------------------------------------------------
         // XX点击事件
         const button = document.querySelector('.increase');
@@ -81,7 +81,7 @@ app.login = {
                 }));
 
         // ## 2. 加入事件队列
-        this.observables.push(increase, decrease, input, query, array, object);
+        this.observers.push(increase, decrease, input, query, array, object);
 
     },
 

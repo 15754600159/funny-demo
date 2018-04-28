@@ -1,7 +1,7 @@
 {
 	"root": true,
 	"parserOptions": {
-		"ecmaVersion": 6,
+		"ecmaVersion": 9,
 		"ecmaFeatures": {
 			"impliedStrict": true
 		}
@@ -53,11 +53,15 @@
 		"func-call-spacing": "error",
 		"indent": [
 			"error",
-			"tab"
+			"tab",
+			"space"
 		],
 		"key-spacing": "error",
 		"keyword-spacing": "error",
-		"linebreak-style": "error",
+		"linebreak-style": [
+			"error",
+			"windows"
+		],
 		"no-array-constructor": "error",
 		"no-inline-comments": "off",
 		"no-multi-assign": "error",

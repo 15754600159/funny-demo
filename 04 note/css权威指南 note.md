@@ -37,11 +37,12 @@
     2. 上下margin设置为auto，它会自动计算为0；
     3. 垂直相邻外边距会合并；
 5. 内边距、边框和外边距：
-    1. 背景延伸到：content, padding, border；
-    2. 为元素的外边距、内边距设置百分数值，是相对于父元素的width计算的；
+    1. 为元素的外边距、内边距设置百分数值，是相对于父元素的width计算的；
 7. 颜色和背景：
     1. 前景色：color, border-color; 背景色：background-color;
-    2. background-position可设置背景定位；
+    2. 背景颜色延伸到：content, padding, border; (可通过改变background-clip改变定位框)
+    3. 背景延伸到：content, padding;  (可通过改变background-origin改变定位框)
+    4. background-position可设置背景定位；
 8. 浮动和定位：
     1. 只要是浮动，就会生成一个块级框；
     3. clear: left/right/both 制定元素的某个方向上不能出现浮动元素(向下看换行)；
