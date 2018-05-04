@@ -29,8 +29,8 @@
 见web收藏夹 前端
 
 ## note:
-3. [css权威指南](https://github.com/15754600159/my-practice/blob/master/04%20note/css%secret.md)
-3. [css secret](https://github.com/15754600159/my-practice/blob/master/04%20note/css%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%20note.md)
+3. [css权威指南](https://github.com/15754600159/my-practice/blob/master/04%20note/css%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%20note.md)
+3. [css secret](https://github.com/15754600159/my-practice/blob/master/04%20note/css%20secret.md)
 1. [css note](https://github.com/15754600159/my-practice/blob/master/04%20note/css%20note.md)
 2. [JavaScript note](https://github.com/15754600159/my-practice/blob/master/04%20note/JavaScript%20note.md)
 3. [ES6 note](https://github.com/15754600159/my-practice/blob/master/04%20note/ES6%20note.md)
