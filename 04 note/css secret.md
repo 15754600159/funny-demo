@@ -1,4 +1,12 @@
-## css 揭秘 note
+---
+title: css揭秘 note
+date: 2018-06-03
+categories: "css揭秘"
+tags: 
+     - CSS
+     - 读书笔记
+---
+css揭秘的一些读书笔记！
 
 ### 第一章 引言
 1. 编码技巧
@@ -281,6 +289,7 @@ body, .backgroung::before {
         linear-gradient(-135deg, transparent 1.5em, #58a 0);
 }
 ```
+
 ### 第五章 字体排印
 1. 外发光文字
 ```
@@ -303,6 +312,7 @@ h1 {
         0 5px 10px black;
 }
 ```
+
 ### 第六章 用户体验
 1. 选择合适的鼠标光标
     - 可拖拽 move
@@ -354,6 +364,7 @@ input[type="checkbox"]:disabled + label::before {
     color: #555;
 }
 ```
+
 ### 第七章 结构与布局
 1. 自适应内部元素宽度(而不是父元素宽度的100%)
 ```
@@ -395,6 +406,7 @@ li:first-child:nth-last-child(n+2):nth-child(-n+6) ~ li {
     /* 当列表项包含2~6项时，命中所有列表项 */
 }
 ```
+
 ### 第八章 过渡与动画
 1. 缓动效果(模拟小球下落)
 ```

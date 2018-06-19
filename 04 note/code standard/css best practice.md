@@ -1,8 +1,12 @@
-# CSS最佳实践 #
-
-*describe: mainly related to css naming.*
+---
+title: CSS最佳实践
+date: 2018-06-03
+categories: "CSS最佳实践"
+tags: 
+     - CSS
+---
+基于网易NEC的一个CSS实践方案
 *reference: http://nec.netease.com/*
-
 
 ## 1. 项目初始reset
     ```

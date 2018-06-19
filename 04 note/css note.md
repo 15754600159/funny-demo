@@ -1,3 +1,13 @@
+---
+title: CSS note
+date: 2018-06-03
+categories: "CSS note"
+tags: 
+     - CSS
+     - note
+---
+日常积累的CSS笔记！
+
 1. 用rem，JS动态改变html的font-size可以屏幕自适应
 2. CSS3的属性pointer-events能控制JS事件的触发：
     ```

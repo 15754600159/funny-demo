@@ -1,9 +1,13 @@
-# JavaScript代码规范 #
-
+---
+title: JavaScript代码规范
+date: 2018-06-03
+categories: "JavaScript代码规范"
+tags: 
+     - JavaScript
+     - 代码规范
+---
 目标：不管有多少参与者，代码都应该像同一个人所写
-
 声明：本规范中的一些规定无对错之分，只是为了统一风格和增加可读性
-
 
 ## 1 文件格式 ##
 

@@ -1,8 +1,12 @@
-# HTML语义化 #
-
-*describe: semanrics, to create more readable html code.*
+---
+title: HTML语义化
+date: 2018-06-03
+categories: "HTML语义化"
+tags: 
+     - HTML
+---
+写可读性更高的HTML代码！
 *reference: https://blog.csdn.net/coco379/article/details/52938071*
-
 
 ## 1. 优点
 1. 提升可访问性；

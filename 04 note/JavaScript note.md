@@ -1,3 +1,13 @@
+---
+title: JavaScript note
+date: 2018-06-03
+categories: "JavaScript note"
+tags: 
+     - JavaScript
+     - note
+---
+日常积累的JavaScript笔记！
+
 ## 原生JavaScript
 1. 选择器时态问题 
     ```
@@ -107,6 +117,7 @@
         func();
     }
     ```
+    
 ## jQuery
 1. jQuery的attr()对应的是html文本；prop()对应的是DOM对象;
 2. jQuery中each类似于javascript的for循环  

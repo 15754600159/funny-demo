@@ -1,3 +1,13 @@
+---
+title: css权威指南 note
+date: 2018-06-03
+categories: "css权威指南"
+tags: 
+     - CSS
+     - 读书笔记
+---
+css权威指南的一些读书笔记！
+
 1. link元素的title属性值生成一个候选样式列表，可以提供用户选择不同的网站主题。
     ```
     <link rel="stylesheet" type="text/css" href="sheet1.css" title="Default" />
