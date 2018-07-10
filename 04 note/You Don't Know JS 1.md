@@ -1,7 +1,7 @@
 ---
-title: 你不知道的JavaScript note
+title: 你不知道的JavaScript 上 note
 date: 2018-06-03
-categories: "你不知道的JavaScript"
+categories: "你不知道的JavaScript 上"
 tags: 
      - JavaScript
      - 读书笔记
@@ -16,7 +16,9 @@ tags:
 1. 编译：
     1. 分词/词法分析
     2. 解析/语法分析：生成"抽象语法树"AST
-    3. 代码生成：AST转化成一组机器指令
+    3. 代码生成：AST转化成一组机器指令 
+     
+<!-- more -->
 2. 作用域是一套规则，如果查找的目的是对变量进行赋值，就会使用LHS查询；如果目的是获取变量的值，就会使用RHS查询；
 3. var a = 2;会被分解成两个独立的步骤：
     1. var a在其作用域中声明变量
@@ -37,7 +39,8 @@ tags:
 
 #### 第五章 作用域和闭包
 1. 闭包：当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行；
-```
+
+```JavaScript
 function foo() {
     var a = 2;
     function bar() {
