@@ -29,7 +29,7 @@ tags:
     }
     funcs(3); // 3
     ```
-<!-- more -->
+    <!-- more -->
     2. 块作用域
     ```JavaScript
     // ES5 foo()能执行
