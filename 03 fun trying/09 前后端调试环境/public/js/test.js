@@ -2,9 +2,12 @@
 
 // })
 
-const obj = {
-    a: 1,
-    b: 'bbb',
-};
+var a = { b: 1 };
 
-console.log(Reflect.has(obj, 'a'));
+function foo(obj) {
+    obj.b = 2;
+    obj = {c: 2};
+}
+
+foo(a);
+console.log(a);

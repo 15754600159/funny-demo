@@ -159,3 +159,4 @@ tags:
     
     }
     ```
+10. pointer-events: none; // 解决元素被覆盖，元素点不上的问题
