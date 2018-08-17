@@ -160,3 +160,4 @@ tags:
     }
     ```
 10. pointer-events: none; // 解决元素被覆盖，元素点不上的问题
+11. 滚动视差：利用background-attachment: scroll/local/fixed; 实现; (滚动视差？CSS不在话下)
