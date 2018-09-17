@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+@import "common/normalize";
+@import "common/fonts";
+
+//组件
+@import "common/plugins/font-awesome";
+//@import "common/plugins/animate.min";
+
+//公共
+@import "common/public";
+@import "~antd/dist/antd.min.css";

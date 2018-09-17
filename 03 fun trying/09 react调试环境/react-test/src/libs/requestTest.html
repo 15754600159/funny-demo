@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>encodeTest</title>
+    <script type="text/javascript" src="jquery-latest.js">
+    </script>
+    <script type="text/javascript" src="crypto-js.js">
+    </script>
+    <script type="text/javascript" src="SecurityUtils.js">
+    </script>
+    <script type="text/javascript" >
+        var username='xinyi';
+        var password='1234567890';
+        var role = 0;//0 stands for common user
+        var appName = 'police_test';
+        var appKey = 'world_1234567890';
+        function doLogin() {
+            $.ajax({
+                type:'POST',
+                url:"http://172.17.1.24:9090/login",
+                data:JSON.stringify({username:username,password:password,"role":role}),
+                success:
+                    function f(result) {
+                    console.log(result);
+                },
+                dataType:'json',
+                contentType:'application/json'
+                });
+        }
+        var sign = encrypt(username,password,appKey);
+        var digest = sign[0];
+        var timestamp = sign[1];
+        function doGet() {
+            $.ajax({
+                type:'GET',
+                url:"http://172.17.1.24:9090/category?req=tables",
+                headers:{
+                    "hippo.appname":appName,
+                    "hippo.digest":digest,
+                    "hippo.timestamp":timestamp
+                },
+                success:
+                    function f(result) {
+                        console.log(result);
+                    },
+                dataType:'json',
+                contentType:'application/json'
+            });
+        }
+    </script>
+</head>
+</head>
+<body onload="doLogin();doGet();">
+
+</body>
+</html>

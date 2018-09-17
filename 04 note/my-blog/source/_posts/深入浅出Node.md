@@ -17,6 +17,7 @@ tags:
     1. CommonJS规范为JavaScript制定了一个美好的愿景，希望JavaScript能够在任何地方运行；
     2. CommonJS规范为JavaScript指明了一条非常棒的道路，规范涵盖了模块、二进制、Buffer、字符集编码、I/O流、进程环境、文件系统、套接字、单元测试、Web服务器网关接口、包管理器等；
     3. CommonJS的模块规范：模块引用、模块定义、模块标识(传递给require()方法的参数，必须是小驼峰命名)；
+    
 <!-- more -->
 
 2. Node的模块实现

@@ -1,0 +1,36 @@
+.componentmain-others{
+  @include size(100%, calc(100% - 60px));
+  overflow: hidden;
+
+  & > div:first-child{
+    @include size(200px,100%);
+    background-color: $gray-ed;
+    border-right: 1px solid $gray-cc;
+    overflow: auto;
+
+    li{
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid white;
+
+      & > a{
+        color: $black;
+        text-decoration: none;
+        @include size(100%, 100%);
+        padding-left: 20px;
+        display: inline-block;
+        overflow: hidden;
+
+        &.active{
+          color: $main-left-fontcolor;
+          background-color: $gray-cc;
+        }
+      }
+    }
+  }
+
+  & > div:last-child{
+    @include size(calc(100% - 200px), 100%);
+    overflow: auto;
+  }
+}

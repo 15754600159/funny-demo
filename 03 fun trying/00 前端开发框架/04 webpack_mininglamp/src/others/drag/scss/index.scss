@@ -1,0 +1,5 @@
+.dragging-sec-others {
+  @include size(500px, 500px);
+  border: 1px solid $gray-55;
+  position: relative;
+}

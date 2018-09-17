@@ -20,7 +20,7 @@ tags:
 
 # 第二章：let和const命令
 1. 块级作用域中声明函数应用函数表达式，而不是函数声明语句；
-```
+```JavaScript
 -推荐-
 {
     let f = function(){
@@ -38,7 +38,7 @@ tags:
 ```
 2. let、const、class命令声明的全局变量不属于顶层对象的属性；
 
-```
+```JavaScript
 let b = 1;
 window.b //undefined
 ```
@@ -46,7 +46,7 @@ window.b //undefined
 
 # 第三章：变量的结构赋值
 1. 数组的结构赋值
-```
+```JavaScript
 let [x, , y] = [1, 2, 3];
 x //1
 y //3
@@ -57,7 +57,7 @@ x //'a'
 y //'b'
 ```
 2. 对象的解构赋值
-```
+```JavaScript
 let { foo, bar } = { foo: 'aaa', bar: 'bbb' };
 foo //'aaa'
 bar //'bbb'
@@ -73,13 +73,13 @@ x //1
 y //5
 ```
 3. 字符串的解构赋值
-```
+```JavaScript
 const [a, b, c, d, e] = 'hello';
 a //'h'
 b //'e'
 ```
 4. 函数的解构赋值
-```
+```JavaScript
 function move({x = 0, y = 0}){
     return [x, y];
 }
@@ -89,7 +89,7 @@ move({}); //[0, 0]
 move(); //error
 ```
 5. 应用
-```
+```JavaScript
 // 1.交换变量的值
 let x = 1;
 let y = 2;
@@ -128,7 +128,7 @@ for (let [key, value] of map) {
 # 第四章：字符串的拓展
 1. includes(), startsWith(), endsWith();
 2. 字符串补全：(金额、科学计数)
-```
+```JavaScript
 'x'.padStart(5, 'ab'); //'ababx'
 'x'.padEnd(5, 'ab'); //'xabab'
 ```
@@ -148,7 +148,7 @@ for (let [key, value] of map) {
 
 # 第五章：正则的拓展
 1. [先行断言和后行断言](http://blog.csdn.net/u012047933/article/details/38365541)
-```
+```JavaScript
 // 先行断言
 /\d+(?=%)/.exec('100% if US persidents have been male')  // ["100"]
 // 先行否定断言
@@ -160,7 +160,7 @@ for (let [key, value] of map) {
 /(?<!\$)\d+/.exec('Beijamin Franklin is on the *100 bill.')  // ['100']
 ```
 2. 具名组匹配
-```
+```JavaScript
 // 原先
 const RE_DATE = /(\d{4})-(\d{2})-(\d{2})/;
 const matchObj = RE_DATE.exec('1999-12-31');
@@ -185,20 +185,20 @@ re.test('abc!abc!abc'); //true
 
 # 第六章：数值的拓展
 1. 二进制和八进制的表示法：0b(或0B)   0o(或0O)
-```
+```JavaScript
 0b111110111 === 503 
 0o767 === 503
 ```
 2. Number.EPSILON 一个很小的数值，是一个可以接受的误差范围（两个值的差小于这个值，即可视为相等）;
 3. 指数运算符：
-```
+```JavaScript
 2 ** 3 = 8
 a **= 2;  //等同于 a = a * a;
 ```
 
 # 第七章：函数的拓展
 1. 参数默认值
-```
+```JavaScript
 // a.
 function log(x, y = 'world') {
     console.log(x, y);
@@ -224,7 +224,7 @@ f(undefined, 1) // [1, 1]
 // d.指定一个函数可以省略，可以给赋默认值为undefined；不可省略，可以给默认赋值执行一个报错函数，来提醒开发者此参数不可省略；
 ```
 2. rest参数 (可替代函数中的arguments变量)
-```
+```JavaScript
 funciton add (...value) {
     let sum = 0;
     for (var val of values) {
@@ -238,7 +238,7 @@ add(2, 5, 3) //10
 ```
 3. 箭头函数  
 [使用注意事项](http://www.zcfy.cc/article/when-not-to-use-arrow-functions-482.html)
-```
+```JavaScript
 // a.
 var sum = (num1, num2) => {
     return num1 + num2;
@@ -266,7 +266,7 @@ function foo() {
 ```
 4. 绑定this（浏览器未支持，Babel转码器已支持）  
 在箭头函数不适用的场景，用来替代call、apply、bind的写法；
-```
+```JavaScript
 // a.
 foo::bar //等同于 bar.bind(foo)
 foo::bar(a) //等同于 bar.apply(foo, a)
@@ -278,7 +278,7 @@ document.querySelectorAll('div.maClass')
 ```
 5. 尾调用  (尾调用只在严格模式下才开启，正常模式下无效)
     1. 尾调用——优化 
-    ```
+    ```JavaScript
     // 普通函数
     function a() {
         let a = 1;
@@ -292,7 +292,7 @@ document.querySelectorAll('div.maClass')
     尾调用函数调用栈中的调用帧更少，节省内存；
     ```
     2. 尾递归
-    ```
+    ```JavaScript
     // 普通递归
     function factorial(n) {
         if (n === 1) return 1;
@@ -308,13 +308,13 @@ document.querySelectorAll('div.maClass')
     普通递归容易造成堆栈溢出，而ES6中，尾调用不会发生栈溢出，相对节省内存；
     ```
 6. 函数参数的尾逗号
-```
+```JavaScript
 // ES6中最后的参数后加逗号，不会报错
 function func(param1, param2,){//...};
 ```
 # 第八章：数组的拓展
 1. 拓展运算符 ... 三个点，将一个数组转化为用逗号分隔的参数序列；
-```
+```JavaScript
 // a.替代数组apply 方法
 // ES5写法
 var arr1 = [1, 2, 3];
@@ -331,7 +331,7 @@ arr1 = [...arr1, ...arr2];
 ```
 2. Array.from() 用于将两类对象转化为正真的数组：类似数组的对象和可遍历对象
 3. 数组遍历的keys()、values()、entries()
-```
+```JavaScript
 var arr = [1, 2, 3];
 for (let index of arr.keys()){
    console.log(index);
@@ -344,7 +344,7 @@ for (let [index, elem] of arr.entries()){
 }
 ```
 4. includes()
-```
+```JavaScript
 [1, 2, 3].includes(2)  //true
 ```
 5. ES6明确将数组空位转为undefined  
@@ -352,7 +352,7 @@ Array.from()和拓展运算符(...)都会把空位转化为undefined
 
 # 第九章：对象的拓展
 1. 属性的简介表示法
-```
+```JavaScript
 var birth = '2000/01/01';
 var person = {
    name: 'zhangsan',
@@ -365,7 +365,7 @@ var person = {
 }
 ```
 2. 属性名表达式 (对象中可用变量定义属性)
-```
+```JavaScript
 var str = 'name';
 var person = {
    [str]: 'dingding',
@@ -375,7 +375,7 @@ var person = {
 }
 ```
 3. Object.assign (浅复制)
-```
+```JavaScript
 var target = {a: 1},
    source1 = {b: 2},
    source2 = {c: 3};
@@ -384,7 +384,7 @@ Object.assign(target, source1, source2);
 console.log(target); //Object {a: 1, b: 2, c: 3}
 ```
 4. for...in循环会遍历自身的和继承的可枚举属性，而Object.keys()只会返回自身的可枚举属性。所以尽量用Object.keys()来遍历对象；
-```
+```JavaScript
 let {keys, values, entries} = Object;
 let obj = {a: 1, b: 2, c: 3};
 
@@ -400,7 +400,7 @@ for (let [key, value] of entries(obj)) {
 ```
 5. 避免用__proto__去操作对象的原型，尽量使用Object.getPrototypeOf()和Object.setPrototypeOf()来获取和操作对象的原型；
 6. 对象拓展运算符（浅复制）
-```
+```JavaScript
 let {x, y, ...z} = {x: 1, y: 2, a: 3, b: 4};
 x; //1
 y; //2
@@ -415,7 +415,7 @@ let ab = {...a, ...b};
 let ab = Object.assign({}, a, b);
 ```
 7. 查询对象属性的描述对象
-```
+```JavaScript
 // 返回对象某个属性的描述对象
 Object.getOwnPropertyDescriptor(obj, 'a');
 // Object {value: 1, writable: true, enumerable: true, configurable: true}
@@ -423,7 +423,7 @@ Object.getOwnPropertyDescriptor(obj, 'a');
 Object.getOwnPropertyDescriptors(obj);
 ```
 8. Null传导运算符 ?. ——提案
-```
+```JavaScript
 // ES5 写法 
 const firstName = (message && message.body && message.body.user) || 'default';
 // ES6 写法
@@ -432,7 +432,7 @@ const firstName = message?.body?.user || 'default';
 
 # 第十章：Symbol
 1. 定义、使用
-```
+```JavaScript
 let s = Symbol();
 let s1 = Symbol('foo');
 
@@ -442,7 +442,7 @@ var a = {
 }
 ```
 2. 消除魔术字符串
-```
+```JavaScript
 // ES5
 var shapeType = {
     triangle: 'Triangle',
@@ -463,7 +463,7 @@ function getArea(shape, options) {
 }
 ```
 3. Symbol.for()接受一个字符串为参数，搜索有没有以该参数为名称的Symbol值，如果有，则返回这个Symbol值；否则返回一个以该字符串为名称的Symbol值。
-```
+```JavaScript
 var a = Symbol('str');
 var b = Symbol.for('str');
 var c = Symbol.for('str');
@@ -473,7 +473,7 @@ b === c // true
 
 # 第十一章：Set和Map数据结构
 1. Set: 类似数组，但成员值都是唯一的。
-```
+```JavaScript
 const set = new Set([1, 2, 3, 4, 4]);
 [...set]  //[1, 2, 3, 4] 可用于数组去重
 
@@ -499,7 +499,7 @@ set = new Set( [...set].map(x => x * 2) );
 set = new Set( [...set].filter( x => (x % 2) == 0) );
 ```
 2. Map: 键值对的集合，和Object的区别是：key不仅仅是字符串，各种类型的值都可以作为键值。
-```
+```JavaScript
 // 方法和set的差不多
 const map = new Map([
     ['name', '张三'],
@@ -522,11 +522,11 @@ element2.addEventListener('click', listerner.get(element2), false);
 
 # 第十二章：Proxy
 1. Proxy用于修改某些操作的默认行为，等同于在语言层面做出修改，对编程语言进行编程。
-```
+```JavaScript
 var proxy = new Proxy(target, handler);
 ```
 2. 应用实例（除了get()和set()还有其他方法可以拦截，祥见书本...）
-```
+```JavaScript
 // 1. get(): 拦截某个属性的读取操作
 // 实现数组读取负数索引
 function createArray(...elements) {
@@ -612,7 +612,7 @@ person.age = 201; // 报错
     3. 让Object操作都变成函数行为。
     4. Reflect对象的方法与Proxy对象的方法一一对应，这就使得Proxy对象可以方便调用对应的Reflect方法来完成默认行为
 2. 观察者模式
-```
+```JavaScript
 function observable(obj, func) {
     const queueObservers = new Set();
     queueObservers.add(func);
@@ -640,7 +640,7 @@ obj2.name = '李四'; //打印 李四, 20
 
 # 第十四章：Promise
 1. 基本用法
-```
+```JavaScript
 // 1. 基本用法
 var promise = new Promise(function(resolve, reject) {
     // ... some code 
@@ -696,19 +696,19 @@ var p = Promise.race([p1, p2, p3]);
 ```
 2. 
 Promise.resolve(): 将现有对象转为Promise()对象
-```
+```JavaScript
 Promise.resolve('foo');
 // 等价于
 new Promise(resolve => resolve('foo'))
 ```
 Promise.reject(): 也会返回一个新的Promise对象，状态为rejected
-```
+```JavaScript
 Promise.reject('出错了');
 // 等价于
 new Promise((resolve, reject) => reject('出错了'))
 ```
 3. 附加方法
-```
+```JavaScript
 // 1. finally
 Promise.prototype.finally = function(callback) {
     let p = this.constructor;
@@ -732,7 +732,7 @@ server.listen(0)
     3. 默认的Iterator接口部署在数据结构的Symbol.iterator属性
     4. 具备原生Iterator接口的数据结构：Array, Map, Set, String, 函数的arguments对象, NodeList对象;
 2. Iterator接口与Generator函数
-```
+```JavaScript
 var myIterable = {};
 myIterable[Symbol.iterator] = function* () {
     yield 1;
@@ -752,7 +752,7 @@ return()方法: 用于for...of循环提前退出（通常是因为出错，或�
 5. for...of与其他遍历语法的比较
     1. for (var index = 0; index < length; index++): 繁琐
     2. JS为数组提供的forEach: 中途无法跳出forEach循环
-    ```
+    ```JavaScript
     myArray.forEach(element => {
         console.log(element);
     });
@@ -762,7 +762,7 @@ return()方法: 用于for...of循环提前退出（通常是因为出错，或�
 # 第十六章：Generator函数的语法
 1. 基本概念
     1. Generator函数是状态机，是一个遍历器对象生成函数，函数生成的遍历器继承了Generator函数prototype对象上的方法；
-    ```
+    ```JavaScript
     function* generator() {
         yield 'hello';
         yield 'world';
@@ -776,14 +776,14 @@ return()方法: 用于for...of循环提前退出（通常是因为出错，或�
     ```
     2. yield表达式只能在Generator函数上下文中；
     3. yield表达式如果用在；另一个表达式之中，必须放在括号内；
-    ```
+    ```JavaScript
     function* generator() {
         console.log('hello' + yield 123); // SyntaxError
         console.log('hello' + (yield 123)); // OK
     }
     ```
     4. yield语句本身没有返回值，或者说总是返回undefined。next方法可以带有一个参数，改参数会被当做上一条yield语句的返回值；
-    ```
+    ```JavaScript
     // yield能传出值，然后接受新值继续运算；
     function* foo(x) {
         var y = 2 * (yield (x + 1));
@@ -794,7 +794,7 @@ return()方法: 用于for...of循环提前退出（通常是因为出错，或�
     console.log(gen.next(12)); // {value:29, done:true}
     ```
 2. for...of循环
-```
+```JavaScript
 // 原生的JS对象没有遍历接口，无法用for...of循环遍历，可以通过Generator函数为它加上这个接口
 function* objectEntries() {
     let propKeys = Object.keys(this);
@@ -810,7 +810,7 @@ for (let [key, value] of jane) {
 }
 ```
 3. Generator函数与其他语法的关系
-```
+```JavaScript
 function* numbers() {
     yield 1;
     yield 2;
@@ -829,7 +829,7 @@ for (let n of numbers()) {
 }// 1, 2
 ```
 4. Generator.prototype.throw()
-```
+```JavaScript
 var g = function* () {
     try { 
         yield ;
@@ -852,7 +852,7 @@ try {
 ```
 5. Genetator.prototype.return()  
 return 方法可以返回给定的值，并终结Generator函数的遍历。
-```
+```JavaScript
 function* gen() {
     yield 1;
     yield 2;
@@ -864,7 +864,7 @@ g.return('foo'); // {value: 'foo', done: true}
 g.next(); // {value: undefined, done: true}
 ```
 6. yield*表达式
-```
+```JavaScript
 function* foo() {
     yield 'a';
     yield 'b';
@@ -903,7 +903,7 @@ function* inorder(t) {
 
 # 第十七章：Generator函数的异步应用
 1. 异步任务的封装(手动执行，不方便)
-```
+```JavaScript
 var fetch = require('node-fetch');
 function* gen() {
     var url = 'http://api.github.com/users/github';
@@ -920,7 +920,7 @@ result.value.then(function(data) {
 });
 ```
 2. Generator函数的自动流程管理
-```
+```JavaScript
 // 1. Thunk函数实现自动流程管理
 function run(fn) {
     var gen = fn();
@@ -988,7 +988,7 @@ co(function* () {
 
 # 第十八章：async函数
 1. async函数就是Generator函数的语法糖，改进体现在以下3点：
-```
+```JavaScript
 var fs = require('fs');
 var readFile = function (fileName) {
     return new Promise(function (resolve, reject) {
@@ -1011,7 +1011,7 @@ asyncReadFile();
     b. 更广的适用性：co模块约定，yield命令后面只能是Thunk函数和Promise对象，而async函数的await命令后面，可以使Promise对象和原始类型的数值(但这时等同于同步操作)；
     c. 返回值是Promise：async函数可以看作由多个异步操作包装成的一个Promise对象，而await命令就是内部then命令的语法糖；
 2. 语法
-```
+```JavaScript
 // 1. 返回Promise对象
 async function f() {
     return 'hello';
@@ -1053,7 +1053,7 @@ let [foo, bar] = await Promise.all([getFoo(), getBar()]);
 
 # 第十九章：Class的基本语法
 1. 简介
-```
+```JavaScript
 // ES5
 function Point(x, y) {
     this.x = x;
@@ -1084,7 +1084,7 @@ class Point {
 const p = new Point(1, 2);
 ```
 2. class的取值函数(getter)和存值函数(setter)
-```
+```JavaScript
 //在类内部可以使用get和set关键字对某个属性设置存值函数和取值函数，拦截该属性的存取行为
 class MyClass {
     constructor(x) {
@@ -1103,7 +1103,7 @@ const myClass = new MyClass(1); // setter: 1
 console.log(myClass.prop); //getter getter undefined
 ```
 3. Class的静态方法
-```
+```JavaScript
 // 1. 方法之前加static关键字，类的静态方法不会被实例继承，而是需要通过类直接调用
 // 2. 父类的静态方法可以被子类继承
 class Foo {
@@ -1118,7 +1118,7 @@ var foo = new Foo();
 foo.classMethod(); //TypeError: foo.classMethod is not a function
 ```
 4. 静态属性和实例属性——（提案）
-```
+```JavaScript
 class Foo {
     myProp = 42; //实例属性
     static classProp = 41; //静态属性
@@ -1128,7 +1128,7 @@ class Foo {
 
 # 第二十章：Class的继承
 1. 简介
-```
+```JavaScript
 class Point {
     constructor(x, y) { 
         this.x = x;
@@ -1152,7 +1152,7 @@ class ColorPoint extends Point {
     1. 当做函数使用时 super()：super代表了父类的构造函数，但是返回的是子类的实例，因此super()在这里相当于A.prototype.constructor.call(this);
     2. super作为对象时在普通方法中指向父类的原型对象，在静态方法中指向父类；
 3. 类的prototype属性和__proto__属性
-```
+```JavaScript
 class A {
 
 }
@@ -1168,7 +1168,7 @@ B.prototype.__proto__ = A.prototype;
 
 # 第二十一章：修饰器
 1. 修饰器是一个函数，用来修改类的行为，ES2017引入，目前Babel转码器已经支持
-```
+```JavaScript
 // 1. 类的修饰器 （target是所要修饰的类）
     // 给类添加静态属性和实例属性
 @testable
@@ -1210,7 +1210,7 @@ function readonly(target, name, descriptor) {
 # 第二十二章：Module的语法
 1. ES6模块自动采用严格模式;
 2. 语法
-```
+```JavaScript
 // 1. export命令
     //module1.js
     const name = 'Michael',
@@ -1262,7 +1262,7 @@ function readonly(target, name, descriptor) {
 # 第二十三章： Module的加载实现
 
 # 第二十四章： 编程风格
-```
+```JavaScript
 // 1. 对象尽量静态化
 	// bad
 	const a = {};

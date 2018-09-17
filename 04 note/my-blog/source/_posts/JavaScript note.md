@@ -10,7 +10,7 @@ tags:
 
 ### 原生JavaScript
 1. 选择器时态问题 
-    ```
+    ```JavaScript
     var elem = document.getElementsByClassName('div');//能选中未来的元素
     var elem = document.querySelectorAll('.div');//不能选中未来的元素
     var elem = $('.div');//不能选中未来的元素
@@ -23,17 +23,12 @@ tags:
     -  如果值是一个基本类型，使用typeof检查其类型
 3. e.currentTarget指的是注册了事件监听器的对象，而e.target指的是该对象里的子对象，也是触发这个事件的对象。
 4. 数组的遍历操作方法：filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()
-5. 四种常见的 POST 提交数据方式：
-    - application/x-www-form-urlencoded
-    - multipart/form-data
-    - application/json
-    - text/xml
-6. 解耦JS/CSS JS操作class
+5. 解耦JS/CSS JS操作class
     - 给大容器div或者body添加不同状态的class，来控制不同分屏元素的显隐；
-7. input[type = 'file'] [上传多个文件](http://blog.csdn.net/qq_35278280/article/details/51919086/)
-8. [setTimeout详解](http://mp.weixin.qq.com/s/poxACQftbiXg2ePtfTrkkQ)
-9. postMessage解决不同iframe之间的参数传递
-    ```
+6. input[type = 'file'] [上传多个文件](http://blog.csdn.net/qq_35278280/article/details/51919086/)
+7. [setTimeout详解](http://mp.weixin.qq.com/s/poxACQftbiXg2ePtfTrkkQ)
+8. postMessage解决不同iframe之间的参数传递
+    ```JavaScript
     // a页面 （!!!注意：window.frames[0]是目标iframe，是信息接收方，而不是信息发送方）
     window.frames[0].postMessage('getcolor','http://lslib.com');
     // b页面
@@ -43,9 +38,9 @@ tags:
         window.parent.postMessage(color,'*');
     },false);   
     ```
-10. 解决路径跳转中文乱码的问题： encodeURI(url) decodeURI(url)
-11. console正确打开方式：
-    ```
+9. 解决路径跳转中文乱码的问题： encodeURI(url) decodeURI(url)
+10. console正确打开方式：
+    ```JavaScript
     console.log("log");
     console.log("%d年%d月%d日", 2015, 09, 22);
     
