@@ -66,6 +66,7 @@ tags:
 ### 第6章 HTTP首部
 
 1. 首部字段(P80概览)；
+2. 四种缓存的优先级：cache-control > expires > etag > last-modified
 
 ### 第7章 HTTPS(加密 + 认证 + 完整性保护)
 

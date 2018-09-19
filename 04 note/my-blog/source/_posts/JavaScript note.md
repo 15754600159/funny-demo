@@ -14,20 +14,14 @@ tags:
     var elem = document.getElementsByClassName('div');//能选中未来的元素
     var elem = document.querySelectorAll('.div');//不能选中未来的元素
     var elem = $('.div');//不能选中未来的元素
-    // 绑定未来元素
-    $(document).on('click', '.class', function(){})
     ```
 <!-- more -->
 2. 值检验：
     -  如果值是一个引用类型，使用instanceof检查其构造函数
     -  如果值是一个基本类型，使用typeof检查其类型
 3. e.currentTarget指的是注册了事件监听器的对象，而e.target指的是该对象里的子对象，也是触发这个事件的对象。
-4. 数组的遍历操作方法：filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()
-5. 解耦JS/CSS JS操作class
-    - 给大容器div或者body添加不同状态的class，来控制不同分屏元素的显隐；
-6. input[type = 'file'] [上传多个文件](http://blog.csdn.net/qq_35278280/article/details/51919086/)
-7. [setTimeout详解](http://mp.weixin.qq.com/s/poxACQftbiXg2ePtfTrkkQ)
-8. postMessage解决不同iframe之间的参数传递
+4. [setTimeout详解](http://mp.weixin.qq.com/s/poxACQftbiXg2ePtfTrkkQ)
+5. postMessage解决不同iframe之间的参数传递
     ```JavaScript
     // a页面 （!!!注意：window.frames[0]是目标iframe，是信息接收方，而不是信息发送方）
     window.frames[0].postMessage('getcolor','http://lslib.com');
@@ -38,8 +32,8 @@ tags:
         window.parent.postMessage(color,'*');
     },false);   
     ```
-9. 解决路径跳转中文乱码的问题： encodeURI(url) decodeURI(url)
-10. console正确打开方式：
+6. 解决路径跳转中文乱码的问题： encodeURI(url) decodeURI(url)
+7. console正确打开方式：
     ```JavaScript
     console.log("log");
     console.log("%d年%d月%d日", 2015, 09, 22);
@@ -70,6 +64,10 @@ tags:
         func();
     }
     ```
+8. 浏览器渲染页面：
+    1. HTML解析文件，生成DOM Tree，解析CSS文件生成CSSOM Tree;
+    2. 将Dom Tree和CSSOM Tree结合，生成Render Tree(渲染树);
+    3. 根据Render Tree渲染绘制，将像素渲染到屏幕上;
     
 ### jQuery
 1. jQuery的attr()对应的是html文本；prop()对应的是DOM对象;
