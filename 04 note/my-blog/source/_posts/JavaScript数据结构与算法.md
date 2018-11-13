@@ -642,7 +642,7 @@ this.search = function(key) {
 };
 ```
 4. 移除节点(最复杂)
-```
+```JavaScript
 // 移除一个节点
 const findMinNode = function(node) {
     while (node && node.left !== null) {
@@ -997,6 +997,21 @@ function Graph() {
     this.mergeSort = function() {
         array = mergeSortRec(array);
     };
+
+    // 网络精简版
+    function mergeSort(arr) {
+        function merge(leftArr, rightArr) {
+            const resultArr = [];
+            while (leftArr.length && rightArr.length) {
+                resultArr.push(leftArr[0] < rightArr[0] ? leftArr.shift() : rightArr.shift());
+            }
+            return resultArr.concat(leftArr, rightArr);
+        }
+
+        if (arr.length < 2) return arr;
+        const mid = Math.floor(arr.length / 2);
+        return merge(mergeSort(arr.slice(0, mid)), mergeSort(arr.slice(mid)));
+    }
     ```
     6. 快速排序：在数组中间选择一个主元，交换两边的元素，让主元左边的元素小于主元，右边的元素大于主元；再对两边重复这个步骤；
     ```JavaScript

@@ -54,7 +54,7 @@ baz(); // 2 ——闭包的效果
 // setTimeout 事件监听函数都有闭包
 ```
 2. 简单模块
-```
+```JavaScript
 function module() {
     var name = 'daming';
     var age = 18;
@@ -77,7 +77,7 @@ m.setAge(19);
 console.log(m.getAge());
 ```
 3. 现代模块机制
-```
+```JavaScript
 // core
 const MyModules = (() => {
     const modules = {};
@@ -124,7 +124,7 @@ console.log(bar.hello('hippo'));
 console.log(foo.awesome());
 ```
 4. 闭包、this、箭头函数
-```
+```JavaScript
 // 猜测：setTimeout 将第一个参数(函数)绑定到了全局对象，相当于obj.cool().call(window)，所以之后this会指向window;
 // 而jQuery事件绑定是将函数绑定到了相关dom元素上；
 var obj = {
@@ -168,7 +168,7 @@ obj2.cool(); // obj
 
 #### 第一章 关于this
 1. why this: 相比函数传参而言，this提供了一种更优雅的方式来隐式传递一个对象引用；
-```
+```JavaScript
 function identify() {
     return this.name;
 }
@@ -184,7 +184,7 @@ console.log(identify.call(me));
 #### 第二章 this全面解析
 1. 绑定规则：
     1. 默认绑定：独立函数调用，this的默认绑定指向全局变量(strict模式下，指向undefined)；
-    ```
+    ```JavaScript
     function foo() {
         console.log(this.a);
     }    
@@ -192,7 +192,7 @@ console.log(identify.call(me));
     foo(); // 2
     ```
     2. 隐式绑定：函数被调用时，obj对象“拥有”或者“包含”它；
-    ```
+    ```JavaScript
     function foo() {
         console.log(this.a);
     }
@@ -220,7 +220,7 @@ console.log(identify.call(me));
     doFoo(obj.foo); // oops, global
     ```
     3. 显示绑定：call, apply, bind
-    ```
+    ```JavaScript
     function foo(num2) {
         console.log(this.num1 + num2);
     }
@@ -246,7 +246,7 @@ console.log(identify.call(me));
         2. 这个对象会被执行[[Prototype]]连接；
         3. 这个新对象会绑定到函数调用的this；
         4. 如果函数没有返回其他对象，那么new表达式中的函数调用会自动返回这个新对象；
-    ```
+    ```JavaScript
     function foo(a) {
         this.a = a;
     }
@@ -254,7 +254,7 @@ console.log(identify.call(me));
     console.log(bar.a); // 2
     ```
 2. this绑定优先级：默认绑定 < 隐式绑定 < (显式绑定 ? new绑定)
-```
+```JavaScript
 // 貌似new的优先级高一点
 function foo(num) {
     this.a = num;
@@ -271,7 +271,7 @@ console.log(baz.a); // 3
 ```
 3. 绑定例外
     1. 被忽略的this
-    ```
+    ```JavaScript
     // 如果把null或者undefined作为this的绑定对象传入call、apply或者bind，这些值在调用时会被忽略，实际上应用的时默认绑定规则；
     function foo() {
         console.log(this.a);
@@ -290,7 +290,7 @@ console.log(baz.a); // 3
     bar(3); // 2, 3
     ```
     2. this词法(箭头函数)：优先级比new还高
-    ```
+    ```JavaScript
     function foo() {
         return (a) => {
             console.log(this.a);
@@ -305,7 +305,7 @@ console.log(baz.a); // 3
 #### 第三章 对象
 1. 类型: 简单基本类型(string, boolean, number, null, undefined)，他们不是对象，在进行某些操作得时候(获取字符长度)，语言会自动把他们转换成一个对象；对象类型(object)；
 2. 属性描述符
-```
+```JavaScript
 var myObject = {};
 Object.defineProperty(myObject, 'a', {
     value: 2,
@@ -316,7 +316,7 @@ Object.defineProperty(myObject, 'a', {
 myObject.a; // 2
 ```
 3. Getter和Setter
-```
+```JavaScript
 var myObject = {
     get a() {
         console.log('get a');
@@ -330,7 +330,7 @@ myObject.a = 1;
 console.log(myObject.a);
 ```
 4. 存在性
-```
+```JavaScript
 // in操作符会检查属性是否在对象及其[[Prototype]]的原型链中
 // hasOwnProperty只会检查属性是否在myObject对象中，不会检查[[Prototype]]的原型链
 var myObject = {
@@ -351,7 +351,7 @@ myObject.hasOwnProperty('a'); // true
     5. ES6获取对象的原型：Object.getPrototypeOf(a);
     6. Object.create(null);会创建一个空[[prototype]]的对象，不会受到原型链的干扰，因此非常适合用来存储数据；
 2. 构造函数
-```
+```JavaScript
 // ‘构造函数’实际作用：a.__proto__ = Foo.prototype;
 // constructor并不是a对象本身的属性，而是关联的原型链上委托的属性
 // 而且constructor属性是可修改的，所以不是一个可靠的属性
@@ -364,7 +364,7 @@ Foo.prototype.constructor === Foo; // true
 a.constructor === Foo; // true
 ```
 3. 原型模仿类的继承(JavaScript类之间的继承很别扭)
-```
+```JavaScript
 /**
  * ES5原型链
  */
@@ -416,7 +416,7 @@ var obj2 = new Obj2('1');
 obj2.sayName();
 ```
 4. 对象关联(JavaScript中的继承就是对象之间的关联，或者类于实例之间的关联)
-```
+```JavaScript
 /**
  * 一般委托
  */
@@ -459,7 +459,7 @@ obj2.sayName(); // 2 obj2
 
 #### 第六章 行为委托
 1. 函数自我引用问题
-```
+```JavaScript
 // 对象中的方法中需要递归引用自身，则采用 baz: function baz() {...} 的写法，就可以用函数名来引用自身；
 var Foo = {
     baz: function baz() {

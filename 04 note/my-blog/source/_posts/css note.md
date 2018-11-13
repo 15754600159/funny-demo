@@ -161,3 +161,18 @@ tags:
     ```
 10. pointer-events: none; // 解决元素被覆盖，元素点不上的问题
 11. 滚动视差：利用background-attachment: scroll/local/fixed; 实现; (滚动视差？CSS不在话下)
+12. 三栏布局
+    *参考：[三栏布局](https://blog.csdn.net/mrchengzp/article/details/78573208)*
+    1. float布局；
+    2. position: absolute;
+    3. display: table;
+    4. display: flex;
+    5. display: grid;
+13. CSS层叠顺序：(层叠次序, 堆叠顺序, Stacking Order) 描述的是元素在同一个层叠上下文中的顺序规则，从层叠的底部开始，共有七种层叠顺序：
+    1. 背景和边框：形成层叠上下文的元素的背景和边框。
+    2. 负z-index值：层叠上下文内有着负z-index值的定位子元素，负的越大层叠等级越低；
+    3. 块级盒：文档流中块级、非定位子元素；
+    4. 浮动盒：非定位浮动元素；
+    5. 行内盒：文档流中行内、非定位子元素；
+    6. z-index: 0：z-index为0或auto的定位元素， 这些元素形成了新的层叠上下文；
+    7. 正z-index值：z-index 为正的定位元素，正的越大层叠等级越高；

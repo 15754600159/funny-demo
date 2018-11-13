@@ -17,8 +17,7 @@ tags:
     2. 传输层：(TCP, UDP);
     3. 网络层：(IP);
     4. 数据链路层：以太网；
-    5. 物理层：
-
+    5. 物理层：  
 <!-- more -->
 3. HTTP方法：
     - GET: 获取资源；
@@ -30,10 +29,19 @@ tags:
     - TRACE: 追踪路径；
     - CONNECT: 要求用隧道协议连接代理；
 4. 四种常见的 POST 提交数据方式：
-    - application/x-www-form-urlencoded
-    - multipart/form-data
-    - application/json
-    - text/xml
+    1. application/x-www-form-urlencoded (默认)：
+        1. 参数形式：提交的数据按照 key1=val1&key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码；
+    2. multipart/form-data：
+        1. 使用表单上传文件时; 
+        2. Content-Type 里指明了数据是以 mutipart/form-data 来编码，本次请求的 boundary 是什么内容;
+        3. 参数形式：消息主体里按照字段个数又分为多个结构类似的部分，每部分都是以 --boundary 开始，紧接着内容描述信息，然后是回车，最后是字段具体内容（文本或二进制）。如果传输的是文件，还要包含文件名和文件类型信息。消息主体最后以 --boundary-- 标示结束。
+    3. application/json：
+        1. 各大浏览器都原生支持 JSON.stringify;
+        2. 可以方便的提交复杂的结构化数据，特别适合 RESTful 的接口;
+        3. 参数形式：{"title":"test","sub":[1,2,3]} 
+    4. text/xml：
+        1. 它是一种使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范;
+        2. XML 结构还是过于臃肿，一般场景用 JSON 会更灵活方便;
 5. 持久连接：
     1. Connection: keep-alive; 一次TCP连接，多次HTTP请求(串行);
     2. pipelining: 同一个TCP连接的HTTP请求用并行方式发送；
@@ -94,8 +102,8 @@ tags:
 
 1. 因输入/输出值转义不完全引发的安全漏洞：
     1. SQL注入；
-    2. 跨站脚本攻击(XSS) + 会话劫持：：利用没转义的输出构建<script>标签，将用户信息发送给自己的服务器，获取用户数据(cookie)，就可以伪装成用户发送请求了；
-    3. 跨站点请求伪造(CSRF)：利用img.src的属性，在用户不知情的情况下，发送请求(如购物)；
+    2. 跨站脚本攻击(XSS) + 会话劫持[1.DOM型； 2.存储型]]：利用没转义的输出构建script标签，将用户信息发送给自己的服务器，获取用户数据(cookie)，就可以伪装成用户发送请求了；[参考](https://tech.meituan.com/fe_security.html)*
+    3. 跨站点请求伪造(CSRF)：利用img.src的属性，在用户不知情的情况下，发送请求(如购物)；[参考](https://tech.meituan.com/fe_security_csrf.html)
 2. 其他安全漏洞：
     1. 密码破解：穷举法，字典攻击；
     2. 点击劫持(iframe透明覆盖)；
