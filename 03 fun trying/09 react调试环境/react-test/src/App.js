@@ -1,38 +1,91 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {  useState, useReducer, useEffect, useRef, Component } from 'react'
+import './App.css'
 
-import './libs/jquery-latest';
-import './libs/crypto-js';
-import './libs/SecurityUtils';
+// class App extends Component {
+//     state = {
+//         count: 0
+//     }
 
-import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
+//     componentDidMount() {
+//         console.log('componentDidMount')
+//     }
 
-class App extends Component {
-  render() {
-    console.log(window.encrypt)
+//     componentWillUnmount() {
+//         console.log('componentWillUnmount')
+//     }
 
-    return (
-      <div className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p> */}
-        <HashRouter>
-          <div>
-            <Switch>
-              <Route path='/login' exact render={() => <div>login</div>} />
-            </Switch>
-            <Redirect to='/login'></Redirect>
-          </div>
-        </HashRouter>
-        
-      </div>
-    );
-  }
+//     componentDidUpdate() {
+//         console.log('componentDidUpdate')
+//     }
+
+//     render() {
+//         const { count } = this.state
+
+//         return <div>
+//             <span>{count}</span>
+//             <button onClick={() => this.setState({ count: count + 1 })}>+</button>
+//         </div>
+//     }
+// }
+
+const reducer = function(state, action) {
+    switch(action.type) {
+        case 'increment':
+            return { ...state, count: state.count + 1 }
+        case 'addList':
+            return { ...state, arr: [ ...state.arr, 1] }
+        default:
+            throw new Error('undefined action type!');
+    }
 }
 
-export default App;
+function App() {
+    const initialState = {
+        count: 1,
+        arr: [1, 2, 3]
+    }
+    const [state, dispatch] = useReducer(reducer, initialState)
+    const inputElem = useRef()
+    const [name, setName] = useState({
+        firstName: 'james',
+        lastName: 'lebran'
+    })
+
+    useEffect(() => {
+        inputElem.current.focus()
+    }, [])
+
+    useEffect(() => {
+        document.title = `You click ${state.count} times`
+        return () => {
+            console.log('clean up!')
+        }
+    }, [state.count])
+
+    const handleNameChange = (value, type) => {
+        setName({
+            ...name,
+            [type]: value
+        })
+    }
+
+    return (
+        <div className="App">
+            <span>{state.count}</span>
+            <div>
+                list:
+                {
+                    state.arr.map((item, index) => <div key={index}>{item}</div>)
+                }
+            </div>
+            <button onClick={() => dispatch({ type: 'increment' })}>add num</button>
+            <button onClick={() => dispatch({ type: 'addList' })}>add list</button>
+            <input type="text" ref={inputElem}/>
+            <br/>
+            <input type="text" value={name.firstName} onChange={e => handleNameChange(e.target.value, 'firstName')}/>
+            <input type="text" value={name.lastName} onChange={e => handleNameChange(e.target.value, 'lastName')}/>
+        </div>
+    )
+}
+
+export default App
